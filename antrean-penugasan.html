@@ -1,0 +1,1853 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_dashboard" name="shell-type">
+<title>CV Intan Pratama - FSM Dispatcher Pro</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      body { overscroll-behavior: none; }
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', 'Inter', monospace;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+<link rel="stylesheet" href="assets/p1.css">
+<script src="assets/crew-master.js"></script>
+<script src="assets/material-catalog.js"></script>
+<script src="assets/ops-calendar.js"></script>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+<!-- SIDEBAR NAVIGASI (Dark Sleek Navy Pro) -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-[#0b1329] border-r border-slate-800/80 z-50 flex flex-col justify-between select-none shadow-2xl">
+<div class="flex flex-col">
+<!-- Brand Header -->
+<div class="px-6 pt-6 pb-4 border-b border-slate-800/60">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/25 ring-1 ring-white/20">
+<span class="material-symbols-outlined text-[22px]">hvac</span>
+</div>
+<div class="flex flex-col">
+<span class="font-extrabold text-[15px] tracking-tight text-white leading-tight">CV INTAN PRATAMA</span>
+<span class="text-[10px] uppercase font-bold tracking-widest text-cyan-400/90 font-mono-code">FSM Dispatcher Pro</span>
+</div>
+</div>
+<!-- Operational Depot Chip -->
+<div class="mt-4 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800/80 flex items-center gap-2.5 shadow-inner">
+<div class="w-7 h-7 rounded-lg bg-blue-500/10 text-cyan-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">warehouse</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Depot Operasional</span>
+<span class="text-xs font-semibold text-slate-200 truncate">Taman Pondok Jati, Sda</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 px-3 mt-4" data-active-classes="bg-blue-600 text-white font-bold shadow-md shadow-blue-600/30">
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="overview" href="./ringkasan-hari.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-cyan-200">dashboard</span>
+<span class="text-[13px]">Ringkasan Hari</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-cyan-300 animate-pulse"></span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="customer-requests" href="./pengajuan-pelanggan.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">pending_actions</span>
+<span class="text-[13px] font-medium">Pengajuan Pelanggan</span>
+</div>
+<span id="navBaru" class="px-2 py-0.5 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 font-mono-code text-[11px] font-bold">5 Baru</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-blue-600 text-white font-bold shadow-md shadow-blue-600/30 transition-all group" data-path="csp-dispatch" href="antrean-penugasan.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-white">assignment_late</span>
+<span class="text-[13px] font-semibold">Antrean &amp; Penugasan</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-400 text-slate-900 font-mono-code text-[11px] font-extrabold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px] font-bold">check_circle</span>CSP
+</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="timeline-gantt" href="./timeline-rute.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">splitscreen</span>
+<span class="text-[13px] font-medium">Timeline Tim &amp; Rute</span>
+</div>
+<span class="text-[11px] font-mono-code text-cyan-400 font-bold bg-cyan-950/60 px-2 py-0.5 rounded-md border border-cyan-800/40">TSP Aktif</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="work-orders-invoices" href="./spk-invoice.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">receipt_long</span>
+<span class="text-[13px] font-medium">SPK &amp; Invoice</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="inventory-master" href="./master-inventaris.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">inventory_2</span>
+<span class="text-[13px] font-medium">Master &amp; Inventaris</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="audit-logs" href="./log-audit.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">history_edu</span>
+<span class="text-[13px] font-medium">Log Audit</span>
+</div>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom Hotline & Info -->
+<div class="p-3 mb-2 flex flex-col gap-2">
+<div class="p-3 rounded-xl bg-gradient-to-r from-rose-950/60 to-rose-900/40 border border-rose-800/50 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-rose-600/30 text-rose-400 flex items-center justify-center ring-1 ring-rose-500/40">
+<span class="material-symbols-outlined text-[18px]">sos</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-extrabold text-rose-300 uppercase tracking-wider">Hotline Darurat</span>
+<span class="font-mono-code text-xs font-bold text-white">0811-3450-990</span>
+</div>
+</div>
+<a class="w-7 h-7 rounded-lg bg-rose-600 hover:bg-rose-500 text-white flex items-center justify-center transition-colors shadow-sm" href="tel:08113450990" title="Hubungi Hotline">
+<span class="material-symbols-outlined text-[15px]">call</span>
+</a>
+</div>
+<div class="px-2 py-1.5 flex items-center justify-between text-slate-400 text-[11px] font-medium border-t border-slate-800/60">
+<span class="truncate">Surabaya &amp; Sidoarjo Rayon</span>
+<span class="font-mono-code text-cyan-400 font-semibold bg-cyan-950/40 px-1.5 py-0.5 rounded border border-cyan-800/40">v2.4.0</span>
+</div>
+</div>
+</aside>
+<!-- CONTENT SHELL WRAPPER -->
+<div class="pl-72 flex flex-col min-h-screen">
+<!-- TOP HEADER BAR (Modern Dark Slate Pro) -->
+<header class="fixed top-0 left-72 right-0 h-16 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800/80 z-40 flex items-center justify-between px-8 select-none shadow-md">
+<div class="flex items-center gap-4">
+<!-- Date Time Pill -->
+<div class="flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/70 text-slate-200 shadow-inner">
+<span class="material-symbols-outlined text-cyan-400 text-[18px]">schedule</span>
+<span id="hdr-date" class="font-mono-code text-xs font-medium text-slate-300">Senin, 26 Okt 2026</span>
+<span class="w-1 h-3 rounded-full bg-slate-700"></span>
+<span id="hdr-clock" class="font-mono-code text-xs font-bold text-cyan-300">08:15 WIB</span>
+</div>
+<!-- Telemetry Status Tag -->
+<div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/70 border border-emerald-600/40 text-emerald-300 text-xs font-semibold shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="">Real-time Telemetri Aktif</span>
+</div>
+</div>
+<!-- User Action Header -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors relative border border-slate-700/60 bg-slate-900/60" title="Notifikasi" type="button">
+<span class="material-symbols-outlined text-[19px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-slate-900"></span>
+</button>
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors border border-slate-700/60 bg-slate-900/60" title="Setelan" type="button">
+<span class="material-symbols-outlined text-[19px]">tune</span>
+</button>
+</div>
+<div class="h-6 w-[1px] bg-slate-700/80"></div>
+<!-- Dispatcher Avatar Info -->
+<div class="flex items-center gap-3 pl-1">
+<div class="flex flex-col text-right">
+<span class="text-xs font-bold text-white leading-tight tracking-tight">Budi Santoso</span>
+<span class="text-[11px] text-cyan-300/80 font-medium">Dispatcher / Kepala Ops</span>
+</div>
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 ring-2 ring-blue-400/40 flex items-center justify-center text-white shadow-md">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN DASHBOARD CONTENT -->
+<main class="w-full pt-20 bg-[#f8fafc] flex-1 px-8 pb-10"><div class="flex flex-col w-full space-y-6"><!-- PAGE HEADER & OPERATIONAL TELEMETRY METRICS -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-4">
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-primary font-mono-code text-[11px] font-bold tracking-wide uppercase">
+<span class="material-symbols-outlined text-[14px] text-electric-cyan" style="font-variation-settings: 'FILL' 1;">psychology</span>
+          CSP Engine Core v3.2
+        </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-badge-csp-valid border border-emerald-500/30 text-badge-csp-valid-text font-label-xs font-bold">
+<span class="material-symbols-outlined text-[13px]">verified</span> Auto-Solver Aktif
+        </span>
+<span class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-xs font-medium">
+<span class="material-symbols-outlined text-[13px]">tune</span> Aturan B.1 &amp; SOP DOC-7
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-navy-deep tracking-tight font-extrabold">Antrean Order &amp; Penugasan Cerdas (CSP Solver)</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+        Evaluasi kelayakan tim lapangan otomatis berdasarkan kualifikasi teknisi berlisensi, batas beban 9 jam kerja, batas kuota unit, dan jeda perjalanan secara matematis dan real-time.
+      </p>
+</div>
+<!-- QUICK ACTIONS -->
+<div class="flex items-center gap-3 shrink-0 flex-wrap">
+<label class="inline-flex items-center gap-2 px-3 py-2.5 rounded-xl bg-surface-card border border-border-subtle text-navy-deep font-label-xs font-bold shadow-sm cursor-pointer" title="Saat order baru masuk atau kru clock-in, order langsung dijadwalkan ke tim yang memenuhi syarat (hanya untuk hari berjalan).">
+<input id="autoAssignToggle" type="checkbox" class="accent-blue-600 w-4 h-4" checked>
+<span class="flex flex-col leading-tight"><span>Auto-assign</span><span class="text-[10px] font-medium text-on-surface-variant">order baru &amp; clock-in</span></span>
+</label>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-card border border-border-subtle text-navy-deep font-label-md shadow-sm hover:bg-surface-container-low transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-electric-cyan">refresh</span>
+<span class="">Hitung Ulang CSP</span>
+</button>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-on-primary font-label-md shadow-md shadow-primary/20 hover:bg-primary-container transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">auto_fix_high</span>
+<span class="">Auto-Assign Batch</span>
+</button>
+</div>
+</div>
+<!-- OPERATIONAL SUMMARY METRICS STRIP -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"><!-- Metric 1: Antrean Belum Ditugaskan -->
+<div class="p-4 rounded-2xl bg-gradient-to-br from-blue-50/90 to-blue-100/50 border border-blue-200/80 shadow-sm flex items-center justify-between transition-all hover:shadow-md">
+<div class="flex flex-col">
+<span class="font-label-xs text-blue-900/80 uppercase tracking-wider font-bold">Antrean Belum Ditugaskan</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-lg text-headline-lg text-blue-950 font-extrabold" id="m-queue">5</span>
+<span class="font-body-sm text-body-sm text-blue-800 font-semibold">Order Kerja</span>
+</div>
+<span class="font-label-xs text-status-otw mt-1.5 flex items-center gap-1 font-bold bg-white/70 px-2 py-0.5 rounded-md border border-amber-200/80 w-fit">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span> <span id="m-queue-sub">—</span>
+</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/30">
+<span class="material-symbols-outlined text-[24px]">pending_actions</span>
+</div>
+</div>
+<!-- Metric 2: Kebutuhan Teknisi Utama -->
+<div class="p-4 rounded-2xl bg-gradient-to-br from-indigo-50/90 to-indigo-100/50 border border-indigo-200/80 shadow-sm flex items-center justify-between transition-all hover:shadow-md">
+<div class="flex flex-col">
+<span class="font-label-xs text-indigo-900/80 uppercase tracking-wider font-bold">Kebutuhan Teknisi Utama</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span id="m-tu" class="font-headline-lg text-headline-lg text-indigo-950 font-extrabold">0</span>
+<span class="font-body-sm text-body-sm text-indigo-800 font-semibold">Order Wajib TU</span>
+</div>
+<span id="m-tu-sub" class="font-label-xs text-indigo-700 mt-1.5 flex items-center gap-1 font-bold bg-white/70 px-2 py-0.5 rounded-md border border-indigo-200/80 w-fit">
+<span class="material-symbols-outlined text-[14px]">military_tech</span> —
+</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center shadow-md shadow-indigo-500/30">
+<span class="material-symbols-outlined text-[24px]">engineering</span>
+</div>
+</div>
+<!-- Metric 3: Lewat Cut-Off 06:00 -->
+<div class="p-4 rounded-2xl bg-gradient-to-br from-rose-50/90 to-rose-100/60 border border-rose-200/80 shadow-sm flex items-center justify-between transition-all hover:shadow-md">
+<div class="flex flex-col">
+<span class="font-label-xs text-rose-800 uppercase tracking-wider font-bold">Lewat Cut-off (06:00)</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span id="m-cutoff" class="font-headline-lg text-headline-lg text-rose-700 font-extrabold">0</span>
+<span class="font-body-sm text-body-sm text-rose-700 font-semibold">Order Darurat</span>
+</div>
+<span id="m-cutoff-sub" class="font-label-xs text-rose-700 mt-1.5 flex items-center gap-1 font-bold bg-white/80 px-2 py-0.5 rounded-md border border-rose-200/80 w-fit">
+<span class="material-symbols-outlined text-[14px]">priority_high</span> —
+</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center shadow-md shadow-rose-500/30">
+<span class="material-symbols-outlined text-[24px]">alarm_on</span>
+</div>
+</div>
+<!-- Metric 4: Sisa Kuota Jam Tim -->
+<div class="p-4 rounded-2xl bg-gradient-to-br from-emerald-50/90 to-teal-100/50 border border-emerald-200/80 shadow-sm flex items-center justify-between transition-all hover:shadow-md">
+<div class="flex flex-col">
+<span class="font-label-xs text-emerald-900/80 uppercase tracking-wider font-bold">Sisa Kuota Jam Tim Hari Ini</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-lg text-headline-lg text-emerald-800 font-extrabold" id="csp-hours">18.0</span>
+<span class="font-body-sm text-body-sm text-emerald-700 font-semibold">Jam Tersedia</span>
+</div>
+<span class="font-label-xs text-emerald-800 mt-1.5 flex items-center gap-1 font-bold bg-white/70 px-2 py-0.5 rounded-md border border-emerald-200/80 w-fit">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> <span id="csp-onduty">2/2 tim · kapasitas 18.0 jam · 0.0 jam terpakai</span>
+</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-md shadow-emerald-500/30">
+<span class="material-symbols-outlined text-[24px]">timelapse</span>
+</div>
+</div></div>
+<!-- EXCEPTION QUEUE: order yang butuh keputusan dispatcher -->
+<div id="csp-exceptions" class="flex flex-col gap-2"></div>
+<!-- NOTIFIKASI PELANGGAN & SLA (v33) -->
+<div id="notifBox" class="p-4 rounded-2xl bg-surface-card border border-border-subtle shadow-sm flex flex-col"></div>
+<!-- FILTER CONTROLS & TAB STRIP -->
+<div class="p-3 bg-surface-card border border-border-subtle rounded-2xl shadow-sm flex flex-col lg:flex-row items-center justify-between gap-3">
+<!-- Category Tabs -->
+<div class="flex items-center gap-1 overflow-x-auto w-full lg:w-auto pb-1 lg:pb-0">
+<button class="px-3.5 py-2 rounded-xl font-label-md text-label-md bg-navy-deep text-white shadow-sm flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="">Semua Antrean</span>
+<span id="tab-all" class="px-1.5 py-0.2 rounded-md bg-white/20 text-[11px] font-bold">0</span>
+</button>
+<button class="px-3.5 py-2 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="">Pasang &amp; Relokasi</span>
+<span id="tab-pasang" class="px-1.5 py-0.2 rounded-md bg-secondary-fixed text-secondary text-[11px] font-bold">0 (TU)</span>
+</button>
+<button class="px-3.5 py-2 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="">Servis &amp; Cuci AC</span>
+<span id="tab-servis" class="px-1.5 py-0.2 rounded-md bg-surface-container text-on-surface-variant text-[11px] font-bold">0</span>
+</button>
+<button class="px-3.5 py-2 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="">Trouble &amp; Freon</span>
+<span id="tab-trouble" class="px-1.5 py-0.2 rounded-md bg-surface-container text-on-surface-variant text-[11px] font-bold">0 (TU)</span>
+</button>
+<button class="px-3.5 py-2 rounded-xl font-label-md text-label-md text-status-batal hover:bg-badge-csp-invalid transition-colors flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="">Lewat Cut-off</span>
+<span id="tab-late" class="px-1.5 py-0.2 rounded-md bg-badge-csp-invalid text-status-batal text-[11px] font-bold">0</span>
+</button>
+</div>
+<!-- Search & Zone Selectors -->
+<div class="flex items-center gap-2 w-full lg:w-auto">
+<div class="relative flex-1 lg:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-xl bg-surface-ice text-navy-deep font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-electric-cyan placeholder:text-on-surface-variant/70 border border-border-subtle" placeholder="Cari nama, ID order, alamat..." type="text">
+</div>
+<div class="flex items-center gap-1 bg-surface-ice border border-border-subtle p-1 rounded-xl">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] ml-2">share_location</span>
+<select class="bg-transparent font-label-md text-label-md text-navy-deep py-1 px-2 border-0 focus:ring-0 cursor-pointer">
+<option>Semua Zona Rayon</option>
+<option selected="">Surabaya Timur (Aktif)</option>
+<option>Surabaya Barat</option>
+<option>Sidoarjo Utara</option>
+<option>Sidoarjo Kota</option>
+</select>
+</div>
+</div>
+</div>
+<!-- TWO-COLUMN WORKSPACE: SPLIT VIEW -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN: SELECTED ORDER INSPECTION & QUEUE STREAM (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col space-y-4">
+<!-- Primary Active Order Card (Pinned Focus) — dirender dari ip_customer_orders -->
+<div id="csp-pinned" class="flex flex-col space-y-4"></div>
+<!-- Queue Header Divider -->
+<div class="flex items-center justify-between px-1">
+<span class="font-label-xs text-on-surface-variant font-bold uppercase tracking-wider">Antrean Order Lainnya (<span id="csp-qlen">0</span>)</span>
+<span class="font-label-xs text-electric-cyan font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sort</span> Urut berdasarkan SLA / waktu pengajuan
+</span>
+</div>
+<!-- Other Queued Orders List — dirender dari ip_customer_orders -->
+<div class="flex flex-col space-y-2.5" id="csp-queue"></div>
+<!-- Panel validasi Admin (Review → Selesai) -->
+<div id="csp-review" class="hidden flex flex-col space-y-2.5"></div>
+</div>
+<!-- RIGHT COLUMN: CSP SOLVER FEASIBILITY MATRIX (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col space-y-4">
+<!-- Absensi kru riil: kehadiran adalah constraint sebelum domain dibentuk -->
+<div id="csp-absen" class="p-4 rounded-2xl bg-surface-card border border-border-subtle shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between gap-2 flex-wrap">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="material-symbols-outlined text-[18px] text-primary">badge</span>
+<span class="font-label-md text-label-md text-navy-deep font-extrabold">Absensi Kru</span>
+<span class="font-label-xs text-on-surface-variant" id="csp-absen-tgl">—</span>
+<span class="font-label-xs px-2 py-0.5 rounded-full border bg-slate-50 text-slate-600 border-slate-200" id="csp-day-mode">hari berjalan</span>
+</div>
+<span class="flex items-center gap-1.5">
+<label class="font-label-xs text-on-surface-variant" for="csp-date">Tanggal kerja</label>
+<button id="csp-day-prev" type="button" class="w-7 h-7 rounded-lg border border-border-subtle bg-white text-navy-deep flex items-center justify-center hover:border-primary" title="Hari sebelumnya"><span class="material-symbols-outlined text-[16px]">chevron_left</span></button>
+<input id="csp-date" type="date" class="r-control border border-border-subtle rounded-lg px-2 py-1 text-[12px] font-bold text-navy-deep bg-white">
+<button id="csp-day-next" type="button" class="w-7 h-7 rounded-lg border border-border-subtle bg-white text-navy-deep flex items-center justify-center hover:border-primary" title="Hari berikutnya"><span class="material-symbols-outlined text-[16px]">chevron_right</span></button>
+<button id="csp-holiday-btn" type="button" class="ml-1 px-2 py-1 rounded-lg border border-border-subtle bg-white text-navy-deep font-label-xs font-bold hover:border-primary flex items-center gap-1" title="Atur hari libur / tutup operasional"><span class="material-symbols-outlined text-[15px]">event_busy</span>Libur</button>
+</span>
+</div>
+<div id="csp-day-note"></div>
+<span class="font-label-xs text-electric-cyan font-semibold">Klik nama untuk menandai tidak masuk — domain solver langsung menyempit</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="csp-crew"></div>
+<!-- AUTO-INSERTED: CSP solver anchor (script injects matrix + trace here) -->
+<!-- Team cards below are replaced by the CSP engine on first run -->
+<div id="csp-matrix">
+<!-- Solver Status Bar -->
+<div class="p-4 rounded-2xl bg-surface-card border border-border-subtle shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-badge-csp-valid border border-emerald-500/30 text-badge-csp-valid-text flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-[24px]">hub</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-navy-deep font-extrabold">Hasil Analisis Kelayakan <span id="csp-team-n">2</span> Tim Lapangan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Evaluasi real-time untuk order: <span class="font-mono-metric font-bold text-primary" id="csp-order-ref">ORD-2610-005</span></span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap" id="csp-counts">
+<span class="font-label-xs text-badge-csp-valid-text font-bold bg-badge-csp-valid border border-emerald-500/30 px-2.5 py-1 rounded-lg flex items-center gap-1" id="csp-c1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-selesai"></span> <span id="csp-n1">1</span> Sangat Direkomendasikan
+</span>
+<span class="font-label-xs text-status-otw font-bold bg-amber-50 border border-status-otw/30 px-2.5 py-1 rounded-lg flex items-center gap-1" id="csp-c2">
+<span class="w-1.5 h-1.5 rounded-full bg-status-otw"></span> <span id="csp-n2">1</span> Bersyarat
+</span>
+<span class="font-label-xs text-status-batal font-bold bg-badge-csp-invalid border border-rose-500/30 px-2.5 py-1 rounded-lg flex items-center gap-1" id="csp-c3">
+<span class="w-1.5 h-1.5 rounded-full bg-status-batal"></span> <span id="csp-n3">2</span> Gugur
+</span>
+</div>
+</div>
+<!-- AUTO-INSERTED: CSP teams render container -->
+<div id="csp-teams" class="flex flex-col space-y-4">
+<!-- TEAM 1: TIM ALPHA (RECOMMENDED - SCORE 94/100) -->
+<div class="p-5 rounded-2xl bg-badge-csp-valid/40 border-2 border-emerald-500/50 shadow-md relative overflow-hidden flex flex-col space-y-4"><!-- Visual CSP Recommended Banner -->
+<div class="flex items-center justify-between pb-3 border-b border-emerald-500/40">
+<div class="flex items-center gap-2.5">
+<span class="px-3.5 py-1 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-label-md text-[11px] font-extrabold flex items-center gap-1.5 shadow-md shadow-emerald-600/30 ring-1 ring-white/30">
+<span class="material-symbols-outlined text-[16px] text-amber-300" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+  REKOMENDASI TERBAIK CSP (SKOR 94/100)
+</span>
+<span class="font-label-xs text-emerald-900 font-bold bg-white/70 px-2 py-0.5 rounded-md border border-emerald-200">Beban Terdistribusi Optimal</span>
+</div>
+<span class="font-mono-metric text-mono-metric text-emerald-800 font-extrabold flex items-center gap-1 bg-white/80 px-2.5 py-0.5 rounded-lg border border-emerald-300 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span> 100% Lolos Constraint
+</span>
+</div>
+<!-- Team Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-indigo-600 text-white flex items-center justify-center font-extrabold font-headline-md text-headline-md shadow-md ring-2 ring-blue-400/40">
+  α
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-navy-deep font-extrabold">Tim Alpha</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-secondary font-label-xs font-bold">Zona Sby Timur</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 flex-wrap">
+<span class="font-body-sm text-body-sm text-navy-deep font-extrabold">Pak Adrian</span>
+<span class="px-2.5 py-0.5 rounded-md bg-primary text-on-primary font-label-xs font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">military_tech</span> TU Daikin Lisensi
+</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm font-medium">+ Budi (Helper)</span>
+</div>
+</div>
+</div>
+<!-- Suggested Slot -->
+<div class="p-3 rounded-xl bg-white border border-emerald-300 flex flex-col items-end shadow-sm">
+<span class="font-label-xs text-on-surface-variant uppercase font-bold">Jadwal Usulan Realistis</span>
+<span class="font-mono-metric text-mono-metric text-blue-800 font-extrabold text-[17px]">10:30 – 12:30 WIB</span>
+<span class="font-label-xs text-emerald-700 flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[13px]">done_all</span> Sesuai toleransi pelanggan
+</span>
+</div>
+</div>
+<!-- Constraint Details Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<!-- Item 1: Beban Kerja -->
+<div class="p-3 rounded-xl bg-white border border-emerald-300/80 shadow-sm flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-slate-600 font-semibold">Beban Kerja Tim</span>
+<span class="font-label-xs text-blue-900 font-extrabold">5.5 / 9.0 Jam</span>
+</div>
+<div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden mt-1 border border-slate-200">
+<div class="bg-blue-600 h-full rounded-full" style="width: 61%;"></div>
+</div>
+<span class="font-label-xs text-emerald-700 font-bold mt-1">+2.5 jam order = 8.0 jam (Aman &lt; 9j)</span>
+</div>
+<!-- Item 2: Kuota Pasang -->
+<div class="p-3 rounded-xl bg-white border border-emerald-300/80 shadow-sm flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-slate-600 font-semibold">Kuota Pasang Baru</span>
+<span class="font-label-xs text-blue-900 font-extrabold">1 / 2 Unit</span>
+</div>
+<div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden mt-1 border border-slate-200">
+<div class="bg-indigo-600 h-full rounded-full" style="width: 50%;"></div>
+</div>
+<span class="font-label-xs text-emerald-700 font-bold mt-1">Sisa 1 slot kapasitas hari ini</span>
+</div>
+<!-- Item 3: Rute & Jeda Tempuh -->
+<div class="p-3 rounded-xl bg-white border border-emerald-300/80 shadow-sm flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-slate-600 font-semibold">Jarak &amp; Jeda Antar-Job</span>
+<span class="font-label-xs text-emerald-800 font-extrabold">14 Menit (Sama Zona)</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-[11px] text-slate-600 font-label-md">
+<span class="material-symbols-outlined text-[14px] text-status-selesai">near_me</span>
+<span class="">Dari Job 1 (Rungkut Asri)</span>
+</div>
+<span class="font-label-xs text-emerald-700 font-bold">Jeda buffer 45 mnt (Syarat &gt; 30 mnt)</span>
+</div>
+</div>
+<!-- Equipment Validation Pill -->
+<div class="p-3 rounded-xl bg-white border border-emerald-400 flex items-center justify-between text-[11px] font-label-md text-emerald-900 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">verified</span>
+<span class="">Peralatan DOC-7 Terverifikasi: <strong>Pompa Vakum Value 2-Stage &amp; Flare Gauge Imperial</strong> siap di mobil APV Tim Alpha.</span>
+</div>
+<span class="font-mono-metric font-bold bg-emerald-100 px-2.5 py-0.5 rounded text-emerald-800 border border-emerald-300 shadow-inner">Ready</span>
+</div>
+<!-- Primary Action Button -->
+<div class="pt-1 flex flex-col sm:flex-row items-center justify-between gap-4">
+<span class="font-label-xs text-slate-600 flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary">timer</span> SLA Panggilan Dispatcher: &lt; 2 menit
+</span>
+<button class="w-full sm:w-auto px-7 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-label-lg shadow-lg shadow-emerald-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer font-bold ring-2 ring-emerald-400/30" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+<span class="">Tugaskan ke Tim Alpha</span>
+</button>
+</div></div>
+<!-- TEAM 2: TIM BETA (CONDITIONALLY QUALIFIED - SCORE 81/100) -->
+<div class="p-4 rounded-2xl bg-amber-50/40 border border-status-otw/40 shadow-sm flex flex-col space-y-3"><div class="flex items-center justify-between pb-2 border-b border-amber-300/60">
+<div class="flex items-center gap-2.5">
+<span class="px-2.5 py-0.5 rounded-full bg-status-otw text-white font-label-xs font-extrabold shadow-sm">
+  TIM BETA (SKOR 81/100)
+</span>
+<span class="font-label-xs text-status-otw font-extrabold flex items-center gap-1 bg-white/70 px-2 py-0.5 rounded border border-amber-200">
+<span class="material-symbols-outlined text-[14px]">warning</span> Layak Bersyarat (Jadwal Mundur)
+</span>
+</div>
+<span class="font-label-xs text-slate-700 font-semibold">Beban Kumulatif: <strong class="text-navy-deep font-extrabold">7.5 / 9.0 Jam</strong></span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold font-headline-sm border border-amber-300 shadow-sm">
+  β
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-navy-deep font-bold">Pak Slamet (TU) + Doni (Helper)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Zona Sby Selatan / Waru • Sisa Beban 1.5 Jam</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right flex flex-col">
+<span class="font-label-xs text-slate-600 font-semibold">Slot Baru Mampu:</span>
+<span class="font-mono-metric text-mono-metric text-amber-900 font-extrabold bg-amber-100 px-2.5 py-0.5 rounded-lg border border-amber-300 shadow-sm">14:30 WIB</span>
+</div>
+<button class="px-4 py-2 rounded-xl bg-white border border-amber-300 text-amber-900 font-label-md hover:bg-amber-100 transition-colors font-bold shadow-sm" type="button">
+Pilih Tim Beta
+</button>
+</div>
+</div>
+<div class="p-2.5 rounded-xl bg-white border border-amber-300/80 text-[11px] font-label-md text-slate-700 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-status-otw shrink-0">info</span>
+<span class="">Perlu konfirmasi WhatsApp ke pelanggan <strong>Kevin Wibowo</strong> untuk memundurkan slot dari jam 10:00 ke jam 14:30 WIB.</span>
+</div></div>
+<!-- TEAM 3: TIM GAMMA (DISQUALIFIED - NO LICENSED LEAD) -->
+<div class="p-4 rounded-2xl bg-badge-csp-invalid/40 border border-rose-500/30 shadow-sm flex flex-col space-y-2.5"><div class="flex items-center justify-between pb-2 border-b border-rose-200">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-rose-600 text-white font-label-xs font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">lock</span> DISKUALIFIKASI CSP (TIM GAMMA)
+</span>
+<span class="font-label-xs text-rose-700 font-bold bg-white/70 px-2 py-0.5 rounded border border-rose-200">Pelanggaran Kualifikasi SOP DOC-7</span>
+</div>
+<span class="font-label-xs text-rose-700 font-mono-metric font-extrabold bg-white px-2.5 py-0.5 rounded-md border border-rose-300 shadow-sm">Score 0/100</span>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold font-headline-sm border border-rose-300 shrink-0 shadow-sm">
+  γ
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-navy-deep font-bold">Rian (Helper Senior) + Eko (Helper)</span>
+<span class="font-body-sm text-body-sm text-rose-700 font-semibold">
+Penyebab: <strong class="text-rose-900">Tidak ada Teknisi Utama (TU) berlisensi</strong>. Pasang AC &amp; Vakum wajib dipimpin TU.
+</span>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-white text-rose-400 font-label-md font-bold cursor-not-allowed border border-rose-200 shrink-0 shadow-sm" disabled="" type="button">
+Terkunci CSP
+</button>
+</div></div>
+<!-- TEAM 4: TIM DELTA (DISQUALIFIED - LOAD & DISTANCE CONFLICT) -->
+<div class="p-4 rounded-2xl bg-badge-csp-invalid/40 border border-rose-500/30 shadow-sm flex flex-col space-y-2.5"><div class="flex items-center justify-between pb-2 border-b border-rose-200">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-rose-600 text-white font-label-xs font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">lock</span> DISKUALIFIKASI CSP (TIM DELTA)
+</span>
+<span class="font-label-xs text-rose-700 font-bold bg-white/70 px-2 py-0.5 rounded border border-rose-200">Batas Beban Penuh &amp; Bentrok Zona</span>
+</div>
+<span class="font-label-xs text-rose-700 font-mono-metric font-extrabold bg-white px-2.5 py-0.5 rounded-md border border-rose-300 shadow-sm">Score 0/100</span>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold font-headline-sm border border-rose-300 shrink-0 shadow-sm">
+  δ
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-navy-deep font-bold">Pak Yudi (TU) + Fajar (Helper)</span>
+<span class="font-body-sm text-body-sm text-rose-700 font-semibold">
+Penyebab: <strong class="text-rose-900">Kuota pasang penuh (2/2 unit)</strong> &amp; Posisi aktif di Krian (Sidoarjo Barat &gt; 65 mnt perjalanan).
+</span>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-white text-rose-400 font-label-md font-bold cursor-not-allowed border border-rose-200 shrink-0 shadow-sm" disabled="" type="button">
+Terkunci CSP
+</button>
+</div></div>
+</div><!-- /#csp-teams -->
+<!-- AUTO-INSERTED: end of CSP matrix wrapper -->
+</div>
+<!-- RINGKASAN OPERASIONAL (v33): keputusan dulu, detail teknis di belakang -->
+<div id="csp-summary" class="p-4 rounded-2xl bg-surface-card border border-border-subtle shadow-sm flex flex-col gap-2"></div>
+<!-- AUTO-INSERTED: CSP SOLVER TRACE CONSOLE -->
+<details id="csp-console" class="p-4 rounded-2xl bg-navy-deep border border-blue-700/40 shadow-md flex flex-col space-y-2">
+<summary class="flex items-center justify-between cursor-pointer list-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-electric-cyan text-[18px]">terminal</span>
+<span class="font-label-md text-label-md text-white font-bold">Konsol Solver CSP — Backtracking + Forward Checking</span>
+</div>
+<span class="flex items-center gap-2">
+<span class="font-label-xs text-electric-cyan font-bold bg-blue-950/60 px-2 py-0.5 rounded border border-blue-700/40" id="csp-console-badge">Siap</span>
+<span class="font-label-xs font-bold text-white/80 underline decoration-dotted">Lihat detail teknis</span>
+</span>
+</summary>
+<pre id="csp-trace" class="font-mono-code text-[11px] leading-relaxed text-cyan-100/90 whitespace-pre-wrap max-h-56 overflow-y-auto bg-blue-950/40 rounded-lg p-3 border border-blue-800/40">Klik "Hitung Ulang CSP" untuk menjalankan pencarian backtracking dengan penyaringan domain & forward checking.</pre>
+</details>
+<!-- MANUAL OVERRIDE & AUDIT ACCORDION / SIMULATOR CARD -->
+<div class="p-4 rounded-2xl bg-surface-card border border-border-subtle shadow-sm flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">admin_panel_settings</span>
+<span class="font-label-md text-label-md text-navy-deep font-bold">Dispatcher Manual Override &amp; Catatan Khusus</span>
+</div>
+<span class="font-label-xs text-on-surface-variant font-medium">Audit Trail: <strong class="text-navy-deep">Budi Santoso</strong></span>
+</div>
+<div class="flex flex-col sm:flex-row gap-3">
+<input id="overrideNote" class="flex-1 px-3.5 py-2.5 rounded-xl bg-surface-ice text-navy-deep font-body-sm text-body-sm border border-border-subtle focus:outline-none focus:ring-2 focus:ring-electric-cyan placeholder:text-on-surface-variant/70" placeholder="Masukkan alasan jika ingin memaksa penugasan ke tim alternatif..." type="text" aria-label="Alasan override manual">
+<button id="overrideSave" class="px-5 py-2.5 rounded-xl bg-navy-deep text-white font-label-md hover:bg-slate-800 transition-colors whitespace-nowrap font-semibold shadow-sm" type="button">
+            Simpan Catatan
+          </button>
+</div>
+<p id="overrideInfo" class="font-label-xs text-on-surface-variant">Alasan wajib diisi bila menugaskan di luar rekomendasi CSP. Setiap override dicatat di audit trail dan log keputusan.</p>
+<div class="p-2.5 rounded-xl bg-surface-container-low border border-border-subtle flex items-center gap-2 text-[11px] font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-electric-cyan text-[16px] shrink-0">sync_alt</span>
+<span class="">Perubahan penugasan pada halaman ini akan langsung disinkronkan ke <strong>TSP Route Engine</strong> pada menu <em>Timeline Tim &amp; Rute</em>.</span>
+</div>
+</div>
+</div>
+</div></div>
+<script>
+/* ============ CSP ENGINE — Constraint Satisfaction Problem Scheduler ============
+   Variabel: order di antrean. Domain: 2 tim lapangan dari roster riil 4 orang.
+   Hard constraints: kehadiran kru, sertifikasi kru yang hadir (TU/Inverter/Vakum),
+   minimum kru per jenis pekerjaan, batas beban dari jam clock-in, kuota pasang maks
+   2 unit/tim, jendela waktu pelanggan, batas operasional 17:00.
+   Search: backtracking + MRV + forward checking; skor = soft-constraint preference. */
+(function(){
+const TRAVEL = {'ST-ST':15,'SB-SB':15,'SK-SK':15,'WD-WD':15,'SU-SU':15,'KR-KR':15,
+'ST-SB':40,'ST-SK':55,'ST-WD':50,'ST-SU':55,'ST-KR':75,
+'SB-SK':35,'SB-WD':45,'SB-SU':35,'SB-KR':30,
+'SK-WD':22,'SK-SU':20,'SK-KR':40,'WD-SU':22,'WD-KR':55,'SU-KR':35};
+const tt=(a,b)=>TRAVEL[a+'-'+b]!=null?TRAVEL[a+'-'+b]:(TRAVEL[b+'-'+a]!=null?TRAVEL[b+'-'+a]:60);
+/* Roster riil: diambil dari CrewMaster (Master & Inventaris → Tambah Teknisi).
+   Fallback statis dipakai bila halaman dibuka tanpa crew-master.js. */
+const BASE_CREW=[
+ {id:'adrian',name:'Pak Adrian',role:'TU',team:'alpha',certs:['TU','Daikin','Inverter','Vakum','Cuci']},
+ {id:'budi',name:'Budi',role:'Helper',team:'alpha',certs:['Cuci','Bongkar']},
+ {id:'slamet',name:'Pak Slamet',role:'TU',team:'beta',certs:['TU','Inverter','Vakum','Cuci']},
+ {id:'doni',name:'Doni',role:'Helper',team:'beta',certs:['Cuci','Bongkar']}];
+const CREW=(function(){
+ if(!window.CrewMaster) return BASE_CREW;
+ const list=window.CrewMaster.crew();
+ return list.length? list.map(c=>({id:c.id,name:c.name,role:c.role,team:c.team,certs:window.CrewMaster.certsOf(c)})) : BASE_CREW;
+})();
+const BASE_TEAMS=[
+ {id:'alpha',chr:'α',name:'Tim Alpha',zone:'ST',zoneLabel:'Zona Sby Timur / Selatan',gear:'Pompa Vakum Value 2-Stage & Flare Gauge Imperial',depotLat:-7.2810,depotLng:112.7560,load:0,cap:9,pasang:0,pasangMax:2,freeAt:8,openAt:8,capFull:9,capSolo:6},
+ {id:'beta',chr:'β',name:'Tim Beta',zone:'WD',zoneLabel:'Zona Waru / Sidoarjo',gear:'Pompa Vakum single-stage',depotLat:-7.3510,depotLng:112.7450,load:0,cap:9,pasang:0,pasangMax:2,freeAt:8,openAt:8,capFull:9,capSolo:6}];
+const TEAMS=(function(){
+ if(!window.CrewMaster) return BASE_TEAMS.map(t=>Object.assign({},t));
+ const meta=window.CrewMaster.read().teams;
+ return BASE_TEAMS.map(t=>Object.assign({},t,{name:(meta[t.id]||{}).name||t.name}));
+})();
+/* jarak sebenarnya: haversine × faktor jalan 1,35 dibagi kecepatan koridor 21 km/jam */
+const ROAD=1.35, SPEED=21;
+function havKm(a,b,c,d){ const R=6371,rad=Math.PI/180;
+  const s=Math.sin((c-a)*rad/2)**2+Math.cos(a*rad)*Math.cos(c*rad)*Math.sin((d-b)*rad/2)**2;
+  return 2*R*Math.asin(Math.sqrt(s)); }
+function travelOf(order,st){
+  if(order.lat!=null){ const from=st.lastPt||{lat:st.depotLat,lng:st.depotLng};
+    const km=havKm(from.lat,from.lng,order.lat,order.lng)*ROAD;
+    return {min:Math.max(8,Math.round(km/SPEED*60)),km:Math.round(km*10)/10,sumber:'koordinat'}; }
+  return {min:tt(st.zone,order.zone),km:Math.round(tt(st.zone,order.zone)*0.35*10)/10,sumber:'matriks zona'}; }
+/* ---- absensi kru PER TANGGAL: kehadiran adalah constraint sebelum domain dibentuk ---- */
+const CKEY='ip_crew';
+const todayKey=()=>new Date().toISOString().slice(0,10);
+let pickDate=todayKey();                       /* tanggal kerja yang sedang dibuka solver */
+const onDate=s=>(s.tgl||todayKey())===pickDate;
+const isoAdd=(d,n)=>{ const x=new Date(d+'T00:00:00'); x.setDate(x.getDate()+n); return x.toISOString().slice(0,10); };
+const dayShort=d=>new Date((d||pickDate)+'T00:00:00').toLocaleDateString('id-ID',{weekday:'short',day:'numeric',month:'short'});
+const isToday=()=>pickDate===todayKey();
+const planning=()=>pickDate>todayKey();        /* tanggal mendatang: presensi belum ada → mode rencana */
+const dayClosed=()=>({closed:!!(window.OpsCalendar&&window.OpsCalendar.has(pickDate)),label:(window.OpsCalendar&&window.OpsCalendar.label(pickDate))||'Libur operasional'});
+function readRec(k){ let r=null; try{ r=JSON.parse(localStorage.getItem(k)||'null'); }catch(e){ r=null; } return r; }
+function crewRec(d){ return readRec(CKEY+'@'+d) || (d===todayKey()? readRec(CKEY) : null); }
+function presence(){ const rec=crewRec(pickDate), map={};
+ CREW.forEach(c=>map[c.id]=true);
+ if(rec && !planning()) CREW.forEach(c=>{ const x=(rec.people||{})[c.id]; if(x) map[c.id]=!!x.present; });
+ return map; }
+function writePresence(id,val){ const rec=crewRec(pickDate)||{date:pickDate,people:{}}; rec.date=pickDate; rec.people=rec.people||{};
+ CREW.forEach(c=>{ if(rec.people[c.id]==null) rec.people[c.id]={present:true,src:'default'}; });
+ rec.people[id]={present:val,at:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}),src:'dispatcher'};
+ safeSet(CKEY+'@'+pickDate,JSON.stringify(rec)); if(isToday()) safeSet(CKEY,JSON.stringify(rec)); }
+function atRec(id){ const r=readRec('ip_attendance_'+id+'@'+pickDate); return r||((isToday()&&!planning())?readRec('ip_attendance_'+id):null); }
+const clockIn=id=>{ const rec=atRec(id); const m=/^(\d{1,2})[.:](\d{2})/.exec((rec&&rec.in)||''); return m?+m[1]+ +m[2]/60:null; }; /* teknisi menulis 15.30, order memakai 15:30 */
+const CUTOFF=6; /* order masuk setelah 06:00 untuk hari yang sama = di luar cut-off harian */
+/* Pekerjaan berat (pasang, butuh sertifikasi TU, atau durasi > 2 jam) wajib 2 orang; ringan boleh 1. */
+const crewNeed=o=>(o.pasangUnit>0||o.needs.some(n=>n!=='Cuci')||o.dur>2)?2:1;
+function syncCrew(){ const pr=presence();
+ TEAMS.forEach(t=>{ const list=CREW.filter(c=>c.team===t.id);
+  t.crewList=list; t.present=list.filter(c=>pr[c.id]); t.absent=list.filter(c=>!pr[c.id]);
+  t.nPresent=t.present.length;
+  t.noClock=planning()?[]:list.filter(c=>{ const r=atRec(c.id); return !r||!r.in; });
+  t.certs=t.present.reduce((a,c)=>a.concat(c.certs.filter(x=>!a.includes(x))),[]);
+  const tu=t.present.find(c=>c.role==='TU'), hp=t.present.find(c=>c.role==='Helper');
+  t.lead=tu?tu.name:'TU tidak masuk'; t.helper=hp?hp.name:(t.nPresent===1?'Helper tidak masuk':'Kru tidak ada');
+  t.certChip=tu?('TU '+(tu.certs.includes('Daikin')?'Daikin ':'')+(tu.certs.includes('Inverter')?'Inverter':'Umum')):'Tanpa TU berlisensi';
+  t.openAt=Math.max(8,Math.max.apply(null,t.present.map(c=>clockIn(c.id)).filter(x=>x!==null).concat([8])));
+  t.freeAt=t.openAt; t.lastPt=null;
+  t.cap=Math.max(0,Math.min(t.nPresent>=2?t.capFull:t.nPresent===1?t.capSolo:0,DEADLINE-t.openAt));
+  t.mode=t.nPresent>=2?'Kru lengkap':t.nPresent===1?'Degradasi 1 orang':'Tidak beroperasi';
+ }); }
+/* ---- jembatan store: order nyata dari portal pelanggan (bukan data demo) ---- */
+const STORE='ip_customer_orders';
+const loadStore=()=>{ try{ return JSON.parse(localStorage.getItem(STORE)||'[]'); }catch(e){ return []; } };
+/* setiap tulis storage lewat penjaga ini — mode privat / kuota penuh harus dilaporkan, bukan diam-diam gagal */
+function safeSet(k,v){ try{ localStorage.setItem(k,v); return true; }catch(e){ storeWarn(e,k); return false; } }
+function storeWarn(e,k){ let el=document.getElementById('csp-store-warn');
+ if(!el){ el=document.createElement('div'); el.id='csp-store-warn';
+  el.className='fixed bottom-4 left-1/2 -translate-x-1/2 z-50 max-w-md px-4 py-3 rounded-xl bg-rose-50 border-2 border-rose-400 text-rose-900 shadow-xl flex items-start gap-3 font-label-xs';
+  document.body.appendChild(el); }
+ el.innerHTML='<span class="material-symbols-outlined text-[18px] text-rose-600">save_alert</span>'
+ +'<span>'+((e&&e.name==='QuotaExceededError')?'Penyimpanan perangkat penuh':'Browser menolak menyimpan data (mode privat)')
+ +'. Perubahan pada <code>'+esc(k)+'</code> belum tersimpan — unduh cadangan JSON di Ringkasan Hari lalu ulangi.</span>'
+ +'<button onclick="this.parentNode.remove()" class="ml-1 px-2 py-1 rounded bg-rose-600 text-white font-bold">Tutup</button>'; }
+const saveStore=a=>safeSet(STORE, JSON.stringify(a));
+const ACTIVE=['Baru','Dijadwalkan','Dikerjakan','Review','Menunggu Persetujuan Customer'];
+/* P2-7: katalog harga + stok gudang (kunci ip_inventory dipakai bersama Master Inventaris & konsol teknisi) */
+const INV_KEY='ip_inventory';
+const FALLBACK_CATALOG=[
+ {sku:'GAS-R32-03KG',nama:'Tabung Freon R32 3kg',unit:'tabung',stok:2,min:5,hpp:165000,jual:250000},
+ {sku:'GAS-R410A-11KG',nama:'Freon R410A 11.3kg',unit:'tabung',stok:6,min:3,hpp:820000,jual:1250000},
+ {sku:'CAP-25UF-450V',nama:'Kapasitor Fan 2.5µF 450V',unit:'pcs',stok:4,min:10,hpp:35000,jual:75000},
+ {sku:'PIP-TAT-0608',nama:'Pipa Tembaga Tateyama 1/4"+3/8"',unit:'roll',stok:2,min:3,hpp:68000,jual:110000},
+ {sku:'ELE-MOD-450V',nama:'Modul / Kipas Elektronik',unit:'pcs',stok:18,min:5,hpp:65000,jual:160000},
+ {sku:'TOOL-VAK-VALU2',nama:'Valve Vacuum Kit',unit:'set',stok:3,min:1,hpp:240000,jual:400000}];
+const CATALOG=window.MaterialCatalog?window.MaterialCatalog.items():FALLBACK_CATALOG;
+const itemOf=sku=>CATALOG.find(i=>i.sku===sku)||{sku,nama:sku,unit:'pcs',jual:0,min:0};
+function invState(){ let m=null; try{ m=JSON.parse(localStorage.getItem(INV_KEY)||'null'); }catch(e){ m=null; }
+  if(!m){ m={}; CATALOG.forEach(i=>m[i.sku]=i.stok); safeSet(INV_KEY,JSON.stringify(m)); } return m; }
+const rupiah=n=>'Rp '+Number(n||0).toLocaleString('id-ID');
+/* harga final: pakai harga katalog bila teknisi hanya mencatat nama */
+const matCost=rows=>(rows||[]).reduce((s,r)=>s+(itemOf(r.sku).jual||r.harga||0)*(+r.qty||0),0);
+function invTake(rows){ const m=invState(); const habis=[];
+  (rows||[]).forEach(r=>{ const it=itemOf(r.sku); const q=+r.qty||0; if(!it.jual&&!m[r.sku]&&m[r.sku]!==0) return;
+    m[r.sku]=Math.max(0,(m[r.sku]!=null?m[r.sku]:it.stok)-q); if(m[r.sku]<(it.min||0)) habis.push(it.nama+' sisa '+m[r.sku]+' '+it.unit); });
+  safeSet(INV_KEY,JSON.stringify(m)); return habis; }
+function invBack(rows){ const m=invState(); (rows||[]).forEach(r=>{ const it=itemOf(r.sku);
+  m[r.sku]=(m[r.sku]!=null?m[r.sku]:it.stok)+(+r.qty||0); }); safeSet(INV_KEY,JSON.stringify(m)); }
+/* perhitungan tagihan — satu sumber kebenaran untuk pratinjau review dan penerbitan invoice */
+function billOf(s){ const jasa=+s.total||0, rows=(s.report||{}).material||[], mat=matCost(rows);
+  const sub=jasa+mat, ppn=11, ppnRp=Math.round(sub*ppn/100), grand=sub+ppnRp;
+  const by=(s.report||{}).bayar||{}, dp=Math.min(+by.dp||0,grand);
+  return {jasa,rows,mat,sub,ppn,ppnRp,grand,dp,metode:by.metode||'—',saldo:Math.max(0,grand-dp)}; }
+const jamPart=j=>{ const m=/(\d{1,2}):(\d{2})/.exec(j||''); return m? (+m[1]+ +m[2]/60) : null; };
+const jamLabel=j=>{ const s=String(j||'').trim(); if(!s) return '—'; const t=s.replace(/\s*(WIB|WITA|WIT)\s*$/i,''); return t||'—'; };
+function mapOrder(s){ const w=jamPart(s.jam); const w0=w!=null?Math.max(8,w):8, w1=w!=null?Math.min(16,w+1):16;
+ return {id:s.id, title:(s.paket||'Servis AC')+(s.unit>1?' · '+s.unit+' unit':''), cust:s.nama||s.cust||'Pelanggan',
+  hp:s.hp||'', zone:s.zone||'ST', addr:s.alamat||s.alamatLabel||'—', dur:+s.dur||1, w0, w1,
+  needs:s.needs||[], pasangUnit:s.pasangUnit||0, prio:s.prio||'Normal', type:s.tipe||s.paket||'Servis',
+  unit:s.unit||1, tgl:s.tgl||'', made:s.made||0, status:s.status||'Baru', slotPref:jamLabel(s.jam), cat:s.alamat||'',
+  lat:s.lat!=null?+s.lat:null, lng:s.lng!=null?+s.lng:null, patokan:s.patokan||'', tipeTitik:s.tipeTitik||'',
+  pic:s.pic||null, picName:s.picName||'', audit:s.audit||[],
+  usulan:s.usulan||null, token:s.token||'', ditolakAlasan:s.ditolakAlasan||'', respon:s.responCustomer||null,
+  custProposal:s.custProposal||null,
+  slotStart:s.slotStart!=null?+s.slotStart:null, slotEnd:s.slotEnd!=null?+s.slotEnd:null,
+  garansiOf:s.garansiOf||null, ulangDari:s.ulangDari||null, tspArrival:s.tspArrival!=null?+s.tspArrival:null,
+  teamName:s.teamName||'', paket:s.paket||s.tipe||'Servis AC', total:+s.total||0, invoice:s.invoice||null,
+  cutoff: s.tgl===todayKey() && s.made ? new Date(s.made).getHours()>=CUTOFF : false }; }
+let store=loadStore();
+function rebuild(){ syncCrew(); store=loadStore(); ORDERS=store.filter(s=>ACTIVE.includes(s.status||'Baru')&&onDate(s)).map(mapOrder);
+ Object.keys(assignments).forEach(k=>{ if(!ORDERS.some(o=>o.id===k)) delete assignments[k]; });
+ ORDERS.forEach(o=>{ const s=store.find(x=>x.id===o.id); if(s&&s.team&&s.status!=='Baru') assignments[o.id]=s.team; });
+ if(!ORDERS.some(o=>o.id===selected)) selected=(ORDERS.find(o=>o.status==='Baru')||ORDERS[0]||{}).id||null; }
+let ORDERS=[];
+/* pindah hari: antrean, presensi dan domain CSP dihitung per tanggal kerja */
+function setDate(d){ if(!/^\d{4}-\d{2}-\d{2}$/.test(d)||d===pickDate) return; pickDate=d; selected=null;
+ rebuild(); refresh();
+ traceWrite(['[TANGGAL] Antrean dibangun ulang untuk '+d+' ('+dayShort(d)+') — '+ORDERS.length+' order aktif pada hari itu.',
+  (planning()?'[ABSEN] Mode rencana: presensi belum dibuka, kru diasumsikan lengkap.':(isToday()?'[ABSEN] Presensi hari berjalan dibaca dari clock-in teknisi + tanda dispatcher.':'[ABSEN] Arsip tanggal lewat — tidak untuk operasional.')),
+  '[DOMAIN] Kapasitas & sertifikasi tiap tim dihitung ulang; order di tanggal lain tidak ikut memakan slot.']); }
+const DEADLINE=17.0;
+const assignments={};
+let selected=null;
+const hhmm=t=>String(Math.floor(t)).padStart(2,'0')+':'+String(Math.round((t%1)*60)).padStart(2,'0');
+const cloneState=()=>TEAMS.map(t=>Object.assign({},t));
+
+function check(order,team,st){ // returns {fail:[reasons], start, end, travel, score}
+  const fails=[]; const dd=dayClosed();
+  if(dd.closed){ const tv=travelOf(order,st);
+    return {fails:['Tanggal '+pickDate+' ditutup — '+dd.label],start:order.w0,end:order.w0+order.dur,travel:tv.min,travelKm:tv.km,travelSrc:tv.sumber,score:0,sisa:0,need:crewNeed(order)}; }
+  const missing=order.needs.filter(c=>!team.certs.includes(c));
+  if(missing.length) fails.push(st.nPresent?'Sertifikasi '+missing.join('/')+' tidak ada pada '+team.name+' yang hadir':team.name+' tidak beroperasi — semua kru tidak masuk');
+  const need=crewNeed(order);
+  if(st.nPresent<need&&st.nPresent) fails.push('Butuh '+need+' orang ('+(need===2?'TU + Helper — pekerjaan berat':'minimal 1 kru')+'), yang masuk hanya '+st.nPresent);
+  if(st.load+order.dur>st.cap+.001) fails.push('Beban '+(st.load+order.dur).toFixed(1)+' jam > maks '+st.cap.toFixed(1)+' jam'+(st.nPresent<2?' (kapasitas menurun karena kru tidak lengkap)':''));
+  if(st.pasang+order.pasangUnit>st.pasangMax) fails.push('Kuota pasang penuh ('+st.pasang+'/'+st.pasangMax+' unit)');
+  const travel=travelOf(order,st);
+  const gap=Math.max(travel.min,30); /* aturan B.1: jeda antar-job minimal 30 menit */
+  let start=Math.max(order.w0, st.freeAt+gap/60);
+  if(start<13 && start+order.dur>12) start=13; /* jeda wajib ISHOMA 12–13: pekerjaan tidak boleh melewati jeda */
+  const end=start+order.dur;
+  if(end>DEADLINE+.001) fails.push('Selesai '+hhmm(end)+' melewati batas operasional '+hhmm(DEADLINE));
+  let score=100;
+  if(travel.min>15) score-=4+Math.round((travel.min-15)/10);
+  if(start>order.w1) score-=Math.min(12,Math.round((start-order.w1)*3));
+  if(st.nPresent===1) score-=6; /* aturan degradasi: tim berjalan satu orang lebih lambat */
+  const sisa=st.cap-(st.load+order.dur);
+  if(sisa<1) score-=6; else if(sisa<1.5) score-=3;
+  if(order.prio==='Darurat') score-=2;
+  if(order.cutoff) score-=3;
+  return {fails,start,end,travel:travel.min,travelKm:travel.km,travelSrc:travel.sumber,score:Math.max(0,score),sisa,need};
+}
+
+/* --- evaluate one order across live-ish state (assignments applied) --- */
+function evalOrder(oid){
+  const o=ORDERS.find(x=>x.id===oid); const st=cloneState();
+  Object.keys(assignments).forEach(aid=>{ if(aid===oid) return; const ti=TEAMS.findIndex(x=>x.id===assignments[aid]); if(ti<0) return;
+    const od=ORDERS.find(x=>x.id===aid), t=st[ti], r=check(od,t,t);
+    t.load+=od.dur; t.pasang+=od.pasangUnit; t.freeAt=r.end; if(od.lat!=null) t.lastPt={lat:od.lat,lng:od.lng}; });
+  const verdicts=TEAMS.map((t,i)=>{const r=check(o,st[i],st[i]); return {team:t,r,assigned:assignments[oid]===t.id};});
+  const passing=verdicts.filter(v=>!v.r.fails.length).sort((a,b)=>b.r.score-a.r.score);
+  return {o,st,verdicts,passing,rec:passing[0]||null,cond:passing[1]||null,gugur:verdicts.filter(v=>v.r.fails.length)};
+}
+
+/* --- batch: greedy MRV + full backtracking, materializing chosen assignment --- */
+function batchAssign(){
+  const pend=ORDERS.filter(o=>!assignments[o.id]).slice();
+  const st=cloneState();
+  Object.keys(assignments).forEach(oid=>{ const ti=st.findIndex(x=>x.id===assignments[oid]); if(ti<0)return; const o=ORDERS.find(x=>x.id===oid), t=st[ti]; const r=check(o,t,t); t.load+=o.dur; t.pasang+=o.pasangUnit; t.freeAt=r.end; if(o.lat!=null) t.lastPt={lat:o.lat,lng:o.lng}; });
+  const trace=[]; const chosen={}; const slots={}; let backtracks=0;
+  function feasible(o,t){return check(o,t,t);}
+  function dom(o){return st.map(t=>({t,r:feasible(o,t)})).filter(v=>!v.r.fails.length).sort((a,b)=>b.r.score-a.r.score);}
+  function search(list){
+    if(!list.length) return true;
+    list.sort((a,b)=>dom(a).length-dom(b).length || b.dur-a.dur);
+    const o=list[0]; const d=dom(o);
+    trace.push('[VAR] '+o.id+' ('+o.type+') — domain: '+(d.length?'{ '+d.map(v=>v.t.name.replace('Tim ',''))+' }':'∅'));
+    for(const v of d){
+      trace.push('  [TRY] '+o.id+' → '+v.t.name+' · skor '+v.r.score+' · slot '+hhmm(v.r.start)+'–'+hhmm(v.r.end));
+      const snap=st.map(t=>Object.assign({},t));
+      const t=st.find(x=>x.id===v.t.id); t.load+=o.dur; t.pasang+=o.pasangUnit; t.freeAt=v.r.end; if(o.lat!=null) t.lastPt={lat:o.lat,lng:o.lng};
+      if(search(list.filter(x=>x.id!==o.id))){ chosen[o.id]=v.t.id; slots[o.id]={start:v.r.start,end:v.r.end}; trace.push('  [OK ] '+o.id+' ← '+v.t.name); return true; }
+      st.forEach((x,i)=>Object.assign(x,snap[i])); backtracks++;
+      trace.push('  [BACKTRACK] gagal di hilir, coba alternatif untuk '+o.id);
+    }
+    return false;
+  }
+  const full=search(pend);
+  Object.assign(assignments,chosen);
+  trace.push('');
+  trace.push('[HASIL] '+(full
+    ? Object.keys(chosen).length+' dari '+pend.length+' order ter-assign otomatis · '+backtracks+' backtrack · 0 konflik constraint'
+    : 'Tidak ada solusi lengkap — '+Object.keys(chosen).length+' order ter-assign, sisanya butuh eskalasi manual · '+backtracks+' backtrack'));
+  return {trace,full,backtracks,chosen,slots};
+}
+
+/* --- rendering --- */
+const $=s=>document.querySelector(s);
+function cardHtml(o){
+  const v=evalOrder(o.id); const rec=v.rec, cond=v.cond, asg=assignments[o.id];
+  let html='';
+  const cp=o.custProposal;
+  if(cp && cp.status==='pending'){
+    const jam=cp.jam!=null?hhmm(+cp.jam):jamLabel(cp.jam);
+    const sisa=cp.deadline?Math.max(0,Math.round((cp.deadline-Date.now())/60000)):null;
+    html+='<div class="p-4 rounded-2xl bg-sky-50 border-2 border-sky-400 shadow-sm flex flex-col gap-2">'
+      +'<div class="flex items-center gap-2 flex-wrap"><span class="material-symbols-outlined text-[18px] text-sky-700">swap_horiz</span>'
+      +'<span class="font-label-md text-label-md text-sky-900 font-extrabold">Customer mengusulkan jadwal baru · '+esc(o.id)+'</span>'
+      +'<span class="font-label-xs font-bold bg-white border border-sky-300 text-sky-800 px-2 py-0.5 rounded-full">'+(sisa!=null?'sisa '+sisa+' menit':'menunggu respons')+'</span></div>'
+      +'<p class="font-body-sm text-sky-900">Usulan <strong>'+esc(tglID(cp.tgl))+' pukul '+esc(jam)+' WIB</strong>'
+      +(cp.impact?' · dampak: '+esc(cp.impact):'')+'</p>'
+      +'<div class="flex items-center gap-2 flex-wrap">'
+      +'<button data-custacc="'+esc(o.id)+'" type="button" class="px-3.5 py-2 rounded-xl bg-emerald-600 text-white font-label-xs font-bold hover:bg-emerald-700 flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">check</span>Setujui &amp; jadwalkan</button>'
+      +'<button data-custrej="'+esc(o.id)+'" type="button" class="px-3.5 py-2 rounded-xl bg-white border border-sky-300 text-sky-900 font-label-xs font-bold hover:bg-sky-100 flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">close</span>Tolak usulan</button>'
+      +'</div></div>';
+  }
+  if(!v.passing.length){
+    const alasan=[]; v.gugur.forEach(x=>x.r.fails.forEach(f=>{ if(!alasan.includes(f)) alasan.push(f); }));
+    html+='<div class="p-4 rounded-2xl bg-rose-50 border-2 border-rose-400 shadow-sm flex flex-col gap-2">'
+    +'<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-rose-700">do_not_disturb_on</span>'
+    +'<span class="font-label-md text-label-md text-rose-900 font-extrabold">Tidak ada tim yang layak untuk '+o.id+'</span>'
+    +'<span class="font-label-xs text-rose-800 bg-white border border-rose-300 px-2 py-0.5 rounded-full font-bold">Domain kosong — butuh keputusan dispatcher</span></div>'
+    +'<p class="font-body-sm text-rose-900">'+alasan.join(' • ')+'</p>'
+    +'<p class="font-label-xs text-rose-800">Sesuai SOP operasional: tawarkan jam lain ke pelanggan lewat portal (reschedule dengan persetujuan). Jika pelanggan menolak atau order tetap tidak muat, order boleh ditolak/dibatalkan dengan alasan tercatat.</p>'
+    +'<div class="flex items-center gap-2 flex-wrap"><button data-usulkan="'+o.id+'" type="button" class="px-3.5 py-2 rounded-xl bg-white border border-rose-400 text-rose-900 font-label-xs font-bold hover:bg-rose-50 flex items-center gap-1.5 shadow-sm"><span class="material-symbols-outlined text-[16px]">schedule_send</span>Usulkan jam baru ke customer</button>'
+    +'<button data-lisan="'+o.id+'" type="button" class="px-3.5 py-2 rounded-xl bg-white border border-sky-300 text-sky-900 font-label-xs font-bold hover:bg-sky-50 flex items-center gap-1.5 shadow-sm"><span class="material-symbols-outlined text-[16px]">voice_over_off</span>Catat jawaban lisan</button>'
+    +'<button data-cancel="'+o.id+'" type="button" class="px-3.5 py-2 rounded-xl bg-rose-600 text-white font-label-xs font-bold hover:bg-rose-700 flex items-center gap-1.5 shadow-sm"><span class="material-symbols-outlined text-[16px]">block</span>Tolak dengan alasan</button>'
+    +(isToday()?'<button data-goto-day="'+isoAdd(pickDate,1)+'" type="button" class="px-3 py-2 rounded-xl bg-slate-100 border border-slate-300 text-slate-700 font-label-xs font-bold hover:bg-slate-200 flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">next_week</span>Cek kapasitas '+dayShort(isoAdd(pickDate,1))+'</button>':'')
+    +'</div>'
+    +(o.cutoff?'<p class="font-label-xs text-rose-800 font-bold"><span class="material-symbols-outlined text-[14px] align-middle">alarm</span> Order masuk '+auditTime(o.made)+' — lewat cut-off '+hhmm(CUTOFF)+' WIB untuk hari yang sama. Sesuai SOP, tawarkan hari berikutnya kecuali ada slot sisa hari ini.</p>':'')
+    +'</div>';
+  }
+  TEAMS.forEach(t=>{
+    const tv=v.st[TEAMS.indexOf(t)];
+    const vd=v.verdicts.find(x=>x.team.id===t.id); const r=vd.r;
+    const passed=!r.fails.length;
+    const isRec=rec&&rec.team.id===t.id, isCond=cond&&cond.team.id===t.id;
+    if(asg===t.id){
+      html+='<div class="p-4 rounded-2xl '+(r.fails.length?'bg-amber-100/70 border-amber-500':'bg-emerald-100/70 border-emerald-500')+' border-2 shadow-sm flex flex-col gap-2"><div class="flex items-center justify-between"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined '+(r.fails.length?'text-amber-700':'text-emerald-700')+'">assignment_turned_in</span><span class="font-label-md text-label-md text-navy-deep font-extrabold">'+t.name+' — DITUGASKAN untuk '+o.id+' ('+hhmm(r.start)+'–'+hhmm(Math.max(r.end,tv.freeAt))+')</span></div><button data-undo="'+t.id+'" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-400 text-emerald-800 font-label-xs font-bold">Batalkan</button></div>'
+      +(r.fails.length?'<p class="font-label-xs text-amber-900 bg-white/70 border border-amber-300 rounded-lg px-2.5 py-1.5">Konflik setelah perubahan absensi: '+r.fails.join(' • ')+'. Pindahkan ke tim lain atau jadwalkan ulang.</p>':'')+'</div>';
+    } else if(isRec){
+      html+='<div class="p-5 rounded-2xl bg-badge-csp-valid/40 border-2 border-emerald-500/50 shadow-md flex flex-col space-y-4">'
+      +'<div class="flex items-center justify-between pb-3 border-b border-emerald-500/40"><span class="px-3.5 py-1 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-label-md text-[11px] font-extrabold flex items-center gap-1.5 shadow-md"><span class="material-symbols-outlined text-[16px] text-amber-300">workspace_premium</span>REKOMENDASI TERBAIK CSP (SKOR '+r.score+'/100)</span><span class="font-mono-metric text-mono-metric text-emerald-800 font-extrabold flex items-center gap-1 bg-white/80 px-2.5 py-0.5 rounded-lg border border-emerald-300">LOLOS SEMUA CONSTRAINT</span></div>'
+      +'<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3"><div class="flex items-center gap-3"><div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-700 to-indigo-600 text-white flex items-center justify-center font-extrabold font-headline-md shadow-md">'+t.chr+'</div><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm text-navy-deep font-extrabold">'+t.name+'</span><span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-secondary font-label-xs font-bold">'+t.zoneLabel+'</span></div><div class="flex items-center gap-2 mt-0.5"><span class="font-body-sm text-navy-deep font-extrabold">'+t.lead+'</span><span class="px-2.5 py-0.5 rounded-md bg-primary text-on-primary font-label-xs font-bold">'+t.certChip+'</span><span class="text-on-surface-variant font-body-sm">+ '+t.helper+'</span></div></div></div>'
+      +'<div class="p-3 rounded-xl bg-white border border-emerald-300 flex flex-col items-end shadow-sm"><span class="font-label-xs text-on-surface-variant uppercase font-bold">Jadwal Usulan Solver</span><span class="font-mono-metric text-mono-metric text-blue-800 font-extrabold text-[17px]">'+hhmm(r.start)+' – '+hhmm(r.end)+' WIB</span><span class="font-label-xs text-emerald-700 font-bold">'+(r.start<=o.w1?'Sesuai toleransi pelanggan':'Mundur dari preferensi')+'</span></div></div>'
+      +'<div class="grid grid-cols-1 md:grid-cols-3 gap-3">'
+      +'<div class="p-3 rounded-xl bg-white border border-emerald-300/80 shadow-sm flex flex-col space-y-1"><div class="flex items-center justify-between"><span class="font-label-xs text-slate-600 font-semibold">Beban Kerja '+dayShort()+'</span><span class="font-label-xs text-blue-900 font-extrabold">'+tv.load.toFixed(1)+' / '+t.cap.toFixed(1)+' Jam</span></div><div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden border border-slate-200"><div class="bg-blue-600 h-full rounded-full" style="width:'+Math.round(tv.load/t.cap*100)+'%"></div></div><span class="font-label-xs text-emerald-700 font-bold">+'+o.dur.toFixed(1)+' jam order = '+(tv.load+o.dur).toFixed(1)+' jam '+(tv.load+o.dur<=t.cap?'(Aman)':'(Melebihi!)')+'</span></div>'
+      +(o.pasangUnit?'<div class="p-3 rounded-xl bg-white border border-emerald-300/80 shadow-sm flex flex-col space-y-1"><div class="flex items-center justify-between"><span class="font-label-xs text-slate-600 font-semibold">Kuota Pasang Baru</span><span class="font-label-xs text-blue-900 font-extrabold">'+tv.pasang+' / '+t.pasangMax+' Unit</span></div><div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden border border-slate-200"><div class="bg-indigo-600 h-full rounded-full" style="width:'+Math.round(tv.pasang/t.pasangMax*100)+'%"></div></div><span class="font-label-xs text-emerald-700 font-bold">Sisa '+(t.pasangMax-tv.pasang)+' slot kapasitas</span></div>':'<div class="p-3 rounded-xl bg-white border border-emerald-300/80 shadow-sm flex flex-col space-y-1"><div class="flex items-center justify-between"><span class="font-label-xs text-slate-600 font-semibold">Jenis Order</span><span class="font-label-xs text-blue-900 font-extrabold">Non-Pasang</span></div><span class="font-label-xs text-emerald-700 font-bold">Kuota pasang tidak terpakai</span></div>')
+      +'<div class="p-3 rounded-xl bg-white border border-emerald-300/80 shadow-sm flex flex-col space-y-1"><div class="flex items-center justify-between"><span class="font-label-xs text-slate-600 font-semibold">Jarak &amp; Jeda Antar-Job</span><span class="font-label-xs text-emerald-800 font-extrabold">'+r.travel+' Menit · '+r.travelKm+' km</span></div><span class="font-label-xs text-emerald-700 font-bold">Sumber jarak: '+(r.travelSrc==='koordinat'?'titik GPS pelanggan (×1,35 jalan)':'matriks zona DOC-19')+' · buffer ≥ 30 mnt</span></div></div>'
+      +'<div class="p-3 rounded-xl bg-white border border-emerald-400 flex items-center justify-between text-[11px] text-emerald-900 shadow-sm"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-emerald-600">verified</span><span>Peralatan: <strong>'+t.gear+'</strong></span></div><span class="font-mono-metric font-bold bg-emerald-100 px-2.5 py-0.5 rounded text-emerald-800 border border-emerald-300">'+t.mode+' · butuh '+r.need+' orang</span></div>'
+      +'<button data-assign="'+t.id+'" class="w-full px-7 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-label-lg shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 font-bold ring-2 ring-emerald-400/30"><span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>Tugaskan ke '+t.name+'</button></div>';
+    } else if(isCond){
+      html+='<div class="p-4 rounded-2xl bg-amber-50/40 border border-status-otw/40 shadow-sm flex flex-col space-y-3"><div class="flex items-center justify-between pb-2 border-b border-amber-300/60"><span class="px-2.5 py-0.5 rounded-full bg-status-otw text-white font-label-xs font-extrabold">'+t.name.toUpperCase()+' (SKOR '+r.score+'/100)</span><span class="font-label-xs text-status-otw font-extrabold flex items-center gap-1 bg-white/70 px-2 py-0.5 rounded border border-amber-200"><span class="material-symbols-outlined text-[14px]">warning</span>Layak Bersyarat — Mundur ke '+hhmm(r.start)+'</span></div><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold font-headline-sm border border-amber-300">'+t.chr+'</div><div class="flex flex-col"><span class="font-label-md text-navy-deep font-bold">'+t.lead+' + '+t.helper+'</span><span class="font-body-sm text-on-surface-variant">'+t.zoneLabel+' • Beban '+(tv.load+o.dur).toFixed(1)+'/'+t.cap.toFixed(1)+' jam</span></div></div><div class="flex items-center gap-3"><div class="text-right flex flex-col"><span class="font-label-xs text-slate-600 font-semibold">Slot Baru Mampu:</span><span class="font-mono-metric text-mono-metric text-amber-900 font-extrabold bg-amber-100 px-2.5 py-0.5 rounded-lg border border-amber-300">'+hhmm(r.start)+' WIB</span></div><button data-assign="'+t.id+'" class="px-4 py-2 rounded-xl bg-white border border-amber-300 text-amber-900 font-label-md hover:bg-amber-100 font-bold shadow-sm">Tugaskan + Konfirmasi Mundur</button></div></div></div>';
+    } else {
+      html+='<div class="p-4 rounded-2xl bg-badge-csp-invalid/40 border border-rose-500/30 shadow-sm flex flex-col space-y-2.5"><div class="flex items-center justify-between pb-2 border-b border-rose-200"><span class="px-2.5 py-0.5 rounded-full bg-rose-600 text-white font-label-xs font-bold flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">lock</span>GUGUR CSP ('+t.name.toUpperCase()+')</span><span class="font-label-xs text-rose-700 font-mono-metric font-extrabold bg-white px-2.5 py-0.5 rounded-md border border-rose-300">Constraint: '+r.fails.length+' gagal</span></div><div class="flex items-center justify-between gap-3"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold font-headline-sm border border-rose-300 shrink-0">'+t.chr+'</div><div class="flex flex-col"><span class="font-label-md text-navy-deep font-bold">'+t.lead+' + '+t.helper+'</span><span class="font-body-sm text-rose-700 font-semibold">Penyebab: '+r.fails.join(' • ')+'</span></div></div><button class="px-3.5 py-1.5 rounded-lg bg-white text-rose-400 font-label-md font-bold cursor-not-allowed border border-rose-200 shrink-0" disabled>Terkunci CSP</button></div></div>';
+    }
+  });
+  return html;
+}
+/* --- panel absensi: kehadiran 4 kru riil PER TANGGAL, sumber constraint domain --- */
+function absenHtml(){
+  const pr=presence(), el=$('#csp-crew'); if(!el) return;
+  const inp=$('#csp-date'); if(inp&&inp.value!==pickDate) inp.value=pickDate;
+  const dl=new Date(pickDate+'T00:00:00');
+  const tgl=$('#csp-absen-tgl'); if(tgl) tgl.textContent=dl.toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  const mode=$('#csp-day-mode');
+  if(mode){ mode.textContent=isToday()?'hari berjalan':(planning()?'mode rencana':'arsip');
+    mode.className='font-label-xs px-2 py-0.5 rounded-full border font-bold '+(isToday()?'bg-emerald-50 text-emerald-800 border-emerald-300':(planning()?'bg-sky-50 text-sky-800 border-sky-300':'bg-slate-100 text-slate-600 border-slate-300')); }
+  el.innerHTML=TEAMS.map(t=>{
+   const waduh=t.nPresent===2?'border-emerald-300':t.nPresent===1?'border-amber-300':'border-rose-300';
+   const chip=t.nPresent===2?'bg-emerald-50 text-emerald-800 border-emerald-300':t.nPresent===1?'bg-amber-50 text-amber-900 border-amber-300':'bg-rose-50 text-rose-800 border-rose-300';
+   return '<div class="p-3 rounded-xl bg-surface-ice border '+waduh+' flex flex-col gap-2">'
+   +'<div class="flex items-center justify-between gap-2"><span class="font-label-md text-label-md font-extrabold text-navy-deep">'+t.chr+' '+t.name+'</span>'
+   +'<span class="font-label-xs px-2 py-0.5 rounded-full border '+chip+' font-bold">'+t.mode+'</span></div>'
+   +t.crewList.map(c=>{ const rec=planning()?null:atRec(c.id);
+     const jam=rec&&rec.out?('keluar '+rec.out):(rec&&rec.in?rec.in:'belum presensi');
+     return '<button data-crew="'+c.id+'" type="button" class="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-white border '+(pr[c.id]?'border-emerald-300':'border-rose-300')+' text-left hover:border-primary transition-colors">'
+     +'<span class="flex flex-col min-w-0"><span class="font-label-xs text-navy-deep font-bold truncate">'+c.name+' <span class="text-on-surface-variant font-medium">('+c.role+')</span></span>'
+     +'<span class="font-label-xs text-on-surface-variant">'+(planning()?'presensi belum dibuka':jam)+'</span></span>'
+     +'<span class="font-label-xs font-extrabold shrink-0 '+(pr[c.id]?(rec&&rec.in?'text-emerald-700':'text-amber-700'):'text-rose-700')+'">'+(pr[c.id]?'Masuk':'Tidak masuk')+'</span></button>'; }).join('')
+   +'<span class="font-label-xs text-on-surface-variant">Kapasitas solver '+t.cap.toFixed(1)+' jam · mulai '+hhmm(t.openAt)+' WIB · sertifikat aktif: '+(t.certs.join('/')||'tidak ada')+'</span>'
+   +'</div>'; }).join('');
+  const note=$('#csp-day-note');
+  if(note){ const parts=[];
+    const dd=dayClosed();
+    if(dd.closed) parts.push('<strong>Tanggal ditutup.</strong> '+pickDate+' ditandai libur ('+dd.label+') — solver CSP tidak menugaskan order di hari ini dan portal pelanggan menutup tanggal tersebut.');
+    if(planning()) parts.push('<strong>Mode rencana.</strong> Presensi hari-H belum dibuka — solver berasumsi kru lengkap ('+CREW.length+' orang / '+TEAMS.length+' tim, kapasitas penuh '+TEAMS.reduce((s,t)=>s+t.capFull,0).toFixed(1)+' jam). Nilai ini menyesuaikan sendiri saat teknisi mulai presensi.');
+    else if(pickDate<todayKey()) parts.push('<strong>Arsip.</strong> Tanggal sudah lewat — penugasan di hari ini hanya untuk rekap, jangan dipakai untuk operasional.');
+    const belum=TEAMS.reduce((a,t)=>a.concat(t.noClock||[]),[]);
+    if(isToday()&&belum.length&&new Date().getHours()>=7)
+      parts.push('<span class="text-rose-800 font-bold">Belum presensi: '+belum.map(c=>c.name+' ('+c.role+')').join(', ')+'. Konfirmasi kehadiran sebelum menugaskan — bila benar tidak masuk, klik namanya di atas.</span>');
+    note.innerHTML=parts.length?'<div class="p-2.5 rounded-xl '+(pickDate<todayKey()?'bg-slate-50 border border-slate-200 text-slate-700':'bg-sky-50 border border-sky-200 text-sky-900')+' font-label-xs flex flex-col gap-1">'+parts.join('</div><div class="font-label-xs flex flex-col gap-1">')+'</div>':''; }
+}
+/* --- render kerangka (pinned, antrean, validasi Admin) dari store --- */
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ZONA_NAME={ST:'Surabaya Timur',SB:'Surabaya Selatan / Barat',SK:'Sidoarjo Kota',WD:'Waru / Sedati',SU:'Gedangan / Candi',KR:'Krian / Sidoarjo Barat'};
+const TYPE_STYLE={'Pasang Baru':['from-indigo-500 to-purple-600','install_mobile','bg-indigo-100 text-indigo-900 border-indigo-300'],
+ 'Bongkar/Pindah':['from-purple-500 to-fuchsia-600','swap_horiz','bg-purple-100 text-purple-900 border-purple-300'],
+ 'Trouble Berat':['from-rose-500 to-red-600','emergency','bg-rose-100 text-rose-900 border-rose-300'],
+ 'Trouble Ringan':['from-orange-500 to-amber-600','bug_report','bg-orange-100 text-orange-900 border-orange-300'],
+ 'Klaim Garansi':['from-emerald-500 to-teal-600','health_and_safety','bg-emerald-100 text-emerald-900 border-emerald-300'],
+ 'Cuci & Perawatan Rutin':['from-cyan-500 to-blue-600','ac_unit','bg-cyan-100 text-cyan-900 border-cyan-300']};
+const styleOf=t=>TYPE_STYLE[t]||TYPE_STYLE['Cuci & Perawatan Rutin'];
+const STATUS_PILL={'Baru':['bg-amber-50 text-amber-900 border-amber-300','Baru — menunggu penugasan CSP'],
+ 'Dijadwalkan':['bg-emerald-100 text-emerald-800 border-emerald-300','Terjadwal — tersinkron ke TSP'],
+ 'Dikerjakan':['bg-blue-100 text-blue-900 border-blue-300','Sedang dikerjakan teknisi'],
+ 'Review':['bg-purple-100 text-purple-900 border-purple-300','Menunggu validasi Admin'],
+ 'Menunggu Persetujuan Customer':['bg-sky-100 text-sky-900 border-sky-300','Menunggu persetujuan customer'],
+ 'Dibatalkan':['bg-rose-100 text-rose-900 border-rose-300','Dibatalkan — alasan tercatat']};
+const statusPill=s=>{const m=STATUS_PILL[s]||STATUS_PILL['Baru'];return '<span class="px-2.5 py-0.5 rounded-full border '+m[0]+' font-label-xs font-bold">'+m[1]+'</span>';};
+
+function usulBlock(o){ const u=o.usulan||{}, ageH=(Date.now()-(u.at||0))/36e5, exp=ageH>USUL_TMO;
+  const link=usulLink(o.token), hp=String((store.find(x=>x.id===o.id)||{}).hp||'').replace(/[^0-9]/g,'').replace(/^0/,'62');
+  const waTxt='CV Intan Pratama — usulan jadwal service '+o.id+': '+tglID(u.tgl)+' pukul '+hhmm(u.start)+' WIB. Setujui, ajukan jam lain, atau batalkan melalui: '+link;
+  return '<div class="p-3.5 rounded-xl bg-sky-50 border border-sky-200 flex flex-col gap-2">'
+  +'<div class="flex items-center justify-between gap-2 flex-wrap"><span class="flex items-center gap-1.5 font-label-xs uppercase tracking-wider text-sky-900 font-bold"><span class="material-symbols-outlined text-[17px]">hourglass_top</span>Menunggu persetujuan customer</span>'
+  +'<span class="font-label-xs '+(exp?'text-error font-bold':'text-sky-800')+'">Terkirim '+Math.round(ageH*10)/10+' jam lalu · batas respons '+USUL_TMO+' jam'+(exp?' — belum ada respons, hubungi ulang':'')+'</span></div>'
+  +'<p class="font-body-sm text-body-sm text-navy-deep font-semibold">Jam usulan: '+esc(tglID(u.tgl))+' · '+hhmm(u.start)+'–'+hhmm(u.end)+' WIB</p>'
+  +(u.alasan?'<p class="font-label-xs text-sky-900">Alasan: '+esc(u.alasan)+'</p>':'')
+  +(u.pesan?'<p class="font-label-xs text-sky-900 italic">"'+esc(u.pesan)+'"</p>':'')
+  +'<div class="flex items-center gap-2 flex-wrap"><code class="font-mono-code text-[11px] bg-white border border-sky-200 rounded-lg px-2 py-1 text-navy-deep break-all max-w-full">'+esc(link)+'</code>'
+  +'<button data-copylink="'+esc(link)+'" type="button" class="px-2.5 py-1 rounded-lg bg-white border border-sky-300 text-sky-900 font-label-xs font-bold hover:bg-sky-100 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">content_copy</span>Salin tautan</button>'
+  +(hp?'<a class="px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-label-xs font-bold hover:bg-emerald-700 flex items-center gap-1" target="_blank" rel="noopener" href="https://wa.me/'+hp+'?text='+encodeURIComponent(waTxt)+'"><span class="material-symbols-outlined text-[14px]">chat</span>Kirim via WhatsApp</a>':'')
+  +'<button data-lisan="'+o.id+'" type="button" class="px-2.5 py-1 rounded-lg bg-white border border-sky-300 text-sky-900 font-label-xs font-bold hover:bg-sky-100 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">voice_over_off</span>Catat jawaban lisan customer</button>'
+  +'<span class="font-label-xs text-sky-800">— pakai bila customer setuju lewat telepon/WA dan tidak membuka tautan.</span>'
+  +'</div></div>'; }
+function responBlock(o){ const r=o.respon||{}; if(r.action!=='ajukan') return '';
+  return '<div class="p-3.5 rounded-xl bg-amber-50 border border-amber-300 flex flex-col gap-1.5">'
+  +'<span class="flex items-center gap-1.5 font-label-xs uppercase tracking-wider text-amber-900 font-bold"><span class="material-symbols-outlined text-[17px]">schedule</span>Customer mengajukan jam lain</span>'
+  +'<p class="font-body-sm text-body-sm text-navy-deep font-semibold">Mohon evaluasi ulang untuk '+esc(tglID(r.tgl||o.tgl))+' pukul '+hhmm(r.start||o.w0)+'–'+hhmm((r.start||o.w0)+o.dur)+' WIB · diajukan '+auditTime(r.at||0)+'</p>'
+  +'<p class="font-label-xs text-amber-900">Bila tidak ada tim yang lolos pada jam ini, gunakan "Usulkan jam baru" atau "Tolak order" beserta alasannya.</p></div>'; }
+/* P3-9: pesan WhatsApp mengikuti status order — dispatcher tinggal kirim, tidak mengetik ulang */
+const waNum=hp=>String(hp||'').replace(/[^0-9]/g,'').replace(/^0/,'62');
+function waStatus(o){ const s=store.find(x=>x.id===o.id)||{};
+  const t=assignments[o.id]?TEAMS.find(x=>x.id===assignments[o.id]):null;
+  const jam=o.slotStart!=null?hhmm(o.slotStart)+(o.slotEnd!=null?'–'+hhmm(o.slotEnd):'')+' WIB':'';
+  const pic=s.picName||crewName(s.pic)||(t&&t.name)||'';
+  const first=String(o.cust||'Pelanggan').split(' ')[0];
+  const base='Order '+o.id+' · '+(o.paket||'Servis AC')+' · '+tglID(o.tgl||'');
+  const msgs={
+    'Baru':'Halo '+first+', pesanan '+base+' sudah kami terima dan sedang masuk antrean penjadwalan (CSP) kami. Kami kabari lagi begitu teknisi ditetapkan. — CV Intan Pratama',
+    'Dijadwalkan':'Halo '+first+', pesanan '+base+' kami jadwalkan'+(jam?' pukul '+jam:'')+(pic?' bersama teknisi '+pic:'')+'. Mohon siapkan akses lokasi & kontak di tempat. — CV Intan Pratama',
+    'Dikerjakan':'Halo '+first+', teknisi '+(pic||'kami')+' sedang menuju / mengerjakan pesanan '+base+'. Sil hubungi PIC bila ada perubahan akses. — CV Intan Pratama',
+    'Review':'Halo '+first+', pekerjaan '+base+' sudah selesai dan laporan teknisi sedang kami validasi sebelum invoice terbit. — CV Intan Pratama',
+    'Selesai':'Halo '+first+', pesanan '+base+' selesai & tervalidasi'+(s.invoice?(' — invoice '+s.invoice.no+' Rp '+Number(s.invoice.total||0).toLocaleString('id-ID')+' + PPN '+(s.invoice.ppn||11)+'%'+(s.invoice.saldo!=null?', sisa bayar Rp '+Number(s.invoice.saldo).toLocaleString('id-ID'):'')+'. Menunggu pembayaran'):'')+'. Terima kasih atas kepercayaannya. — CV Intan Pratama',
+    'Menunggu Persetujuan Customer':'Halo '+first+', tim kami penuh pada tanggal '+tglID(o.tgl||'')+'. Kami usulkan '+((o.usulan||{}).tgl?tglID(o.usulan.tgl)+' pukul '+hhmm(o.usulan.start)+' WIB':'waktu lain')+' — mohon buka tautan persetujuan untuk Setuju / ajukan jam lain. — CV Intan Pratama',
+    'Dibatalkan':'Halo '+first+', pesanan '+base+' tidak dapat kami layani'+(o.ditolakAlasan?' dengan alasan: '+o.ditolakAlasan:'')+'. Anda tetap boleh membuat pesanan baru. Mohon maaf atas ketidaknyamanan. — CV Intan Pratama'
+  };
+  return msgs[o.status]||msgs['Baru']; }
+function pinnedHtml(o){
+  if(!o) return '<div class="p-6 rounded-2xl bg-surface-card border-2 border-dashed border-border-subtle flex flex-col items-center gap-2 text-center">'
+    +'<span class="material-symbols-outlined text-[34px] text-on-surface-variant">inventory_2</span>'
+    +'<span class="font-label-md font-bold text-navy-deep">Antrean penugasan kosong</span>'
+    +'<span class="font-label-xs text-on-surface-variant">Belum ada order aktif. Buat pesanan baru lewat portal pelanggan (customer.html) — order masuk ke antrean ini secara otomatis.</span></div>';
+  const st=styleOf(o.type), asg=assignments[o.id], t=asg?TEAMS.find(x=>x.id===asg):null;
+  const v=evalOrder(o.id);
+  const hard=[];
+  if(o.needs.length) hard.push(['Wajib sertifikasi: '+o.needs.join(' / '),o.needs.includes('TU')?'TU + '+(o.needs.includes('Inverter')?'Inverter':'Vakum'):'Sertifikasi']);
+  if(o.pasangUnit) hard.push(['Kuota pasang '+(o.pasangUnit*2)+' jam · maks 2 unit/tim','Maks 2 Unit / Tim']);
+  hard.push(['Jeda tempuh antar-job dari tim '+ (t?t.zone:'zona tim'),'Min. 30 Menit']);
+  hard.push(['Selesai sebelum batas operasional','17:00 WIB']);
+  return '<div class="p-5 rounded-2xl bg-surface-card border-2 border-primary/30 shadow-md relative flex flex-col space-y-4" data-pinned="1" data-oid="'+o.id+'">'
+  +'<div class="absolute top-0 left-0 right-0 h-1.5 rounded-t-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-electric-cyan"></div>'
+  +'<div class="p-3.5 -mx-1 -mt-1 rounded-xl bg-gradient-to-r from-blue-50/90 via-indigo-50/70 to-blue-50/50 border border-blue-200/80 flex items-start justify-between gap-3">'
+  +'<div class="flex flex-col"><div class="flex items-center gap-2 flex-wrap">'
+  +'<span class="font-mono-metric text-mono-metric text-blue-900 font-extrabold bg-blue-100 px-2 py-0.5 rounded-lg border border-blue-300">'+o.id+'</span>'
+  +(o.prio!=='Normal'?'<span class="px-2.5 py-0.5 rounded-full bg-rose-600 text-white font-label-xs font-bold uppercase tracking-wide shadow-sm">'+esc(o.prio)+'</span>':'')
+  +(o.garansiOf?'<span class="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white font-label-xs font-bold uppercase tracking-wide shadow-sm" title="Klaim garansi dari '+esc(o.garansiOf)+'">Garansi</span>':'')
+  +'<span class="px-2 py-0.5 rounded-full bg-blue-600 text-white font-label-xs font-bold uppercase">'+esc(o.type)+'</span>'
+  +(o.cutoff?'<span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 border border-rose-300 font-label-xs font-bold uppercase" title="Order masuk setelah cut-off 06:00 untuk hari yang sama">Lewat cut-off 06:00</span>':'')
+  +'</div>'
+  +'<div class="mt-1.5">'+statusPill(o.status)+'</div>'
+  +'<h2 class="font-headline-md text-headline-md text-navy-deep mt-2 font-extrabold">'+esc(o.title)+'</h2>'
+  +'<p class="font-label-xs text-on-surface-variant mt-1">Tanggal kerja: <strong>'+esc(o.tgl||'—')+'</strong> · preferensi '+(o.slotPref==='Fleksibel'?'fleksibel sehari penuh':esc(o.slotPref)+' WIB')+'</p></div>'
+  +'<div class="text-right flex flex-col items-end shrink-0 bg-white/80 px-2.5 py-1.5 rounded-xl border border-blue-200/60 shadow-sm">'
+  +'<span class="font-label-xs text-on-surface-variant uppercase font-bold">Bobot Kerja</span>'
+  +'<span class="font-headline-sm text-headline-sm text-primary font-extrabold">'+o.dur.toFixed(1)+' Jam</span>'
+  +'<span class="font-label-xs text-electric-cyan font-bold">'+(o.unit||1)+' unit'+(o.needs.length?' · '+o.needs.join('/'):'')+'</span></div></div>'
+  +'<div class="p-3.5 rounded-xl bg-surface-ice border border-border-subtle flex flex-col space-y-2.5">'
+  +'<div class="flex items-center justify-between"><div class="flex items-center gap-2.5">'
+  +'<div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold shadow-md shadow-blue-500/20"><span class="material-symbols-outlined text-[19px]">person</span></div>'
+  +'<div class="flex flex-col"><span class="font-label-md text-label-md text-navy-deep font-bold">'+esc(o.cust)+'</span>'
+  +'<span class="font-mono-code text-xs text-on-surface-variant font-medium">'+esc(o.hp||'—')+'</span></div></div>'
+  +(o.hp?'<a title="Isi pesan mengikuti status order" class="px-3 py-1.5 rounded-xl bg-emerald-500 text-white hover:bg-emerald-600 transition-all shadow-sm flex items-center gap-1.5 font-label-xs font-bold" href="https://wa.me/'+esc(waNum(o.hp))+'?text='+encodeURIComponent(waStatus(o))+'" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]">chat</span><span>Kirim status via WhatsApp</span></a>'
+    +'<button data-wacopy="'+o.id+'" type="button" title="Salin pesan status tanpa mengirim" class="px-2.5 py-1.5 rounded-xl bg-white border border-emerald-300 text-emerald-800 hover:bg-emerald-50 flex items-center gap-1 font-label-xs font-bold"><span class="material-symbols-outlined text-[15px]">content_copy</span>Salin</button>':'')
+  +'</div><div class="flex items-start gap-2 pt-2 border-t border-border-subtle">'
+  +'<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">location_on</span>'
+  +'<div class="flex flex-col"><span class="font-body-sm text-body-sm text-navy-deep font-semibold">'+esc(o.addr)+'</span>'
+  +(o.patokan?'<span class="font-label-xs text-on-surface-variant">Patokan: '+esc(o.patokan)+' · '+(o.tipeTitik||'titik layanan')+'</span>':'')
+  +'<span class="font-label-xs text-on-surface-variant">Zona '+esc(ZONA_NAME[o.zone]||o.zone)+' ('+o.zone+') · '+(o.lat!=null?'titik GPS '+o.lat.toFixed(5)+', '+o.lng.toFixed(5):'tanpa koordinat — pakai matriks zona')+(t?' · tim standby '+t.zone:'')+'</span></div></div>'
+  +'<div class="flex items-center gap-2 pt-1"><span class="material-symbols-outlined text-electric-cyan text-[18px] shrink-0">schedule</span>'
+  +'<span class="font-body-sm text-body-sm text-navy-deep">Jendela pelanggan: <span class="font-bold text-primary">'+hhmm(o.w0)+'–'+hhmm(o.w1)+' WIB</span> <span class="text-on-surface-variant">(toleransi solver ±60 mnt)</span></span></div></div>'
+  +'<div class="p-3.5 rounded-xl bg-gradient-to-r from-blue-50/70 to-indigo-50/60 border border-blue-200/90 flex flex-col space-y-2">'
+  +'<div class="flex items-center justify-between"><span class="font-label-xs text-navy-deep font-extrabold uppercase tracking-wider flex items-center gap-1.5">'
+  +'<span class="material-symbols-outlined text-[18px] text-blue-600">verified</span>Syarat Mutlak SOP DOC-7 (Hard Constraints)</span>'
+  +'<span class="font-label-xs text-emerald-800 font-extrabold bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-300">'+hard.length+' Filter Aktif</span></div>'
+  +'<div class="grid grid-cols-1 gap-1.5">'+hard.map(([a,b])=>'<div class="flex items-center justify-between text-[11px] font-label-md px-3 py-1.5 rounded-lg bg-white border border-blue-200/70 shadow-sm">'
+    +'<span class="flex items-center gap-2 text-navy-deep font-semibold"><span class="material-symbols-outlined text-[16px] text-status-selesai">check_circle</span>'+esc(a)+'</span>'
+    +'<span class="text-status-selesai font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">'+esc(b)+'</span></div>').join('')+'</div></div>'
+  +(t?'<div class="p-3.5 rounded-xl bg-surface-bright border border-border-subtle flex flex-col gap-2">'
+  +'<div class="flex items-center justify-between gap-2 flex-wrap"><span class="flex items-center gap-1.5 font-label-xs uppercase tracking-wider text-on-surface-variant font-bold"><span class="material-symbols-outlined text-[17px] text-primary">badge</span>PIC pelapor order ini</span>'
+  +'<button data-pic="'+o.id+'" type="button" class="px-2.5 py-1 rounded-lg bg-white border border-border-subtle font-label-xs font-bold text-primary hover:bg-surface-container">Ganti PIC</button></div>'
+  +'<p class="font-body-sm text-body-sm text-navy-deep font-semibold">'+esc(o.picName||crewName(o.pic)||'belum ditetapkan')
+  +' <span class="font-label-xs text-on-surface-variant">· ditetapkan oleh '+esc(o.picSetBy||'Dispatcher (admin)')+(o.picAt?' · '+auditTime(o.picAt):'')+'</span></p>'
+  +(o.audit&&o.audit.length?'<div class="flex flex-col gap-1 pt-1.5 border-t border-border-subtle">'
+    +o.audit.slice(-3).reverse().map(a=>'<span class="font-label-xs text-on-surface-variant"><span class="font-mono-code text-navy-deep">'+esc(auditTime(a.t))+'</span> · <strong class="text-navy-deep">'+esc(a.actor||'—')+'</strong> — '+esc(a.detail)+'</span>').join('')+'</div>':'')
+  +'</div>':'')
+  +(o.status==='Baru'?responBlock(o):'')
+  +(o.status==='Menunggu Persetujuan Customer'?usulBlock(o):'')
+  +'<div class="lg:sticky lg:bottom-3 z-10 flex items-center justify-end -mx-1 px-2 py-1.5 rounded-xl bg-surface-card/95 backdrop-blur border border-border-subtle shadow-md flex-wrap gap-1.5">'
+  +(t?'<button data-undo="1" class="px-3 py-1.5 rounded-lg bg-white border border-rose-200 text-rose-700 font-label-xs font-bold hover:bg-rose-50" type="button">Batalkan penugasan</button>':'')
+  +(o.status==='Menunggu Persetujuan Customer'
+    ?'<button data-usulbatal="'+o.id+'" class="px-3 py-1.5 rounded-lg bg-white border border-sky-300 text-sky-900 font-label-xs font-bold hover:bg-sky-50" type="button">Tarik usulan, kembalikan ke antrean</button>'
+    :'<button data-usulkan="'+o.id+'" class="px-3 py-1.5 rounded-lg bg-white border border-sky-300 text-sky-900 font-label-xs font-bold hover:bg-sky-50" type="button">Usulkan jam baru</button>')
+  +'<button data-cancel="'+o.id+'" class="px-3 py-1.5 rounded-lg bg-white border border-rose-200 text-status-batal hover:bg-badge-csp-invalid transition-colors font-label-xs font-bold flex items-center gap-1" type="button"><span class="material-symbols-outlined text-[15px]">block</span>Tolak order</button></div></div>';
+}
+function queueHtml(o){
+  const st=styleOf(o.type), asg=assignments[o.id], t=asg?TEAMS.find(x=>x.id===asg):null;
+  const urgent=o.prio!=='Normal';
+  return '<div class="p-3.5 rounded-xl '+(urgent?'bg-rose-50/30 border border-rose-300 hover:border-rose-500':'bg-surface-card border border-border-subtle hover:border-cyan-400')+' hover:shadow-md transition-all shadow-sm flex items-center justify-between group" data-oid="'+o.id+'">'
+  +'<div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-gradient-to-br '+st[0]+' text-white flex items-center justify-center shrink-0 mt-0.5 shadow-md shadow-blue-500/20">'
+  +'<span class="material-symbols-outlined text-[20px]">'+st[1]+'</span></div><div class="flex flex-col"><div class="flex items-center gap-2">'
+  +'<span class="font-mono-metric text-[13px] '+(urgent?'text-status-batal':'text-navy-deep')+' font-bold">'+o.id+'</span>'
+  +'<span class="px-2 py-0.2 rounded-full '+st[2]+' font-label-xs font-bold">'+esc(o.type)+'</span>'
+  +(o.garansiOf?'<span class="px-2 py-0.2 rounded-full bg-emerald-600 text-white font-label-xs font-bold" title="Klaim garansi dari '+esc(o.garansiOf)+'">Garansi</span>':'')
+  +(urgent?'<span class="px-2 py-0.2 rounded-full bg-rose-600 text-white font-label-xs font-bold shadow-sm">'+esc(o.prio)+'</span>':'')
+  +(t?'<span class="csp-assigned px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-300 font-label-xs font-bold">→ '+t.name+'</span>':'')
+  +(o.status==='Menunggu Persetujuan Customer'&&o.usulan?'<span class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-900 border border-sky-300 font-label-xs font-bold">menunggu customer · usulan '+esc(tglID(o.usulan.tgl))+' '+hhmm(o.usulan.start)+'</span>':'')
+  +(o.status==='Baru'&&o.respon&&o.respon.action==='ajukan'?'<span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 border border-amber-300 font-label-xs font-bold">customer ajukan '+esc(tglID(o.respon.tgl))+' '+hhmm(o.respon.start)+'</span>':'')
+  +'</div><span class="font-label-md text-label-md text-navy-deep mt-0.5 font-bold">'+esc(o.cust)+' • '+esc(String(o.addr).split(',')[0])+'</span>'
+  +'<span class="font-label-xs text-on-surface-variant font-medium">'+esc(o.tgl||'')+' · Slot '+(o.slotPref==='Fleksibel'?'Fleksibel':esc(o.slotPref))+' · Est: '+o.dur.toFixed(1)+' Jam · '+(o.needs.length?'<strong class="text-'+(urgent?'rose':'indigo')+'-700">Wajib '+o.needs.join('/')+'</strong>':'Helper layak')+'</span>'
+  +'</div></div><button data-pick="'+o.id+'" class="px-3.5 py-1.5 rounded-lg '+(urgent?'bg-white border border-rose-300 text-rose-700 group-hover:bg-rose-600 group-hover:text-white font-bold':'bg-surface-ice border border-border-subtle text-navy-deep group-hover:bg-primary group-hover:text-white')+' font-label-md text-label-md transition-all font-semibold" type="button">Pilih</button></div>';
+}
+function reviewHtml(){
+  const rev=ORDERS.filter(o=>o.status==='Review');
+  const box=$('#csp-review');
+  if(!rev.length){ box.classList.add('hidden'); box.innerHTML=''; return; }
+  box.classList.remove('hidden');
+  box.innerHTML='<div class="flex items-center gap-2 px-1 pt-2"><span class="material-symbols-outlined text-[18px] text-purple-700">fact_check</span>'
+   +'<span class="font-label-xs text-navy-deep font-bold uppercase tracking-wider">Menunggu validasi Admin ('+rev.length+')</span></div>'
+   +rev.map(o=>{ const s=store.find(x=>x.id===o.id)||{}; const r=s.report||{}; const b=billOf(s);
+    const thumb=st=>{ let d=''; try{ d=localStorage.getItem('ip_photo@'+o.id+'@'+st)||''; }catch(e){ d=''; }
+      return d?'<img src="'+d+'" alt="foto '+st+'" class="w-16 h-16 object-cover rounded-lg border border-purple-200">'
+        :(r['foto'+(st==='sebelum'?'Sebelum':'Sesudah')]?'<span class="w-16 h-16 rounded-lg bg-purple-100 border border-purple-200 flex items-center justify-center text-[10px] font-bold text-purple-700 text-center">'+st+' ✓</span>':''); };
+    return '<div class="p-4 rounded-xl bg-purple-50/60 border border-purple-200 flex flex-col gap-2.5" data-oid="'+o.id+'">'
+    +'<div class="flex items-center justify-between gap-2 flex-wrap"><span class="font-mono-metric text-[13px] text-purple-900 font-bold">'+o.id+'</span>'
+    +'<span class="font-label-xs text-purple-800 font-bold">'+esc(o.cust)+' · '+(s.teamName||'—')+' · '+esc(tglID(s.tgl||o.tgl||''))+'</span></div>'
+    +'<p class="font-label-xs text-purple-900">PIC pelapor: <strong>'+esc(s.picName||crewName(s.pic)||'belum ditetapkan')+'</strong>'+(r.sentBy?' · laporan dikirim oleh '+esc(r.sentBy)+' pada '+esc(r.sentAt||''):'')+'</p>'
+    +'<div class="flex items-center gap-2">'+['sebelum','sesudah'].map(thumb).join('')
+    +'<p class="font-label-xs text-navy-deep flex-1">Laporan teknisi: '+(r.fotoSebelum&&r.fotoSesudah?'2 foto terpasang':'foto belum lengkap')+' · '+((r.pekerjaan||[]).length)+' item kerja ✓ · tes nyala '+(r.tes?'OK':'belum')+' · tanda tangan '+(r.ttd?'ada':'belum')+'</p></div>'
+    +(r.catatan?'<p class="font-label-xs text-on-surface-variant italic">"' +esc(r.catatan)+'"</p>':'')
+    +'<div class="p-2.5 rounded-lg bg-white border border-purple-200 flex flex-col gap-1 text-[11px]">'
+    +'<div class="flex items-center justify-between font-bold uppercase tracking-wider text-purple-900"><span>Rincian tagihan</span><span class="font-label-xs text-on-surface-variant">PPN 11%</span></div>'
+    +'<div class="flex justify-between"><span>Jasa '+(s.paket||'')+(s.unit>1?' · '+s.unit+' unit':'')+'</span><span class="font-bold">'+rupiah(b.jasa)+'</span></div>'
+    +(b.rows.length?'<div class="flex justify-between"><span>Material: '+b.rows.map(x=>esc(itemOf(x.sku).nama)+' '+x.qty+' '+itemOf(x.sku).unit).join(', ')+'</span><span class="font-bold">'+rupiah(b.mat)+'</span></div>'
+      :'<div class="flex justify-between text-on-surface-variant"><span>Material</span><span>tidak ada</span></div>')
+    +'<div class="flex justify-between border-t border-purple-100 pt-1"><span>Subtotal + PPN</span><span class="font-bold">'+rupiah(b.sub)+' + '+rupiah(b.ppnRp)+'</span></div>'
+    +'<div class="flex justify-between"><span>Total tagihan</span><span class="font-bold">'+rupiah(b.grand)+'</span></div>'
+    +'<div class="flex justify-between"><span>DP lapangan ('+esc(b.metode)+')</span><span class="font-bold">− '+rupiah(b.dp)+'</span></div>'
+    +'<div class="flex justify-between font-extrabold text-primary"><span>Sisa ditagih</span><span>'+rupiah(b.saldo)+'</span></div>'
+    +(b.mat>0?'<p class="font-label-xs text-purple-800">Menyetujui akan memotong stok gudang: '+b.rows.map(x=>esc(itemOf(x.sku).nama)+' −'+x.qty+' '+itemOf(x.sku).unit).join(', ')+'</p>':'')
+    +'</div>'
+    +'<div class="flex items-center gap-2 flex-wrap"><button data-validate="'+o.id+'" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-label-xs font-bold flex items-center gap-1.5" title="Invoice diterbitkan sebesar total tagihan; DP sudah diterima teknisi."><span class="material-symbols-outlined text-[15px]">task_alt</span>Validasi &amp; terbitkan invoice '+rupiah(b.grand)+(b.dp?' · sisa '+rupiah(b.saldo):'')+'</button>'
+    +'<button data-reject="'+o.id+'" class="px-3 py-1.5 rounded-lg bg-white border border-purple-300 text-purple-800 font-label-xs font-bold hover:bg-purple-100">Kembalikan ke teknisi</button></div></div>'; }).join('');
+}
+function renderShell(){
+  const o=ORDERS.find(x=>x.id===selected)||null;
+  $('#csp-pinned').innerHTML=pinnedHtml(o);
+  const rest=ORDERS.filter(x=>x.id!==(o&&o.id)).sort((a,b)=>(a.prio!==b.prio?(a.prio==='Normal'?1:-1):(a.made-b.made)));
+  $('#csp-queue').innerHTML=rest.length?rest.map(queueHtml).join('')
+    :'<div class="p-3.5 rounded-xl bg-surface-card border border-dashed border-border-subtle font-label-xs text-on-surface-variant text-center">Tidak ada order lain di antrean.</div>';
+  $('#csp-qlen').textContent=rest.length;
+  reviewHtml();
+}
+const setTxt=(id,t)=>{ const el=$('#'+id); if(el) el.textContent=t; };
+function paintMetrics(){
+  const un=ORDERS.filter(x=>!assignments[x.id]);
+  const tu=ORDERS.filter(x=>(x.needs||[]).includes('TU'));
+  const urgent=ORDERS.filter(x=>x.cutoff||x.prio==='Darurat');
+  setTxt('m-queue',un.length);
+  const prio=un.filter(x=>x.prio!=='Normal').length;
+  setTxt('m-queue-sub',un.length?(prio?prio+' prioritas tinggi · ':'')+(un.length-prio)+' normal':'Tidak ada order menunggu');
+  setTxt('m-tu',tu.length);
+  setTxt('m-tu-sub',tu.length?'Wajib teknisi TU · '+tu.filter(x=>!assignments[x.id]).length+' belum terjadwal':'Tidak ada order wajib TU');
+  setTxt('m-cutoff',urgent.length);
+  setTxt('m-cutoff-sub',urgent.length?'Masuk setelah cut-off 06:00 / darurat':'Semua order dalam cut-off');
+  setTxt('tab-all',ORDERS.length);
+  const pasang=ORDERS.filter(x=>/pasang|relokasi/i.test(x.paket||'')).length;
+  const trouble=ORDERS.filter(x=>/trouble|freon/i.test(x.paket||'')).length;
+  setTxt('tab-pasang',pasang+' (TU)');
+  setTxt('tab-trouble',trouble+' (TU)');
+  setTxt('tab-servis',Math.max(0,ORDERS.length-pasang-trouble));
+  setTxt('tab-late',urgent.length);
+}
+function paintSolverSummary(){
+  const el=$('#csp-summary'); if(!el) return;
+  const o=ORDERS.find(x=>x.id===selected);
+  if(!o){ el.innerHTML='<p class="font-label-md text-on-surface-variant">Pilih order pada antrean untuk melihat ringkasan keputusan dispatcher.</p>'; return; }
+  const v=evalOrder(o.id), best=v.rec||v.cond;
+  const reasons=[]; v.gugur.forEach(x=>x.r.fails.forEach(f=>{ if(!reasons.includes(f)) reasons.push(f); }));
+  const asg=assignments[o.id]?TEAMS.find(t=>t.id===assignments[o.id]):null;
+  const team=asg?asg.name:(best?best.team.name:'Belum ada tim layak');
+  const slot=asg?hhmm(o.slotStart==null?0:o.slotStart)+'–'+hhmm(o.slotEnd==null?0:o.slotEnd)+' WIB':(best?hhmm(best.r.start)+'–'+hhmm(best.r.end)+' WIB':'perlu eskalasi');
+  const tone=asg?'border-emerald-300 bg-emerald-50':(best?'border-sky-300 bg-sky-50':'border-rose-300 bg-rose-50');
+  el.className='p-4 rounded-2xl shadow-sm border '+tone+' flex flex-col gap-2';
+  el.innerHTML='<div class="flex flex-wrap items-center justify-between gap-2">'
+    +'<div class="flex flex-col"><span class="font-label-xs uppercase tracking-wider font-bold text-on-surface-variant">Ringkasan keputusan · '+esc(o.id)+'</span>'
+    +'<span class="font-headline-sm text-headline-sm font-extrabold text-navy-deep">'+esc(team)+' · '+slot+' · '+reasons.length+' alasan</span>'
+    +'<span class="font-label-xs text-on-surface-variant">'+esc(o.cust)+' · '+esc(o.type)+' · zona '+esc(o.zone)+' · status '+esc(o.status)+'</span></div>'
+    +'<button type="button" data-csp-detail class="px-3.5 py-2 rounded-xl bg-white border border-border-subtle font-label-xs font-bold text-navy-deep hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">code</span>Lihat detail teknis</button></div>'
+    +(reasons.length?'<details class="rounded-xl bg-white/70 border border-border-subtle px-3 py-2"><summary class="font-label-xs font-bold text-on-surface cursor-pointer">'+reasons.length+' alasan constraint (klik untuk lihat)</summary>'
+      +'<ul class="mt-1.5 pl-4 list-disc font-label-xs text-on-surface-variant space-y-0.5">'+reasons.map(r=>'<li>'+esc(r)+'</li>').join('')+'</ul></details>'
+      :'<p class="font-label-xs text-emerald-800 font-bold">Semua tim dengan kru hadir lolos constraint untuk order ini.</p>');
+}
+function paintExceptions(){
+  const box=$('#csp-exceptions'); if(!box) return;
+  const un=ORDERS.filter(x=>!assignments[x.id]);
+  const noTeamIds=[];
+  un.forEach(x=>{ try{ const v=evalOrder(x.id); if(!v.rec&&!v.cond) noTeamIds.push(x.id); }catch(e){} });
+  const urgent=un.filter(x=>x.cutoff||x.prio==='Darurat').map(x=>x.id);
+  const waiting=store.filter(s=>s.status==='Menunggu Persetujuan Customer').map(s=>s.id);
+  const sla=window.IP?window.IP.slaState(store,{clocked:TEAMS.filter(t=>t.nPresent>0).length}):{late:[],expired:[],custProp:[],noClock:false};
+  const lateIds=sla.late.map(x=>x.id);
+  const cpIds=sla.custProp.map(x=>x.id);
+  const expIds=sla.expired.map(x=>x.id);
+  if(!noTeamIds.length&&!urgent.length&&!waiting.length&&!lateIds.length&&!cpIds.length&&!sla.noClock){ box.innerHTML=''; return; }
+  const chip=(tone,icon,label,ids)=>'<div class="flex items-start gap-2 p-3 rounded-xl border '+tone+'">'
+    +'<span class="material-symbols-outlined text-[18px] shrink-0">'+icon+'</span>'
+    +'<div class="flex flex-col min-w-0"><span class="font-label-md text-label-md font-bold">'+label+'</span>'
+    +'<span class="font-label-xs leading-snug break-words">'+esc(ids.slice(0,6).join(', '))+(ids.length>6?' +'+(ids.length-6)+' lainnya':'')+'</span></div></div>';
+  box.innerHTML='<div class="flex items-center gap-2 px-1"><span class="material-symbols-outlined text-[16px] text-status-otw">notification_important</span>'
+    +'<span class="font-label-xs uppercase tracking-wider font-bold text-on-surface-variant">Perlu keputusan dispatcher</span></div>'
+    +'<div class="grid grid-cols-1 md:grid-cols-3 gap-2">'
+    +(urgent.length?chip('border-rose-200 bg-rose-50 text-rose-900','priority_high',urgent.length+' order darurat / lewat cut-off',urgent):'')
+    +(noTeamIds.length?chip('border-amber-200 bg-amber-50 text-amber-900','report_problem',noTeamIds.length+' order tanpa tim yang lolos CSP',noTeamIds):'')
+    +(waiting.length?chip('border-sky-200 bg-sky-50 text-sky-900','hourglass_top',waiting.length+' order menunggu persetujuan customer',waiting):'')
+    +(lateIds.length?chip('border-orange-200 bg-orange-50 text-orange-900','timer',lateIds.length+' order >'+((window.IP&&IP.SLA_NEW_MINUTES)||15)+' menit belum terjadwal',lateIds):'')
+    +(cpIds.length?chip('border-violet-200 bg-violet-50 text-violet-900','swap_horiz',cpIds.length+' usulan customer menunggu respons (SLA 2 jam)',cpIds):'')
+    +(expIds.length?chip('border-slate-300 bg-slate-100 text-slate-800','event_busy',expIds.length+' usulan kedaluwarsa >24 jam',expIds):'')
+    +(sla.noClock?chip('border-rose-200 bg-rose-50 text-rose-900','login',('Belum ada kru clock-in setelah 07.00 — eskalasi supervisor'),[]):'')
+    +'</div>';
+}
+/* --- auto-assign event-driven: order baru & clock-in kru --- */
+const AUTO_KEY='ip_auto_assign';
+const autoOn=()=>{ try{ return localStorage.getItem(AUTO_KEY)!=='0'; }catch(e){ return true; } };
+const setAuto=on=>{ try{ localStorage.setItem(AUTO_KEY,on?'1':'0'); }catch(e){} };
+function runAutoAssign(reason){
+  if(!autoOn()||pickDate!==todayKey()) return false;
+  if(dayClosed().closed) return false;
+  if(!TEAMS.some(t=>t.nPresent>0)) return false;
+  if(!ORDERS.some(o=>!assignments[o.id])) return false;
+  const res=batchAssign(); const n=Object.keys(res.chosen).length;
+  if(!n) return false;
+  traceWrite(res.trace); $('#csp-console-badge').textContent=res.full?'Selesai ✓':'Parsial';
+  persistBatch(res); rebuild(); refresh();
+  if(window.AdminV32) AdminV32.debounceRerender();
+  toast('Auto-assign ('+reason+') — '+n+' order terjadwal otomatis.');
+  return true;
+}
+function refresh(countsOnly){
+  syncCrew(); absenHtml(); renderShell(); paintMetrics(); paintExceptions(); paintSolverSummary();
+  if(window.IP&&window.IP.renderNotifPanel) window.IP.renderNotifPanel(document.getElementById('notifBox'));
+  const tn=$('#csp-team-n'); if(tn) tn.textContent=TEAMS.length;
+  const o=ORDERS.find(x=>x.id===selected);
+  if(!o){ $('#csp-teams').innerHTML='<div class="p-6 rounded-2xl bg-surface-card border border-border-subtle text-center font-label-md text-on-surface-variant">Tidak ada order terpilih untuk dievaluasi — antrean sedang kosong.</div>';
+    $('#csp-order-ref').textContent='—'; $('#csp-n1').textContent='0'; $('#csp-n2').textContent='0'; $('#csp-n3').textContent='0';
+    $('#m-queue').textContent='0'; return; }
+  const v=evalOrder(o.id);
+  $('#csp-teams').innerHTML=cardHtml(o);
+  $('#csp-order-ref').textContent=o.id;
+  const nRec=v.rec?1:0, nCond=v.cond?1:0;
+  $('#csp-n1').textContent=nRec; $('#csp-n2').textContent=nCond; $('#csp-n3').textContent=v.verdicts.filter(x=>x.r.fails.length).length;
+  $('#m-queue').textContent=ORDERS.filter(x=>!assignments[x.id]).length;
+  const used={}; ORDERS.forEach(x=>{ const a=assignments[x.id]; if(a) used[a]=(used[a]||0)+x.dur; });
+  const sisa=TEAMS.reduce((s,t)=>s+Math.max(0,t.cap-(used[t.id]||0)),0);
+  const kap=TEAMS.reduce((s,t)=>s+t.cap,0), onDuty=TEAMS.filter(t=>t.nPresent>0).length;
+  const hEl=$('#csp-hours'); if(hEl) hEl.textContent=sisa.toFixed(1);
+  const usedTotal=kap-sisa;
+  const dEl=$('#csp-onduty'); if(dEl) dEl.textContent=onDuty+'/'+TEAMS.length+' tim · kapasitas '+kap.toFixed(1)+' jam · '+usedTotal.toFixed(1)+' jam terpakai';
+}
+function traceWrite(lines){ $('#csp-trace').textContent=lines.join('\n'); $('#csp-trace').scrollTop=1e9; }
+function toast(msg,ok){ let el=document.getElementById('csp-toast');
+  if(!el){el=document.createElement('div');el.id='csp-toast';el.className='fixed bottom-6 right-6 z-50 px-4 py-3 rounded-xl bg-navy-deep text-white shadow-xl flex items-center gap-3 transition-all';document.body.appendChild(el);}
+  el.innerHTML='<span class="material-symbols-outlined text-status-selesai">check_circle</span><span class="font-label-md">'+msg+'</span>'; el.style.opacity=1; el.style.transform='translateY(0)';
+  setTimeout(()=>{el.style.opacity=0;el.style.transform='translateY(20px)';},3200); }
+/* --- P0-C: PIC pelapor ditetapkan Admin, rekan non-PIC hanya bisa melihat --- */
+const crewName=id=>(CREW.find(c=>c.id===id)||{name:'—'}).name;
+const auditTime=ms=>{ const d=new Date(ms); return d.toLocaleDateString('id-ID',{day:'2-digit',month:'short'})+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); };
+const picDefault=tid=>{ const list=CREW.filter(c=>c.team===tid); const on=list.filter(c=>presence()[c.id]);
+  return ((on.find(c=>c.role==='TU')||on[0]||list.find(c=>c.role==='TU')||list[0])||{}).id||null; };
+function pushAudit(s,detail,who){ if(!s) return []; s.audit=(s.audit||[]).concat([Object.assign({t:Date.now(),detail},who||{actor:'Dispatcher (admin)',role:'Admin'})]); return s.audit; }
+function auditNow(s,detail){ pushAudit(s,detail); saveStore(store); const i=ORDERS.findIndex(x=>x.id===s.id); if(i>=0) ORDERS[i]=mapOrder(s); }
+/* ---- P0-D: usulan jam baru (persetujuan customer) + penolakan beralasan ---- */
+const USUL_TMO=24; /* jam tanpa respons → usulan dianggap kedaluwarsa */
+const tkn=()=>'PS'+Math.random().toString(36).slice(2,7).toUpperCase()+Date.now().toString(36).slice(-3).toUpperCase();
+const usulLink=token=>location.href.split('?')[0].replace(/antrean-penugasan\.html.*/,'customer.html')+'?token='+token;
+const todayISO=()=>new Date().toISOString().slice(0,10);
+const tglID=t=>{ const d=/^(\d{4})-(\d{2})-(\d{2})$/.exec(t); if(!d) return t; return d[3]+' '+['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'][+d[2]-1]+' '+d[1]; };
+function modalShell(id,eyebrow,sub,bodyHtml,okLabel,onOk){
+  let el=document.getElementById(id);
+  if(!el){ el=document.createElement('div'); el.id=id; el.className='fixed inset-0 z-[60] hidden items-center justify-center p-4'; el.style.background='rgba(11,19,41,.62)'; document.body.appendChild(el);
+    el.addEventListener('click',e=>{ if(e.target===el) el.querySelector('[data-mx]').click(); }); }
+  el.classList.remove('hidden'); el.classList.add('flex');
+  el.innerHTML='<div class="w-full max-w-lg rounded-2xl border border-border-subtle p-5 flex flex-col gap-3 max-h-[88vh] overflow-y-auto" style="background:#fff;box-shadow:0 25px 50px -12px rgba(0,0,0,.35)">'
+  +'<div class="flex items-start justify-between gap-2"><div class="flex flex-col"><span class="font-label-xs uppercase tracking-wider text-on-surface-variant font-bold">'+eyebrow+'</span>'
+  +'<span class="font-headline-md text-headline-md text-navy-deep font-extrabold">'+sub+'</span></div>'
+  +'<button data-mx type="button" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant shrink-0"><span class="material-symbols-outlined text-[18px]">close</span></button></div>'
+  +bodyHtml
+  +'<div class="flex items-center justify-end gap-2 pt-1"><button data-mcancel type="button" class="px-3.5 py-2 rounded-lg font-label-xs font-bold text-on-surface-variant hover:bg-surface-container">Batal</button>'
+  +'<button data-mok type="button" class="px-4 py-2 rounded-lg font-label-sm font-bold shadow-sm" style="background:#00288e;color:#fff">'+okLabel+'</button></div></div>';
+  const close=()=>{ el.classList.add('hidden'); el.classList.remove('flex'); el.innerHTML=''; };
+  el.querySelector('[data-mx]').onclick=close; el.querySelector('[data-mcancel]').onclick=close;
+  el.querySelector('[data-mok]').onclick=()=>onOk(el,close); return el; }
+/* --- kalender operasional: hari libur menutup domain CSP & portal pelanggan --- */
+function holidayBodyHtml(){
+  const list=window.OpsCalendar?window.OpsCalendar.all():[];
+  return '<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">'
+    +'<label class="flex flex-col gap-1 font-label-xs font-bold text-on-surface-variant">Tanggal<input id="holDate" type="date" min="'+todayKey()+'" class="border border-border-subtle rounded-lg px-2.5 py-2 font-body-sm text-navy-deep"></label>'
+    +'<label class="flex flex-col gap-1 font-label-xs font-bold text-on-surface-variant">Keterangan<input id="holLabel" type="text" maxlength="48" placeholder="Libur nasional / cuti bersama" class="border border-border-subtle rounded-lg px-2.5 py-2 font-body-sm text-navy-deep"></label></div>'
+    +'<p class="font-label-xs text-on-surface-variant leading-relaxed">Tanggal yang ditandai libur hilang dari pilihan pelanggan dan dilewati solver CSP (batas domain). Rute TSP juga menolak dikunci di tanggal tersebut.</p>'
+    +'<div class="flex flex-col gap-1.5 max-h-52 overflow-y-auto">'
+    +(list.length?list.map(x=>'<div class="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-surface-ice border border-border-subtle"><span class="font-label-xs text-navy-deep"><strong class="font-mono-metric">'+esc(tglID(x.d))+'</strong> · '+esc(x.label)+'</span><button type="button" data-holiday-del="'+x.d+'" class="px-2 py-1 rounded bg-white border border-rose-200 text-rose-700 font-label-xs font-bold">Hapus</button></div>').join('')
+      :'<p class="font-label-xs text-on-surface-variant">Belum ada tanggal libur — semua tanggal dibuka.</p>')
+    +'</div>';
+}
+function openHolidayModal(){
+  const el=modalShell('csp-holiday-modal','Kalender operasional','Hari libur & tutup',holidayBodyHtml(),'Tandai libur',(box)=>{
+    const d=(box.querySelector('#holDate')||{}).value||'', l=((box.querySelector('#holLabel')||{}).value||'').trim();
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(d)){ const i=box.querySelector('#holDate'); if(i) i.focus(); toast('Pilih tanggal yang akan ditandai libur.'); return; }
+    if(!window.OpsCalendar){ toast('Modul kalender tidak termuat — muat ulang halaman.'); return; }
+    if(!window.OpsCalendar.add(d,l||'Libur operasional')){ toast('Gagal menyimpan kalender — penyimpanan perangkat penuh.'); return; }
+    traceWrite(['[KALENDER] '+d+' ditandai libur ('+(l||'Libur operasional')+') — domain CSP tanggal itu ditutup.']);
+    toast(tglID(d)+' ditandai libur.'); openHolidayModal(); refresh();
+  });
+  if(!el.dataset.holidayWired){ el.dataset.holidayWired='1';
+    el.addEventListener('click',e=>{ const b=e.target.closest('[data-holiday-del]'); if(!b) return;
+      if(window.OpsCalendar){ window.OpsCalendar.remove(b.dataset.holidayDel); toast(tglID(b.dataset.holidayDel)+' dibuka kembali.'); }
+      openHolidayModal(); refresh(); }); }
+}
+const usulFields='<div class="grid grid-cols-2 gap-2">'
+  +'<label class="flex flex-col gap-1 font-label-xs font-bold text-on-surface-variant">Tanggal kerja<input id="usTgl" type="date" class="border border-border-subtle rounded-lg px-2.5 py-2 font-body-sm text-navy-deep"></label>'
+  +'<label class="flex flex-col gap-1 font-label-xs font-bold text-on-surface-variant">Jam mulai usulan<select id="usJam" class="border border-border-subtle rounded-lg px-2.5 py-2 font-body-sm text-navy-deep"></select></label></div>'
+  +'<p id="usWarn" class="font-label-xs text-error font-bold"></p>'
+  +'<label class="flex flex-col gap-1 font-label-xs font-bold text-on-surface-variant">Pesan untuk customer<textarea id="usPesan" rows="3" class="border border-border-subtle rounded-lg px-2.5 py-2 font-body-sm text-navy-deep"></textarea></label>';
+function usulkanModal(oid){ const o=ORDERS.find(x=>x.id===oid); if(!o) return; const s=store.find(x=>x.id===oid)||{};
+  const v=evalOrder(oid), alasan=[]; (v&&v.verdicts||[]).forEach(x=>x.r.fails.forEach(f=>{ if(!alasan.includes(f)) alasan.push(f); }));
+  const tgl0=/^\d{4}-\d{2}-\d{2}$/.test(s.tgl||'')?s.tgl:todayISO();
+  const jamOpts=[]; for(let j=8;j<=16;j++) jamOpts.push(j);
+  const defJam=Math.min(16,Math.max(8,Math.round(o.w0)));
+  const body='<p class="font-label-xs text-on-surface-variant leading-relaxed">'+(v&&v.rec
+    ? 'Solver CSP saat ini masih menawarkan <strong>'+v.rec.team.name+'</strong> untuk jendela '+hhmm(o.w0)+'–'+hhmm(o.w1)+' WIB. Pakai alur ini bila kapasitas atau absensi memaksa Anda tetap menawarkan jam lain — order baru ditugaskan lagi setelah customer menyetujui.'
+    : 'Belum ada tim yang lolos CSP pada jendela '+hhmm(o.w0)+'–'+hhmm(o.w1)+' WIB. Tawarkan jam lain lewat portal customer — order tidak ditugaskan sebelum customer menyetujui.')+'</p>'
+  +(alasan.length?'<div class="p-3 rounded-xl bg-rose-50 border border-rose-200 font-label-xs text-rose-900"><strong>Alasan yang dikirim ke customer:</strong> '+esc(alasan.join(' • '))+'</div>':'')
+  +usulFields;
+  const el=modalShell('csp-usul-modal','Usulkan jam baru',esc(o.id)+' · '+esc(o.cust),body,'Kirim usulan persetujuan',(elm,close)=>{
+    const start=+elm.querySelector('#usJam').value, tgl2=elm.querySelector('#usTgl').value;
+    const end=start+o.dur, pesan=elm.querySelector('#usPesan').value.trim();
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(tgl2)){ toast('Tanggal usulan belum valid.'); return; }
+    if(tgl2<todayISO()){ toast('Tanggal usulan tidak boleh melewati hari ini.'); return; }
+    if(end>DEADLINE){ toast('Usulan selesai '+hhmm(end)+' — melewati batas operasional 17:00. Pilih jam lebih awal.'); return; }
+    const token=s.token||tkn(); close();
+    commit(oid,{status:'Menunggu Persetujuan Customer',team:null,teamName:null,slotStart:null,slotEnd:null,responCustomer:null,
+      usulan:{tgl:tgl2,start,end,at:Date.now(),by:'Dispatcher (admin)',pesan,alasan:alasan.join(' • ')},token:token});
+    const soU=store.find(x=>x.id===oid);
+    if(soU&&window.IP) window.IP.notify(mapOrder(soU),'usul',{force:true,auditTarget:soU.audit,
+      text:'Halo '+(soU.nama||soU.cust||'Pelanggan')+', kami mengusulkan jadwal baru untuk '+oid+': '+tglID(tgl2)+' pukul '+hhmm(start)+' WIB ('+hhmm(start)+'–'+hhmm(end)+'). Mohon konfirmasi dalam '+USUL_TMO+' jam melalui tautan yang dikirim.'});
+    auditNow(soU,'Usulan jam '+tglID(tgl2)+' '+hhmm(start)+' dikirim ke customer · tautan persetujuan '+token);
+    delete assignments[oid]; rebuild(); refresh();
+    traceWrite(['[USUL] '+oid+' → Menunggu Persetujuan Customer (keluar dari domain solver)',
+      '   jam usulan: '+tglID(tgl2)+' '+hhmm(start)+'–'+hhmm(end)+' WIB · durasi '+o.dur.toFixed(1)+' jam',
+      '   tautan persetujuan: '+usulLink(token),
+      '[COMMIT] Customer memilih lewat portal: Setujui / Ajukan jam lain / Batalkan. Timeout '+USUL_TMO+' jam.']);
+    toast('Usulan '+oid+' terkirim — bagikan tautan persetujuan ke customer.'); });
+  el.querySelector('#usTgl').value=tgl0;
+  el.querySelector('#usJam').innerHTML=jamOpts.map(j=>'<option value="'+j+'"'+(j===defJam?' selected':'')+'>'+String(j).padStart(2,'0')+':00 WIB</option>').join('');
+  el.querySelector('#usPesan').value='';
+  let pesanEdited=false; const pesEl=el.querySelector('#usPesan'); pesEl.oninput=()=>{ pesanEdited=true; };
+  const jamAsal=/(Fleksibel|—)/.test(s.jam||'')?'permintaan jam Anda':jamLabel(s.jam)+' WIB';
+  const regen=()=>{ if(pesanEdited) return; const st=+el.querySelector('#usJam').value;
+    pesEl.value='Mohon maaf, jadwal '+jamAsal+' belum dapat kami layani'+(alasan.length?' ('+alasan.join(', ')+')':' (kapasitas tim penuh / jarak tempuh)')
+      +'. Kami usulkan '+tglID(el.querySelector('#usTgl').value)+' pukul '+String(st).padStart(2,'0')+':00 WIB. Silakan pilih Setujui, ajukan jam lain, atau batalkan pesanan.'; };
+  const chk=()=>{ const st=+el.querySelector('#usJam').value, en=st+o.dur, w=el.querySelector('#usWarn');
+    w.textContent = en>DEADLINE ? ('Perkiraan selesai '+hhmm(en)+' WIB melewati batas operasional 17:00 — usulan akan ditolak solver.') : ('Perkiraan pengerjaan '+hhmm(st)+'–'+hhmm(en)+' WIB (± '+o.dur.toFixed(1)+' jam).');
+    w.classList.toggle('hidden', en<=DEADLINE); regen(); };
+  el.querySelector('#usJam').onchange=chk; el.querySelector('#usTgl').onchange=chk; chk(); }
+/* ---- persetujuan lisan: customer menjawab lewat telepon/WA, Admin mencatat jawabannya ---- */
+function lisanModal(oid){ const o=ORDERS.find(x=>x.id===oid); if(!o) return; const s=store.find(x=>x.id===oid)||{}; const u=s.usulan||{};
+  const jamOpts=[8,9,10,11,13,14,15,16];
+  const defJam=u.start||Math.min(16,Math.max(8,Math.round(o.w0)));
+  const body='<p class="font-label-xs text-on-surface-variant leading-relaxed">Pakai alur ini bila customer menyetujui jadwal lewat <strong>telepon atau WhatsApp</strong> dan tidak membuka tautan persetujuan. Jawaban dicatat atas nama Admin di jejak audit order, lengkap dengan tanggal &amp; jam yang disepakati, lalu order masuk kembali ke antrean CSP pada tanggal tersebut.</p>'
+  +'<div class="grid grid-cols-2 gap-2">'
+  +'<label class="flex flex-col gap-1 font-label-xs font-bold text-on-surface-variant">Tanggal disepakati<input id="liTgl" type="date" value="'+esc(u.tgl||o.tgl||todayISO())+'" class="border border-border-subtle rounded-lg px-2.5 py-2 font-body-sm text-navy-deep"></label>'
+  +'<label class="flex flex-col gap-1 font-label-xs font-bold text-on-surface-variant">Jam mulai<select id="liJam" class="border border-border-subtle rounded-lg px-2.5 py-2 font-body-sm text-navy-deep">'
+  +jamOpts.map(j=>'<option value="'+j+'"'+(j===defJam?' selected':'')+'>'+String(j).padStart(2,'0')+':00 WIB</option>').join('')+'</select></label></div>'
+  +'<label class="flex flex-col gap-1 font-label-xs font-bold text-on-surface-variant">Cara customer menjawab<input id="liCara" value="telepon" class="border border-border-subtle rounded-lg px-2.5 py-2 font-body-sm text-navy-deep" placeholder="telepon / WhatsApp / di lokasi"></label>'
+  +'<p id="liInfo" class="font-label-xs text-on-surface-variant"></p>';
+  const el=modalShell('csp-lisan-modal','Persetujuan dicatat Admin',esc(o.id)+' · '+esc(o.cust),body,'Simpan persetujuan',(elm,close)=>{
+    const tgl=elm.querySelector('#liTgl').value, jam=+elm.querySelector('#liJam').value, cara=(elm.querySelector('#liCara').value.trim()||'telepon');
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(tgl)){ toast('Tanggal persetujuan belum diisi dengan benar.'); return; }
+    if(jam+o.dur>DEADLINE){ toast('Selesai '+hhmm(jam+o.dur)+' melewati batas operasional 17:00 — pilih jam lebih awal.'); return; }
+    const st=commit(oid,{status:'Baru',tgl:tgl,jam:hhmm(jam),slotStart:null,slotEnd:null,usulan:null,token:'',
+      responCustomer:{action:'setuju',at:Date.now(),tgl:tgl,start:jam},
+      disetujui:{tgl:tgl,start:jam,end:jam+o.dur,at:Date.now(),oleh:'Admin · jawaban via '+cara}});
+    if(st) auditNow(st,'Customer menyetujui '+tglID(tgl)+' pukul '+hhmm(jam)+' WIB — jawaban via '+cara+', dicatat Admin (tautan tidak dipakai)');
+    if(st&&window.IP){ const moL=mapOrder(st); window.IP.notify(moL,'approval',{force:true,text:'Halo '+(st.nama||st.cust||'Pelanggan')+', jadwal usulan Anda untuk '+oid+' ('+tglID(tgl)+' pukul '+hhmm(jam)+' WIB) sudah disetujui dan akan dikunci dispatcher. Kami kabari lagi saat teknisi berangkat.'}); saveStore(store); }
+    delete assignments[oid]; close();
+    if(tgl!==pickDate) pickDate=tgl;
+    rebuild(); refresh();
+    if(ORDERS.some(x=>x.id===oid)) selectOrder(oid); else traceWrite(['[LISAN] '+oid+' — persetujuan '+tglID(tgl)+' '+hhmm(jam)+' WIB dicatat Admin.','[COMMIT] Order kembali ke antrean CSP tanggal '+tgl+' ('+ORDERS.length+' order pada hari itu).']);
+    toast('Persetujuan '+oid+' tercatat untuk '+dayShort(tgl)+' '+hhmm(jam)+' WIB — antrean hari itu dibuka.'); });
+  const chk=()=>{ const jam=+el.querySelector('#liJam').value, tgl=el.querySelector('#liTgl').value;
+    el.querySelector('#liInfo').textContent='Perkiraan pengerjaan '+hhmm(jam)+'–'+hhmm(jam+o.dur)+' WIB ('+o.dur.toFixed(1)+' jam) pada '+tglID(tgl)+' · antrean '+dayShort(tgl)+' akan dibuka setelah disimpan.'; };
+  el.querySelector('#liJam').onchange=chk; el.querySelector('#liTgl').onchange=chk; chk(); }
+const TOLAK_ALASAN=['Kedua tim penuh pada tanggal yang diminta','Di luar jangkauan zona layanan kami','Sparepart / inverter tidak tersedia','Customer tidak dapat dikonfirmasi','Pekerjaan di luar SOP layanan kami','Lainnya'];
+function tolakModal(oid){ const o=ORDERS.find(x=>x.id===oid); if(!o) return;
+  const body='<p class="font-label-xs text-on-surface-variant leading-relaxed">Order akan berstatus <strong>Dibatalkan</strong>, keluar dari antrean CSP, dan alasannya tercatat di jejak audit serta terlihat customer di portal lacak. Bila penyebabnya hanya kapasitas, gunakan “Usulkan jam baru” agar order tidak hilang.</p>'
+  +'<label class="flex flex-col gap-1 font-label-xs font-bold text-on-surface-variant">Alasan penolakan<select id="tkAlasan" class="border border-border-subtle rounded-lg px-2.5 py-2 font-body-sm text-navy-deep">'
+  +TOLAK_ALASAN.map(a=>'<option>'+esc(a)+'</option>').join('')+'</select></label>'
+  +'<label class="flex flex-col gap-1 font-label-xs font-bold text-on-surface-variant">Catatan tambahan (opsional)<textarea id="tkCatat" rows="2" class="border border-border-subtle rounded-lg px-2.5 py-2 font-body-sm text-navy-deep" placeholder="contoh: silakan pesan ulang untuk minggu depan"></textarea></label>';
+  modalShell('csp-tolak-modal','Tolak order',esc(o.id)+' · '+esc(o.cust),body,'Tolak &amp; catat alasan',(el,close)=>{
+    const a=el.querySelector('#tkAlasan').value, c=el.querySelector('#tkCatat').value.trim();
+    if(a==='Lainnya'&&!c){ toast('Tuliskan alasan penolakan.'); return; }
+    const alasan=a+(c?' — '+c:''); close();
+    commit(oid,{status:'Dibatalkan',team:null,teamName:null,usulan:null,ditolakAlasan:alasan,ditolakAt:Date.now()});
+    auditNow(store.find(x=>x.id===oid),'Order ditolak Admin — '+alasan);
+    delete assignments[oid]; rebuild(); refresh();
+    traceWrite(['[TOLAK] '+oid+' → Dibatalkan · alasan: '+alasan,'[COMMIT] Order keluar dari antrean; alasan tampil di portal lacak customer.']);
+    toast('Order '+oid+' ditolak dengan alasan tercatat.'); }); }
+function picModal(oid,tid,okLabel,onOk){ const t=TEAMS.find(x=>x.id===tid); if(!t) return;
+  const cur=(store.find(x=>x.id===oid)||{}).pic||picDefault(tid);
+  let el=document.getElementById('csp-pic-modal');
+  if(!el){ el=document.createElement('div'); el.id='csp-pic-modal'; el.className='fixed inset-0 z-[60] hidden items-center justify-center bg-navy-deep/60 p-4'; document.body.appendChild(el);
+    el.addEventListener('click',e=>{ if(e.target===el) el.querySelector('[data-pic-close]').click(); }); }
+  el.classList.remove('hidden'); el.classList.add('flex');
+  el.innerHTML='<div class="w-full max-w-md bg-surface-card rounded-2xl shadow-2xl border border-border-subtle p-5 flex flex-col gap-3">'
+  +'<div class="flex items-start justify-between gap-2"><div class="flex flex-col"><span class="font-label-xs uppercase tracking-wider text-on-surface-variant font-bold">Tetapkan PIC pelapor</span>'
+  +'<span class="font-headline-md text-headline-md text-navy-deep font-extrabold">'+esc(oid)+' · '+esc(t.name)+'</span></div>'
+  +'<button data-pic-close type="button" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">close</span></button></div>'
+  +'<p class="font-label-xs text-on-surface-variant leading-relaxed">Hanya PIC yang dapat memperbarui status dan mengirim laporan kerja di konsol teknisi. Rekan satu tim yang bukan PIC tetap bisa melihat order, checklist dan jadwal rute.</p>'
+  +'<div class="flex flex-col gap-2">'+t.crewList.map(c=>{ const on=presence()[c.id];
+    return '<label class="flex items-start gap-3 p-3 rounded-xl border border-border-subtle '+(on?'bg-surface-bright cursor-pointer':'bg-surface-container/50 opacity-60')+'">'
+    +'<input type="radio" name="cspPic" value="'+c.id+'" class="mt-1 accent-blue-600"'+(c.id===cur?' checked':'')+(on?'':' disabled')+'>'
+    +'<span class="flex flex-col"><span class="font-label-md text-label-md font-bold text-navy-deep">'+esc(c.name)+' · '+c.role+'</span>'
+    +'<span class="font-label-xs text-on-surface-variant">'+(on?esc(c.certs.join(' / ')):'Tidak masuk hari ini — tidak dapat ditetapkan sebagai PIC')+'</span></span></label>'; }).join('')+'</div>'
+  +'<div class="flex items-center justify-end gap-2 pt-1"><button data-pic-cancel type="button" class="px-3.5 py-2 rounded-lg font-label-xs font-bold text-on-surface-variant hover:bg-surface-container">Batal</button>'
+  +'<button data-pic-ok type="button" class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-sm font-bold shadow-sm">'+esc(okLabel)+'</button></div></div>';
+  const close=()=>{ el.classList.add('hidden'); el.classList.remove('flex'); el.innerHTML=''; };
+  el.querySelector('[data-pic-close]').onclick=close; el.querySelector('[data-pic-cancel]').onclick=close;
+  el.querySelector('[data-pic-ok]').onclick=()=>{ const c=el.querySelector('input[name=cspPic]:checked');
+    if(!c){ toast('Pilih kru yang masuk sebagai PIC terlebih dahulu.'); return; } close(); onOk(c.value); }; }
+/* --- tulis balik hasil CSP ke store (dipakai TSP, konsol teknisi, lacak pelanggan) --- */
+function commit(oid,patch){ store=loadStore(); const s=store.find(x=>x.id===oid); if(!s) return null;
+  if(patch&&patch.status&&window.IP&&!window.IP.canMove(s.status,patch.status)){
+    const to=patch.status;
+    window.IP.logState(s,s.status,to,{actor:'Dispatcher (admin)',role:'Admin',detail:'commit ditolak oleh state machine'},'ditolak');
+    const p2=Object.assign({},patch); delete p2.status; patch=p2;
+    toast('Transisi status '+s.status+' → '+to+' tidak sah dan diabaikan.');
+  }
+  const prevStatus=s.status;
+  Object.assign(s,patch);
+  if(patch&&patch.status&&prevStatus!==patch.status&&window.IP) window.IP.logState(s,prevStatus,patch.status,{actor:'Dispatcher (admin)',role:'Admin',detail:'commit antrean'},'ok'); saveStore(store); const i=ORDERS.findIndex(x=>x.id===oid); if(i>=0) Object.assign(ORDERS[i],mapOrder(s)); return s; }
+/* ETA hasil TSP jadi basi saat tim/slot berubah — bersihkan agar portal tidak menampilkan jam tiba lama */
+function clearEta(oid){ store=loadStore(); const s=store.find(x=>x.id===oid); if(s){ delete s.ruteLocked; delete s.tspStart; delete s.tspEnd; delete s.tspArrival; saveStore(store); }
+  const i=ORDERS.findIndex(x=>x.id===oid); if(i>=0){ delete ORDERS[i].tspArrival; } }
+function doAssign(oid,tid,pic){ const t=TEAMS.find(x=>x.id===tid); const v=evalOrder(oid); const r=v.verdicts.find(x=>x.team.id===tid).r;
+  assignments[oid]=tid; const pid=pic||picDefault(tid);
+  const s=commit(oid,{status:'Dijadwalkan',team:tid,teamName:t.name,slotStart:+r.start.toFixed(2),slotEnd:+r.end.toFixed(2),assignedAt:Date.now(),
+    pic:pid, picName:crewName(pid), picSetBy:'Dispatcher (admin)', picAt:Date.now()});
+  if(s){ clearEta(oid); if(window.IP) window.IP.notify(mapOrder(s),'assigned',{auditTarget:s.audit});
+    auditNow(s,'Ditugaskan ke '+t.name+' · PIC pelapor '+crewName(pid)+' · slot '+hhmm(r.start)+'–'+hhmm(r.end)+' WIB'); }
+  return r; }
+function doUndo(oid){ delete assignments[oid]; const s=commit(oid,{status:'Baru',team:null,teamName:null,slotStart:null,slotEnd:null,pic:null,picName:''});
+  if(s){ clearEta(oid); auditNow(s,'Penugasan dibatalkan Admin — order kembali ke antrean CSP'); } }
+
+function selectOrder(oid){ selected=oid; const v=evalOrder(oid); const o=v.o;
+  const fresh=cloneState();
+  const lines=['[SELECT] Variabel dipilih: '+o.id+' ('+o.type+', '+o.dur+' jam, zona '+o.zone+', jendela '+hhmm(o.w0)+'–'+hhmm(o.w1)+')',
+    '[DOMAIN] Inisialisasi '+TEAMS.length+' tim dari roster '+CREW.length+' orang —'+TEAMS.map((t,i)=>{const r=check(o,t,fresh[i]);return '\n   '+t.chr+' '+t.name+' ['+t.mode+', '+t.nPresent+'/'+t.crewList.length+' masuk]: '+(r.fails.length?'pruned ('+r.fails[0]+')':'d='+r.score);}).join(''),
+    '[MRV] Order lain menunggu: '+ORDERS.filter(x=>x.id!==oid&&!assignments[x.id]).length+' antrean',
+    '[SOLVE] Evaluasi constraint per tim selesai — rekomendasi: '+(v.rec?v.rec.team.name+' (skor '+v.rec.r.score+')':'TIDAK ADA (eskalasi)'),
+    v.cond?'[SOFT] Alternatif bersyarat: '+v.cond.team.name+' (skor '+v.cond.r.score+', slot mundur '+hhmm(v.cond.r.start)+')':'[SOFT] Tidak ada alternatif bersyarat'];
+  traceWrite(lines); $('#csp-console-badge').textContent='Dievaluasi'; refresh(); }
+
+function persistBatch(res){ store=loadStore();
+  Object.keys(res.chosen).forEach(oid=>{ const s=store.find(x=>x.id===oid); if(!s) return;
+    const tid=res.chosen[oid], sl=res.slots[oid]||{}, t=TEAMS.find(x=>x.id===tid); if(!t) return;
+    if(window.IP&&!window.IP.canMove(s.status,'Dijadwalkan')){ window.IP.logState(s,s.status,'Dijadwalkan',{actor:'Sistem auto-assign',role:'System',detail:'ditolak: status tidak dapat dijadwalkan'},'ditolak'); return; }
+    const prev=s.status;
+    s.status='Dijadwalkan'; s.team=tid; s.teamName=t.name; s.slotStart=+(sl.start||8); s.slotEnd=+(sl.end||9); s.assignedAt=Date.now();
+    delete s.ruteLocked; delete s.tspStart; delete s.tspEnd; delete s.tspArrival;
+    s.pic=picDefault(tid); s.picName=crewName(s.pic); s.picSetBy='Dispatcher (admin)'; s.picAt=Date.now();
+    if(window.IP){ window.IP.logState(s,prev,'Dijadwalkan',{actor:'Sistem auto-assign',role:'System',detail:'batch CSP'},'ok'); window.IP.notify(mapOrder(s),'assigned',{auditTarget:s.audit}); }
+    pushAudit(s,'Ditugaskan otomatis (Jalankan CSP Seluruhnya) ke '+t.name+' · PIC pelapor '+s.picName); });
+  saveStore(store); }
+
+function wire(){
+  const di=$('#csp-date'); if(di){ di.value=pickDate; di.min=isoAdd(todayKey(),-120); di.max=isoAdd(todayKey(),60); di.addEventListener('change',()=>setDate(di.value)); }
+  const pv=$('#csp-day-prev'); if(pv) pv.addEventListener('click',()=>setDate(isoAdd(pickDate,-1)));
+  const nx=$('#csp-day-next'); if(nx) nx.addEventListener('click',()=>setDate(isoAdd(pickDate,1)));
+  const hb=$('#csp-holiday-btn'); if(hb&&!hb.dataset.wired){ hb.dataset.wired='1'; hb.addEventListener('click',openHolidayModal); }
+  const at=$('#autoAssignToggle'); if(at){ at.checked=autoOn();
+    at.addEventListener('change',()=>{ setAuto(at.checked);
+      toast(at.checked?'Auto-assign aktif — order baru & clock-in dijadwalkan otomatis.':'Auto-assign nonaktif — penjadwalan manual lewat Auto-Assign Batch.');
+      if(at.checked) runAutoAssign('diaktifkan'); }); }
+  document.querySelectorAll('button').forEach(btn=>{
+    const txt=btn.innerText;
+    if(txt.includes('Hitung Ulang CSP')&&!btn.dataset.wired){ btn.dataset.wired=1; btn.addEventListener('click',()=>{ rebuild(); if(selected) selectOrder(selected); else refresh(); }); }
+    if(txt.includes('Auto-Assign Batch')&&!btn.dataset.wired){ btn.dataset.wired=1; btn.addEventListener('click',()=>{
+      const dd=dayClosed();
+      if(dd.closed){ toast('Tanggal '+pickDate+' ditutup ('+dd.label+') — solver tidak menugaskan. Buka kembali lewat tombol Libur bila order tetap harus dijadwalkan.'); return; }
+      rebuild();
+      if(!ORDERS.filter(o=>!assignments[o.id]).length){ toast('Tidak ada order baru di antrean — semua sudah terjadwal.'); refresh(); return; }
+      const res=batchAssign(); traceWrite(res.trace); $('#csp-console-badge').textContent=res.full?'Selesai ✓':'Parsial';
+      persistBatch(res); rebuild(); refresh();
+      if(window.AdminV32) AdminV32.debounceRerender();
+      toast(res.full?'Batch CSP selesai — '+Object.keys(res.chosen).length+' order ter-assign & tersinkron ke TSP Route Engine.':'Batch CSP parsial — '+(res.backtracks>0?res.backtracks+' backtrack, ': '')+'sisanya butuh eskalasi manual.'); }); }
+  });
+  const ov=$('#overrideSave'), ovIn=$('#overrideNote');
+  const saveOverride=()=>{
+    const note=(ovIn&&ovIn.value||'').trim();
+    if(!selected){ toast('Pilih order yang akan di-override terlebih dahulu.'); return; }
+    if(!note){ toast('Tulis alasan override agar keputusan dapat diaudit.'); if(ovIn) ovIn.focus(); return; }
+    const s=store.find(x=>x.id===selected); if(!s){ toast('Order tidak ditemukan di antrean.'); return; }
+    s.override={note:note,at:Date.now(),by:'Dispatcher (admin)'};
+    if(window.IP) window.IP.logState(s,s.status,s.status,{actor:'Dispatcher (admin)',role:'Admin',detail:'Override manual: '+note},'ok');
+    auditNow(s,'Override manual: '+note);
+    if(ovIn) ovIn.value='';
+    traceWrite(['[OVERRIDE] '+selected+' — alasan: '+note,'   Dicatat di audit trail order & log keputusan (ip_state_log).']);
+    toast('Catatan override '+selected+' tersimpan di audit trail.');
+    rebuild(); refresh();
+  };
+  if(ov) ov.addEventListener('click',saveOverride);
+  if(ovIn) ovIn.addEventListener('keydown',e=>{ if(e.key==='Enter') saveOverride(); });
+  document.body.addEventListener('click',e=>{
+    const cw=e.target.closest('[data-crew]'); if(cw){ const cid=cw.dataset.crew; const person=CREW.find(c=>c.id===cid);
+      writePresence(cid,!presence()[cid]); rebuild(); absenHtml(); if(selected) selectOrder(selected); else refresh();
+      const tm=TEAMS.find(t=>t.id===person.team);
+      traceWrite(['[ABSEN] '+person.name+' ('+person.role+', '+tm.name+') → '+(presence()[cid]?'MASUK':'TIDAK MASUK'),'   '+tm.name+': '+tm.mode+' · kapasitas '+tm.cap.toFixed(1)+' jam · sertifikat aktif '+(tm.certs.join('/')||'tidak ada'),'[PROP] Domain semua order di antrean dihitung ulang dengan kehadiran baru.']);
+      toast(person.name+(presence()[cid]?' ditandai masuk.':' ditandai tidak masuk — '+tm.name+' '+tm.mode.toLowerCase()+'.')+(tm.nPresent===0?' Penugasan aktif di tim ini perlu dipindahkan.':person.role==='TU'&&!tm.certs.includes('TU')?' Order wajib TU tidak bisa ditugaskan ke tim ini.':'')); return; }
+    const pick=e.target.closest('[data-pick]'); if(pick){ selectOrder(pick.dataset.pick); return; }
+    const asg=e.target.closest('[data-assign]'); if(asg){ const oid=selected, tid=asg.dataset.assign; const t=TEAMS.find(x=>x.id===tid);
+      picModal(oid,tid,'Simpan & tugaskan',pid=>{ const r=doAssign(oid,tid,pid);
+        traceWrite(['[ASSIGN] '+oid+' ← '+t.name,'   slot '+hhmm(r.start)+'–'+hhmm(r.end)+' WIB · beban tim '+t.chr+' diperbarui · travel '+r.travel+' mnt',
+          '[PIC] Admin menetapkan PIC pelapor: '+crewName(pid)+' ('+(CREW.find(c=>c.id===pid)||{}).role+') — hanya dia yang bisa update status di konsol teknisi',
+          '[COMMIT] Status order → Dijadwalkan (localStorage ip_customer_orders) · jejak audit '+((store.find(x=>x.id===oid)||{}).audit||[]).length+' entri',
+          '[PROP] Domain order antrean lain diperketat (forward checking).']);
+        refresh(); toast(oid+' ditugaskan ke '+t.name+' · PIC '+crewName(pid)); }); return; }
+    const pchg=e.target.closest('[data-pic]'); if(pchg){ const oid=pchg.dataset.pic, tid=assignments[oid]; const t=TEAMS.find(x=>x.id===tid); if(!t) return;
+      picModal(oid,tid,'Simpan PIC',pid=>{ const s=store.find(x=>x.id===oid); if(!s) return; s.pic=pid; s.picName=crewName(pid); s.picSetBy='Dispatcher (admin)'; s.picAt=Date.now();
+        pushAudit(s,'PIC pelapor diubah Admin menjadi '+crewName(pid)); saveStore(store); rebuild(); refresh();
+        traceWrite(['[PIC] '+oid+' — PIC pelapor sekarang '+crewName(pid)+' ('+(CREW.find(c=>c.id===pid)||{}).role+', '+t.name+')','   Perubahan ini langsung mengunci/membuka hak update status di konsol teknisi yang bersangkutan.']);
+        toast('PIC '+oid+' → '+crewName(pid)); }); return; }
+    const undo=e.target.closest('[data-undo]'); if(undo){ const oid=(undo.closest('[data-oid]')||{dataset:{}}).dataset.oid||selected;
+      const so=store.find(x=>x.id===oid)||{};
+      modalShell('csp-undo-modal','Batalkan penugasan',esc(oid)+' · '+esc(so.cust||so.nama||'Order'),''
+        +'<p class="font-label-xs text-on-surface-variant leading-relaxed">Order dikembalikan ke status <strong>Baru</strong>, slot '
+        +esc(hhmm(so.slotStart))+'–'+esc(hhmm(so.slotEnd))+' WIB dilepas, dan rute '+esc(so.teamName||'tim')+' dihitung ulang.</p>'
+        +'<p class="font-label-xs text-rose-700 font-bold">Customer akan melihat status menunggu penjadwalan sampai order dijadwalkan ulang.</p>',
+        'Ya, batalkan penugasan',(el,close)=>{ close();
+          doUndo(oid); traceWrite(['[UNDO] Penugasan '+oid+' dibatalkan — status kembali Baru, domain tim dipulihkan.']); refresh(); toast('Penugasan '+oid+' dibatalkan.'); });
+      return; }
+    const val=e.target.closest('[data-validate]'); if(val){ const oid=val.dataset.validate;
+      const so=store.find(x=>x.id===oid)||{}; const b=billOf(so);
+      const tgl=so.tgl||pickDate, yy=String(tgl).slice(2,4)+String(tgl).slice(5,7);
+      const urut=store.filter(x=>x.invoice&&String(x.invoice.no).indexOf('INV-'+yy)===0).length+1;
+      const inv={no:'INV-'+yy+'-'+String(urut).padStart(3,'0'), jasa:b.jasa, material:b.mat, subtotal:b.sub,
+        ppn:11, ppnRp:b.ppnRp, total:b.grand, dp:b.dp, metode:b.metode, saldo:b.saldo, created:Date.now(), items:b.rows};
+      const habis=b.rows.length?invTake(b.rows):[];
+      commit(oid,{status:'Selesai',closedAt:Date.now(),nextServiceAt:Date.now()+90*864e5,invoice:inv,bayar:{dp:b.dp,metode:b.metode,saldo:b.saldo,at:Date.now()}});
+      pushAudit(store.find(x=>x.id===oid),'Divalidasi Admin & invoice '+inv.no+' terbit — total '+rupiah(b.grand)+(b.dp?', DP '+rupiah(b.dp)+' ('+b.metode+')':'')+', sisa '+rupiah(b.saldo)+' — stok gudang dipotong');
+      saveStore(store); delete assignments[oid]; rebuild(); refresh();
+      traceWrite(['[VALIDATE] '+oid+' divalidasi Admin · invoice '+inv.no+' = jasa '+rupiah(b.jasa)+(b.mat?' + material '+rupiah(b.mat):'')+' + PPN 11% '+rupiah(b.ppnRp)+' → '+rupiah(b.grand),
+        '   DP diterima '+rupiah(b.dp)+' ('+b.metode+') · sisa tagihan '+rupiah(b.saldo),
+        b.rows.length?'[STOCK] ip_inventory dipotong: '+b.rows.map(x=>itemOf(x.sku).nama+' −'+x.qty+' '+itemOf(x.sku).unit).join(', ')+(habis.length?' · MENIPIS: '+habis.join(', '):''):'[STOCK] Tidak ada material terpakai — stok tetap.',
+        '[COMMIT] Status order → Selesai · customer dapat melihat invoice di portal lacak.']);
+      toast(oid+' selesai — invoice '+inv.no+' '+rupiah(b.grand)+' terbit'+(habis.length?' · stok menipis: '+habis.join(', '):'.')); return; }
+    const rej=e.target.closest('[data-reject]'); if(rej){ const oid=rej.dataset.reject; const so=store.find(x=>x.id===oid)||{};
+      modalShell('csp-reject-modal','Kembalikan laporan',esc(oid)+' · '+esc(so.cust||so.nama||'Order'),''
+        +'<p class="font-label-xs text-on-surface-variant leading-relaxed">Status order kembali ke <strong>Dikerjakan</strong> dan laporan yang sudah dikirim ditarik dari antrean validasi.</p>'
+        +'<p class="font-label-xs text-rose-700 font-bold">Teknisi '+esc(so.picName||'PIC')+' harus melengkapi checklist lalu mengirim ulang. Invoice belum terbit.</p>',
+        'Ya, kembalikan',(el,close)=>{ close(); const rep=Object.assign({},so.report||{}); delete rep.sentAt;
+          commit(oid,{status:'Dikerjakan',report:rep,finishedAt:null}); pushAudit(store.find(x=>x.id===oid),'Laporan kerja dikembalikan Admin — teknisi melengkapi checklist'); saveStore(store); rebuild(); refresh();
+          traceWrite(['[REJECT] Laporan '+oid+' dikembalikan — teknisi harus melengkapi checklist.']); toast('Laporan '+oid+' dikembalikan ke teknisi.'); });
+      return; }
+    const ca=e.target.closest('[data-custacc]'); if(ca){ const oid=ca.dataset.custacc; const so=store.find(x=>x.id===oid)||{}; const cp=so.custProposal||{};
+      if(!cp.tgl||cp.jam==null){ toast('Usulan customer tidak lengkap.'); return; }
+      const s2=commit(oid,{tgl:cp.tgl,jam:cp.jam,status:'Baru',custProposal:Object.assign({},cp,{status:'disetujui',decidedAt:Date.now(),decidedBy:'Dispatcher (admin)'})});
+      if(s2){ if(window.IP) window.IP.notify(mapOrder(s2),'approval',{force:true,auditTarget:s2.audit});
+        auditNow(s2,'Usulan jadwal customer disetujui — '+tglID(cp.tgl)+' '+jamLabel(cp.jam)+' WIB dikunci untuk CSP'); }
+      if(pickDate!==cp.tgl){ pickDate=cp.tgl; rebuild(); }
+      rebuild(); refresh(); if(cp.tgl===pickDate) runAutoAssign('usulan customer disetujui');
+      traceWrite(['[CUSTPROP] '+oid+' — usulan customer '+tglID(cp.tgl)+' '+jamLabel(cp.jam)+' WIB DISETUJUI','[COMMIT] Order kembali ke antrean CSP dan dicoba dijadwalkan otomatis.']);
+      toast('Usulan '+oid+' disetujui — order dikembalikan ke antrean CSP.'); return; }
+    const cr=e.target.closest('[data-custrej]'); if(cr){ const oid=cr.dataset.custrej; const so=store.find(x=>x.id===oid)||{}; const cp=so.custProposal||{};
+      if(!cp.deadline&&!cp.at){ toast('Tidak ada usulan customer aktif.'); return; }
+      const prev=cp.prev||{}; const s3=commit(oid,{tgl:prev.tgl||so.tgl,jam:prev.jam||so.jam,status:'Baru',
+        custProposal:Object.assign({},cp,{status:'ditolak',decidedAt:Date.now(),decidedBy:'Dispatcher (admin)'})});
+      if(s3){ const mo=mapOrder(s3);
+        if(window.IP) window.IP.notify(mo,'usul',{force:true,auditTarget:s3.audit,text:'Halo '+(mo.nama||mo.cust||'Pelanggan')+', usulan jadwal Anda untuk '+oid+' belum dapat kami setujui karena kapasitas tim. Jadwal lama ('+tglID(prev.tgl||so.tgl)+' '+jamLabel(prev.jam||so.jam)+' WIB) kami pertahankan; dispatcher akan menawarkan jam pengganti.'});
+        auditNow(s3,'Usulan jadwal customer ditolak — jadwal lama dipertahankan, customer diberi notifikasi'); }
+      rebuild(); refresh();
+      traceWrite(['[CUSTPROP] '+oid+' — usulan customer DITOLAK, jadwal lama dipertahankan.']);
+      toast('Usulan '+oid+' ditolak — jadwal lama dipertahankan.'); return; }
+    const cdp=e.target.closest('[data-csp-detail]'); if(cdp){ const d=document.getElementById('csp-console'); if(d){ d.open=!d.open; d.scrollIntoView({behavior:'smooth',block:'center'}); } return; }
+    const usl=e.target.closest('[data-usulkan]'); if(usl){ usulkanModal(usl.dataset.usulkan||selected); return; }
+    const lis=e.target.closest('[data-lisan]'); if(lis){ lisanModal(lis.dataset.lisan||selected); return; }
+    const gd=e.target.closest('[data-goto-day]'); if(gd){ setDate(gd.dataset.gotoDay); return; }
+    const ub=e.target.closest('[data-usulbatal]'); if(ub){ const oid=ub.dataset.usulbatal; const so=store.find(x=>x.id===oid)||{};
+      modalShell('csp-usulbatal-modal','Tarik usulan jam',esc(oid)+' · '+esc(so.cust||so.nama||'Order'),''
+        +'<p class="font-label-xs text-on-surface-variant leading-relaxed">Usulan jam <strong>'+esc(so.usulan&&so.usulan.jam!=null?hhmm(so.usulan.jam)+' WIB':'—')+'</strong> dibatalkan dan tautan persetujuan customer tidak berlaku lagi.</p>'
+        +'<p class="font-label-xs text-rose-700 font-bold">Order kembali ke antrean <strong>Baru</strong> dan belum memiliki jadwal sampai dispatcher menawarkan jam lain.</p>',
+        'Ya, tarik usulan',(el,close)=>{ close();
+          commit(oid,{status:'Baru',usulan:null,responCustomer:null}); auditNow(store.find(x=>x.id===oid),'Usulan jam ditarik Admin — order kembali ke antrean CSP');
+          rebuild(); refresh(); traceWrite(['[USUL] '+oid+' — usulan ditarik, status kembali Baru.']); toast('Usulan '+oid+' ditarik kembali ke antrean.'); });
+      return; }
+    const cp=e.target.closest('[data-copylink]'); if(cp){ const link=cp.dataset.copylink;
+      const ok=()=>toast('Tautan persetujuan disalin — kirim ke customer.');
+      const fallback=()=>{ const ta=document.createElement('textarea'); ta.value=link; ta.style.cssText='position:fixed;top:0;left:0;opacity:0';
+        document.body.appendChild(ta); ta.focus(); ta.select(); let done=false; try{ done=document.execCommand('copy'); }catch(err){} ta.remove();
+        done?ok():toast('Browser menolak akses papan klip — salin tautan yang tampil di kartu order.'); };
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(link).then(ok,fallback); } else fallback(); return; }
+    const wc=e.target.closest('[data-wacopy]'); if(wc){ const o=ORDERS.find(x=>x.id===wc.dataset.wacopy); if(!o) return;
+      const txt=waStatus(o); const done=()=>toast('Pesan status '+o.status+' disalin — tempel di chat customer.');
+      const fb=()=>{ const ta=document.createElement('textarea'); ta.value=txt; ta.style.cssText='position:fixed;top:0;left:0;opacity:0';
+        document.body.appendChild(ta); ta.focus(); ta.select(); let ok=false; try{ ok=document.execCommand('copy'); }catch(err){} ta.remove();
+        ok?done():traceWrite(['[WA] Pesan status '+o.id+' — salin manual: ',txt]); };
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done,fb); } else fb(); return; }
+    const can=e.target.closest('[data-cancel]'); if(can){ const card=can.closest('[data-oid]'); const oid=can.dataset.cancel&&can.dataset.cancel!=='1'?can.dataset.cancel:(card&&card.dataset.oid)||selected;
+      if(oid) tolakModal(oid); }
+  });
+}
+/* init: bangun antrean dari store, bukan data demo */
+document.addEventListener('DOMContentLoaded',()=>{ rebuild(); const qo=/[?&]order=([A-Za-z0-9_-]+)/.exec(location.search||''); if(qo&&ORDERS.some(o=>o.id===qo[1])) selected=qo[1];
+ wire(); absenHtml(); if(selected){ selectOrder(selected); } else { refresh(); traceWrite(['[IDLE] Antrean kosong — menunggu order masuk dari portal pelanggan.']); $('#csp-console-badge').textContent='Menunggu order'; } });
+window.addEventListener('storage',e=>{
+  const k=e.key||'';
+  if(k===STORE||k===CKEY||k.indexOf(CKEY+'@')===0||k.indexOf('ip_attendance_')===0){
+    rebuild(); refresh();
+    if(k===STORE) setTimeout(()=>runAutoAssign('order baru'),80);
+    else if(k.indexOf('ip_attendance_')===0||k.indexOf('ip_crew')===0) setTimeout(()=>runAutoAssign('clock-in kru'),80);
+  }
+});
+})();
+</script></main>
+</div>
+
+<!-- P0 ADMIN SHELL: navigasi responsif, tanggal operasional global, banner mode demo -->
+<style id="adminP0Style">
+#adminAside{overflow-y:auto}
+#adminBackdrop{display:none}
+#adminDrawerClose{display:none;position:absolute;top:10px;right:10px;z-index:60;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.12);color:#fff;align-items:center;justify-content:center}
+.adminTableWrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:1023px){
+  #adminHeader{display:none!important}
+  #adminAside{transform:translateX(-100%);transition:transform .25s ease}
+  #adminAside.is-open{transform:translateX(0);box-shadow:0 24px 60px rgba(0,0,0,.55)}
+  #adminAside.is-open #adminDrawerClose{display:flex}
+  #adminBackdrop.is-open{display:block}
+  body.adminDrawerOpen{overflow:hidden}
+  main{padding-left:16px!important;padding-right:16px!important;padding-bottom:104px!important}
+  .pl-72{padding-left:0!important}
+  .left-72{left:0!important}
+  #adminMobileBar{display:flex!important}
+  #adminBottomNav{display:flex!important}
+  main footer.sticky{position:static!important;bottom:auto!important}
+}
+</style>
+<div id="adminBackdrop" class="fixed inset-0 z-40 bg-black/50"></div>
+<div id="adminMobileBar" class="fixed top-0 inset-x-0 z-40 h-16 items-center gap-2.5 px-3 bg-[#0b1329] text-white shadow-lg" style="display:none">
+<button id="adminMenuBtn" type="button" aria-label="Buka menu" class="w-10 h-10 shrink-0 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center active:scale-95 transition-colors">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<div class="flex flex-col min-w-0 flex-1 leading-tight">
+<span class="text-[9px] uppercase tracking-[0.14em] text-cyan-300/80 font-bold">FSM Dispatcher</span>
+<span id="adminPageTitle" class="text-[13px] font-bold truncate">Admin</span>
+</div>
+<span id="adminOpsDate" class="shrink-0 text-[10px] font-bold px-2 py-1 rounded-lg bg-white/10 text-slate-200">—</span>
+</div>
+<nav id="adminBottomNav" class="fixed bottom-0 inset-x-0 z-40 h-16 items-stretch bg-[#0b1329] text-slate-400 border-t border-slate-700/70" style="display:none">
+<a data-nav="ringkasan-hari.html" href="ringkasan-hari.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">dashboard</span><span>Ringkasan</span>
+</a>
+<a data-nav="pengajuan-pelanggan.html" href="pengajuan-pelanggan.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">pending_actions</span><span>Pengajuan</span>
+</a>
+<a data-nav="antrean-penugasan.html" href="antrean-penugasan.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">assignment_late</span><span>Antrean</span>
+</a>
+<a data-nav="timeline-rute.html" href="timeline-rute.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">route</span><span>Rute</span>
+</a>
+<button id="adminMoreBtn" type="button" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">apps</span><span>Lainnya</span>
+</button>
+</nav>
+<div id="adminDemoBanner" class="w-full items-start gap-2 rounded-xl border border-amber-300 bg-amber-50 px-3 py-2 text-[11px] leading-snug text-amber-900 shadow-sm" style="display:none">
+<span class="material-symbols-outlined text-[16px] text-amber-700">info</span>
+<span class="flex-1"><strong>Mode demo lokal.</strong> Data tersimpan di perangkat ini (localStorage) — cadangkan rutin dari Ringkasan Hari agar tidak hilang.</span>
+<button id="adminDemoClose" type="button" aria-label="Tutup pemberitahuan" class="shrink-0 w-6 h-6 rounded-md hover:bg-amber-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+<script>
+(function(){
+  'use strict';
+  var page=(location.pathname.split('/').pop()||'').toLowerCase()||'index.html';
+  var TITLES={'ringkasan-hari.html':'Ringkasan Hari','pengajuan-pelanggan.html':'Pengajuan Pelanggan','antrean-penugasan.html':'Antrean & Penugasan','timeline-rute.html':'Timeline Tim & Rute','spk-invoice.html':'SPK & Invoice','master-inventaris.html':'Master & Inventaris','log-audit.html':'Log Audit'};
+  var DATES={'ringkasan-hari.html':'owner-date','antrean-penugasan.html':'csp-date','timeline-rute.html':'rute-date'};
+  var KEY='ip_ops_date';
+  function $(id){ return document.getElementById(id); }
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function todayKey(){ var d=new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+  function readDate(){ try{ var v=localStorage.getItem(KEY); return /^\d{4}-\d{2}-\d{2}$/.test(v||'')?v:''; }catch(e){ return ''; } }
+  function writeDate(v){ try{ localStorage.setItem(KEY,v); }catch(e){} }
+  function fmtDate(iso){ if(!iso) return 'Hari ini';
+    if(iso===todayKey()) return 'Hari ini';
+    try{ return new Date(iso+'T00:00:00').toLocaleDateString('id-ID',{day:'2-digit',month:'short'}); }catch(e){ return iso; } }
+
+  var aside=document.querySelector('aside.fixed');
+  var header=document.querySelector('header.fixed');
+  var backdrop=$('adminBackdrop');
+  if(aside) aside.id='adminAside';
+  if(header) header.id='adminHeader';
+  if(aside){
+    var x=document.createElement('button');
+    x.id='adminDrawerClose'; x.type='button'; x.setAttribute('aria-label','Tutup menu');
+    x.innerHTML='<span class="material-symbols-outlined text-[20px]">close</span>';
+    aside.appendChild(x);
+  }
+  function openDrawer(){ if(!aside||!backdrop) return; aside.classList.add('is-open'); backdrop.classList.add('is-open'); document.body.classList.add('adminDrawerOpen'); }
+  function closeDrawer(){ if(!aside||!backdrop) return; aside.classList.remove('is-open'); backdrop.classList.remove('is-open'); document.body.classList.remove('adminDrawerOpen'); }
+  var mb=$('adminMenuBtn'), more=$('adminMoreBtn');
+  if(mb) mb.addEventListener('click',openDrawer);
+  if(more) more.addEventListener('click',openDrawer);
+  if(backdrop) backdrop.addEventListener('click',closeDrawer);
+  var xb=$('adminDrawerClose'); if(xb) xb.addEventListener('click',closeDrawer);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrawer(); });
+  if(aside) aside.addEventListener('click',function(e){ if(e.target.closest('a')) closeDrawer(); });
+
+  var title=$('adminPageTitle'); if(title) title.textContent=TITLES[page]||'Admin';
+  Array.prototype.forEach.call(document.querySelectorAll('#adminBottomNav [data-nav]'),function(a){
+    if(a.getAttribute('data-nav')===page){ a.classList.add('text-cyan-300','bg-white/5'); }
+  });
+
+  function paintOpsDate(iso){
+    var el=$('adminOpsDate'); if(!el) return;
+    el.textContent=fmtDate(iso||readDate()||todayKey());
+    el.title='Hari operasional aktif';
+  }
+
+  var banner=$('adminDemoBanner');
+  var bannerHidden=false; try{ bannerHidden=sessionStorage.getItem('adminDemoBannerHidden')==='1'; }catch(e){}
+  if(banner){
+    var bc=$('adminDemoClose');
+    if(bc) bc.addEventListener('click',function(){ banner.style.display='none'; try{ sessionStorage.setItem('adminDemoBannerHidden','1'); }catch(e){} });
+  }
+
+  function wrapTables(){
+    Array.prototype.forEach.call(document.querySelectorAll('main table'),function(t){
+      var p=t.parentElement;
+      if(p && p.classList && p.classList.contains('adminTableWrap')) return;
+      var w=document.createElement('div'); w.className='adminTableWrap';
+      t.parentNode.insertBefore(w,t); w.appendChild(t);
+    });
+  }
+
+  function fixOverflow(){
+    var main=document.querySelector('main'); if(!main) return;
+    var vw=document.documentElement.clientWidth;
+    Array.prototype.forEach.call(main.querySelectorAll('div,nav'),function(el){
+      if(el.dataset.ofx||el.classList.contains('flex-nowrap')) return;
+      var s=getComputedStyle(el);
+      if(s.display!=='flex'&&s.display!=='inline-flex') return;
+      if(s.flexDirection!=='row'&&s.flexDirection!=='row-reverse') return;
+      if(s.position==='fixed'||s.position==='absolute') return;
+      var r=el.getBoundingClientRect();
+      if(r.width>vw) return;
+      if(el.scrollWidth<=el.clientWidth+3) return;
+      if(el.querySelectorAll(':scope > button').length>=3){
+        el.style.flexWrap='wrap';
+        el.dataset.ofx='1';
+        return;
+      }
+      el.style.flexWrap='wrap';
+      el.dataset.ofx='1';
+      if(el.scrollWidth>el.clientWidth+3){ el.style.maxWidth='100%'; el.style.overflowX='auto'; }
+    });
+  }
+
+  function initDate(){
+    var id=DATES[page]; if(!id) return;
+    var inp=$(id); if(!inp) return;
+    var v=readDate();
+    if(v && page==='ringkasan-hari.html' && v>todayKey()) v='';
+    if(v && inp.value!==v){
+      inp.value=v;
+      try{ inp.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){}
+    }
+    inp.addEventListener('change',function(){
+      if(/^\d{4}-\d{2}-\d{2}$/.test(inp.value)){ writeDate(inp.value); paintOpsDate(inp.value); }
+    });
+    paintOpsDate(inp.value||readDate());
+  }
+
+  function countBy(list,st){ return list.filter(function(o){ return o.status===st; }).length; }
+  function paintDayStatus(){
+    var box=$('adminDayStatus'); if(!box) return;
+    var inp=$('owner-date');
+    var iso=(inp&&inp.value)||readDate()||todayKey();
+    var all=[]; try{ all=JSON.parse(localStorage.getItem('ip_customer_orders')||'[]')||[]; }catch(e){}
+    var day=all.filter(function(o){ return (o.tgl||todayKey())===iso; });
+    var baru=countBy(day,'Baru')+countBy(day,'Menunggu Persetujuan Customer');
+    var doing=countBy(day,'Dikerjakan');
+    var review=countBy(day,'Review');
+    var sched=day.filter(function(o){ return o.status==='Dijadwalkan'; });
+    var unlocked=sched.filter(function(o){ return !o.ruteLocked; }).length;
+    var closed=day.length && day.every(function(o){ return o.status==='Selesai'||o.status==='Dibatalkan'; });
+    var label='',tone='',sub='',icon='radio_button_checked';
+    if(!day.length){ label='Belum ada order'; tone='bg-slate-100 text-slate-600 border-slate-200'; sub='Belum ada order pada tanggal ini.'; icon='inbox'; }
+    else if(baru){ label='Perlu penugasan'; tone='bg-amber-100 text-amber-800 border-amber-200'; sub=baru+' order menunggu penugasan CSP.'; icon='assignment_late'; }
+    else if(unlocked){ label='Rute belum dikunci'; tone='bg-orange-100 text-orange-800 border-orange-200'; sub=unlocked+' order terjadwal belum punya rute resmi.'; icon='lock_open'; }
+    else if(doing){ label='Sedang berjalan'; tone='bg-blue-100 text-blue-800 border-blue-200'; sub=doing+' order dikerjakan teknisi.'; icon='engineering'; }
+    else if(review){ label='Menunggu validasi'; tone='bg-violet-100 text-violet-800 border-violet-200'; sub=review+' laporan teknisi menunggu review admin.'; icon='fact_check'; }
+    else if(closed){ label='Siap tutup hari'; tone='bg-emerald-100 text-emerald-800 border-emerald-200'; sub='Semua order selesai/dibatalkan — lengkapi rekap dan cadangkan data.'; icon='task_alt'; }
+    else { label='Siap berangkat'; tone='bg-emerald-100 text-emerald-800 border-emerald-200'; sub='Rute terkunci, menunggu teknisi clock-in.'; icon='departure_boarding'; }
+    var detail=[];
+    if(doing) detail.push(doing+' dikerjakan');
+    if(review) detail.push(review+' menunggu validasi');
+    if(unlocked) detail.push(unlocked+' rute belum dikunci');
+    if(baru) detail.push(baru+' baru');
+    if(detail.length) sub=detail.join(' · ');
+    box.className='bg-white rounded-2xl shadow-sm border border-slate-200/90 p-4 flex flex-col sm:flex-row sm:items-center gap-3';
+    box.innerHTML='<div class="w-10 h-10 shrink-0 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center"><span class="material-symbols-outlined text-[21px]">'+icon+'</span></div>'
+      +'<div class="flex-1 min-w-0"><div class="flex flex-wrap items-center gap-2"><h2 class="text-sm font-bold text-slate-900">Status Hari Operasional</h2>'
+      +'<span class="px-2 py-0.5 rounded-full border text-[10px] font-bold '+tone+'">'+label+'</span></div>'
+      +'<p class="text-xs text-slate-500">'+sub+'</p></div>'
+      +'<div class="flex items-center gap-2 shrink-0"><a href="antrean-penugasan.html" class="px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-bold">Antrean</a>'
+      +'<a href="timeline-rute.html" class="px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-bold border border-slate-300">Rute</a></div>';
+  }
+
+  function boot(){
+    wrapTables();
+    fixOverflow();
+    initDate();
+    var main=document.querySelector('main');
+    var host=main&&(main.firstElementChild||main);
+    if(banner && host && banner.parentElement!==host){
+      host.insertBefore(banner,host.firstChild);
+      banner.style.display=bannerHidden?'none':'flex';
+    }
+    if(page==='log-audit.html' && window.matchMedia('(max-width:1023px)').matches){
+      var bcs=[].slice.call(document.querySelectorAll('main div')).filter(function(d){
+        return d.className && d.className.toString().indexOf('uppercase')>=0 && d.textContent.indexOf('Ledger SOP DOC-19')>=0 && d.children.length<=7;
+      })[0];
+      if(bcs) bcs.style.display='none';
+    }
+    if(main){
+      var t=null;
+      var mo=new MutationObserver(function(){
+        clearTimeout(t);
+        t=setTimeout(function(){ wrapTables(); fixOverflow(); },240);
+      });
+      mo.observe(main,{childList:true,subtree:true});
+    }
+    var rt=null;
+    window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(fixOverflow,200); });
+    if(page==='ringkasan-hari.html'){
+      if(host && !$('adminDayStatus')){
+        var el=document.createElement('div'); el.id='adminDayStatus';
+        host.insertBefore(el,(banner&&banner.parentElement===host)?banner.nextSibling:host.firstChild);
+      }
+      paintDayStatus();
+      setInterval(paintDayStatus,15000);
+      document.addEventListener('change',paintDayStatus);
+      window.addEventListener('storage',paintDayStatus);
+    }
+    paintOpsDate();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){ setTimeout(boot,60); });
+  else setTimeout(boot,60);
+})();
+</script>
+<!-- /P0 ADMIN SHELL -->
+
+<script src="assets/p1.js"></script>
+<script src="assets/admin-v32.js"></script>
+</body></html>

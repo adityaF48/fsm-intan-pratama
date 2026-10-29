@@ -1,0 +1,1377 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_dashboard" name="shell-type">
+<title>CV Intan Pratama - FSM Dispatcher Pro</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      body { overscroll-behavior: none; }
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', 'Inter', monospace;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+<link rel="stylesheet" href="assets/p1.css">
+<script src="assets/crew-master.js"></script>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+<!-- SIDEBAR NAVIGASI (Dark Sleek Navy Pro) -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-[#0b1329] border-r border-slate-800/80 z-50 flex flex-col justify-between select-none shadow-2xl">
+<div class="flex flex-col">
+<!-- Brand Header -->
+<div class="px-6 pt-6 pb-4 border-b border-slate-800/60">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/25 ring-1 ring-white/20">
+<span class="material-symbols-outlined text-[22px]">hvac</span>
+</div>
+<div class="flex flex-col">
+<span class="font-extrabold text-[15px] tracking-tight text-white leading-tight">CV INTAN PRATAMA</span>
+<span class="text-[10px] uppercase font-bold tracking-widest text-cyan-400/90 font-mono-code">FSM Dispatcher Pro</span>
+</div>
+</div>
+<!-- Operational Depot Chip -->
+<div class="mt-4 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800/80 flex items-center gap-2.5 shadow-inner">
+<div class="w-7 h-7 rounded-lg bg-blue-500/10 text-cyan-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">warehouse</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Depot Operasional</span>
+<span class="text-xs font-semibold text-slate-200 truncate">Taman Pondok Jati, Sda</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 px-3 mt-4" data-active-classes="bg-blue-600 text-white font-bold shadow-md shadow-blue-600/30">
+<a aria-current="page" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold shadow-md shadow-blue-900/40 border border-blue-400/20" data-path="overview" href="ringkasan-hari.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-cyan-200">dashboard</span>
+<span class="text-[13px]">Ringkasan Hari</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-cyan-300 animate-pulse"></span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="customer-requests" href="./pengajuan-pelanggan.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">pending_actions</span>
+<span class="text-[13px] font-medium">Pengajuan Pelanggan</span>
+</div>
+<span id="nav-pg" class="px-2 py-0.5 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 font-mono-code text-[11px] font-bold">—</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="csp-dispatch" href="./antrean-penugasan.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">assignment_late</span>
+<span class="text-[13px] font-medium">Antrean &amp; Penugasan</span>
+</div>
+<span id="nav-csp" class="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 font-mono-code text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>CSP
+          </span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="timeline-gantt" href="./timeline-rute.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">splitscreen</span>
+<span class="text-[13px] font-medium">Timeline Tim &amp; Rute</span>
+</div>
+<span class="text-[11px] font-mono-code text-cyan-400 font-bold bg-cyan-950/60 px-2 py-0.5 rounded-md border border-cyan-800/40">TSP Aktif</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="work-orders-invoices" href="./spk-invoice.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">receipt_long</span>
+<span class="text-[13px] font-medium">SPK &amp; Invoice</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="inventory-master" href="./master-inventaris.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">inventory_2</span>
+<span class="text-[13px] font-medium">Master &amp; Inventaris</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="audit-logs" href="./log-audit.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">history_edu</span>
+<span class="text-[13px] font-medium">Log Audit</span>
+</div>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom Hotline & Info -->
+<div class="p-3 mb-2 flex flex-col gap-2">
+<div class="p-3 rounded-xl bg-gradient-to-r from-rose-950/60 to-rose-900/40 border border-rose-800/50 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-rose-600/30 text-rose-400 flex items-center justify-center ring-1 ring-rose-500/40">
+<span class="material-symbols-outlined text-[18px]">sos</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-extrabold text-rose-300 uppercase tracking-wider">Hotline Darurat</span>
+<span class="font-mono-code text-xs font-bold text-white">0811-3450-990</span>
+</div>
+</div>
+<a class="w-7 h-7 rounded-lg bg-rose-600 hover:bg-rose-500 text-white flex items-center justify-center transition-colors shadow-sm" href="tel:08113450990" title="Hubungi Hotline">
+<span class="material-symbols-outlined text-[15px]">call</span>
+</a>
+</div>
+<div class="px-2 py-1.5 flex items-center justify-between text-slate-400 text-[11px] font-medium border-t border-slate-800/60">
+<span class="truncate">Surabaya &amp; Sidoarjo Rayon</span>
+<span class="font-mono-code text-cyan-400 font-semibold bg-cyan-950/40 px-1.5 py-0.5 rounded border border-cyan-800/40">v2.4.0</span>
+</div>
+</div>
+</aside>
+<!-- CONTENT SHELL WRAPPER -->
+<div class="pl-72 flex flex-col min-h-screen">
+<!-- TOP HEADER BAR (Modern Dark Slate Pro) -->
+<header class="fixed top-0 left-72 right-0 h-16 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800/80 z-40 flex items-center justify-between px-8 select-none shadow-md">
+<div class="flex items-center gap-4">
+<!-- Date Time Pill -->
+<div class="flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/70 text-slate-200 shadow-inner">
+<span class="material-symbols-outlined text-cyan-400 text-[18px]">schedule</span>
+<span id="hdr-date" class="font-mono-code text-xs font-medium text-slate-300">Senin, 26 Okt 2026</span>
+<span class="w-1 h-3 rounded-full bg-slate-700"></span>
+<span id="hdr-clock" class="font-mono-code text-xs font-bold text-cyan-300">08:15 WIB</span>
+</div>
+<!-- Telemetry Status Tag -->
+<div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/70 border border-emerald-600/40 text-emerald-300 text-xs font-semibold shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="">Real-time Telemetri Aktif</span>
+</div>
+</div>
+<!-- User Action Header -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors relative border border-slate-700/60 bg-slate-900/60" title="Notifikasi" type="button">
+<span class="material-symbols-outlined text-[19px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-slate-900"></span>
+</button>
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors border border-slate-700/60 bg-slate-900/60" title="Setelan" type="button">
+<span class="material-symbols-outlined text-[19px]">tune</span>
+</button>
+</div>
+<div class="h-6 w-[1px] bg-slate-700/80"></div>
+<!-- Dispatcher Avatar Info -->
+<div class="flex items-center gap-3 pl-1">
+<div class="flex flex-col text-right">
+<span class="text-xs font-bold text-white leading-tight tracking-tight">Budi Santoso</span>
+<span class="text-[11px] text-cyan-300/80 font-medium">Dispatcher / Kepala Ops</span>
+</div>
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 ring-2 ring-blue-400/40 flex items-center justify-center text-white shadow-md">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN DASHBOARD CONTENT -->
+<main class="w-full pt-20 bg-[#f8fafc] flex-1 px-8 pb-10">
+<div class="flex flex-col w-full max-w-7xl mx-auto space-y-6">
+<!-- SUB-HEADER ALERT & OPERATIONAL ENVIRONMENT BANNER -->
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#1e3a8a] p-5 text-white shadow-lg border border-slate-700/60">
+<div class="absolute -right-8 -bottom-8 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-2.5 text-xs">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/80 text-slate-200">
+<span class="material-symbols-outlined text-[16px] text-emerald-400">calendar_today</span>
+<span id="sub-date" class="font-medium">Senin, 26 Okt 2026</span>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-950/40 border border-amber-600/40 text-amber-200 font-medium">
+<span class="material-symbols-outlined text-[16px] text-amber-400">wb_sunny</span>
+<span class="">Surabaya &amp; Sidoarjo: 32°C Panas Terik (Surge Demand)</span>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/80 text-slate-200">
+<span class="material-symbols-outlined text-[16px] text-cyan-400">location_on</span>
+<span class="">Depot: Taman Pondok Jati, Sukodono, Sidoarjo</span>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-600/40 text-emerald-300 font-semibold">
+<span class="material-symbols-outlined text-[15px] text-emerald-400">lock_clock</span>
+<span class="">Cut-Off Masuk: 06:00 WIB (Terlewati)</span>
+</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs text-blue-200/90 font-medium hidden sm:inline">Aturan FSM: Toleransi jam fleksibel maks 120 mnt</span>
+<button class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/10 border border-white/25 text-white font-semibold text-xs hover:bg-white/20 transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px] text-electric-cyan">tune</span>
+                Parameter Algoritma
+              </button>
+</div>
+</div>
+</div><section class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-4"><div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 mb-3 border-b border-slate-100"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600"><span class="material-symbols-outlined text-[19px]">flash_on</span></div><div class="flex flex-col"><div class="flex items-center gap-2"><h3 class="font-bold text-sm text-slate-900">Aksi Cepat Operasional</h3></div><p class="text-xs text-slate-500">Solver CSP adalah langkah utama hari ini. Aksi lain tersedia di menu "Aksi lain".</p></div></div><div class="flex items-center gap-2"><span class="text-[11px] text-slate-500 font-medium hidden sm:inline">Mode Dispatcher:</span><span class="px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 font-mono-code text-xs font-bold border border-blue-200">Semi-Otomatis</span></div></div><div class="flex flex-col sm:flex-row sm:items-center gap-2.5"><button class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-600/30 transition-all active:scale-95" type="button"><span class="material-symbols-outlined text-[17px]">bolt</span> Panggil Solver CSP Otomatis</button><details class="w-full sm:w-auto"><summary class="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-300 text-slate-700 font-bold text-xs cursor-pointer select-none list-none hover:bg-slate-50 transition-colors"><span class="material-symbols-outlined text-[17px] text-slate-600">more_horiz</span> Aksi lain (6)<span class="material-symbols-outlined text-[16px] text-slate-500">expand_more</span></summary><div class="mt-2 flex flex-wrap items-center gap-2.5"><button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs border border-slate-300 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[17px] text-slate-600">route</span> Kalkulasi Ulang Rute TSP</button><button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs border border-slate-300 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[17px] text-slate-600">chat</span> Broadcast WA Batch ke Semua PIC</button><button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs border border-slate-300 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[17px] text-slate-600">print</span> Cetak Semua SPK Tim (Shift Pagi)</button><button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs border border-slate-300 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[17px] text-amber-600">sync_problem</span> Simulasi Kendala &amp; Re-route</button><button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs border border-slate-300 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[17px] text-slate-600">lock</span> Kunci Jadwal Hari H</button><button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs border border-slate-300 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[17px] text-slate-600">download</span> Unduh Rekap Harian Excel/PDF</button></div></details></div></section>
+<!-- PROTOKOL ALUR KERJA HARIAN DISPATCHER (Sticky Interactive Workflow Header) -->
+<section class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-4 border-b border-slate-100 gap-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-bold text-base text-slate-900 tracking-tight">Protokol Alur Kerja Harian Dispatcher</h2>
+<span class="text-[11px] font-mono-code font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200">SOP CV Intan Pratama DOC-7</span>
+</div>
+<p class="text-xs text-slate-500">Urutan tindakan sistem yang wajib dieksekusi secara berurutan hari ini.</p>
+</div>
+</div>
+<div class="flex items-center gap-3 bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-200/80">
+<div class="flex flex-col items-end">
+<span class="text-[11px] text-slate-500 font-medium">Penyelesaian Harian:</span>
+<span class="font-mono-code text-xs font-bold text-blue-600" id="proto-pct">0% (Step 1)</span>
+</div>
+<div class="w-24 bg-slate-200 h-2.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-blue-600 to-cyan-500 h-full rounded-full transition-all" id="proto-bar" style="width: 0%"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+<!-- Step 1: Active Attention -->
+<div class="flex flex-col p-3.5 rounded-xl bg-amber-50/70 border border-amber-200 hover:border-amber-300 transition-all shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="w-6 h-6 rounded-lg bg-amber-600 text-white flex items-center justify-center font-mono-code text-xs font-bold shadow-sm">1</span>
+<span class="px-2 py-0.5 rounded-full bg-rose-100 border border-rose-200 text-rose-700 text-[10px] font-bold font-mono-code" id="p-act">0 Perlu Tindakan</span>
+</div>
+<span class="text-xs font-bold text-amber-900">Reschedule &amp; Batal</span>
+<span class="text-[11px] text-slate-600 mt-1 leading-snug">Wajib putuskan pertama agar slot kapasitas rilis.</span>
+</div>
+<!-- Step 2: In-queue -->
+<div class="flex flex-col p-3.5 rounded-xl bg-blue-50/60 border border-blue-200 hover:border-blue-300 transition-all shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center font-mono-code text-xs font-bold shadow-sm">2</span>
+<span class="px-2 py-0.5 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-[10px] font-bold font-mono-code" id="p-queue">0 Antrean</span>
+</div>
+<span class="text-xs font-bold text-slate-900">Antrean Order Masuk</span>
+<span class="text-[11px] text-slate-600 mt-1 leading-snug">1 Order reguler masuk lewat cut-off 06:00 WIB.</span>
+</div>
+<!-- Step 3: Current Focus (Glowing Accent) -->
+<div class="flex flex-col p-3.5 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white shadow-md shadow-blue-500/20 ring-2 ring-blue-500/50">
+<div class="flex items-center justify-between mb-2">
+<span class="w-6 h-6 rounded-lg bg-white text-blue-700 flex items-center justify-center font-mono-code text-xs font-extrabold shadow-sm">3</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-400 text-emerald-950 text-[10px] font-extrabold font-mono-code shadow-sm">CSP Ready</span>
+</div>
+<span class="text-xs font-bold text-white flex items-center gap-1">
+                Penugasan Tim (CSP)
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+</span>
+<span class="text-[11px] text-blue-100 mt-1 leading-snug">Evaluasi keahlian TU, kuota unit, dan beban waktu.</span>
+</div>
+<!-- Step 4: Pending -->
+<div class="flex flex-col p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700">
+<div class="flex items-center justify-between mb-2">
+<span class="w-6 h-6 rounded-lg bg-slate-300 text-slate-700 flex items-center justify-center font-mono-code text-xs font-bold">4</span>
+<span class="text-[10px] font-mono-code font-semibold px-2 py-0.5 rounded bg-slate-200/80 text-slate-600" id="p-teams">0 Tim Aktif</span>
+</div>
+<span class="text-xs font-bold text-slate-800">Optimasi Rute (TSP)</span>
+<span class="text-[11px] text-slate-500 mt-1 leading-snug">Kluster zona Sidoarjo vs Surabaya &amp; jeda aman 30 mnt.</span>
+</div>
+<!-- Step 5: Final -->
+<div class="flex flex-col p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700">
+<div class="flex items-center justify-between mb-2">
+<span class="w-6 h-6 rounded-lg bg-slate-300 text-slate-700 flex items-center justify-center font-mono-code text-xs font-bold">5</span>
+<span class="text-[10px] font-mono-code font-semibold px-2 py-0.5 rounded bg-slate-200/80 text-slate-600" id="p-spk">0 Siap SPK</span>
+</div>
+<span class="text-xs font-bold text-slate-800">Terbitkan SPK Massal</span>
+<span class="text-[11px] text-slate-500 mt-1 leading-snug">Cetak SPK fisik &amp; broadcast rute ke WhatsApp teknisi.</span>
+</div>
+</div>
+</section>
+<!-- 5 KEY OPERATIONAL KPI METRICS CARDS -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<!-- Card 1: Total Orders -->
+<div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200/90 border-l-4 border-l-blue-600 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Total Beban Hari Ini</span>
+<span class="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-mono-code text-3xl font-extrabold text-slate-900 leading-none" id="k-total">0</span>
+<span class="text-xs text-slate-500 font-medium">Order AC</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-3">
+<span class="px-2 py-0.5 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono-code text-[10px] font-bold" id="k-sched">0 Terjadwal</span>
+<span class="px-2 py-0.5 rounded-md bg-amber-50 border border-amber-200 text-amber-700 font-mono-code text-[10px] font-bold" id="k-queue">0 Antrean</span>
+<span class="px-2 py-0.5 rounded-md bg-rose-50 border border-rose-200 text-rose-700 font-mono-code text-[10px] font-bold" id="k-late">0 Late</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Field Technicians -->
+<div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200/90 border-l-4 border-l-cyan-600 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Kekuatan Armada</span>
+<span class="w-8 h-8 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center border border-cyan-100">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-mono-code text-3xl font-extrabold text-slate-900 leading-none" id="k-tim">2 Tim</span>
+<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold font-mono-code" id="k-hadir">4 kru siaga</span>
+</div>
+<p class="text-[11px] text-slate-600 mt-2 leading-relaxed font-medium" id="k-personel">
+                4 Personel: 2 Teknisi Utama (TU) + 2 Helper — 1 tim = 1 TU + 1 Helper.
+              </p>
+</div>
+</div>
+<!-- Card 3: Capacity Utilization -->
+<div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200/90 border-l-4 border-l-indigo-600 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Kapasitas Kerja FSM</span>
+<span class="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-100">
+<span class="material-symbols-outlined text-[18px]">hourglass_top</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="font-mono-code text-2xl font-bold text-slate-900 leading-none" id="k-load">0 <span class="text-xs text-slate-500 font-normal">/ 18 Jam</span></span>
+<span class="font-mono-code text-xs font-extrabold text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100" id="k-pct">0%</span>
+</div>
+<div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden p-0.5 border border-slate-200">
+<div class="bg-gradient-to-r from-blue-600 to-indigo-600 h-full rounded-full transition-all" id="k-bar" style="width: 0%"></div>
+</div>
+<span class="text-[10px] text-slate-500 mt-2 block font-medium" id="k-sisa-wrap">Sisa ruang darurat: <strong class="text-slate-800 font-mono-code" id="k-sisa">18 jam kerja</strong></span>
+</div>
+</div>
+<!-- Card 4: Service Type Mix -->
+<div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200/90 border-l-4 border-l-sky-500 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Komposisi Unit Kerja</span>
+<span class="w-8 h-8 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center border border-sky-100">
+<span class="material-symbols-outlined text-[18px]">view_in_ar</span>
+</span>
+</div>
+<div class="flex flex-col gap-1.5 text-xs">
+<div class="flex items-center justify-between gap-2">
+<span class="text-slate-600 text-[11px]">Cuci Reguler</span>
+<span class="font-mono-code font-bold text-slate-900 text-xs" id="k-cuci">0</span>
+</div>
+<div class="flex items-center justify-between gap-2">
+<span class="text-slate-600 text-[11px]">Pemasangan Baru</span>
+<span class="font-mono-code font-bold text-blue-600 text-xs" id="k-pasang">0</span>
+</div>
+<div class="flex items-center justify-between gap-2">
+<span class="text-slate-600 text-[11px]">Trouble / Kompresor</span>
+<span class="font-mono-code font-bold text-rose-600 text-xs" id="k-trouble">0</span>
+</div>
+<p class="text-[10px] text-slate-400 leading-snug pt-1 border-t border-slate-100">Batas per tim: cuci 7 unit · pasang 2 unit · trouble wajib TU bersertifikat.</p>
+</div>
+</div>
+<!-- Card 5: Projected Revenue -->
+<div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200/90 border-l-4 border-l-emerald-600 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Omset Hari Ini</span>
+<span class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</span>
+</div>
+<div>
+<span class="font-mono-code text-xl font-black text-emerald-700 block leading-tight" id="k-omset">Rp 0</span>
+<div class="mt-2.5 flex flex-col gap-1 text-[11px] text-slate-600 pt-1.5 border-t border-slate-100">
+<div class="flex justify-between items-center">
+<span class="">Pending Antrean:</span>
+<span class="font-mono-code text-amber-700 font-bold" id="k-pending">Rp 0</span>
+</div>
+<p class="text-[10px] text-slate-400 leading-snug">Omzet = total invoice yang sudah divalidasi Admin, dikelompokkan pada tanggal kerja.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- LAPORAN PEMILIK & CADANGAN DATA -->
+<section class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+<div class="xl:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3 flex-wrap">
+<div>
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Ringkasan untuk pemilik</span>
+<h2 class="text-base font-extrabold text-slate-900 mt-0.5">Kinerja operasional hari ini</h2>
+<p class="text-[11px] text-slate-500 mt-1">Metrik di sini tidak diulang dari kartu KPI di atas: rata-rata nilai invoice bulan berjalan dan kecepatan penetapan tim.</p>
+</div>
+<div class="flex items-center gap-2">
+<label class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 bg-slate-50">
+<span class="material-symbols-outlined text-[15px] text-slate-500">event</span>
+<input id="owner-date" type="date" class="bg-transparent text-[11px] font-bold text-slate-700 outline-none">
+</label>
+<button id="btn-refresh" type="button" class="px-2.5 py-1.5 rounded-lg bg-blue-600 text-white text-[11px] font-bold hover:bg-blue-700">Muat ulang</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+<div class="rounded-xl border border-slate-200 p-3"><span class="text-[10px] font-bold uppercase tracking-wide text-slate-500">Rata-rata invoice bulan ini</span><p class="font-mono-code text-lg font-extrabold text-slate-900" id="o-avg">Rp 0</p><p class="text-[10px] text-slate-500" id="o-avg-sub">—</p></div>
+<div class="rounded-xl border border-slate-200 p-3"><span class="text-[10px] font-bold uppercase tracking-wide text-slate-500">SLA respon penugasan</span><p class="font-mono-code text-lg font-extrabold text-blue-700" id="o-sla">—</p><p class="text-[10px] text-slate-500" id="o-sla-sub">order masuk → tim ditetapkan</p></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="rounded-xl border border-slate-200 p-3">
+<p class="text-[11px] font-extrabold text-slate-700 mb-1.5">Beban per tim</p>
+<div id="o-team" class="text-[11px] text-slate-600 flex flex-col gap-1">—</div>
+</div>
+<div class="rounded-xl border border-slate-200 p-3">
+<p class="text-[11px] font-extrabold text-slate-700 mb-1.5">Pembatalan &amp; penolakan</p>
+<div id="o-cancel" class="text-[11px] text-slate-600 flex flex-col gap-1">—</div>
+</div>
+</div>
+<p class="text-[10px] text-slate-400">Omzet = total invoice (jasa + material + PPN). Data hanya tersimpan di perangkat ini sampai backend aktif.</p>
+</div>
+<div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5 flex flex-col gap-3">
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Cadangan data</span>
+<h2 class="text-base font-extrabold text-slate-900">Unduh &amp; pulihkan</h2>
+<p class="text-[11px] text-slate-500 leading-relaxed">Data demo ini hidup di localStorage perangkat. Unduh cadangan JSON sebelum menghapus data browser, memakai mode privat, atau menyerahkan perangkat ke orang lain.</p>
+<div class="flex flex-col gap-2">
+<button id="btn-backup" type="button" class="w-full px-3 py-2.5 rounded-lg bg-emerald-600 text-white text-[12px] font-bold hover:bg-emerald-700 flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[16px]">download</span>Unduh cadangan JSON</button>
+<label class="w-full px-3 py-2.5 rounded-lg bg-slate-100 text-slate-800 text-[12px] font-bold hover:bg-slate-200 flex items-center justify-center gap-1.5 cursor-pointer">
+<span class="material-symbols-outlined text-[16px]">upload</span>Pulihkan dari file
+<input id="file-restore" type="file" accept="application/json,.json" class="hidden">
+</label>
+<button id="btn-clear" type="button" class="w-full px-3 py-2.5 rounded-lg bg-white border border-rose-300 text-rose-700 text-[12px] font-bold hover:bg-rose-50 flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[16px]">delete_sweep</span>Hapus data uji di perangkat</button>
+</div>
+<p id="backup-note" class="text-[11px] font-semibold text-slate-500"></p>
+<div class="mt-auto pt-3 border-t border-slate-100 text-[10px] text-slate-400 leading-relaxed" id="store-fill">Penyimpanan: —</div>
+</div>
+</section>
+<!-- PRIORITAS 1: PENGAJUAN PELANGGAN (Reschedule & Pembatalan) -->
+<section class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-4 border-b border-slate-100">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-rose-50 border border-rose-200 flex items-center justify-center text-rose-600 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-bold text-base text-slate-900">Prioritas 1: Pengajuan Pelanggan yang Membutuhkan Keputusan</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-rose-600 text-white font-mono-code text-[10px] font-bold uppercase tracking-wider">2 Permintaan Menunggu</span>
+</div>
+<p class="text-xs text-slate-500">Sesuai aturan operasional: permintaan ini wajib diputuskan lebih dahulu sebelum mengunci rute TSP.</p>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-rose-50 text-rose-800 px-3 py-1 rounded-lg border border-rose-200 text-xs font-semibold self-start sm:self-auto">
+<span class="material-symbols-outlined text-[16px] text-rose-600">timer</span>
+<span class="">Batas SLA Respon: &lt; 30 Menit</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+<!-- Request Item 1: Reschedule (Bpk. Hendro) -->
+<div class="p-4 rounded-xl bg-amber-50/40 border border-amber-200 flex flex-col justify-between shadow-sm hover:border-amber-300 transition-all">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 font-mono-code text-xs font-bold border border-amber-300/80">ORD-2610-008</span>
+<span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-mono-code text-[10px] font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">edit_calendar</span> Reschedule
+                    </span>
+</div>
+<span class="text-[11px] font-mono-code text-slate-500 font-medium">Diajukan 07:42 WIB</span>
+</div>
+<div class="flex flex-col gap-1 mb-3">
+<span class="text-sm font-bold text-slate-900">Bpk. Hendro Kurniawan</span>
+<span class="text-xs text-slate-600 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-cyan-600">pin_drop</span> Jl. Rungkut Asri Timur No. 14, Surabaya (Zona Timur)
+                  </span>
+<span class="text-xs font-semibold text-blue-700 mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">hvac</span> Pemasangan AC 1.5 PK Daikin Inverter Baru
+                  </span>
+</div>
+<!-- Quote Alasan -->
+<div class="p-3 rounded-xl bg-white border border-amber-200/90 mb-3 shadow-inner">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-amber-600 mt-0.5">format_quote</span>
+<div class="text-xs">
+<span class="text-[10px] text-slate-500 uppercase font-bold block">Alasan Permintaan Pelanggan:</span>
+<p class="text-slate-800 italic mt-0.5 font-medium leading-relaxed">"Mohon dimajukan ke Selasa 27 Okt pkl 10:00 WIB, tukang sipil belum tuntas plester jalur pipa."</p>
+<div class="mt-2 p-1.5 rounded-md bg-blue-50 border border-blue-200 text-blue-800 text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-blue-600">info</span>
+<span class="">Dampak Sistem: Membebaskan 2.5 jam kerja Tim Alpha di slot 13:00 - 15:30 WIB.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-end gap-2 pt-2 border-t border-amber-200/60"><details class="mr-auto"><summary class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-600 text-xs font-semibold cursor-pointer select-none list-none hover:bg-slate-50 transition-colors"><span class="material-symbols-outlined text-[15px] text-slate-500">more_horiz</span> Aksi lain</summary><div class="mt-2 flex flex-col gap-1.5"><button class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-colors flex items-center gap-1" type="button"><span class="material-symbols-outlined text-[15px] text-slate-500">history</span> Riwayat</button><button class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-rose-600 text-xs font-semibold hover:bg-rose-50 hover:border-rose-300 transition-colors flex items-center gap-1" type="button"><span class="material-symbols-outlined text-[15px] text-rose-500">block</span> Tolak Catatan</button></div></details><button class="px-2.5 py-1.5 rounded-lg bg-white border border-blue-200 text-blue-700 text-xs font-semibold hover:bg-blue-50 transition-colors flex items-center gap-1" type="button"><span class="material-symbols-outlined text-[15px] text-blue-600">calendar_month</span> Tawarkan Slot Alternatif</button><button class="px-3.5 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-bold shadow-md shadow-blue-600/30 hover:bg-blue-700 transition-all flex items-center gap-1.5 active:scale-95" type="button"><span class="material-symbols-outlined text-[16px]">check_circle</span> Setujui &amp; Bebaskan Slot</button></div>
+</div>
+<!-- Request Item 2: Batal (Ibu Maya) -->
+<div class="p-4 rounded-xl bg-rose-50/40 border border-rose-200 flex flex-col justify-between shadow-sm hover:border-rose-300 transition-all">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-rose-100 text-rose-900 font-mono-code text-xs font-bold border border-rose-300/80">ORD-2610-012</span>
+<span class="px-2.5 py-0.5 rounded-full bg-rose-600 text-white font-mono-code text-[10px] font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">cancel</span> Pembatalan
+                    </span>
+</div>
+<span class="text-[11px] font-mono-code text-slate-500 font-medium">Diajukan 08:04 WIB</span>
+</div>
+<div class="flex flex-col gap-1 mb-3">
+<span class="text-sm font-bold text-slate-900">Ibu Maya Sandra</span>
+<span class="text-xs text-slate-600 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-cyan-600">pin_drop</span> Perum Deltasari Indah Blok BD, Waru, Sidoarjo (Zona Waru)
+                  </span>
+<span class="text-xs font-semibold text-blue-700 mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">cleaning_services</span> Cuci AC Reguler (2 Unit Split 1 PK)
+                  </span>
+</div>
+<!-- Quote Alasan -->
+<div class="p-3 rounded-xl bg-white border border-rose-200/90 mb-3 shadow-inner">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-rose-600 mt-0.5">report_problem</span>
+<div class="text-xs">
+<div class="flex items-center gap-2">
+<span class="text-[10px] text-slate-500 uppercase font-bold">Alasan Validasi (Min 5 Karakter):</span>
+<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold font-mono-code">Valid (14 Karakter)</span>
+</div>
+<p class="text-slate-800 italic mt-1 font-medium leading-relaxed">"Tugas dinas mendadak ke luar kota jam 10 pagi ini."</p>
+<div class="mt-2 p-1.5 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-emerald-600">verified</span>
+<span class="">Aturan Batal H-0: Tidak ada denda (sebelum teknisi OTW). Slot Tim Beta pkl 14:00 bebas.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-end gap-2 pt-2 border-t border-rose-200/60"><details class="mr-auto"><summary class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-600 text-xs font-semibold cursor-pointer select-none list-none hover:bg-slate-50 transition-colors"><span class="material-symbols-outlined text-[15px] text-slate-500">more_horiz</span> Aksi lain</summary><div class="mt-2 flex flex-col gap-1.5"><button class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-colors flex items-center gap-1" type="button"><span class="material-symbols-outlined text-[15px] text-slate-500">person_search</span> Profil Konsumen</button><a class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-colors flex items-center gap-1" href="https://wa.me/628123456789" target="_blank"><span class="material-symbols-outlined text-[15px] text-emerald-600">call</span> Hubungi Telp</a></div></details><button class="px-2.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-semibold hover:bg-emerald-100 transition-colors flex items-center gap-1" type="button"><span class="material-symbols-outlined text-[15px] text-emerald-600">chat</span> Minta Bukti via WA</button><button class="px-3.5 py-1.5 rounded-lg bg-rose-600 text-white text-xs font-bold shadow-md shadow-rose-600/30 hover:bg-rose-700 transition-all flex items-center gap-1.5 active:scale-95" type="button"><span class="material-symbols-outlined text-[16px]">delete_forever</span> Konfirmasi Batal &amp; Kuota</button></div>
+</div>
+</div>
+</section>
+<!-- PRIORITAS 2 & 3: ANTREAN ORDER & MESIN EVALUASI CSP SOLVER -->
+<section class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 mb-4 border-b border-slate-100">
+<div>
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<h2 class="font-bold text-base text-slate-900">Antrean Order &amp; Rekomendasi Penugasan Tim (CSP Solver)</h2>
+</div>
+<p class="text-xs text-slate-500 mt-0.5">Saran sistem berbasis kelayakan keahlian (Teknisi Utama), batas kuota unit, jeda antar-job, dan radius depot.</p>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center gap-1 bg-slate-100/90 p-1 rounded-xl border border-slate-200 self-start lg:self-auto max-w-full overflow-x-auto"><button class="px-2.5 py-1.5 rounded-lg bg-white text-blue-700 font-bold text-xs shadow-sm border border-slate-200/80" type="button">Semua (6)</button><button class="px-2.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 text-xs font-medium" type="button">Order Baru (2)</button><button class="px-2.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 text-xs font-medium flex items-center gap-1" type="button"><span class="">Lewat Cut-off</span><span class="w-2 h-2 rounded-full bg-rose-500"></span></button><button class="px-2.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 text-xs font-medium flex items-center gap-1" type="button"><span class="material-symbols-outlined text-[13px] text-amber-600">warning</span> Bentrok (1)</button><button class="px-2.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 text-xs font-medium" type="button">Cuci Rutin</button><button class="px-2.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 text-xs font-medium" type="button">Pasang AC</button></div>
+</div>
+<!-- SPLIT LAYOUT: ORDER DETAILS (LEFT) VS CSP 4 TEAMS MATRIX (RIGHT) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+<!-- LEFT COLUMN: Selected Order Focus (5 cols) -->
+<div class="lg:col-span-5 flex flex-col justify-between p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="px-2.5 py-1 rounded-full bg-amber-500 text-white font-mono-code text-[10px] font-extrabold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span> Fokus Penugasan Saat Ini
+                  </span>
+<span class="font-mono-code text-xs font-bold text-slate-600 bg-white px-2 py-0.5 rounded border border-slate-200">ID: ORD-2610-005</span>
+</div>
+<div class="flex items-baseline justify-between mb-2 pb-2 border-b border-slate-200/80">
+<h3 class="text-base font-extrabold text-slate-900">Pemasangan AC Baru 1.5 PK</h3>
+<span class="font-mono-code text-base font-black text-blue-700">Rp 350.000</span>
+</div>
+<div class="flex flex-col gap-2 text-xs mb-4">
+<div class="flex items-center gap-2 text-slate-800">
+<span class="material-symbols-outlined text-[16px] text-blue-600">person</span>
+<span class="font-bold">Bpk. Kevin Wibowo</span>
+<span class="text-slate-500 font-normal">(Pelanggan Reguler)</span>
+</div>
+<div class="flex items-start gap-2 text-slate-700">
+<span class="material-symbols-outlined text-[16px] text-blue-600 mt-0.5">location_on</span>
+<span class="">Jl. Rungkut Madya No. 88, Gunung Anyar, Surabaya (Zona Timur)</span>
+</div>
+<div class="flex items-center gap-2 text-slate-700">
+<span class="material-symbols-outlined text-[16px] text-blue-600">schedule</span>
+<span class="">Preferensi Pelanggan: <strong class="text-slate-900 font-mono-code">10:00 WIB</strong> <span class="text-slate-500">(Fleksibilitas: ±60 mnt)</span></span>
+</div>
+<div class="flex items-center gap-2 text-slate-700">
+<span class="material-symbols-outlined text-[16px] text-blue-600">construction</span>
+<span class="">Scope: Pemasangan indoor/outdoor + Pipa Tembaga 4m + Vakum Pipa</span>
+</div>
+</div>
+<!-- Strict Business Constraints Card -->
+<div class="p-3.5 rounded-xl bg-white border border-slate-200/90 mb-3 shadow-sm">
+<span class="text-[10px] uppercase font-bold text-slate-800 flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-[15px] text-blue-600">rule</span> Syarat Mutlak CSP (DOC-7)
+                  </span>
+<ul class="flex flex-col gap-1.5 text-xs text-slate-600">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span class="">Wajib minimal 1 Teknisi Utama (TU) bersertifikat vakum.</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span class="">Batas beban pasang: Tim belum mencapai kuota 2 AC/hari.</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span class="">Jeda perjalanan aman: minimal 30 menit dari order sebelumnya.</span>
+</li>
+</ul>
+</div>
+<!-- Cut-off info tag -->
+<div class="p-2.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-amber-600 mt-0.5">notification_important</span>
+<span class="">Order ini masuk sistem pkl 06:14 WIB (Lewat cut-off reguler 06:00). Diprioritaskan karena kuota pasang zona Surabaya masih terbuka.</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-slate-200 flex items-center justify-between text-xs text-slate-600 font-medium">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-slate-400">timelapse</span>
+                  Estimasi Durasi Kerja: <strong>120 Menit</strong>
+</span>
+<span class="font-mono-code font-bold text-slate-900 bg-white px-2 py-0.5 rounded border border-slate-200">Bobot Beban: 2.5 Jam</span>
+</div><div class="flex flex-wrap items-center gap-2 pt-2.5 mt-2 border-t border-slate-200/80"><button class="flex-1 inline-flex items-center justify-center gap-1 px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[15px] text-blue-600">swap_horiz</span> Pindahkan</button><button class="flex-1 inline-flex items-center justify-center gap-1 px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[15px] text-indigo-600">call_split</span> Split Job</button><button class="flex-1 inline-flex items-center justify-center gap-1 px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[15px] text-emerald-600">chat</span> WA Konsumen</button><button class="flex-1 inline-flex items-center justify-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-100 border border-slate-300 text-slate-800 text-xs font-bold hover:bg-slate-200 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[15px] text-slate-700">person_add</span> Manual</button></div>
+</div>
+<!-- RIGHT COLUMN: CSP Matrix Recommendation (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-3">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-blue-600">query_stats</span>
+<span class="text-xs font-bold text-slate-900">Hasil Evaluasi 4 Tim Aktif</span>
+</div>
+<span class="text-[11px] font-mono-code font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">2 Tim Layak • 2 Tim Diskualifikasi</span>
+</div>
+<!-- Tim Alpha: RECOMMENDED (Valid 94/100) -->
+<div class="p-4 rounded-xl bg-emerald-50/40 border-2 border-emerald-500 shadow-md relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-emerald-600 text-white px-3 py-1 font-mono-code text-[10px] font-extrabold rounded-bl-xl shadow-sm flex items-center gap-1 tracking-wider uppercase">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> Rekomendasi Terbaik CSP
+                </div>
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 pr-12">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h4 class="text-sm font-black text-slate-900">Tim Alpha</h4>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white font-mono-code text-[10px] font-extrabold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> LAYAK (Skor 94/100)
+                      </span>
+</div>
+<p class="text-xs text-slate-600">
+                      Teknisi Utama: <strong class="text-slate-900">Pak Adrian (Sertifikat Daikin)</strong> • Helper: <strong class="text-slate-900">Budi</strong>
+</p>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-mono-code text-sm font-extrabold text-emerald-800">5.5 / 9.0 Jam</span>
+<span class="block text-[10px] text-slate-500">Beban Saat Ini</span>
+</div>
+</div>
+<!-- Detail Metrics Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 p-2.5 rounded-lg bg-white border border-emerald-200/80 text-[11px]">
+<div>
+<span class="text-slate-500 block text-[10px]">Kuota Pasang Baru:</span>
+<span class="font-mono-code text-slate-900 font-bold">1 / 2 Unit (Tersedia)</span>
+</div>
+<div>
+<span class="text-slate-500 block text-[10px]">Jarak dari Order #1:</span>
+<span class="font-mono-code text-slate-900 font-bold">14 Menit (Sama Zona)</span>
+</div>
+<div>
+<span class="text-slate-500 block text-[10px]">Jeda Perjalanan:</span>
+<span class="font-mono-code text-emerald-700 font-extrabold">45 Mnt (Aman &gt;30)</span>
+</div>
+<div>
+<span class="text-slate-500 block text-[10px]">Kelengkapan Alat:</span>
+<span class="font-mono-code text-emerald-700 font-extrabold">Vakum + Flare Lengkap</span>
+</div>
+</div>
+<div class="mt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-2 border-t border-emerald-200/80">
+<span class="text-xs text-slate-700 font-medium">
+                    Jadwal yang disarankan sistem: <strong class="text-emerald-900 font-mono-code font-bold">10:30 - 12:30 WIB</strong> (Pelanggan toleran)
+                  </span>
+<button class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md shadow-emerald-600/30 transition-all flex items-center justify-center gap-1.5 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px]">assignment_turned_in</span>
+                    Tugaskan ke Tim Alpha
+                  </button>
+</div>
+</div>
+<!-- Tim Beta: ELIGIBLE (Valid 81/100) -->
+<div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-slate-300 transition-all">
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-sm font-bold text-slate-900">Tim Beta</h4>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono-code text-[10px] font-bold flex items-center gap-1 border border-emerald-200">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> LAYAK (Skor 81/100)
+                    </span>
+</div>
+<p class="text-xs text-slate-600 mt-1">
+                    TU: <strong class="text-slate-800">Pak Slamet</strong> • Helper: <strong class="text-slate-800">Doni</strong> • Beban: <strong class="text-slate-900 font-mono-code font-bold">7.5 / 9 Jam</strong> (Sudah 1 Pasang + 3 Cuci)
+                  </p>
+<span class="text-[11px] text-amber-700 font-medium block mt-0.5">Catatan: Slot tersedia mepet pkl 14:30 WIB (Perlu konfirmasi geser jadwal ke pelanggan).</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors whitespace-nowrap border border-slate-200" type="button">
+                  Pilih Tim Beta
+                </button>
+</div>
+<!-- MODE DEGRADASI 1: TU TIDAK MASUK -->
+<div class="p-3.5 rounded-xl bg-rose-50/50 border border-rose-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 opacity-90">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-rose-600 text-[20px] mt-0.5">cancel</span>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-sm font-bold text-slate-900">Tim Beta — TU tidak masuk</h4>
+<span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 font-mono-code text-[10px] font-bold border border-rose-200">
+                        TIDAK LAYAK
+                      </span>
+</div>
+<p class="text-xs text-rose-700 font-bold mt-1">
+                      Pelanggaran Aturan: Teknisi Utama tidak masuk, hanya Helper yang hadir.
+                    </p>
+<p class="text-[11px] text-slate-500 mt-0.5">
+                      DOC-7 Syarat Wajib: Pasang AC baru &amp; vakum pipa wajib dipimpin Teknisi Utama bersertifikasi. Job cuci/servis ringan tetap boleh jalan dengan 1 orang.
+                    </p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-400 font-semibold text-xs cursor-not-allowed border border-slate-200" disabled="" type="button">
+                  Terkunci CSP
+                </button>
+</div>
+<!-- MODE DEGRADASI 2: KEDUA TIM PENUH -->
+<div class="p-3.5 rounded-xl bg-rose-50/50 border border-rose-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 opacity-90">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-rose-600 text-[20px] mt-0.5">cancel</span>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-sm font-bold text-slate-900">Kedua tim penuh</h4>
+<span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 font-mono-code text-[10px] font-bold border border-rose-200">
+                        DOMAIN KOSONG
+                      </span>
+</div>
+<p class="text-xs text-rose-700 font-bold mt-1">
+                      Pelanggaran Aturan: Beban Alpha + Beta mencapai batas jam dan kuota pasang 2 unit habis.
+                    </p>
+<p class="text-[11px] text-slate-500 mt-0.5">
+                      Tindakan wajib: ajukan usulan jam lain ke pelanggan lewat portal. Jika pelanggan tidak setuju, order ditolak/dibatalkan dengan alasan tercatat — bukan dijadwalkan diam-diam.
+                    </p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-400 font-semibold text-xs cursor-not-allowed border border-slate-200" disabled="" type="button">
+                  Terkunci CSP
+                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- PRIORITAS 4: GANTT TIMELINE & LIVE ROUTE OVERVIEW (TSP Surabaya - Sidoarjo) -->
+<section class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5 overflow-hidden">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 mb-4 border-b border-slate-100">
+<div>
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">splitscreen</span>
+</div>
+<h2 class="font-bold text-base text-slate-900">Timeline Armada &amp; Visualisasi TSP (08:00 - 17:00 WIB)</h2>
+</div>
+<p class="text-xs text-slate-500 mt-0.5">
+                Penyelarasan jeda minimal 30 menit antar-order &amp; matriks rute antar-zona (Sidoarjo ↔ Surabaya: 42-50 menit).
+              </p>
+</div>
+<!-- Color Legend -->
+<div class="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100 rounded-xl border border-slate-200 mb-2 sm:mb-0"><button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white text-slate-700 hover:text-slate-900 text-xs font-semibold border border-slate-200 shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[14px] text-blue-600">fast_rewind</span> Geser -15 Mnt</button><button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white text-slate-700 hover:text-slate-900 text-xs font-semibold border border-slate-200 shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[14px] text-blue-600">fast_forward</span> Geser +15 Mnt</button><button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white text-slate-700 hover:text-slate-900 text-xs font-semibold border border-slate-200 shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[14px] text-amber-600">restore</span> Reset Istirahat</button><button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[14px]">lock</span> Kunci Rute</button></div><div class="flex flex-wrap items-center gap-2 text-xs">
+<span class="flex items-center gap-1.5 px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-700">
+<span class="w-3 h-3 rounded bg-cyan-500"></span> Cuci AC (60 mnt)
+              </span>
+<span class="flex items-center gap-1.5 px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-700">
+<span class="w-3 h-3 rounded bg-blue-600"></span> Pasang AC (120 mnt)
+              </span>
+<span class="flex items-center gap-1.5 px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-700">
+<span class="w-3 h-3 rounded bg-amber-400"></span> Transit / Travel Buffer
+              </span>
+<span class="flex items-center gap-1.5 px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-700">
+<span class="w-3 h-3 rounded bg-rose-500"></span> Trouble / Kompresor
+              </span>
+<span class="flex items-center gap-1.5 px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-700">
+<span class="w-3 h-3 rounded bg-slate-300"></span> Istirahat / Siaga
+              </span>
+</div>
+</div>
+<!-- Gantt Chart Container -->
+<div class="w-full overflow-x-auto pb-2">
+<div class="min-w-[940px] flex flex-col gap-2">
+<!-- Time Axis Header (08:00 to 17:00) -->
+<div class="grid grid-cols-10 pl-52 pr-2 py-2 bg-slate-100 rounded-xl font-mono-code text-[11px] font-bold text-slate-600 text-center border border-slate-200">
+<div class="">08:00</div>
+<div class="">09:00</div>
+<div class="">10:00</div>
+<div class="">11:00</div>
+<div class="">12:00 (Break)</div>
+<div class="">13:00</div>
+<div class="">14:00</div>
+<div class="">15:00</div>
+<div class="">16:00</div>
+<div class="">17:00</div>
+</div>
+<!-- Row 1: Tim Alpha -->
+<div class="flex items-center p-2 rounded-xl bg-slate-50/80 border border-slate-200/80 hover:bg-slate-100/60 transition-colors">
+<div class="w-52 flex flex-col pr-3">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-slate-900">Tim Alpha</span>
+<span class="px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-mono-code text-[10px] font-bold border border-amber-200">OTW</span>
+</div>
+<span class="text-[11px] text-slate-600 truncate mt-0.5">Adrian (TU) &amp; Budi (H)</span>
+<span class="text-[10px] text-blue-600 font-semibold">Zona: Sda → Sby Timur</span>
+</div>
+<div class="flex-1 grid grid-cols-10 gap-1.5 h-14 bg-white rounded-lg p-1 items-center border border-slate-200 shadow-inner">
+<!-- 08:00 - 08:30 Transit -->
+<div class="col-span-1 h-full bg-amber-100/90 border border-amber-300 rounded-lg flex items-center justify-center text-amber-800 text-[10px] font-mono-code font-bold" title="Transit Depot ke Waru (25 mnt)">
+                    Travel
+                  </div>
+<!-- 08:30 - 09:30 Order 1 Cuci -->
+<div class="col-span-1 h-full bg-cyan-500 text-white rounded-lg p-1.5 flex flex-col justify-between shadow-sm" title="ORD-001 (Cuci 1 AC - Waru)">
+<span class="text-[10px] font-mono-code font-extrabold leading-none">ORD-001</span>
+<span class="text-[9px] truncate opacity-95">Cuci 1 Unit</span>
+</div>
+<!-- 09:30 - 10:15 Travel Buffer to Rungkut -->
+<div class="col-span-1 h-full bg-amber-100/90 border border-amber-300 rounded-lg flex items-center justify-center text-amber-800 text-[10px] font-mono-code font-bold" title="Buffer Rute Waru ke Rungkut (20 mnt)">
+                    Transit
+                  </div>
+<!-- 10:15 - 12:15 Slot Calon ORD-005 (Pasang AC) -->
+<div class="col-span-2 h-full bg-blue-100 border-2 border-dashed border-blue-500 rounded-lg p-1.5 flex flex-col justify-between" title="Slot Penugasan Rekomendasi ORD-005 (Pasang 1.5 PK)">
+<span class="text-[10px] font-mono-code text-blue-800 font-extrabold leading-none flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-blue-600">add_circle</span> ORD-005
+                    </span>
+<span class="text-[10px] text-blue-900 font-bold truncate">Usulan Pasang AC</span>
+</div>
+<!-- 12:00 - 13:00 Break -->
+<div class="col-span-1 h-full bg-slate-200/90 rounded-lg flex items-center justify-center text-slate-600 font-mono-code text-[10px] font-bold">
+                    Ishoma
+                  </div>
+<!-- 13:00 - 14:00 Free Slot (Reschedule Request) -->
+<div class="col-span-1 h-full bg-emerald-50 border border-dashed border-emerald-400 rounded-lg flex items-center justify-center text-emerald-700 font-mono-code text-[10px] font-bold" title="Slot Dibebaskan Reschedule">
+                    Slot Bebas
+                  </div>
+<!-- 14:00 - 16:00 Order 3 -->
+<div class="col-span-2 h-full bg-blue-600 text-white rounded-lg p-1.5 flex flex-col justify-between shadow-sm" title="ORD-009 (Pasang Baru Rungkut)">
+<span class="text-[10px] font-mono-code font-extrabold leading-none">ORD-009</span>
+<span class="text-[9px] truncate">Pasang Daikin 2 PK</span>
+</div>
+<!-- 16:00 - 17:00 Return to Depot -->
+<div class="col-span-1 h-full bg-amber-100/90 border border-amber-300 rounded-lg flex items-center justify-center text-amber-800 text-[10px] font-mono-code font-bold" title="Kembali Depot Pondok Jati (40 mnt)">
+                    Depot
+                  </div>
+</div>
+</div>
+<!-- Row 2: Tim Beta -->
+<div class="flex items-center p-2 rounded-xl bg-slate-50/80 border border-slate-200/80 hover:bg-slate-100/60 transition-colors">
+<div class="w-52 flex flex-col pr-3">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-slate-900">Tim Beta</span>
+<span class="px-2 py-0.5 rounded bg-blue-100 text-blue-900 font-mono-code text-[10px] font-bold border border-blue-200">KERJA</span>
+</div>
+<span class="text-[11px] text-slate-600 truncate mt-0.5">Slamet (TU) &amp; Doni (H)</span>
+<span class="text-[10px] text-blue-600 font-semibold">Surabaya Pusat &amp; Barat</span>
+</div>
+<div class="flex-1 grid grid-cols-10 gap-1.5 h-14 bg-white rounded-lg p-1 items-center border border-slate-200 shadow-inner">
+<!-- 08:00 - 10:00 Pasang AC -->
+<div class="col-span-2 h-full bg-blue-600 text-white rounded-lg p-1.5 flex flex-col justify-between shadow-sm" title="ORD-002 (Pasang AC Tunjungan)">
+<span class="text-[10px] font-mono-code font-extrabold leading-none">ORD-002</span>
+<span class="text-[9px] truncate">Pasang Split 1 PK</span>
+</div>
+<!-- 10:00 - 10:30 Buffer -->
+<div class="col-span-1 h-full bg-amber-100/90 border border-amber-300 rounded-lg flex items-center justify-center text-amber-800 text-[10px] font-mono-code font-bold">
+                    Transit
+                  </div>
+<!-- 10:30 - 11:30 Cuci AC -->
+<div class="col-span-1 h-full bg-cyan-500 text-white rounded-lg p-1.5 flex flex-col justify-between shadow-sm" title="ORD-004 (Cuci Darmo)">
+<span class="text-[10px] font-mono-code font-extrabold leading-none">ORD-004</span>
+<span class="text-[9px] truncate">Cuci 2 Unit</span>
+</div>
+<!-- 12:00 - 13:00 Break -->
+<div class="col-span-1 h-full bg-slate-200/90 rounded-lg flex items-center justify-center text-slate-600 font-mono-code text-[10px] font-bold">
+                    Ishoma
+                  </div>
+<!-- 13:00 - 14:00 Cuci AC -->
+<div class="col-span-1 h-full bg-cyan-500 text-white rounded-lg p-1.5 flex flex-col justify-between shadow-sm" title="ORD-007 (Cuci Mayjen)">
+<span class="text-[10px] font-mono-code font-extrabold leading-none">ORD-007</span>
+<span class="text-[9px] truncate">Cuci 1 Unit</span>
+</div>
+<!-- 14:00 - 15:30 Cuci AC -->
+<div class="col-span-2 h-full bg-cyan-500 text-white rounded-lg p-1.5 flex flex-col justify-between shadow-sm" title="ORD-011 (Cuci HR Muhammad)">
+<span class="text-[10px] font-mono-code font-extrabold leading-none">ORD-011</span>
+<span class="text-[9px] truncate">Cuci 3 Unit Kantor</span>
+</div>
+<!-- 16:00 - 17:00 Buffer kembali -->
+<div class="col-span-2 h-full bg-amber-100/90 border border-amber-300 rounded-lg flex items-center justify-center text-amber-800 text-[10px] font-mono-code font-bold">
+                    Transit Balik (Tol Satelit - Waru)
+                  </div>
+</div>
+</div>
+<!-- Row 3: kapasitas cadangan — roster riil hanya 2 tim -->
+<div class="flex items-center p-2 rounded-xl bg-slate-50/80 border border-dashed border-slate-300">
+<div class="w-52 flex flex-col pr-3">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-slate-900">Sisa roster</span>
+<span class="px-2 py-0.5 rounded bg-slate-200 text-slate-700 font-mono-code text-[10px] font-bold">2 TIM / 4 KRU</span>
+</div>
+<span class="text-[11px] text-slate-600 truncate mt-0.5">Tidak ada tim ketiga</span>
+<span class="text-[10px] text-blue-600 font-semibold">Seluruh zona dilayani Alpha + Beta</span>
+</div>
+<div class="flex-1 grid grid-cols-10 gap-1.5 h-14 bg-white rounded-lg p-1 items-center border border-slate-200 shadow-inner">
+<div class="col-span-10 h-full bg-slate-100 border border-slate-300 rounded-lg flex items-center justify-center text-slate-600 text-[10px] font-bold px-3 text-center">Jika kedua tim penuh atau TU tidak masuk, order tidak dialihkan ke tim bayangan — ia dijadwalkan ulang dengan persetujuan pelanggan atau ditolak dengan alasan tercatat.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Geographic Status Alert -->
+<div class="mt-4 p-3 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]">alt_route</span>
+</div>
+<div>
+<span class="text-xs font-bold text-slate-900 block">Rekomendasi Rute TSP Aktif (Efisiensi 34 KM)</span>
+<p class="text-[11px] text-slate-600 leading-snug">
+                  Semua rute telah dikelompokkan per zona untuk memangkas jarak tempuh 34 km hari ini dan menghindari crossing Surabaya ↔ Sidoarjo di jam sibuk 16:30.
+                </p>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-white border border-blue-300 text-blue-700 text-xs font-bold shadow-sm hover:bg-blue-50 transition-colors whitespace-nowrap self-start sm:self-auto" type="button">
+              Buka Peta Satelit
+            </button>
+</div>
+</section>
+<!-- STICKY / DOCKED OPERATIONAL ACTION FOOTER -->
+<footer class="bg-white rounded-2xl p-4 shadow-xl border border-slate-200 flex flex-col lg:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3 w-full lg:w-auto">
+<div class="w-10 h-10 rounded-xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-700 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-sm font-extrabold text-slate-900">Siap Terbitkan SPK Lapangan</span>
+<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-extrabold font-mono-code border border-emerald-300" id="spk-ready">0 Order Siap SPK</span>
+</div>
+<span class="text-xs text-slate-500">Pastikan semua permintaan ganti jadwal &amp; penugasan CSP selesai sebelum tutup harian.</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2.5 w-full lg:w-auto justify-end">
+<!-- Action 1: Print SPK -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 border border-slate-300 text-slate-700 font-bold text-xs hover:bg-slate-200 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[17px]">print</span>
+              Cetak Batch SPK Fisik (<span id="spk-print-n">0</span>)
+            </button>
+<!-- Action 2: Trigger WhatsApp Dispatch -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-300 text-slate-700 font-bold text-xs hover:bg-slate-50 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[17px] text-emerald-600">send</span>
+              Kirim Rute via WA ke 4 PIC Tim
+            </button>
+<!-- Action 3: Lock Daily Operations -->
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-700 to-indigo-800 hover:from-blue-800 hover:to-indigo-900 text-white font-extrabold text-xs shadow-md shadow-blue-700/30 transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[17px]">lock</span>
+              Kunci &amp; Finalisasi Jadwal Hari H
+            </button>
+</div>
+</footer>
+</div>
+</main>
+</div>
+<script>
+    // Micro-interactions for Dispatch actions
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          if (this.disabled) return;
+          if (this.innerText.includes('Tugaskan ke Tim Alpha')) {
+            const originalText = this.innerHTML;
+            this.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Menugaskan...';
+            setTimeout(() => {
+              this.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span> Berhasil Ditugaskan';
+              this.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
+              this.classList.add('bg-slate-800', 'text-white');
+            }, 600);
+          }
+        });
+      });
+    });
+  </script>
+<script>
+/* Kartu kekuatan armada, laporan pemilik & cadangan data — semua dari store perangkat */
+(function(){
+const CREW=[{id:'adrian',team:'alpha',role:'TU',name:'Adrian'},{id:'budi',team:'alpha',role:'Helper',name:'Budi'},
+ {id:'slamet',team:'beta',role:'TU',name:'Slamet'},{id:'doni',team:'beta',role:'Helper',name:'Doni'}];
+const TEAMS=[{id:'alpha',name:'Tim Alpha'},{id:'beta',name:'Tim Beta'}];
+const CAP_FULL=9, CAP_SOLO=6, DEADLINE=17;
+const todayKey=()=>new Date().toISOString().slice(0,10);
+let pickDate=todayKey();
+const j=k=>{ try{ return JSON.parse(localStorage.getItem(k)||'null'); }catch(e){ return null; } };
+const rp=n=>'Rp '+Number(Math.round(n||0)).toLocaleString('id-ID');
+const inJam=(id,d)=>{ const r=j('ip_attendance_'+id+'@'+d)||(d===todayKey()?j('ip_attendance_'+id):null);
+  const m=/^(\d{1,2}):(\d{2})/.exec((r&&r.in)||''); return m?+m[1]+ +m[2]/60:null; };
+const set=(id,txt)=>{ const el=document.getElementById(id); if(el) el.innerHTML=txt; };
+const dayID=d=>{ const x=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d||''); if(!x) return '—';
+  return new Date(+x[1],+x[2]-1,+x[3]).toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'short',year:'numeric'}); };
+const isoOf=ms=>new Date(ms).toISOString().slice(0,10);
+function crewOn(d){ let rec=j('ip_crew@'+d)||(d===todayKey()?j('ip_crew'):null);
+  const on={}; CREW.forEach(c=>on[c.id]=true);
+  if(rec&&rec.date===d) CREW.forEach(c=>{ const x=(rec.people||{})[c.id]; if(x) on[c.id]=!!x.present; });
+  return on; }
+function render(){
+ const on=crewOn(pickDate), tidakMasuk=CREW.filter(c=>!on[c.id]);
+ let cap=0, tim=0;
+ TEAMS.forEach(t=>{ const list=CREW.filter(c=>c.team===t.id&&on[c.id]); if(!list.length) return; tim++;
+  const ins=list.map(c=>inJam(c.id,pickDate)).filter(x=>x!==null);
+  const openAt=ins.length?Math.max(8,Math.max.apply(null,ins)):8;
+  cap+=Math.max(0,Math.min(list.length>=2?CAP_FULL:CAP_SOLO,DEADLINE-openAt)); });
+ const all=j('ip_customer_orders')||[];
+ const day=all.filter(o=>(o.tgl||todayKey())===pickDate);
+ const work=day.filter(o=>o.team&&['Dijadwalkan','Dikerjakan','Review'].includes(o.status||'Baru'));
+ const load=work.reduce((s,o)=>s+(+o.dur||0),0);
+ const pct=cap>0?Math.min(100,load/cap*100):0;
+ const mode=tidakMasuk.length?'mode degradasi':'siaga penuh';
+ set('k-tim',tim+' Tim');
+ set('k-hadir',tidakMasuk.length?(CREW.length-tidakMasuk.length)+' dari '+CREW.length+' kru masuk':'100% Hadir');
+ set('k-personel',tidakMasuk.length
+   ? 'Absensi '+dayID(pickDate)+': <strong>'+tidakMasuk.map(c=>c.name+' ('+c.role+')').join(', ')+'</strong> tidak masuk — tim berjalan dalam mode degradasi, order berat butuh 2 orang.'
+   : '4 Personel: 2 Teknisi Utama (TU) + 2 Helper — 1 tim = 1 TU + 1 Helper, '+mode+'.');
+ set('k-load',load.toFixed(1)+' <span class="text-xs text-slate-500 font-normal">/ '+cap.toFixed(0)+' Jam</span>');
+ set('k-pct',cap>0?pct.toFixed(1)+'%':'—');
+ const bar=document.getElementById('k-bar'); if(bar) bar.style.width=(cap>0?pct.toFixed(1):0)+'%';
+ set('k-sisa',Math.max(0,cap-load).toFixed(1)+' jam kerja');
+ /* komposisi unit kerja */
+ const units=paket=>day.filter(o=>(o.paket||o.tipe||'')===paket).reduce((s,o)=>s+(+o.unit||1),0);
+ set('k-cuci',String(units('Cuci & Perawatan Rutin')));
+ set('k-pasang',String(units('Pasang Baru')));
+ set('k-trouble',String(units('Trouble Berat')+units('Trouble Ringan')));
+ /* omset & laporan pemilik — dikelompokkan menurut tanggal kerja order, bukan tanggal validasi */
+ const closed=day.filter(o=>o.invoice);
+ const omzet=closed.reduce((s,o)=>s+(+((o.invoice||{}).total)||0),0);
+ const pending=day.filter(o=>!o.invoice&&o.status!=='Dibatalkan').reduce((s,o)=>s+(+o.total||0),0);
+ set('k-omset',rp(omzet));
+ set('k-pending',rp(pending));
+ const bulan=pickDate.slice(0,7), invBulan=all.filter(o=>o.invoice&&String(o.tgl||'').slice(0,7)===bulan);
+ const avg=invBulan.length?invBulan.reduce((s,o)=>s+(+o.invoice.total||0),0)/invBulan.length:0;
+ set('k-total',String(day.length));
+ set('k-sched',day.filter(o=>o.status==='Dijadwalkan').length+' Terjadwal');
+ set('k-queue',day.filter(o=>['Baru','Menunggu Persetujuan Customer'].includes(o.status||'Baru')).length+' Antrean');
+ set('k-late',day.filter(o=>o.status!=='Selesai'&&o.status!=='Dibatalkan'&&(o.tgl||todayKey())<todayKey()).length+' Late');
+ const perlu=day.filter(o=>o.status==='Menunggu Persetujuan Customer').length;
+ const baruN=day.filter(o=>(o.status||'Baru')==='Baru').length;
+ const schedN=day.filter(o=>o.status==='Dijadwalkan').length;
+ const closedN=day.filter(o=>o.status==='Selesai'||o.status==='Dibatalkan').length;
+ const donePct=day.length?Math.round(closedN/day.length*100):0;
+ set('p-act',perlu+' Perlu Tindakan');
+ const pa=document.getElementById('p-act');
+ if(pa) pa.className='px-2 py-0.5 rounded-full text-[10px] font-bold font-mono-code border '
+   +(perlu?'bg-rose-100 border-rose-200 text-rose-700':'bg-slate-100 border-slate-200 text-slate-600');
+ set('p-queue',baruN+' Antrean');
+ set('p-teams',tim+' Tim Aktif');
+ set('p-spk',schedN+' Siap SPK');
+ set('proto-pct',donePct+'% selesai');
+ const pb=document.getElementById('proto-bar'); if(pb) pb.style.width=donePct+'%';
+ set('spk-ready',schedN+' Order Siap SPK');
+ set('spk-print-n',String(schedN));
+ set('o-avg',rp(avg));
+ set('o-avg-sub',invBulan.length+' invoice · '+bulan.replace('-','/'));
+ const resp=day.filter(o=>o.made&&o.assignedAt).map(o=>(o.assignedAt-o.made)/60000);
+ if(resp.length){ const med=resp.slice().sort((a,b)=>a-b)[Math.floor(resp.length/2)];
+   set('o-sla',(med<60?Math.round(med)+' mnt':(med/60).toFixed(1)+' jam'));
+   set('o-sla-sub','median dari '+resp.length+' order (target < 2 menit)');
+ } else { set('o-sla','—'); set('o-sla-sub','belum ada order yang ditetapkan tim'); }
+ const teamRows=TEAMS.map(t=>{ const list=work.filter(o=>o.team===t.id);
+   return '<div class="flex justify-between"><span>'+t.name+'</span><span class="font-mono-code font-bold text-slate-900">'+list.length+' order · '+list.reduce((s,o)=>s+(+o.dur||0),0).toFixed(1)+' jam</span></div>'; });
+ const belum=day.filter(o=>!o.team&&['Baru','Menunggu Persetujuan Customer'].includes(o.status||'Baru')).length;
+ set('o-team',teamRows.join('')+(belum?'<div class="text-amber-700 font-bold">'+belum+' order belum dapat tim</div>':''));
+ const batal=day.filter(o=>o.status==='Dibatalkan');
+ set('o-cancel',batal.length?batal.map(o=>'<div><strong>'+o.id+'</strong> · '+esc(o.nama||o.cust||'Pelanggan')+' — '+esc(o.ditolakAlasan||o.customerAlasan||'alasan tidak dicatat')+'</div>').join('')
+   :'<span class="text-slate-400">Tidak ada pembatalan / penolakan pada tanggal ini.</span>');
+ /* navigasi & jam */
+ set('nav-pg',day.filter(o=>o.status==='Menunggu Persetujuan Customer').length||'0');
+ set('nav-csp',day.filter(o=>['Baru','Menunggu Persetujuan Customer'].includes(o.status||'Baru')).length+' baru');
+ set('hdr-date',dayID(pickDate));
+ set('sub-date',dayID(pickDate));
+ const clock=document.getElementById('hdr-clock');
+ if(clock) clock.textContent=new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})+' WIB';
+ const of=document.getElementById('owner-date'); if(of&&of.value!==pickDate) of.value=pickDate;
+ const fill=document.getElementById('store-fill');
+ if(fill){ let n=0; try{ for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(k.indexOf('ip_')===0) n+=((localStorage.getItem(k)||'').length+k.length)*2; } }catch(e){}
+   fill.textContent='Penyimpanan: '+(n/1024).toFixed(0)+' KB terpakai dari kuota ±5 MB · '+(n>3.5e6?'mendekati batas, unduh cadangan lalu hapus data lama':'masih aman'); }
+}
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+/* P1-3: cadangan & pulihkan seluruh kunci ip_* */
+function backup(){
+  const data={app:'CV Intan Pratama FSM',ver:1,at:new Date().toISOString(),keys:{}};
+  try{ for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(k&&k.indexOf('ip_')===0) data.keys[k]=localStorage.getItem(k); } }catch(e){}
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='fsm-intan-pratama-cadangan-'+todayKey()+'.json'; document.body.appendChild(a); a.click(); a.remove();
+  note('Cadangan diunduh: '+Object.keys(data.keys).length+' kunci data.');
+}
+function restore(file){ const rd=new FileReader();
+  rd.onload=()=>{ let d=null; try{ d=JSON.parse(rd.result); }catch(e){ note('File bukan JSON yang valid.',true); return; }
+    if(!d||!d.keys||typeof d.keys!=='object'){ note('Struktur cadangan tidak dikenali.',true); return; }
+    let n=0, gagal=0;
+    Object.keys(d.keys).forEach(k=>{ if(k.indexOf('ip_')!==0) return; try{ localStorage.setItem(k,d.keys[k]); n++; }catch(e){ gagal++; } });
+    note('Dipulihkan '+n+' kunci'+(gagal?(' · '+gagal+' gagal (kuota penuh)'):'')+'. Halaman dimuat ulang…',!!gagal);
+    setTimeout(()=>location.reload(),900); };
+  rd.readAsText(file); }
+function clearAll(){ if(!confirm('Hapus seluruh data uji (order, presensi, stok, foto) dari perangkat ini? Tindakan ini tidak bisa dibatalkan — unduh cadangan lebih dulu bila perlu.')) return;
+  const keys=[]; try{ for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(k&&k.indexOf('ip_')===0) keys.push(k); } }catch(e){}
+  keys.forEach(k=>{ try{ localStorage.removeItem(k); }catch(e){} });
+  note(keys.length+' kunci data dihapus — halaman dimuat ulang.'); setTimeout(()=>location.reload(),700); }
+function note(msg,bad){ const el=document.getElementById('backup-note'); if(!el) return;
+  el.textContent=msg; el.className='text-[11px] font-semibold '+(bad?'text-rose-600':'text-emerald-700'); }
+document.addEventListener('DOMContentLoaded',()=>{
+  const od=document.getElementById('owner-date');
+  if(od){ od.value=pickDate; od.max=todayKey(); /* tanggal masa lalu saja: laporan bersifat historis */
+    od.addEventListener('change',()=>{ if(/^\d{4}-\d{2}-\d{2}$/.test(od.value)){ pickDate=od.value; render(); } }); }
+  const rf=document.getElementById('btn-refresh'); if(rf) rf.addEventListener('click',()=>{ pickDate=(od&&od.value)||pickDate; render(); note('Data dimuat ulang.'); });
+  const bk=document.getElementById('btn-backup'); if(bk) bk.addEventListener('click',backup);
+  const fr=document.getElementById('file-restore'); if(fr) fr.addEventListener('change',()=>{ if(fr.files&&fr.files[0]) restore(fr.files[0]); fr.value=''; });
+  const cl=document.getElementById('btn-clear'); if(cl) cl.addEventListener('click',clearAll);
+  render();
+});
+window.addEventListener('storage',render);
+setInterval(()=>{ const c=document.getElementById('hdr-clock'); if(c) c.textContent=new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})+' WIB'; },30000);
+})();
+</script>
+
+
+
+<!-- P0 ADMIN SHELL: navigasi responsif, tanggal operasional global, banner mode demo -->
+<style id="adminP0Style">
+#adminAside{overflow-y:auto}
+#adminBackdrop{display:none}
+#adminDrawerClose{display:none;position:absolute;top:10px;right:10px;z-index:60;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.12);color:#fff;align-items:center;justify-content:center}
+.adminTableWrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:1023px){
+  #adminHeader{display:none!important}
+  #adminAside{transform:translateX(-100%);transition:transform .25s ease}
+  #adminAside.is-open{transform:translateX(0);box-shadow:0 24px 60px rgba(0,0,0,.55)}
+  #adminAside.is-open #adminDrawerClose{display:flex}
+  #adminBackdrop.is-open{display:block}
+  body.adminDrawerOpen{overflow:hidden}
+  main{padding-left:16px!important;padding-right:16px!important;padding-bottom:104px!important}
+  .pl-72{padding-left:0!important}
+  .left-72{left:0!important}
+  #adminMobileBar{display:flex!important}
+  #adminBottomNav{display:flex!important}
+  main footer.sticky{position:static!important;bottom:auto!important}
+}
+</style>
+<div id="adminBackdrop" class="fixed inset-0 z-40 bg-black/50"></div>
+<div id="adminMobileBar" class="fixed top-0 inset-x-0 z-40 h-16 items-center gap-2.5 px-3 bg-[#0b1329] text-white shadow-lg" style="display:none">
+<button id="adminMenuBtn" type="button" aria-label="Buka menu" class="w-10 h-10 shrink-0 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center active:scale-95 transition-colors">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<div class="flex flex-col min-w-0 flex-1 leading-tight">
+<span class="text-[9px] uppercase tracking-[0.14em] text-cyan-300/80 font-bold">FSM Dispatcher</span>
+<span id="adminPageTitle" class="text-[13px] font-bold truncate">Admin</span>
+</div>
+<span id="adminOpsDate" class="shrink-0 text-[10px] font-bold px-2 py-1 rounded-lg bg-white/10 text-slate-200">—</span>
+</div>
+<nav id="adminBottomNav" class="fixed bottom-0 inset-x-0 z-40 h-16 items-stretch bg-[#0b1329] text-slate-400 border-t border-slate-700/70" style="display:none">
+<a data-nav="ringkasan-hari.html" href="ringkasan-hari.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">dashboard</span><span>Ringkasan</span>
+</a>
+<a data-nav="pengajuan-pelanggan.html" href="pengajuan-pelanggan.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">pending_actions</span><span>Pengajuan</span>
+</a>
+<a data-nav="antrean-penugasan.html" href="antrean-penugasan.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">assignment_late</span><span>Antrean</span>
+</a>
+<a data-nav="timeline-rute.html" href="timeline-rute.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">route</span><span>Rute</span>
+</a>
+<button id="adminMoreBtn" type="button" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">apps</span><span>Lainnya</span>
+</button>
+</nav>
+<div id="adminDemoBanner" class="w-full items-start gap-2 rounded-xl border border-amber-300 bg-amber-50 px-3 py-2 text-[11px] leading-snug text-amber-900 shadow-sm" style="display:none">
+<span class="material-symbols-outlined text-[16px] text-amber-700">info</span>
+<span class="flex-1"><strong>Mode demo lokal.</strong> Data tersimpan di perangkat ini (localStorage) — cadangkan rutin dari Ringkasan Hari agar tidak hilang.</span>
+<button id="adminDemoClose" type="button" aria-label="Tutup pemberitahuan" class="shrink-0 w-6 h-6 rounded-md hover:bg-amber-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+<script>
+(function(){
+  'use strict';
+  var page=(location.pathname.split('/').pop()||'').toLowerCase()||'index.html';
+  var TITLES={'ringkasan-hari.html':'Ringkasan Hari','pengajuan-pelanggan.html':'Pengajuan Pelanggan','antrean-penugasan.html':'Antrean & Penugasan','timeline-rute.html':'Timeline Tim & Rute','spk-invoice.html':'SPK & Invoice','master-inventaris.html':'Master & Inventaris','log-audit.html':'Log Audit'};
+  var DATES={'ringkasan-hari.html':'owner-date','antrean-penugasan.html':'csp-date','timeline-rute.html':'rute-date'};
+  var KEY='ip_ops_date';
+  function $(id){ return document.getElementById(id); }
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function todayKey(){ var d=new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+  function readDate(){ try{ var v=localStorage.getItem(KEY); return /^\d{4}-\d{2}-\d{2}$/.test(v||'')?v:''; }catch(e){ return ''; } }
+  function writeDate(v){ try{ localStorage.setItem(KEY,v); }catch(e){} }
+  function fmtDate(iso){ if(!iso) return 'Hari ini';
+    if(iso===todayKey()) return 'Hari ini';
+    try{ return new Date(iso+'T00:00:00').toLocaleDateString('id-ID',{day:'2-digit',month:'short'}); }catch(e){ return iso; } }
+
+  var aside=document.querySelector('aside.fixed');
+  var header=document.querySelector('header.fixed');
+  var backdrop=$('adminBackdrop');
+  if(aside) aside.id='adminAside';
+  if(header) header.id='adminHeader';
+  if(aside){
+    var x=document.createElement('button');
+    x.id='adminDrawerClose'; x.type='button'; x.setAttribute('aria-label','Tutup menu');
+    x.innerHTML='<span class="material-symbols-outlined text-[20px]">close</span>';
+    aside.appendChild(x);
+  }
+  function openDrawer(){ if(!aside||!backdrop) return; aside.classList.add('is-open'); backdrop.classList.add('is-open'); document.body.classList.add('adminDrawerOpen'); }
+  function closeDrawer(){ if(!aside||!backdrop) return; aside.classList.remove('is-open'); backdrop.classList.remove('is-open'); document.body.classList.remove('adminDrawerOpen'); }
+  var mb=$('adminMenuBtn'), more=$('adminMoreBtn');
+  if(mb) mb.addEventListener('click',openDrawer);
+  if(more) more.addEventListener('click',openDrawer);
+  if(backdrop) backdrop.addEventListener('click',closeDrawer);
+  var xb=$('adminDrawerClose'); if(xb) xb.addEventListener('click',closeDrawer);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrawer(); });
+  if(aside) aside.addEventListener('click',function(e){ if(e.target.closest('a')) closeDrawer(); });
+
+  var title=$('adminPageTitle'); if(title) title.textContent=TITLES[page]||'Admin';
+  Array.prototype.forEach.call(document.querySelectorAll('#adminBottomNav [data-nav]'),function(a){
+    if(a.getAttribute('data-nav')===page){ a.classList.add('text-cyan-300','bg-white/5'); }
+  });
+
+  function paintOpsDate(iso){
+    var el=$('adminOpsDate'); if(!el) return;
+    el.textContent=fmtDate(iso||readDate()||todayKey());
+    el.title='Hari operasional aktif';
+  }
+
+  var banner=$('adminDemoBanner');
+  var bannerHidden=false; try{ bannerHidden=sessionStorage.getItem('adminDemoBannerHidden')==='1'; }catch(e){}
+  if(banner){
+    var bc=$('adminDemoClose');
+    if(bc) bc.addEventListener('click',function(){ banner.style.display='none'; try{ sessionStorage.setItem('adminDemoBannerHidden','1'); }catch(e){} });
+  }
+
+  function wrapTables(){
+    Array.prototype.forEach.call(document.querySelectorAll('main table'),function(t){
+      var p=t.parentElement;
+      if(p && p.classList && p.classList.contains('adminTableWrap')) return;
+      var w=document.createElement('div'); w.className='adminTableWrap';
+      t.parentNode.insertBefore(w,t); w.appendChild(t);
+    });
+  }
+
+  function fixOverflow(){
+    var main=document.querySelector('main'); if(!main) return;
+    var vw=document.documentElement.clientWidth;
+    Array.prototype.forEach.call(main.querySelectorAll('div,nav'),function(el){
+      if(el.dataset.ofx||el.classList.contains('flex-nowrap')) return;
+      var s=getComputedStyle(el);
+      if(s.display!=='flex'&&s.display!=='inline-flex') return;
+      if(s.flexDirection!=='row'&&s.flexDirection!=='row-reverse') return;
+      if(s.position==='fixed'||s.position==='absolute') return;
+      var r=el.getBoundingClientRect();
+      if(r.width>vw) return;
+      if(el.scrollWidth<=el.clientWidth+3) return;
+      if(el.querySelectorAll(':scope > button').length>=3){
+        el.style.flexWrap='wrap';
+        el.dataset.ofx='1';
+        return;
+      }
+      el.style.flexWrap='wrap';
+      el.dataset.ofx='1';
+      if(el.scrollWidth>el.clientWidth+3){ el.style.maxWidth='100%'; el.style.overflowX='auto'; }
+    });
+  }
+
+  function initDate(){
+    var id=DATES[page]; if(!id) return;
+    var inp=$(id); if(!inp) return;
+    var v=readDate();
+    if(v && page==='ringkasan-hari.html' && v>todayKey()) v='';
+    if(v && inp.value!==v){
+      inp.value=v;
+      try{ inp.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){}
+    }
+    inp.addEventListener('change',function(){
+      if(/^\d{4}-\d{2}-\d{2}$/.test(inp.value)){ writeDate(inp.value); paintOpsDate(inp.value); }
+    });
+    paintOpsDate(inp.value||readDate());
+  }
+
+  function countBy(list,st){ return list.filter(function(o){ return o.status===st; }).length; }
+  function paintDayStatus(){
+    var box=$('adminDayStatus'); if(!box) return;
+    var inp=$('owner-date');
+    var iso=(inp&&inp.value)||readDate()||todayKey();
+    var all=[]; try{ all=JSON.parse(localStorage.getItem('ip_customer_orders')||'[]')||[]; }catch(e){}
+    var day=all.filter(function(o){ return (o.tgl||todayKey())===iso; });
+    var baru=countBy(day,'Baru')+countBy(day,'Menunggu Persetujuan Customer');
+    var doing=countBy(day,'Dikerjakan');
+    var review=countBy(day,'Review');
+    var sched=day.filter(function(o){ return o.status==='Dijadwalkan'; });
+    var unlocked=sched.filter(function(o){ return !o.ruteLocked; }).length;
+    var closed=day.length && day.every(function(o){ return o.status==='Selesai'||o.status==='Dibatalkan'; });
+    var label='',tone='',sub='',icon='radio_button_checked';
+    if(!day.length){ label='Belum ada order'; tone='bg-slate-100 text-slate-600 border-slate-200'; sub='Belum ada order pada tanggal ini.'; icon='inbox'; }
+    else if(baru){ label='Perlu penugasan'; tone='bg-amber-100 text-amber-800 border-amber-200'; sub=baru+' order menunggu penugasan CSP.'; icon='assignment_late'; }
+    else if(unlocked){ label='Rute belum dikunci'; tone='bg-orange-100 text-orange-800 border-orange-200'; sub=unlocked+' order terjadwal belum punya rute resmi.'; icon='lock_open'; }
+    else if(doing){ label='Sedang berjalan'; tone='bg-blue-100 text-blue-800 border-blue-200'; sub=doing+' order dikerjakan teknisi.'; icon='engineering'; }
+    else if(review){ label='Menunggu validasi'; tone='bg-violet-100 text-violet-800 border-violet-200'; sub=review+' laporan teknisi menunggu review admin.'; icon='fact_check'; }
+    else if(closed){ label='Siap tutup hari'; tone='bg-emerald-100 text-emerald-800 border-emerald-200'; sub='Semua order selesai/dibatalkan — lengkapi rekap dan cadangkan data.'; icon='task_alt'; }
+    else { label='Siap berangkat'; tone='bg-emerald-100 text-emerald-800 border-emerald-200'; sub='Rute terkunci, menunggu teknisi clock-in.'; icon='departure_boarding'; }
+    var detail=[];
+    if(doing) detail.push(doing+' dikerjakan');
+    if(review) detail.push(review+' menunggu validasi');
+    if(unlocked) detail.push(unlocked+' rute belum dikunci');
+    if(baru) detail.push(baru+' baru');
+    if(detail.length) sub=detail.join(' · ');
+    box.className='bg-white rounded-2xl shadow-sm border border-slate-200/90 p-4 flex flex-col sm:flex-row sm:items-center gap-3';
+    box.innerHTML='<div class="w-10 h-10 shrink-0 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center"><span class="material-symbols-outlined text-[21px]">'+icon+'</span></div>'
+      +'<div class="flex-1 min-w-0"><div class="flex flex-wrap items-center gap-2"><h2 class="text-sm font-bold text-slate-900">Status Hari Operasional</h2>'
+      +'<span class="px-2 py-0.5 rounded-full border text-[10px] font-bold '+tone+'">'+label+'</span></div>'
+      +'<p class="text-xs text-slate-500">'+sub+'</p></div>'
+      +'<div class="flex items-center gap-2 shrink-0"><a href="antrean-penugasan.html" class="px-3 py-2 rounded-lg bg-white border border-blue-300 text-blue-700 hover:bg-blue-50 text-[11px] font-bold">Antrean</a>'
+      +'<a href="timeline-rute.html" class="px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-bold border border-slate-300">Rute</a></div>';
+  }
+
+  function boot(){
+    wrapTables();
+    fixOverflow();
+    initDate();
+    var main=document.querySelector('main');
+    var host=main&&(main.firstElementChild||main);
+    if(banner && host && banner.parentElement!==host){
+      host.insertBefore(banner,host.firstChild);
+      banner.style.display=bannerHidden?'none':'flex';
+    }
+    if(page==='log-audit.html' && window.matchMedia('(max-width:1023px)').matches){
+      var bcs=[].slice.call(document.querySelectorAll('main div')).filter(function(d){
+        return d.className && d.className.toString().indexOf('uppercase')>=0 && d.textContent.indexOf('Ledger SOP DOC-19')>=0 && d.children.length<=7;
+      })[0];
+      if(bcs) bcs.style.display='none';
+    }
+    if(main){
+      var t=null;
+      var mo=new MutationObserver(function(){
+        clearTimeout(t);
+        t=setTimeout(function(){ wrapTables(); fixOverflow(); },240);
+      });
+      mo.observe(main,{childList:true,subtree:true});
+    }
+    var rt=null;
+    window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(fixOverflow,200); });
+    if(page==='ringkasan-hari.html'){
+      if(host && !$('adminDayStatus')){
+        var el=document.createElement('div'); el.id='adminDayStatus';
+        host.insertBefore(el,(banner&&banner.parentElement===host)?banner.nextSibling:host.firstChild);
+      }
+      paintDayStatus();
+      setInterval(paintDayStatus,15000);
+      document.addEventListener('change',paintDayStatus);
+      window.addEventListener('storage',paintDayStatus);
+    }
+    paintOpsDate();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){ setTimeout(boot,60); });
+  else setTimeout(boot,60);
+})();
+</script>
+<!-- /P0 ADMIN SHELL -->
+
+<script src="assets/material-catalog.js"></script>
+<script src="assets/p1.js"></script>
+<script src="assets/admin-v32.js"></script>
+</body></html>

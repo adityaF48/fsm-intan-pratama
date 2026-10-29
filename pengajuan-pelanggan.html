@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<title>CV Intan Pratama - Pengajuan Reschedule &amp; Pembatalan</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "navy-deep": "#0A192F",
+            "primary": "#00288e",
+            "electric-cyan": "#0284C7",
+            "surface-ice": "#F8FAFC",
+            "surface-card": "#FFFFFF",
+            "border-subtle": "#E2E8F0",
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      body { overscroll-behavior: none; }
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', 'Inter', monospace;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+<link rel="stylesheet" href="assets/p1.css">
+</head>
+<body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+<!-- SIDEBAR NAVIGASI (Dark Sleek Navy Pro) -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-[#0b1329] border-r border-slate-800/80 z-50 flex flex-col justify-between select-none shadow-2xl">
+<div class="flex flex-col">
+<!-- Brand Header -->
+<div class="px-6 pt-6 pb-4 border-b border-slate-800/60">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/25 ring-1 ring-white/20">
+<span class="material-symbols-outlined text-[22px]">hvac</span>
+</div>
+<div class="flex flex-col">
+<span class="font-extrabold text-[15px] tracking-tight text-white leading-tight">CV INTAN PRATAMA</span>
+<span class="text-[10px] uppercase font-bold tracking-widest text-cyan-400/90 font-mono-code">FSM Dispatcher Pro</span>
+</div>
+</div>
+<!-- Operational Depot Chip -->
+<div class="mt-4 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800/80 flex items-center gap-2.5 shadow-inner">
+<div class="w-7 h-7 rounded-lg bg-blue-500/10 text-cyan-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">warehouse</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Depot Operasional</span>
+<span class="text-xs font-semibold text-slate-200 truncate">Taman Pondok Jati, Sda</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 px-3 mt-4">
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="overview" href="./ringkasan-hari.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">dashboard</span>
+<span class="text-[13px] font-medium">Ringkasan Hari</span>
+</div>
+</a>
+<!-- Active Item: Pengajuan Pelanggan -->
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-blue-600/90 text-white font-semibold shadow-md shadow-blue-600/25 border border-blue-500/30 transition-all group" data-path="customer-requests" href="pengajuan-pelanggan.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-cyan-200">pending_actions</span>
+<span class="text-[13px]">Pengajuan Pelanggan</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-slate-700 text-slate-200 font-mono-code text-[10px] font-bold shrink-0" id="pg-badge" title="0 pengajuan perlu keputusan dispatcher" aria-label="0 pengajuan perlu keputusan dispatcher">0</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="csp-dispatch" href="./antrean-penugasan.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">assignment_late</span>
+<span class="text-[13px] font-medium">Antrean &amp; Penugasan</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 font-mono-code text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>CSP
+        </span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="timeline-gantt" href="./timeline-rute.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">splitscreen</span>
+<span class="text-[13px] font-medium">Timeline Tim &amp; Rute</span>
+</div>
+<span class="text-[11px] font-mono-code text-cyan-400 font-bold bg-cyan-950/60 px-2 py-0.5 rounded-md border border-cyan-800/40">TSP Aktif</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="work-orders-invoices" href="./spk-invoice.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">receipt_long</span>
+<span class="text-[13px] font-medium">SPK &amp; Invoice</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="inventory-master" href="./master-inventaris.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">inventory_2</span>
+<span class="text-[13px] font-medium">Master &amp; Inventaris</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group" data-path="audit-logs" href="./log-audit.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-cyan-400 transition-colors">history_edu</span>
+<span class="text-[13px] font-medium">Log Audit</span>
+</div>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom Hotline & Rayon Info -->
+<div class="p-3 mb-2 flex flex-col gap-2">
+<div class="p-3 rounded-xl bg-gradient-to-r from-rose-950/60 to-rose-900/40 border border-rose-800/50 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-rose-600/30 text-rose-400 flex items-center justify-center ring-1 ring-rose-500/40">
+<span class="material-symbols-outlined text-[18px]">sos</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-extrabold text-rose-300 uppercase tracking-wider">Hotline Darurat</span>
+<span class="font-mono-code text-xs font-bold text-white">0811-3450-990</span>
+</div>
+</div>
+<a class="w-7 h-7 rounded-lg bg-rose-600 hover:bg-rose-500 text-white flex items-center justify-center transition-colors shadow-sm" href="tel:08113450990" title="Hubungi Hotline">
+<span class="material-symbols-outlined text-[15px]">call</span>
+</a>
+</div>
+<div class="px-2 py-1.5 flex items-center justify-between text-slate-400 text-[11px] font-medium border-t border-slate-800/60">
+<span class="truncate">Surabaya &amp; Sidoarjo Rayon</span>
+<span class="font-mono-code text-cyan-400 font-semibold bg-cyan-950/40 px-1.5 py-0.5 rounded border border-cyan-800/40">v2.4.0</span>
+</div>
+</div>
+</aside>
+<!-- CONTENT SHELL WRAPPER -->
+<div class="pl-72 flex flex-col min-h-screen">
+<!-- TOP HEADER BAR (Modern Dark Slate Pro) -->
+<header class="fixed top-0 left-72 right-0 h-16 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800/80 z-40 flex items-center justify-between px-8 select-none shadow-md">
+<div class="flex items-center gap-4">
+<!-- Date Time Pill -->
+<div class="flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/70 text-slate-200 shadow-inner">
+<span class="material-symbols-outlined text-cyan-400 text-[18px]">schedule</span>
+<span id="hdr-date" class="font-mono-code text-xs font-medium text-slate-300">Senin, 26 Okt 2026</span>
+<span class="w-1 h-3 rounded-full bg-slate-700"></span>
+<span id="hdr-clock" class="font-mono-code text-xs font-bold text-cyan-300">08:15 WIB</span>
+</div>
+<!-- Telemetry Status Tag -->
+<div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/70 border border-emerald-600/40 text-emerald-300 text-xs font-semibold shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span>Real-time Telemetri Aktif</span>
+</div>
+</div>
+<!-- User Action Header -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors relative border border-slate-700/60 bg-slate-900/60" title="Notifikasi" type="button">
+<span class="material-symbols-outlined text-[19px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-slate-900"></span>
+</button>
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors border border-slate-700/60 bg-slate-900/60" title="Setelan" type="button">
+<span class="material-symbols-outlined text-[19px]">tune</span>
+</button>
+</div>
+<div class="h-6 w-[1px] bg-slate-700/80"></div>
+<!-- Dispatcher Avatar Info -->
+<div class="flex items-center gap-3 pl-1">
+<div class="flex flex-col text-right">
+<span class="text-xs font-bold text-white leading-tight tracking-tight">Budi Santoso</span>
+<span class="text-[11px] text-cyan-300/80 font-medium">Dispatcher / Kepala Ops</span>
+</div>
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 ring-2 ring-blue-400/40 flex items-center justify-center text-white shadow-md">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN DASHBOARD CONTENT -->
+<main class="w-full pt-20 bg-[#f8fafc] flex-1 px-8 pb-10">
+<div class="flex flex-col w-full">
+<!-- BANNER ATURAN + RINGKASAN NYATA -->
+<div class="mb-6 rounded-2xl bg-white border border-slate-200/90 p-5 shadow-sm border-l-4 border-l-blue-700 flex flex-col md:flex-row md:items-center justify-between gap-5 relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-44 h-44 rounded-full bg-blue-50/60 pointer-events-none -z-0"></div>
+<div class="flex items-start gap-4 relative z-10">
+<div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 flex-shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[26px]">verified_user</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="text-xs font-semibold text-slate-500 uppercase tracking-wider font-mono-code">Dispatcher Ops • Antrean Perubahan Jadwal</span>
+<span class="px-2.5 py-0.5 rounded-full bg-sky-50 border border-sky-200 text-sky-700 text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">timer</span> Batas respons usulan: 24 jam
+</span>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Data langsung dari portal pelanggan
+</span>
+</div>
+<h1 class="text-xl font-bold text-slate-900 tracking-tight mt-1">Pengajuan Perubahan Jadwal &amp; Pembatalan Pelanggan</h1>
+<p class="text-xs text-slate-600 mt-1 leading-relaxed max-w-4xl">
+<strong class="text-blue-800 font-semibold">Aturan FSM B.6 &amp; C.2:</strong> setiap usulan jam dikirim dispatcher lewat tautan persetujuan pribadi di portal pelanggan. Selama status masih <em>Menunggu Persetujuan Customer</em>, order keluar dari domain solver CSP — penugasan teknisi baru dikunci setelah customer menyetujui, mengajukan jam lain, atau order ditolak beserta alasannya.
+</p>
+</div>
+</div>
+<div class="flex items-center gap-3 relative z-10 self-end md:self-center flex-shrink-0">
+<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+<div class="flex flex-col text-right">
+<span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider font-mono-code">Pengajuan Tercatat</span>
+<span class="text-sm font-extrabold text-slate-800" id="pg-total">0 permohonan</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-sm" id="pg-total-n">0</div>
+</div>
+<button class="h-9 px-3 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-1.5 text-slate-600 hover:text-blue-700 hover:border-blue-300 transition-colors text-[12px] font-bold" title="Muat ulang data pengajuan" type="button" id="pg-refresh">
+<span class="material-symbols-outlined text-[18px]">refresh</span>Muat ulang
+</button>
+</div>
+</div>
+<!-- FILTER + RINGKASAN (tab berangka, tanpa kartu KPI duplikat) -->
+<div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+<div class="flex items-center gap-1.5 p-1 rounded-xl bg-slate-200/70 border border-slate-200 overflow-x-auto shadow-inner" id="pg-filters" role="tablist" aria-label="Filter pengajuan pelanggan">
+<button data-f="all" type="button" aria-selected="true" class="pg-tab px-3.5 py-2 rounded-lg text-[13px] font-bold bg-white text-blue-700 shadow-sm border border-slate-200 flex items-center gap-1.5"><span class="material-symbols-outlined text-[17px]">inbox</span>Semua <span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 text-[11px] font-bold font-mono-code border border-slate-300" id="f-all">0</span></button>
+<button data-f="usul" type="button" aria-selected="false" class="pg-tab px-3.5 py-2 rounded-lg text-[13px] font-semibold text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5"><span class="material-symbols-outlined text-[17px]">edit_calendar</span>Menunggu customer <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-bold font-mono-code" id="f-usul">0</span></button>
+<button data-f="minta" type="button" aria-selected="false" class="pg-tab px-3.5 py-2 rounded-lg text-[13px] font-semibold text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5"><span class="material-symbols-outlined text-[17px]">schedule_send</span>Permintaan jam <span class="px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 text-[11px] font-bold font-mono-code" id="f-minta">0</span></button>
+<button data-f="batal" type="button" aria-selected="false" class="pg-tab px-3.5 py-2 rounded-lg text-[13px] font-semibold text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5"><span class="material-symbols-outlined text-[17px]">event_busy</span>Pembatalan <span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 text-[11px] font-bold font-mono-code" id="f-batal">0</span></button>
+</div>
+<div class="flex items-center gap-2 text-[12px] font-medium text-slate-600 bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-blue-600">location_on</span>
+<span>Wilayah: <strong class="text-slate-800 font-bold">Surabaya Timur &amp; Sidoarjo</strong></span>
+<span class="w-px h-4 bg-slate-200"></span>
+<span id="pg-lewat-chip" class="inline-flex items-center gap-1 text-slate-500"><span class="material-symbols-outlined text-[16px]">alarm</span><span id="pg-lewat-text">Usulan &gt;24 jam: 0</span></span>
+</div>
+</div>
+<!-- SPLIT MASTER-DETAIL -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<div class="lg:col-span-7 flex flex-col gap-4" id="pg-list"></div>
+<div class="lg:col-span-5 flex flex-col gap-4" id="pg-detail"></div>
+</div>
+</div>
+</main>
+</div>
+<script>
+const STORE='ip_customer_orders';
+const USUL_TMO=24;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const read=()=>{ try{ return JSON.parse(localStorage.getItem(STORE)||'[]'); }catch(e){ return []; } };
+/* P1-4: tulis-lewat-safeSet — kuota penuh / mode privat tidak menghapus data */
+function safeSet(k,v){ try{ localStorage.setItem(k,v); return true; }catch(e){ storeWarn(e); return false; } }
+function storeWarn(e){ let el=document.getElementById('pg-store-warn');
+  if(!el){ el=document.createElement('div'); el.id='pg-store-warn';
+    el.style.cssText='position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:60;max-width:480px;display:flex;align-items:center;gap:10px;background:#DC2626;color:#fff;border-radius:10px;padding:9px 12px;font-size:12px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.25)';
+    document.body.appendChild(el); }
+  el.innerHTML='<span>'+((e&&e.name==='QuotaExceededError')?'Penyimpanan perangkat penuh':'Browser menolak menyimpan data (mode privat)')+' — perubahan terakhir belum tersimpan.</span>'
+   +'<button onclick="document.getElementById(\'pg-store-warn\').remove()" style="background:#fff;color:#B91C1C;border-radius:6px;padding:3px 9px;font-weight:800">Tutup</button>'; }
+const BULAN=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+const HARI=['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+const tglID=t=>{ const d=/^(\d{4})-(\d{2})-(\d{2})$/.exec(t||''); return d? HARI[new Date(+d[1],+d[2]-1,+d[3]).getDay()]+', '+d[3]+' '+BULAN[+d[2]-1]+' '+d[1] : (t||'—'); };
+const jamLabel=j=>{ const s=String(j||'').trim(); if(!s) return '—'; const t=s.replace(/\s*(WIB|WITA|WIT)\s*$/i,''); return t||'—'; };
+const jamHM=t=>String(Math.floor(t)).padStart(2,'0')+':'+String(Math.round((t%1)*60)).padStart(2,'0');
+const jamLama=ms=>{ const h=(Date.now()-(ms||0))/36e5; return h<1? Math.round(h*60)+' menit lalu' : Math.round(h*10)/10+' jam lalu'; };
+const auditTime=ms=>{ const d=new Date(ms); return d.getDate()+' '+BULAN[d.getMonth()]+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); };
+const CSP='./antrean-penugasan.html';
+let filter='all', cur=null;
+function daftar(){ const out=[]; read().forEach(o=>{
+  if(o.status==='Menunggu Persetujuan Customer'&&o.usulan) out.push({o,kind:'usul',at:o.usulan.at||0});
+  else if((o.responCustomer||{}).action==='ajukan') out.push({o,kind:'minta',at:(o.responCustomer||{}).at||o.made||0});
+  else if(o.status==='Dibatalkan') out.push({o,kind:'batal',at:o.ditolakAt||o.responCustomer&&o.responCustomer.at||o.made||0});
+ }); return out.sort((a,b)=>b.at-a.at); }
+const KIND={usul:['bg-amber-50 border-amber-300 text-amber-900','edit_calendar','Usulan jam dari dispatcher — menunggu customer'],
+ minta:['bg-sky-50 border-sky-300 text-sky-900','schedule_send','Customer mengajukan jam lain — perlu dinilai CSP'],
+ batal:['bg-rose-50 border-rose-300 text-rose-900','event_busy','Order dibatalkan — alasan tercatat di audit']};
+function usulLink(token){ return CSP.replace('antrean-penugasan.html','customer.html')+'?token='+token; }
+function itemHtml(x,i){ const o=x.o, k=KIND[x.kind], u=o.usulan||{}, r=o.responCustomer||{};
+  const lewat=x.kind==='usul'&&(Date.now()-(u.at||0))/36e5>USUL_TMO;
+  const inti=x.kind==='usul'?('Jadwal awal '+tglID(o.tgl)+' · '+jamLabel(o.jam)+' WIB<br><span class="text-slate-400 text-[11px]">menjadi usulan</span> '+tglID(u.tgl)+' · '+jamHM(u.start)+'–'+jamHM(u.end)+' WIB')
+   :x.kind==='minta'?('Customer minta <span class="text-sky-800 font-extrabold">'+tglID(r.tgl||o.tgl)+' · '+jamHM(r.start||0)+' WIB</span><br><span class="text-slate-400 text-[11px]">status order</span> '+esc(o.status)+' · tunggu penilaian CSP dispatcher')
+   :('Alasan: '+(o.ditolakAlasan?esc(o.ditolakAlasan):(o.customerAlasan?'customer: '+esc(o.customerAlasan):'—')));
+  return '<div class="rounded-2xl bg-white p-4.5 shadow-sm border '+(i===0?'border-2 border-blue-600/80 shadow-md':'border-slate-200 hover:border-blue-300')+' transition-all flex flex-col gap-2.5" data-oid="'+esc(o.id)+'">'
+  +'<div class="flex items-start justify-between gap-3 flex-wrap">'
+  +'<div class="flex items-center gap-2 flex-wrap"><span class="font-mono-code text-[12px] font-extrabold text-slate-800 bg-slate-100 border border-slate-300 px-2 py-0.5 rounded-lg">'+esc(o.id)+'</span>'
+  +'<span class="px-2 py-0.5 rounded-full border '+k[0]+' text-[10px] font-bold uppercase tracking-wide flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">'+k[1]+'</span>'+esc(k[2].split(' — ')[0])+'</span>'
+  +(lewat?'<span class="px-2 py-0.5 rounded-full bg-rose-600 text-white text-[10px] font-bold uppercase">lewat batas 24 jam</span>':'')
+  +(o.prio&&o.prio!=='Normal'?'<span class="px-2 py-0.5 rounded-full bg-rose-100 border border-rose-300 text-rose-800 text-[10px] font-bold uppercase">'+esc(o.prio)+'</span>':'')+'</div>'
+  +'<span class="text-[11px] text-slate-500">'+jamLama(x.at)+'</span></div>'
+  +'<div class="flex items-start gap-3"><div class="w-9 h-9 rounded-xl bg-blue-50 border border-blue-100 text-blue-700 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">'+(o.tipe==='Pasang Baru'?'install_mobile':o.tipe==='Trouble Berat'?'emergency':'ac_unit')+'</span></div>'
+  +'<div class="flex flex-col"><span class="text-sm font-extrabold text-slate-900">'+esc(o.nama||o.cust||'Pelanggan')+'</span>'
+  +'<span class="text-[11px] text-slate-500">'+esc(o.paket||o.tipe||'Servis')+' · '+(o.unit||1)+' unit · '+esc(o.alamat||'—')+'</span></div></div>'
+  +'<p class="text-[12px] text-slate-700 leading-relaxed bg-slate-50 border border-slate-200 rounded-xl px-3 py-2">'+inti+'</p>'
+  +(x.kind==='usul'&&u.pesan?'<p class="text-[11px] text-slate-600 italic border-l-4 border-amber-300 pl-2.5">"'+esc(u.pesan)+'"</p>':'')
+  +'<div class="flex items-center gap-2 flex-wrap pt-0.5">'
+  +'<a href="'+CSP+'?order='+encodeURIComponent(o.id)+'" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-bold transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">assignment</span>Proses di Antrean CSP</a>'
+  +(x.kind==='usul'?'<button data-tarik="'+esc(o.id)+'" type="button" class="px-3 py-1.5 rounded-lg bg-white border border-amber-300 text-amber-900 text-[11px] font-bold hover:bg-amber-50 transition-colors">Tarik usulan ke antrean</button>'
+    +'<button data-copy="'+esc(usulLink(o.token))+'" type="button" class="px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 text-[11px] font-bold hover:bg-slate-50 transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">content_copy</span>Salin tautan persetujuan</button>'
+    +'<a target="_blank" rel="noopener" href="https://wa.me/'+esc(String(o.hp||'').replace(/[^0-9]/g,'').replace(/^0/,'62'))+'?text='+encodeURIComponent('CV Intan Pratama — usulan jadwal '+o.id+': '+tglID(u.tgl)+' pukul '+jamHM(u.start)+' WIB. Setujui atau ajukan jam lain: '+usulLink(o.token))+'" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">chat</span>WhatsApp</a>':'')
+  +'</div></div>'; }
+function detailHtml(x){ if(!x) return '<div class="rounded-2xl bg-white border-2 border-dashed border-slate-300 p-8 flex flex-col items-center gap-2 text-center"><span class="material-symbols-outlined text-[32px] text-slate-400">inbox</span><span class="text-sm font-bold text-slate-700">Belum ada pengajuan terjadwal</span><span class="text-[11px] text-slate-500 max-w-xs">Alur reschedule aktif ketika dispatcher memilih "Usulkan jam baru" di halaman Antrean &amp; Penugasan, atau ketika customer mengajukan jam lain lewat portal.</span></div>';
+  const o=x.o, u=o.usulan||{}, r=o.responCustomer||{};
+  const baris=(l,v)=>'<div class="flex items-start justify-between gap-3 py-1.5 border-b border-slate-100 last:border-0"><span class="text-[11px] uppercase font-bold text-slate-400 tracking-wide">'+l+'</span><span class="text-[12px] font-semibold text-slate-800 text-right max-w-[62%]">'+v+'</span></div>';
+  const al=x.kind==='batal'?(o.ditolakAlasan||o.customerAlasan||'—'):(u.alasan||'kapasitas tim penuh / jarak tempuh');
+  return '<div class="rounded-2xl bg-white border border-slate-200 shadow-sm p-5 flex flex-col gap-1">'
+  +'<div class="flex items-center justify-between gap-2"><span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest font-mono-code">Detail pengajuan</span><span class="font-mono-code text-[11px] font-extrabold text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-lg">'+esc(o.id)+'</span></div>'
+  +'<h2 class="text-base font-extrabold text-slate-900 mt-1">'+esc(o.nama||o.cust||'Pelanggan')+'</h2>'
+  +'<p class="text-[11px] text-slate-500 mb-2">'+esc(o.paket||o.tipe||'Servis')+' · '+(o.unit||1)+' unit · estimasi '+(Number(o.dur)||1).toFixed(1)+' jam</p>'
+  +baris('Status sistem','<span class="px-2 py-0.5 rounded-full bg-slate-100 border border-slate-300 text-[10px] font-bold">'+esc(o.status)+'</span>')
+  +baris('Tanggal & jam awal',esc(tglID(o.tgl))+' · '+esc(jamLabel(o.jam))+' WIB')
+  +(u.tgl?baris('Usulan dispatcher',esc(tglID(u.tgl))+' · '+jamHM(u.start)+'–'+jamHM(u.end)+' WIB'):'')
+  +(r.action?baris('Respons customer','<span class="uppercase">'+esc(r.action)+'</span> · '+auditTime(r.at||0)):'')
+  +(o.disetujui?baris('Disetujui customer',esc(tglID(o.disetujui.tgl))+' · '+jamHM(o.disetujui.start)+' WIB'):'')
+  +baris('Alasan',esc(al))
+  +baris('Kontak',esc(o.hp||'—'))
+  +baris('Alamat',esc(o.alamat||'—'))
+  +(o.patokan?baris('Patokan',esc(o.patokan)+(o.tipeTitik?' · '+esc(o.tipeTitik):'')):'')
+  +(o.lat!=null?baris('Koordinat','<span class="font-mono-code">'+(+o.lat).toFixed(5)+', '+((+o.lng)).toFixed(5)+'</span>'):'')
+  +'</div>'
+  +'<div class="rounded-2xl bg-white border border-slate-200 shadow-sm p-5 flex flex-col gap-3">'
+  +'<span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest font-mono-code">Jejak audit ( kronologis )</span>'
+  +'<div class="flex flex-col gap-2.5">'
+  +((o.audit||[]).slice().reverse().map(a=>'<div class="relative pl-4"><span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-blue-500 ring-2 ring-white"></span>'
+    +'<div class="flex items-center gap-1.5 flex-wrap"><span class="font-mono-code font-bold text-[11px] text-slate-800">'+auditTime(a.t)+'</span>'
+    +'<span class="px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-[10px] font-bold uppercase text-slate-600">'+esc(a.role||'Sistem')+'</span>'
+    +'<span class="text-[11px] text-slate-500">'+esc(a.actor||'—')+'</span></div>'
+    +'<p class="text-[11px] text-slate-700 mt-0.5 leading-relaxed">'+esc(a.detail||'')+'</p></div>').join('')
+    ||'<p class="text-[11px] text-slate-400">Belum ada entri audit untuk order ini.</p>')
+  +'</div></div>'
+  +'<div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 flex gap-3"><span class="material-symbols-outlined text-[20px] text-blue-700 shrink-0">gavel</span>'
+  +'<p class="text-[11px] text-slate-600 leading-relaxed">Tindakan setujui, ajukan jam lain, atau batalkan dilakukan customer di portal (tautan pribadi <span class="font-mono-code">'+esc(o.token||'—')+'</span>). Penolakan oleh dispatcher dilakukan di halaman Antrean &amp; Penugasan agar alasan langsung terekam pada solver CSP.</p></div>'; }
+function render(){ const all=daftar();
+  const n={all:all.length, usul:0, minta:0, batal:0, lewat:0};
+  all.forEach(x=>{ n[x.kind]++; if(x.kind==='usul'&&(Date.now()-(x.o.usulan.at||0))/36e5>USUL_TMO) n.lewat++; });
+  const setTxt=(id,v)=>{ const e=$('#'+id); if(e) e.textContent=v; };
+  setTxt('f-all',n.all); setTxt('f-usul',n.usul); setTxt('f-minta',n.minta); setTxt('f-batal',n.batal);
+  setTxt('pg-lewat-text','Usulan >24 jam: '+n.lewat);
+  const lw=$('#pg-lewat-chip'); if(lw) lw.className='inline-flex items-center gap-1 '+(n.lewat?'text-rose-700 font-bold':'text-slate-500');
+  setTxt('pg-total',n.all+' permohonan'); setTxt('pg-total-n',n.all);
+  const badge=$('#pg-badge'); if(badge){ badge.textContent=n.usul;
+    const lbl=n.usul+' pengajuan perlu keputusan dispatcher';
+    badge.title=lbl; badge.setAttribute('aria-label',lbl);
+    badge.className='px-2 py-0.5 rounded-full font-mono-code text-[10px] font-bold shrink-0 '
+      +(n.usul?'bg-rose-500 text-white shadow-sm shadow-rose-500/40':'bg-slate-700 text-slate-200'); }
+  const list=all.filter(x=>filter==='all'||x.kind===filter);
+  if(!list.length){ $('#pg-list').className='lg:col-span-12 flex flex-col gap-4';
+   $('#pg-list').innerHTML='<div class="rounded-2xl bg-white border-2 border-dashed border-slate-300 p-10 flex flex-col items-center gap-2 text-center"><span class="material-symbols-outlined text-[34px] text-slate-400">all_inbox</span><span class="text-sm font-bold text-slate-700">Tidak ada pengajuan pada filter ini</span><span class="text-[12px] text-slate-500 max-w-md">Semua permohonan perubahan jadwal customer sudah tertangani. Usulan baru muncul otomatis di sini setelah dispatcher mengirimkannya.</span><a href="./antrean-penugasan.html" class="mt-2 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-blue-600 text-white text-[12px] font-bold hover:bg-blue-700"><span class="material-symbols-outlined text-[17px]">arrow_forward</span>Buka Antrean &amp; Penugasan</a></div>';
+   cur=null; $('#pg-detail').className=''; $('#pg-detail').innerHTML=''; return; }
+  $('#pg-list').className='lg:col-span-7 flex flex-col gap-4';
+  $('#pg-detail').className='lg:col-span-5 flex flex-col gap-4';
+  if(!list.some(x=>x.o.id===cur)) cur=list[0].o.id;
+  $('#pg-list').innerHTML=list.map((x,i)=>itemHtml(x,i)).join('');
+  $('#pg-detail').innerHTML=detailHtml(list.find(x=>x.o.id===cur)||list[0]); }
+function toast(msg){ let el=$('#pg-toast'); if(!el){ el=document.createElement('div'); el.id='pg-toast'; el.className='fixed bottom-6 right-6 z-[60] px-4 py-3 rounded-xl bg-slate-900 text-white shadow-xl flex items-center gap-3 transition-all'; document.body.appendChild(el); }
+  el.innerHTML='<span class="material-symbols-outlined text-emerald-400">check_circle</span><span class="text-[13px] font-semibold">'+msg+'</span>';
+  setTimeout(()=>{ el.remove(); },3400); }
+function tarik(oid){ const l=read(); const o=l.find(x=>x.id===oid); if(!o) return;
+  o.status='Baru'; o.usulan=null; o.responCustomer=null;
+  o.audit=(o.audit||[]).concat([{t:Date.now(),actor:'Dispatcher (admin)',role:'Admin',detail:'Usulan jam ditarik Admin — order kembali ke antrean CSP'}]);
+  if(!safeSet(STORE,JSON.stringify(l))){ toast('Gagal menyimpan — penyimpanan perangkat penuh.'); return; }
+  toast('Usulan '+oid+' ditarik — order kembali ke antrean CSP.'); render(); }
+document.addEventListener('DOMContentLoaded',()=>{
+  $('#pg-refresh').addEventListener('click',()=>{ render(); toast('Data pengajuan dimuat ulang.'); });
+  $('#pg-filters').addEventListener('click',e=>{ const b=e.target.closest('[data-f]'); if(!b) return; filter=b.dataset.f;
+    [...$('#pg-filters').children].forEach(x=>{ x.className='pg-tab px-3.5 py-2 rounded-lg text-[13px] font-semibold text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5'; x.setAttribute('aria-selected','false'); });
+    b.className='pg-tab px-3.5 py-2 rounded-lg text-[13px] font-bold bg-white text-blue-700 shadow-sm border border-slate-200 flex items-center gap-1.5'; b.setAttribute('aria-selected','true'); render(); });
+  $('#pg-list').addEventListener('click',e=>{ const tk=e.target.closest('[data-tarik]'); if(tk){ tarik(tk.dataset.tarik); return; }
+    const cp=e.target.closest('[data-copy]'); if(cp){ const link=cp.dataset.copy; const ok=()=>toast('Tautan persetujuan disalin — kirim ke customer.');
+      const fb=()=>{ const ta=document.createElement('textarea'); ta.value=link; ta.style.cssText='position:fixed;top:0;left:0;opacity:0'; document.body.appendChild(ta); ta.focus(); ta.select();
+        let done=false; try{ done=document.execCommand('copy'); }catch(err){} ta.remove(); done?ok():toast('Browser menolak papan klip — salin tautan dari kartu usulan di Antrean CSP.'); };
+      if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(link).then(ok,fb); else fb(); return; }
+    const card=e.target.closest('[data-oid]'); if(card&&!e.target.closest('a')){ cur=card.dataset.oid; render(); } });
+  window.addEventListener('storage',e=>{ if(e.key===STORE) render(); });
+  render(); });
+</script>
+
+<!-- P0 ADMIN SHELL: navigasi responsif, tanggal operasional global, banner mode demo -->
+<style id="adminP0Style">
+#adminAside{overflow-y:auto}
+#adminBackdrop{display:none}
+#adminDrawerClose{display:none;position:absolute;top:10px;right:10px;z-index:60;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.12);color:#fff;align-items:center;justify-content:center}
+.adminTableWrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:1023px){
+  #adminHeader{display:none!important}
+  #adminAside{transform:translateX(-100%);transition:transform .25s ease}
+  #adminAside.is-open{transform:translateX(0);box-shadow:0 24px 60px rgba(0,0,0,.55)}
+  #adminAside.is-open #adminDrawerClose{display:flex}
+  #adminBackdrop.is-open{display:block}
+  body.adminDrawerOpen{overflow:hidden}
+  main{padding-left:16px!important;padding-right:16px!important;padding-bottom:104px!important}
+  .pl-72{padding-left:0!important}
+  .left-72{left:0!important}
+  #adminMobileBar{display:flex!important}
+  #adminBottomNav{display:flex!important}
+  main footer.sticky{position:static!important;bottom:auto!important}
+}
+</style>
+<div id="adminBackdrop" class="fixed inset-0 z-40 bg-black/50"></div>
+<div id="adminMobileBar" class="fixed top-0 inset-x-0 z-40 h-16 items-center gap-2.5 px-3 bg-[#0b1329] text-white shadow-lg" style="display:none">
+<button id="adminMenuBtn" type="button" aria-label="Buka menu" class="w-10 h-10 shrink-0 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center active:scale-95 transition-colors">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<div class="flex flex-col min-w-0 flex-1 leading-tight">
+<span class="text-[9px] uppercase tracking-[0.14em] text-cyan-300/80 font-bold">FSM Dispatcher</span>
+<span id="adminPageTitle" class="text-[13px] font-bold truncate">Admin</span>
+</div>
+<span id="adminOpsDate" class="shrink-0 text-[10px] font-bold px-2 py-1 rounded-lg bg-white/10 text-slate-200">—</span>
+</div>
+<nav id="adminBottomNav" class="fixed bottom-0 inset-x-0 z-40 h-16 items-stretch bg-[#0b1329] text-slate-400 border-t border-slate-700/70" style="display:none">
+<a data-nav="ringkasan-hari.html" href="ringkasan-hari.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">dashboard</span><span>Ringkasan</span>
+</a>
+<a data-nav="pengajuan-pelanggan.html" href="pengajuan-pelanggan.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">pending_actions</span><span>Pengajuan</span>
+</a>
+<a data-nav="antrean-penugasan.html" href="antrean-penugasan.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">assignment_late</span><span>Antrean</span>
+</a>
+<a data-nav="timeline-rute.html" href="timeline-rute.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">route</span><span>Rute</span>
+</a>
+<button id="adminMoreBtn" type="button" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">apps</span><span>Lainnya</span>
+</button>
+</nav>
+<div id="adminDemoBanner" class="w-full items-start gap-2 rounded-xl border border-amber-300 bg-amber-50 px-3 py-2 text-[11px] leading-snug text-amber-900 shadow-sm" style="display:none">
+<span class="material-symbols-outlined text-[16px] text-amber-700">info</span>
+<span class="flex-1"><strong>Mode demo lokal.</strong> Data tersimpan di perangkat ini (localStorage) — cadangkan rutin dari Ringkasan Hari agar tidak hilang.</span>
+<button id="adminDemoClose" type="button" aria-label="Tutup pemberitahuan" class="shrink-0 w-6 h-6 rounded-md hover:bg-amber-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+<script>
+(function(){
+  'use strict';
+  var page=(location.pathname.split('/').pop()||'').toLowerCase()||'index.html';
+  var TITLES={'ringkasan-hari.html':'Ringkasan Hari','pengajuan-pelanggan.html':'Pengajuan Pelanggan','antrean-penugasan.html':'Antrean & Penugasan','timeline-rute.html':'Timeline Tim & Rute','spk-invoice.html':'SPK & Invoice','master-inventaris.html':'Master & Inventaris','log-audit.html':'Log Audit'};
+  var DATES={'ringkasan-hari.html':'owner-date','antrean-penugasan.html':'csp-date','timeline-rute.html':'rute-date'};
+  var KEY='ip_ops_date';
+  function $(id){ return document.getElementById(id); }
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function todayKey(){ var d=new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+  function readDate(){ try{ var v=localStorage.getItem(KEY); return /^\d{4}-\d{2}-\d{2}$/.test(v||'')?v:''; }catch(e){ return ''; } }
+  function writeDate(v){ try{ localStorage.setItem(KEY,v); }catch(e){} }
+  function fmtDate(iso){ if(!iso) return 'Hari ini';
+    if(iso===todayKey()) return 'Hari ini';
+    try{ return new Date(iso+'T00:00:00').toLocaleDateString('id-ID',{day:'2-digit',month:'short'}); }catch(e){ return iso; } }
+
+  var aside=document.querySelector('aside.fixed');
+  var header=document.querySelector('header.fixed');
+  var backdrop=$('adminBackdrop');
+  if(aside) aside.id='adminAside';
+  if(header) header.id='adminHeader';
+  if(aside){
+    var x=document.createElement('button');
+    x.id='adminDrawerClose'; x.type='button'; x.setAttribute('aria-label','Tutup menu');
+    x.innerHTML='<span class="material-symbols-outlined text-[20px]">close</span>';
+    aside.appendChild(x);
+  }
+  function openDrawer(){ if(!aside||!backdrop) return; aside.classList.add('is-open'); backdrop.classList.add('is-open'); document.body.classList.add('adminDrawerOpen'); }
+  function closeDrawer(){ if(!aside||!backdrop) return; aside.classList.remove('is-open'); backdrop.classList.remove('is-open'); document.body.classList.remove('adminDrawerOpen'); }
+  var mb=$('adminMenuBtn'), more=$('adminMoreBtn');
+  if(mb) mb.addEventListener('click',openDrawer);
+  if(more) more.addEventListener('click',openDrawer);
+  if(backdrop) backdrop.addEventListener('click',closeDrawer);
+  var xb=$('adminDrawerClose'); if(xb) xb.addEventListener('click',closeDrawer);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrawer(); });
+  if(aside) aside.addEventListener('click',function(e){ if(e.target.closest('a')) closeDrawer(); });
+
+  var title=$('adminPageTitle'); if(title) title.textContent=TITLES[page]||'Admin';
+  Array.prototype.forEach.call(document.querySelectorAll('#adminBottomNav [data-nav]'),function(a){
+    if(a.getAttribute('data-nav')===page){ a.classList.add('text-cyan-300','bg-white/5'); }
+  });
+
+  function paintOpsDate(iso){
+    var el=$('adminOpsDate'); if(!el) return;
+    el.textContent=fmtDate(iso||readDate()||todayKey());
+    el.title='Hari operasional aktif';
+  }
+
+  var banner=$('adminDemoBanner');
+  var bannerHidden=false; try{ bannerHidden=sessionStorage.getItem('adminDemoBannerHidden')==='1'; }catch(e){}
+  if(banner){
+    var bc=$('adminDemoClose');
+    if(bc) bc.addEventListener('click',function(){ banner.style.display='none'; try{ sessionStorage.setItem('adminDemoBannerHidden','1'); }catch(e){} });
+  }
+
+  function wrapTables(){
+    Array.prototype.forEach.call(document.querySelectorAll('main table'),function(t){
+      var p=t.parentElement;
+      if(p && p.classList && p.classList.contains('adminTableWrap')) return;
+      var w=document.createElement('div'); w.className='adminTableWrap';
+      t.parentNode.insertBefore(w,t); w.appendChild(t);
+    });
+  }
+
+  function fixOverflow(){
+    var main=document.querySelector('main'); if(!main) return;
+    var vw=document.documentElement.clientWidth;
+    Array.prototype.forEach.call(main.querySelectorAll('div,nav'),function(el){
+      if(el.dataset.ofx||el.classList.contains('flex-nowrap')) return;
+      var s=getComputedStyle(el);
+      if(s.display!=='flex'&&s.display!=='inline-flex') return;
+      if(s.flexDirection!=='row'&&s.flexDirection!=='row-reverse') return;
+      if(s.position==='fixed'||s.position==='absolute') return;
+      var r=el.getBoundingClientRect();
+      if(r.width>vw) return;
+      if(el.scrollWidth<=el.clientWidth+3) return;
+      if(el.querySelectorAll(':scope > button').length>=3){
+        el.style.flexWrap='wrap';
+        el.dataset.ofx='1';
+        return;
+      }
+      el.style.flexWrap='wrap';
+      el.dataset.ofx='1';
+      if(el.scrollWidth>el.clientWidth+3){ el.style.maxWidth='100%'; el.style.overflowX='auto'; }
+    });
+  }
+
+  function initDate(){
+    var id=DATES[page]; if(!id) return;
+    var inp=$(id); if(!inp) return;
+    var v=readDate();
+    if(v && page==='ringkasan-hari.html' && v>todayKey()) v='';
+    if(v && inp.value!==v){
+      inp.value=v;
+      try{ inp.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){}
+    }
+    inp.addEventListener('change',function(){
+      if(/^\d{4}-\d{2}-\d{2}$/.test(inp.value)){ writeDate(inp.value); paintOpsDate(inp.value); }
+    });
+    paintOpsDate(inp.value||readDate());
+  }
+
+  function countBy(list,st){ return list.filter(function(o){ return o.status===st; }).length; }
+  function paintDayStatus(){
+    var box=$('adminDayStatus'); if(!box) return;
+    var inp=$('owner-date');
+    var iso=(inp&&inp.value)||readDate()||todayKey();
+    var all=[]; try{ all=JSON.parse(localStorage.getItem('ip_customer_orders')||'[]')||[]; }catch(e){}
+    var day=all.filter(function(o){ return (o.tgl||todayKey())===iso; });
+    var baru=countBy(day,'Baru')+countBy(day,'Menunggu Persetujuan Customer');
+    var doing=countBy(day,'Dikerjakan');
+    var review=countBy(day,'Review');
+    var sched=day.filter(function(o){ return o.status==='Dijadwalkan'; });
+    var unlocked=sched.filter(function(o){ return !o.ruteLocked; }).length;
+    var closed=day.length && day.every(function(o){ return o.status==='Selesai'||o.status==='Dibatalkan'; });
+    var label='',tone='',sub='',icon='radio_button_checked';
+    if(!day.length){ label='Belum ada order'; tone='bg-slate-100 text-slate-600 border-slate-200'; sub='Belum ada order pada tanggal ini.'; icon='inbox'; }
+    else if(baru){ label='Perlu penugasan'; tone='bg-amber-100 text-amber-800 border-amber-200'; sub=baru+' order menunggu penugasan CSP.'; icon='assignment_late'; }
+    else if(unlocked){ label='Rute belum dikunci'; tone='bg-orange-100 text-orange-800 border-orange-200'; sub=unlocked+' order terjadwal belum punya rute resmi.'; icon='lock_open'; }
+    else if(doing){ label='Sedang berjalan'; tone='bg-blue-100 text-blue-800 border-blue-200'; sub=doing+' order dikerjakan teknisi.'; icon='engineering'; }
+    else if(review){ label='Menunggu validasi'; tone='bg-violet-100 text-violet-800 border-violet-200'; sub=review+' laporan teknisi menunggu review admin.'; icon='fact_check'; }
+    else if(closed){ label='Siap tutup hari'; tone='bg-emerald-100 text-emerald-800 border-emerald-200'; sub='Semua order selesai/dibatalkan — lengkapi rekap dan cadangkan data.'; icon='task_alt'; }
+    else { label='Siap berangkat'; tone='bg-emerald-100 text-emerald-800 border-emerald-200'; sub='Rute terkunci, menunggu teknisi clock-in.'; icon='departure_boarding'; }
+    var detail=[];
+    if(doing) detail.push(doing+' dikerjakan');
+    if(review) detail.push(review+' menunggu validasi');
+    if(unlocked) detail.push(unlocked+' rute belum dikunci');
+    if(baru) detail.push(baru+' baru');
+    if(detail.length) sub=detail.join(' · ');
+    box.className='bg-white rounded-2xl shadow-sm border border-slate-200/90 p-4 flex flex-col sm:flex-row sm:items-center gap-3';
+    box.innerHTML='<div class="w-10 h-10 shrink-0 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center"><span class="material-symbols-outlined text-[21px]">'+icon+'</span></div>'
+      +'<div class="flex-1 min-w-0"><div class="flex flex-wrap items-center gap-2"><h2 class="text-sm font-bold text-slate-900">Status Hari Operasional</h2>'
+      +'<span class="px-2 py-0.5 rounded-full border text-[10px] font-bold '+tone+'">'+label+'</span></div>'
+      +'<p class="text-xs text-slate-500">'+sub+'</p></div>'
+      +'<div class="flex items-center gap-2 shrink-0"><a href="antrean-penugasan.html" class="px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-bold">Antrean</a>'
+      +'<a href="timeline-rute.html" class="px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-bold border border-slate-300">Rute</a></div>';
+  }
+
+  function boot(){
+    wrapTables();
+    fixOverflow();
+    initDate();
+    var main=document.querySelector('main');
+    var host=main&&(main.firstElementChild||main);
+    if(banner && host && banner.parentElement!==host){
+      host.insertBefore(banner,host.firstChild);
+      banner.style.display=bannerHidden?'none':'flex';
+    }
+    if(page==='log-audit.html' && window.matchMedia('(max-width:1023px)').matches){
+      var bcs=[].slice.call(document.querySelectorAll('main div')).filter(function(d){
+        return d.className && d.className.toString().indexOf('uppercase')>=0 && d.textContent.indexOf('Ledger SOP DOC-19')>=0 && d.children.length<=7;
+      })[0];
+      if(bcs) bcs.style.display='none';
+    }
+    if(main){
+      var t=null;
+      var mo=new MutationObserver(function(){
+        clearTimeout(t);
+        t=setTimeout(function(){ wrapTables(); fixOverflow(); },240);
+      });
+      mo.observe(main,{childList:true,subtree:true});
+    }
+    var rt=null;
+    window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(fixOverflow,200); });
+    if(page==='ringkasan-hari.html'){
+      if(host && !$('adminDayStatus')){
+        var el=document.createElement('div'); el.id='adminDayStatus';
+        host.insertBefore(el,(banner&&banner.parentElement===host)?banner.nextSibling:host.firstChild);
+      }
+      paintDayStatus();
+      setInterval(paintDayStatus,15000);
+      document.addEventListener('change',paintDayStatus);
+      window.addEventListener('storage',paintDayStatus);
+    }
+    paintOpsDate();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){ setTimeout(boot,60); });
+  else setTimeout(boot,60);
+})();
+</script>
+<!-- /P0 ADMIN SHELL -->
+
+<script src="assets/material-catalog.js"></script>
+<script src="assets/p1.js"></script>
+<script src="assets/admin-v32.js"></script>
+</body></html>

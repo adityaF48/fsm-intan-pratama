@@ -1,0 +1,2499 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Intan Pratama — Portal Teknisi Lapangan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { sans: ['Plus Jakarta Sans','Inter','system-ui','sans-serif'] },
+  colors: {
+    primary: '#0037b0', 'primary-container': '#1d4ed8', 'on-primary': '#ffffff', 'on-primary-container': '#cad3ff',
+    'primary-fixed': '#dce1ff', 'primary-fixed-dim': '#b7c4ff', 'on-primary-fixed': '#001551', 'on-primary-fixed-variant': '#0039b5',
+    secondary: '#855300', 'secondary-container': '#fea619', 'on-secondary-container': '#684000',
+    'secondary-fixed': '#ffddb8', 'on-secondary-fixed': '#2a1700', 'on-secondary-fixed-variant': '#653e00',
+    tertiary: '#004f35', 'tertiary-container': '#006a48', 'on-tertiary-container': '#60eeb1',
+    'tertiary-fixed': '#6ffbbe', 'tertiary-fixed-dim': '#4edea3', 'on-tertiary-fixed': '#002113', 'on-tertiary-fixed-variant': '#005236',
+    surface: '#faf8ff', 'surface-container-lowest': '#ffffff', 'surface-container-low': '#f2f3ff',
+    'surface-container': '#eaedff', 'surface-container-high': '#e2e7ff', 'surface-container-highest': '#dae2fd',
+    'on-surface': '#131b2e', 'on-surface-variant': '#434655', outline: '#747686', 'outline-variant': '#c4c5d7',
+    'inverse-surface': '#283044', 'inverse-on-surface': '#eef0ff',
+    'surface-tint': '#2151da', 'surface-variant': '#dae2fd',
+    error: '#ba1a1a', 'error-container': '#ffdad6', 'on-error-container': '#93000a', 'on-error': '#ffffff'
+  },
+  fontSize: {
+    'headline-xl': ['32px', { lineHeight: '40px', letterSpacing: '-0.02em', fontWeight: '800' }],
+    'headline-lg': ['26px', { lineHeight: '34px', letterSpacing: '-0.015em', fontWeight: '700' }],
+    'headline-md': ['20px', { lineHeight: '28px', letterSpacing: '-0.01em', fontWeight: '700' }],
+    'headline-sm': ['18px', { lineHeight: '24px', fontWeight: '600' }],
+    'body-lg': ['16px', { lineHeight: '24px', fontWeight: '500' }],
+    'body-md': ['14px', { lineHeight: '20px', fontWeight: '400' }],
+    'body-sm': ['13px', { lineHeight: '18px', fontWeight: '400' }],
+    'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.01em', fontWeight: '600' }],
+    'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.02em', fontWeight: '600' }],
+    'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.04em', fontWeight: '700' }]
+  },
+  spacing: { 'space-xs': '0.25rem', 'space-sm': '0.5rem', 'space-md': '0.75rem', 'space-lg': '1rem', 'space-xl': '1.5rem', margin: '1rem', gutter: '1rem' }
+} } };
+</script>
+<style>
+  html, body { background:#faf8ff; }
+  body { font-family:'Plus Jakarta Sans', Inter, system-ui, sans-serif; -webkit-tap-highlight-color:transparent; }
+  .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+  .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+  .no-scrollbar::-webkit-scrollbar { display:none; }
+  .no-scrollbar { scrollbar-width:none; }
+  .view { display:none; }
+  .view.on { display:block; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24; }
+  .sig-cursive { font-family:'Segoe Script','Bradley Hand',cursive; }
+  .tnum { font-variant-numeric: tabular-nums; }
+  #dtMap { z-index:0; }
+  .leaflet-container { font-family:'Plus Jakarta Sans',sans-serif; }
+  .view.on main { animation: fade .18s ease-out; }
+  @keyframes fade { from { opacity:.55; } to { opacity:1; } }
+  /* checklist kerja + tes nyala: input sr-only, kotak visual mengikuti :checked */
+  .cl-item input:checked ~ .clbox { background:#0037b0; border-color:#0037b0; }
+  .cl-item input:checked ~ .clbox .material-symbols-outlined { color:#fff; opacity:1; }
+  .cl-item input:checked ~ .cltxt { color:#434655; }
+  .cl-item input:checked ~ .cltxt span:first-child { text-decoration: line-through; text-decoration-thickness:2px; }
+  .cl-item input:checked ~ .clok { opacity:1; }
+  .tesrow input:checked ~ .tesbox { background:#004f35; border-color:#004f35; }
+  .tesrow input:checked ~ .tesbox .material-symbols-outlined { color:#fff; }
+</style>
+<link rel="stylesheet" href="assets/p1.css">
+<script src="assets/crew-master.js"></script>
+<script src="assets/material-catalog.js"></script>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased">
+<div class="max-w-[480px] mx-auto min-h-screen relative bg-surface">
+
+<!-- ==================== VIEW: TUGAS ==================== -->
+<div class="view on" id="view-tugas">
+
+  <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-50 pt-safe bg-white border-b border-slate-200 shadow-sm">
+    <div class="h-14 px-4 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-primary text-white flex items-center justify-center font-extrabold text-[15px] shadow-sm">IP</div>
+        <div class="flex flex-col">
+          <span class="text-[12px] font-extrabold uppercase tracking-tight text-slate-900 leading-tight">CV INTAN PRATAMA</span>
+          <span class="text-[12px] font-semibold text-primary leading-tight">Portal Teknisi AC</span>
+        </div>
+      </div>
+      <button type="button" onclick="bukaNotif()" aria-label="Notifikasi tugas" class="relative min-w-[48px] min-h-[44px] flex items-center justify-center rounded-lg text-slate-700 hover:bg-slate-100 active:bg-slate-200">
+        <span class="material-symbols-outlined text-[26px]">notifications</span>
+        <span id="tgNotifDot" class="hidden absolute top-2 right-2.5 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-white"></span>
+      </button>
+    </div>
+    <div data-sync-bar class="bg-emerald-50 px-4 py-1.5 border-t border-emerald-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span data-sync-pill class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-600 text-white text-[11px] font-bold">
+          <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span><span data-sync-title>ONLINE</span>
+        </span>
+        <span data-sync-text class="text-[12px] font-medium text-emerald-900">Tersinkron otomatis</span>
+      </div>
+      <span id="tgSyncAgo" class="text-[11px] font-semibold text-emerald-800">Baru saja</span>
+    </div>
+  </header>
+
+  <main class="pt-[96px] pb-28 px-4 flex flex-col gap-4">
+
+    <!-- KRU TEKNISI -->
+    <section class="bg-white rounded-xl border border-slate-300 p-3.5 shadow-sm flex flex-col gap-3">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-2.5">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+          <span class="text-[14px] font-bold text-slate-900">Kru Teknisi · <span id="tgTeam">Tim Alpha</span></span>
+        </div>
+        <a href="login.html" onclick="try{sessionStorage.removeItem('ip_sess')}catch(e){}" class="min-h-[40px] px-3 flex items-center gap-1.5 rounded-lg bg-slate-100 border border-slate-300 text-slate-700 font-bold text-[13px] active:bg-red-50 active:text-red-700">
+          <span class="material-symbols-outlined text-[18px]">logout</span>Keluar
+        </a>
+      </div>
+      <div class="grid grid-cols-2 gap-2.5">
+        <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="relative shrink-0">
+            <span id="tgLeadAv" class="w-10 h-10 rounded-lg bg-primary text-white flex items-center justify-center font-extrabold text-[13px] border-2 border-white shadow-sm">PA</span>
+            <span class="absolute -bottom-1 -right-1 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"></span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span id="tgLeadName" class="text-[14px] font-bold text-slate-900 leading-tight truncate">Pak Adrian</span>
+            <span id="tgLeadRole" class="text-[12px] font-semibold text-primary leading-tight mt-0.5">Lead PIC</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="relative shrink-0">
+            <span id="tgHelperAv" class="w-10 h-10 rounded-lg bg-slate-700 text-white flex items-center justify-center font-extrabold text-[13px] border-2 border-white shadow-sm">BU</span>
+            <span class="absolute -bottom-1 -right-1 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"></span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span id="tgHelperName" class="text-[14px] font-bold text-slate-900 leading-tight truncate">Budi</span>
+            <span id="tgHelperRole" class="text-[12px] font-medium text-slate-600 leading-tight mt-0.5">Helper · Anda</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RINGKASAN HARI -->
+    <section class="bg-white rounded-xl border border-slate-300 p-3.5 shadow-sm flex flex-col gap-3">
+      <div class="flex items-center justify-between gap-2 border-b border-slate-200 pb-2.5">
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="material-symbols-outlined text-primary text-[20px] shrink-0">calendar_today</span>
+          <span id="tgDate" class="text-[15px] font-bold text-slate-900 truncate">Senin, 26 Okt 2026</span>
+        </div>
+        <span id="tgZone" class="text-[11px] font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200 shrink-0 max-w-[45%] truncate">Surabaya Timur</span>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg min-h-[56px]">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-primary flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px]">assignment</span>
+          </div>
+          <div class="flex flex-col">
+            <span id="tgTotal" class="text-[20px] font-extrabold text-slate-900 leading-tight tnum">0</span>
+            <span class="text-[13px] font-medium text-slate-600">Total Tugas</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg min-h-[56px]">
+          <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px]">task_alt</span>
+          </div>
+          <div class="flex flex-col">
+            <span id="tgDone" class="text-[20px] font-extrabold text-slate-900 leading-tight tnum">0</span>
+            <span class="text-[13px] font-medium text-slate-600">Selesai</span>
+          </div>
+        </div>
+      </div>
+      <div id="tgDayStrip" class="flex items-center gap-2 overflow-x-auto no-scrollbar -mt-0.5"></div>
+    </section>
+
+    <div id="tgHeroWrap" class="flex flex-col gap-4"></div>
+
+    <!-- TUGAS BERIKUTNYA -->
+    <section id="tgNextSection" class="hidden flex-col gap-2.5 mt-1">
+      <div class="flex items-center justify-between px-1">
+        <h3 class="text-[16px] font-extrabold text-slate-900">Tugas Berikutnya Hari Ini</h3>
+        <span id="tgNextCount" class="text-[13px] font-bold text-slate-500">0 Antrean</span>
+      </div>
+      <div id="tgNextWrap" class="flex flex-col gap-2.5"></div>
+    </section>
+  </main>
+</div>
+
+<!-- ==================== VIEW: RIWAYAT ==================== -->
+<div class="view" id="view-riwayat">
+  <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-sm pt-safe">
+    <div class="flex flex-col h-20 px-4 justify-center">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex flex-col min-w-0 flex-1">
+          <span class="text-[11px] font-bold text-primary uppercase tracking-wider truncate">CV INTAN PRATAMA · Portal Teknisi AC</span>
+          <h1 class="text-[18px] font-bold text-slate-900 truncate leading-tight">Riwayat</h1>
+        </div>
+        <div class="flex items-center gap-1 shrink-0">
+          <button type="button" onclick="bukaNotif()" aria-label="Notifikasi operasional" class="w-11 h-11 rounded-lg flex items-center justify-center text-slate-600 hover:bg-slate-100 active:bg-slate-200">
+            <span class="material-symbols-outlined text-[24px]">notifications</span>
+          </button>
+          <span id="rwAvatar" class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-[11px] font-extrabold">PA</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-1.5 mt-0.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span data-sync-inline class="text-[11px] font-bold text-emerald-700 truncate">ONLINE · Tersinkron otomatis</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-[88px] pb-28 px-4 flex flex-col gap-4">
+    <!-- periode -->
+    <section class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200">
+      <div class="flex items-center justify-between mb-2.5">
+        <button type="button" aria-label="Bulan sebelumnya" onclick="monthStep(-1)" class="w-11 h-11 flex items-center justify-center rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-900 active:scale-95">
+          <span class="material-symbols-outlined text-[22px]">chevron_left</span>
+        </button>
+        <div class="flex flex-col items-center">
+          <span id="rwMonthLabel" class="text-[18px] font-bold text-slate-900">Oktober 2026</span>
+          <span id="rwMonthTotal" class="text-[11px] font-bold text-slate-500">0 total penugasan selesai</span>
+        </div>
+        <button type="button" aria-label="Bulan berikutnya" onclick="monthStep(1)" class="w-11 h-11 flex items-center justify-center rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-900 active:scale-95">
+          <span class="material-symbols-outlined text-[22px]">chevron_right</span>
+        </button>
+      </div>
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar">
+        <button type="button" data-pill="this" onclick="setHistPill('this')" class="rw-pill h-10 px-3.5 rounded-lg font-bold text-[12px] shrink-0">Bulan Ini</button>
+        <button type="button" data-pill="last" onclick="setHistPill('last')" class="rw-pill h-10 px-3.5 rounded-lg font-bold text-[12px] shrink-0">Bulan Lalu</button>
+        <button type="button" data-pill="all" onclick="setHistPill('all')" class="rw-pill h-10 px-3.5 rounded-lg font-bold text-[12px] shrink-0">Semua Bulan</button>
+      </div>
+    </section>
+
+    <!-- metrik -->
+    <section class="grid grid-cols-3 gap-2">
+      <div class="bg-white rounded-xl p-2.5 flex flex-col justify-between shadow-sm border border-slate-200 min-h-[88px]">
+        <div class="flex items-center gap-1 text-emerald-700">
+          <span class="material-symbols-outlined text-[18px]">check_circle</span>
+          <span class="text-[11px] font-bold truncate">Tuntas</span>
+        </div>
+        <div class="mt-1">
+          <span id="rwDone" class="text-[20px] font-bold text-slate-900 tnum">0</span>
+          <span class="text-[11px] font-bold text-slate-500 block">Order</span>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-2.5 flex flex-col justify-between shadow-sm border border-slate-200 min-h-[88px]">
+        <div class="flex items-center gap-1 text-error">
+          <span class="material-symbols-outlined text-[18px]">cancel</span>
+          <span class="text-[11px] font-bold truncate">Batal</span>
+        </div>
+        <div class="mt-1">
+          <span id="rwCancel" class="text-[20px] font-bold text-slate-900 tnum">0</span>
+          <span class="text-[11px] font-bold text-slate-500 block">Order</span>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-2.5 flex flex-col justify-between shadow-sm border border-slate-200 min-h-[88px]">
+        <div class="flex items-center gap-1 text-primary">
+          <span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+          <span class="text-[11px] font-bold truncate">SPK Valid</span>
+        </div>
+        <div class="mt-1">
+          <span id="rwValid" class="text-[20px] font-bold text-slate-900 tnum">0%</span>
+          <span class="text-[11px] font-bold text-slate-500 block">Laporan</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- pencarian & filter -->
+    <section class="flex flex-col gap-2">
+      <div class="relative flex items-center">
+        <span class="material-symbols-outlined absolute left-3 text-slate-500 pointer-events-none text-[21px]">search</span>
+        <input id="rwSearch" type="text" inputmode="search" oninput="setHistQuery(this.value)" placeholder="Cari nomor order, pelanggan, alamat…" class="w-full h-12 pl-11 pr-11 rounded-lg bg-white text-slate-900 placeholder:text-slate-500 text-[14px] shadow-sm border border-slate-200 outline-none focus:border-primary focus:ring-2 focus:ring-primary/15">
+        <button type="button" aria-label="Bersihkan pencarian" onclick="clearHistQuery()" class="absolute right-1 w-10 h-10 flex items-center justify-center text-slate-500 active:scale-95">
+          <span class="material-symbols-outlined text-[20px]">cancel</span>
+        </button>
+      </div>
+      <div id="rwChips" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5"></div>
+    </section>
+
+    <div id="rwList" class="flex flex-col gap-4"></div>
+
+    <div class="bg-surface-container-high rounded-lg p-2.5 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2 min-w-0">
+        <span class="material-symbols-outlined text-[20px] text-tertiary shrink-0">cloud_done</span>
+        <span class="text-[11px] font-bold text-on-surface-variant truncate">Seluruh bukti foto &amp; SPK terarsip di perangkat ini</span>
+      </div>
+      <button type="button" onclick="unduhRiwayat()" class="text-[11px] font-bold text-primary shrink-0">Unduh CSV</button>
+    </div>
+  </main>
+</div>
+
+<!-- ==================== VIEW: KEHADIRAN ==================== -->
+<div class="view" id="view-kehadiran">
+  <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-sm pt-safe">
+    <div class="flex flex-col h-20 px-4 justify-center">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex flex-col min-w-0 flex-1">
+          <span class="text-[11px] font-bold text-primary uppercase tracking-wider truncate">CV INTAN PRATAMA · Portal Teknisi AC</span>
+          <h1 class="text-[18px] font-bold text-slate-900 truncate leading-tight">Kehadiran</h1>
+        </div>
+        <div class="flex items-center gap-1 shrink-0">
+          <button type="button" onclick="bukaNotif()" aria-label="Notifikasi operasional" class="w-11 h-11 rounded-lg flex items-center justify-center text-slate-600 hover:bg-slate-100 active:bg-slate-200">
+            <span class="material-symbols-outlined text-[24px]">notifications</span>
+          </button>
+          <span id="hdAvatar" class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-[11px] font-extrabold">PA</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-1.5 mt-0.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span data-sync-inline class="text-[11px] font-bold text-emerald-700 truncate">ONLINE · Tersinkron otomatis</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-[88px] pb-28 px-4 flex flex-col gap-4">
+    <section class="flex flex-col gap-2">
+      <div class="flex items-start justify-between gap-2">
+        <div class="min-w-0">
+          <h2 class="text-[20px] font-bold text-slate-900">Kehadiran Saya</h2>
+          <p class="text-[12px] text-slate-500">Log absensi &amp; rotasi penugasan lapangan</p>
+        </div>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-primary text-[10px] font-bold shrink-0">
+          <span class="material-symbols-outlined text-[15px]">verified_user</span>Terverifikasi
+        </span>
+      </div>
+      <div class="flex items-center justify-between bg-white p-1.5 rounded-xl border border-slate-200 shadow-sm">
+        <button type="button" aria-label="Bulan sebelumnya" onclick="attMonthStep(-1)" class="w-11 h-11 flex items-center justify-center rounded-lg bg-slate-100 text-slate-900 active:scale-95">
+          <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+        </button>
+        <div class="flex flex-col items-center">
+          <span id="hdMonthLabel" class="text-[16px] font-bold text-slate-900">Oktober 2026</span>
+          <span class="text-[10px] font-bold text-tertiary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Shift Pagi · <span id="hdShiftTeam">Tim Alpha</span></span>
+        </div>
+        <button type="button" aria-label="Bulan berikutnya" onclick="attMonthStep(1)" class="w-11 h-11 flex items-center justify-center rounded-lg bg-slate-100 text-slate-900 active:scale-95">
+          <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- STATUS HARI INI -->
+    <section class="bg-white rounded-xl p-4 shadow-sm border border-slate-200 flex flex-col gap-3">
+      <div class="flex items-start justify-between gap-2">
+        <div class="flex flex-col min-w-0">
+          <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Status Harian</span>
+          <span id="hdToday" class="text-[17px] font-bold text-slate-900 leading-tight">Selasa, 27 Okt 2026</span>
+        </div>
+        <span id="hdStatusChip" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-tertiary text-[11px] font-bold shrink-0">
+          <span class="w-2 h-2 rounded-full bg-tertiary-container"></span>Belum Absen
+        </span>
+      </div>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 rounded bg-surface-container text-slate-800 text-[10px] font-bold" id="hdBadgeTeam">Tim Alpha</span>
+        <span class="px-2.5 py-1 rounded bg-surface-container text-slate-800 text-[10px] font-bold" id="hdBadgeRole">Teknisi Utama</span>
+        <span id="hdBadgePic" class="hidden px-2.5 py-1 rounded bg-primary-container text-white text-[10px] font-bold items-center gap-1">
+          <span class="material-symbols-outlined text-[13px]">star</span>PIC Harian
+        </span>
+        <span id="hdBadgeIn" class="hidden px-2.5 py-1 rounded bg-tertiary-container text-white text-[10px] font-bold items-center gap-1">
+          <span class="material-symbols-outlined text-[13px]">schedule</span><span id="hdBadgeInText">Masuk —</span>
+        </span>
+      </div>
+      <div class="bg-surface-container-low rounded-lg p-3 grid grid-cols-2 gap-3 items-center">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg bg-white flex items-center justify-center text-tertiary-container shrink-0 border border-slate-200">
+            <span class="material-symbols-outlined text-[20px]">login</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="text-[10px] font-bold text-slate-500">Absen Masuk</span>
+            <span id="hdIn" class="text-[16px] font-bold text-slate-900 leading-tight">—</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg bg-white flex items-center justify-center text-primary shrink-0 border border-slate-200">
+            <span class="material-symbols-outlined text-[20px]">logout</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="text-[10px] font-bold text-slate-500">Selesai Shift</span>
+            <span id="hdOut" class="text-[16px] font-bold text-slate-900 leading-tight">—</span>
+          </div>
+        </div>
+      </div>
+      <button id="hdClockBtn" type="button" onclick="toggleAbsen()" class="w-full min-h-[48px] rounded-lg bg-primary text-white font-bold text-[14px] flex items-center justify-center gap-2 active:scale-[0.99] transition-transform shadow-sm disabled:opacity-50">
+        <span class="material-symbols-outlined text-[20px]">fingerprint</span>
+        <span id="hdClockLabel">Clock In Sekarang</span>
+      </button>
+      <p id="hdClockHint" class="text-[11px] text-slate-500 leading-relaxed">Clock-in tercatat sebagai bukti kehadiran lapangan dan dipakai solver CSP saat menyusun tim.</p>
+    </section>
+
+    <!-- AKUMULASI BULAN -->
+    <section class="bg-white rounded-xl p-4 shadow-sm border border-slate-200 flex flex-col gap-3">
+      <div class="flex items-center justify-between gap-2">
+        <div class="min-w-0">
+          <h3 class="text-[17px] font-bold text-slate-900">Akumulasi Bulan Ini</h3>
+          <p id="hdPeriod" class="text-[11px] text-slate-500">Periode 1 – 31 Oktober 2026</p>
+        </div>
+        <div class="flex items-center gap-2 bg-surface-container px-2.5 py-1.5 rounded-lg shrink-0">
+          <div class="relative w-8 h-8 flex items-center justify-center">
+            <svg class="w-8 h-8 -rotate-90" viewBox="0 0 36 36">
+              <circle class="text-surface-variant" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+              <circle id="hdRing" class="text-primary" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3"></circle>
+            </svg>
+            <span class="material-symbols-outlined absolute text-primary text-[13px]">trending_up</span>
+          </div>
+          <div class="flex flex-col">
+            <span id="hdDiscipline" class="text-[16px] font-bold text-primary leading-none">0%</span>
+            <span class="text-[10px] font-bold text-slate-500">Disiplin</span>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-2">
+        <div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col items-center justify-center text-center">
+          <span class="w-2.5 h-2.5 rounded-full bg-tertiary-container mb-1"></span>
+          <span id="hdHadir" class="text-[20px] font-bold text-tertiary tnum">0</span>
+          <span class="text-[10px] font-bold text-slate-500">Hadir (Hari)</span>
+        </div>
+        <div class="bg-primary p-2.5 rounded-lg flex flex-col items-center justify-center text-center">
+          <span class="material-symbols-outlined text-[16px] mb-0.5 text-white">star</span>
+          <span id="hdPicDays" class="text-[20px] font-bold text-white tnum">0</span>
+          <span class="text-[10px] font-bold text-white/90">Hari PIC</span>
+        </div>
+        <div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col items-center justify-center text-center">
+          <span class="w-2.5 h-2.5 rounded-full bg-secondary mb-1"></span>
+          <span id="hdIzin" class="text-[20px] font-bold text-secondary tnum">0</span>
+          <span class="text-[10px] font-bold text-slate-500">Izin (Hari)</span>
+        </div>
+        <div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col items-center justify-center text-center">
+          <span class="w-2.5 h-2.5 rounded-full bg-surface-tint mb-1"></span>
+          <span id="hdSakit" class="text-[20px] font-bold text-slate-900 tnum">0</span>
+          <span class="text-[10px] font-bold text-slate-500">Sakit</span>
+        </div>
+        <div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col items-center justify-center text-center">
+          <span class="w-2.5 h-2.5 rounded-full bg-outline mb-1"></span>
+          <span id="hdCuti" class="text-[20px] font-bold text-slate-900 tnum">0</span>
+          <span class="text-[10px] font-bold text-slate-500">Cuti</span>
+        </div>
+        <div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col items-center justify-center text-center">
+          <span class="material-symbols-outlined text-[16px] text-tertiary mb-0.5">verified</span>
+          <span id="hdTelat" class="text-[20px] font-bold text-tertiary tnum">0</span>
+          <span class="text-[10px] font-bold text-slate-500">Telat</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- KALENDER -->
+    <section class="bg-white rounded-xl p-4 shadow-sm border border-slate-200 flex flex-col gap-3">
+      <div class="flex items-center justify-between">
+        <h3 class="text-[17px] font-bold text-slate-900">Kalender Absensi</h3>
+        <span class="text-[10px] font-bold text-slate-500">Sentuh tanggal untuk detail</span>
+      </div>
+      <div class="grid grid-cols-7 text-center text-[11px] font-bold text-slate-500">
+        <span class="py-1 text-error">Min</span><span class="py-1">Sen</span><span class="py-1">Sel</span><span class="py-1">Rab</span><span class="py-1">Kam</span><span class="py-1">Jum</span><span class="py-1">Sab</span>
+      </div>
+      <div id="hdCal" class="grid grid-cols-7 gap-1.5"></div>
+      <div class="pt-2 flex flex-wrap items-center justify-between gap-2 text-slate-500">
+        <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span><span class="text-[10px] font-bold">Hadir</span></div>
+        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px] text-primary">star</span><span class="text-[10px] font-bold">PIC Harian</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span><span class="text-[10px] font-bold">Izin</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-surface-tint"></span><span class="text-[10px] font-bold">Sakit</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-outline"></span><span class="text-[10px] font-bold">Cuti</span></div>
+      </div>
+    </section>
+
+    <!-- DETAIL PRESENSI -->
+    <section class="bg-white rounded-xl p-4 shadow-sm border border-slate-200 flex flex-col gap-3">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2 min-w-0">
+          <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+            <span class="material-symbols-outlined text-[18px]">event_note</span>
+          </div>
+          <span id="hdDetailTitle" class="text-[14px] font-bold text-slate-900 truncate">Detail Presensi</span>
+        </div>
+        <span id="hdDetailChip" class="px-2 py-0.5 rounded bg-surface-container-highest text-slate-600 text-[10px] font-bold shrink-0">—</span>
+      </div>
+      <div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-2">
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-[11px] text-slate-500">Catatan Absensi:</span>
+          <span id="hdDetailHours" class="text-[11px] font-bold text-slate-900">—</span>
+        </div>
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-[11px] text-slate-500">Penugasan Shift:</span>
+          <span id="hdDetailShift" class="text-[11px] font-semibold text-slate-900 flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">star</span>Shift Pagi</span>
+        </div>
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-[11px] text-slate-500">Lokasi Presensi:</span>
+          <span class="text-[11px] text-slate-900 flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-tertiary">my_location</span>Depo Logistik Sentral (Radius 15m)</span>
+        </div>
+      </div>
+      <button type="button" onclick="bukaKoreksi()" class="w-full min-h-[48px] px-4 rounded-lg bg-surface-container-highest text-slate-900 font-bold text-[13px] flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+        <span class="material-symbols-outlined text-[20px] text-secondary">edit_note</span>Laporkan Salah Catat / Koreksi Presensi
+      </button>
+    </section>
+
+    <section class="bg-secondary-fixed/50 text-on-secondary-fixed-variant p-3.5 rounded-lg flex items-start gap-3">
+      <span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">info</span>
+      <div class="flex flex-col gap-1">
+        <span class="text-[12px] font-bold text-on-secondary-fixed">Kebijakan Presensi Operasional</span>
+        <p class="text-[12px] leading-relaxed">Data presensi dan pergantian jadwal dikelola Admin Operasional CV Intan Pratama. Laporan koreksi absensi diproses dan diverifikasi maksimal 1×24 jam kerja.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ==================== VIEW: DETAIL ORDER ==================== -->
+<div class="view" id="view-detail">
+  <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-50 pt-safe bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-sm">
+    <div class="h-16 px-3 flex items-center gap-2">
+      <button type="button" onclick="closeDetail()" aria-label="Kembali ke daftar tugas" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container active:scale-95">
+        <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+      </button>
+      <div class="flex flex-col min-w-0 flex-1">
+        <span id="dtOrderId" class="text-[10px] font-extrabold text-primary uppercase tracking-wider truncate">Detail order</span>
+        <h1 id="dtCust" class="text-[15px] font-bold text-on-surface truncate leading-tight">—</h1>
+      </div>
+      <span id="dtStatusChip" class="shrink-0 px-2.5 py-1 rounded-full bg-secondary-container/20 text-on-secondary-fixed text-[10px] font-bold">Terjadwal</span>
+    </div>
+  </header>
+
+  <main class="pt-[84px] pb-[168px] px-3.5 flex flex-col gap-3.5">
+
+    <!-- HERO ORDER -->
+    <section class="bg-gradient-to-br from-[#0037b0] via-[#00308f] to-[#1d4ed8] text-white p-4 rounded-2xl shadow-lg relative overflow-hidden">
+      <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="flex items-center justify-between gap-2 relative z-10">
+        <div class="flex items-center gap-2 min-w-0">
+          <div class="w-9 h-9 rounded-xl bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 shrink-0">
+            <span class="material-symbols-outlined text-secondary-fixed-dim text-[22px]">receipt_long</span>
+          </div>
+          <div class="min-w-0">
+            <span class="text-[10px] tracking-wider uppercase text-primary-fixed font-bold block">Nomor Order SPK</span>
+            <h1 id="dtHeroId" class="font-extrabold text-xl text-white tracking-tight leading-tight truncate">—</h1>
+          </div>
+        </div>
+        <span class="text-[10px] font-bold bg-white/15 border border-white/25 px-2 py-1 rounded-lg shrink-0">SPK Digital</span>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm p-3 rounded-xl border border-white/15 grid grid-cols-2 gap-2.5 mt-3">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center text-primary-fixed shrink-0">
+            <span class="material-symbols-outlined text-[18px]">person</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="text-[10px] text-primary-fixed font-medium">Pelanggan</span>
+            <span id="dtHeroCust" class="text-[13px] text-white font-bold truncate">—</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2.5 border-l border-white/15 pl-2.5 min-w-0">
+          <div class="w-8 h-8 rounded-lg bg-secondary-container/25 flex items-center justify-center text-secondary-fixed shrink-0">
+            <span class="material-symbols-outlined text-[18px]">schedule</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="text-[10px] text-primary-fixed font-medium">Jadwal Mulai</span>
+            <span id="dtHeroSlot" class="text-[13px] text-white font-bold truncate">—</span>
+          </div>
+        </div>
+      </div>
+      <div class="bg-black/20 border border-white/15 px-3 py-2 rounded-xl flex items-center justify-between gap-2 mt-2.5">
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="material-symbols-outlined text-tertiary-fixed text-[18px] shrink-0">ac_unit</span>
+          <span id="dtHeroService" class="text-[12px] text-white/90 font-medium truncate">—</span>
+        </div>
+        <span id="dtHeroEst" class="bg-white/20 text-white font-bold px-2 py-0.5 rounded text-[10px] shrink-0">—</span>
+      </div>
+    </section>
+
+    <!-- STEPPER 7 TAHAP -->
+    <section class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex flex-col gap-2.5">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-1.5 min-w-0">
+          <span class="material-symbols-outlined text-primary text-[20px] shrink-0">timeline</span>
+          <span id="dtStepLabel" class="text-[11px] font-extrabold text-on-surface uppercase tracking-wide truncate">Tahap 1 dari 7</span>
+        </div>
+        <span id="dtStepTime" class="text-[10px] font-bold text-primary bg-primary-fixed px-2 py-0.5 rounded-md shrink-0">—</span>
+      </div>
+      <div id="dtStepper" class="overflow-x-auto no-scrollbar pb-1 flex items-center gap-1.5"></div>
+    </section>
+
+    <!-- BANNER PIC / READ ONLY -->
+    <div id="picLock" class="hidden bg-secondary-fixed/60 border border-secondary/40 text-on-secondary-fixed px-3 py-2.5 rounded-xl text-[12px] font-semibold leading-relaxed"></div>
+
+    <!-- TRIO AKSI LAPANGAN -->
+    <div class="grid grid-cols-3 gap-2">
+      <a id="dtNav" href="https://maps.google.com" target="_blank" rel="noopener" class="min-h-[56px] p-2 bg-gradient-to-b from-primary-fixed/60 to-primary-fixed/30 text-primary border border-primary/20 rounded-xl shadow-sm flex flex-col items-center justify-center gap-1 active:scale-95 transition-all text-center">
+        <span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[18px]">near_me</span></span>
+        <span class="text-[11px] font-bold leading-none">Peta Rute</span>
+      </a>
+      <a id="dtCall" href="tel:" class="min-h-[56px] p-2 bg-gradient-to-b from-tertiary-fixed/40 to-tertiary-fixed/20 text-tertiary border border-tertiary/20 rounded-xl shadow-sm flex flex-col items-center justify-center gap-1 active:scale-95 transition-all text-center">
+        <span class="w-8 h-8 rounded-full bg-tertiary-container text-white flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[18px]">call</span></span>
+        <span class="text-[11px] font-bold leading-none">Telepon</span>
+      </a>
+      <a id="dtWa" href="https://wa.me/" target="_blank" rel="noopener" class="min-h-[56px] p-2 bg-gradient-to-b from-emerald-500 to-green-600 text-white border border-emerald-600 rounded-xl shadow-sm flex flex-col items-center justify-center gap-1 active:scale-95 transition-all text-center">
+        <span class="w-8 h-8 rounded-full bg-white text-green-600 flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[20px] font-bold">chat</span></span>
+        <span class="text-[11px] font-bold leading-none">WhatsApp</span>
+      </a>
+    </div>
+
+    <!-- SUB TABS -->
+    <div class="flex bg-surface-container p-1 rounded-xl shadow-inner" role="tablist" id="dtTabs">
+      <button type="button" class="dtab flex-1 min-h-[44px] rounded-lg font-bold text-[12px] flex items-center justify-center transition-all" data-tab="ringkasan">Ringkasan</button>
+      <button type="button" class="dtab flex-1 min-h-[44px] rounded-lg font-bold text-[12px] flex items-center justify-center transition-all" data-tab="spk">SPK</button>
+      <button type="button" class="dtab flex-1 min-h-[44px] rounded-lg font-bold text-[12px] flex items-center justify-center transition-all" data-tab="checklist">Checklist</button>
+      <button type="button" class="dtab flex-1 min-h-[44px] rounded-lg font-bold text-[12px] flex items-center justify-center transition-all" data-tab="invoice">Biaya</button>
+    </div>
+
+    <!-- TAB RINGKASAN -->
+    <div id="tab-ringkasan" class="dp flex flex-col gap-3.5">
+      <section class="bg-white p-4 rounded-2xl shadow-sm space-y-3 border border-slate-200">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 min-w-0">
+            <div class="w-8 h-8 rounded-lg bg-error-container text-error flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[20px]">location_on</span>
+            </div>
+            <div class="min-w-0">
+              <h2 class="font-extrabold text-[14px] text-on-surface">Alamat &amp; Titik Lokasi</h2>
+              <p id="dtZona" class="text-[11px] text-on-surface-variant truncate">—</p>
+            </div>
+          </div>
+          <button type="button" onclick="salinAlamat()" class="min-h-[40px] px-3 py-1 flex items-center gap-1.5 bg-primary-fixed/60 text-primary rounded-lg text-[11px] font-bold border border-primary/20 active:scale-95 transition-all shrink-0">
+            <span class="material-symbols-outlined text-[16px]">content_copy</span>
+            <span id="copyLabel">Salin</span>
+          </button>
+        </div>
+        <div class="bg-surface-container-low border border-outline-variant/60 p-3 rounded-xl space-y-1.5">
+          <p id="dtAlamat" class="text-[14px] text-on-surface font-bold leading-snug">—</p>
+          <div class="flex items-start gap-1.5 pt-1 text-[11px] text-on-secondary-fixed bg-secondary-fixed/40 p-2 rounded-lg border border-secondary/30">
+            <span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">signpost</span>
+            <span class="font-medium min-w-0"><strong>Patokan:</strong> <span id="dtPatokan">—</span></span>
+          </div>
+        </div>
+        <a id="dtMapLink" href="https://maps.google.com" target="_blank" rel="noopener" class="block w-full h-32 rounded-xl relative overflow-hidden border border-outline-variant/60 bg-surface-container-low" style="background-image:linear-gradient(135deg,#e2e7ff,#f2f3ff 45%,#dae2fd);">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="flex flex-col items-center gap-1 text-primary">
+              <span class="material-symbols-outlined text-[30px]" style="font-variation-settings:'FILL' 1;">location_on</span>
+              <span class="text-[11px] font-bold bg-white/85 px-2 py-0.5 rounded-full">Buka Google Maps</span>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <section class="bg-white p-4 rounded-2xl shadow-sm space-y-2.5 border border-slate-200">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-primary-fixed text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[20px]">badge</span>
+          </div>
+          <h2 class="font-extrabold text-[14px] text-on-surface">Profil Pelanggan</h2>
+        </div>
+        <div class="bg-gradient-to-r from-surface-container-low to-primary-fixed/30 border border-outline-variant/60 p-3 rounded-xl flex items-center justify-between gap-2">
+          <div class="flex items-center gap-3 min-w-0">
+            <div id="dtCustAv" class="w-11 h-11 rounded-full bg-gradient-to-tr from-primary to-primary-container text-white flex items-center justify-center font-extrabold text-[13px] shadow-sm shrink-0">—</div>
+            <div class="flex flex-col min-w-0">
+              <span id="dtCustName" class="text-[14px] font-bold text-on-surface truncate">—</span>
+              <span id="dtHp" class="text-[12px] text-on-surface-variant font-semibold">—</span>
+              <span id="dtTipe" class="text-[10px] font-bold text-on-secondary-fixed flex items-center gap-1 mt-0.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>Rumah Tinggal
+              </span>
+            </div>
+          </div>
+          <a id="dtCallMini" href="tel:" class="w-10 h-10 rounded-xl bg-tertiary-fixed/50 text-tertiary border border-tertiary/30 flex items-center justify-center active:scale-95 shrink-0">
+            <span class="material-symbols-outlined text-[20px]">call</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="bg-white p-4 rounded-2xl shadow-sm space-y-3 border border-slate-200">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 min-w-0">
+            <div class="w-8 h-8 rounded-lg bg-tertiary-fixed/50 text-tertiary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[20px]">mode_fan</span>
+            </div>
+            <div class="min-w-0">
+              <h2 id="dtUnitTitle" class="font-extrabold text-[14px] text-on-surface truncate">Detail Unit AC</h2>
+              <p class="text-[11px] text-on-surface-variant">Daftar item pekerjaan</p>
+            </div>
+          </div>
+          <span id="dtMerekBadge" class="text-[10px] bg-tertiary-fixed/40 border border-tertiary/25 text-tertiary px-2 py-0.5 rounded-full font-bold shrink-0 max-w-[42%] truncate">—</span>
+        </div>
+        <div id="dtUnits" class="space-y-2"></div>
+      </section>
+
+      <section class="bg-white p-4 rounded-2xl shadow-sm space-y-2.5 border border-slate-200">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-secondary-fixed text-secondary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[20px]">assignment_late</span>
+          </div>
+          <h2 class="font-extrabold text-[14px] text-on-surface">Instruksi &amp; Catatan SPK</h2>
+        </div>
+        <div class="space-y-2">
+          <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-primary-fixed/40 border border-primary/20">
+            <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">shield</span>
+            <p id="dtInstruksi" class="text-[12px] font-semibold text-on-surface leading-relaxed">Sesuai paket layanan.</p>
+          </div>
+          <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-tertiary-fixed/30 border border-tertiary/20">
+            <span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">compress</span>
+            <p id="dtAkses" class="text-[12px] font-semibold text-on-surface leading-relaxed">Tidak ada catatan akses.</p>
+          </div>
+        </div>
+        <div id="dtKendalaCard" class="hidden items-start gap-2.5 p-2.5 rounded-xl bg-error-container border border-error/30">
+          <span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">report</span>
+          <div class="flex flex-col min-w-0">
+            <span class="text-[11px] font-extrabold text-on-error-container uppercase tracking-wide">Kendala dilaporkan</span>
+            <span id="dtKendalaText" class="text-[12px] font-semibold text-on-error-container leading-snug">—</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white p-4 rounded-2xl shadow-sm space-y-3 border border-slate-200">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-primary-fixed text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">group</span>
+            </div>
+            <h2 class="font-extrabold text-[14px] text-on-surface">Tim Teknisi</h2>
+          </div>
+          <span class="text-[10px] font-bold text-on-surface-variant">2 Personil</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="bg-surface-container-low border border-outline-variant/60 p-2.5 rounded-xl flex items-center gap-2.5 min-w-0">
+            <span id="dtLeadAv" class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center font-bold text-[11px] shrink-0">—</span>
+            <div class="min-w-0">
+              <span class="text-[9px] font-bold text-on-surface-variant block uppercase">Lead PIC</span>
+              <p id="dtLeadName" class="text-[12px] font-bold text-on-surface truncate">—</p>
+              <span class="text-[9px] font-bold text-tertiary bg-tertiary-fixed/40 px-1.5 py-0.5 rounded inline-block mt-0.5">Teknisi Utama</span>
+            </div>
+          </div>
+          <div class="bg-surface-container-low border border-outline-variant/60 p-2.5 rounded-xl flex items-center gap-2.5 min-w-0">
+            <span id="dtHelpAv" class="w-9 h-9 rounded-full bg-inverse-surface text-white flex items-center justify-center font-bold text-[11px] shrink-0">—</span>
+            <div class="min-w-0">
+              <span class="text-[9px] font-bold text-on-surface-variant block uppercase">Partner Helper</span>
+              <p id="dtHelpName" class="text-[12px] font-bold text-on-surface truncate">—</p>
+              <span class="text-[9px] font-bold text-primary bg-primary-fixed/60 px-1.5 py-0.5 rounded inline-block mt-0.5">Helper</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-start justify-between gap-2 bg-surface-container border border-outline-variant/50 px-3 py-2 rounded-xl">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0">verified_user</span>
+            <span class="text-[11px] text-on-surface-variant font-medium shrink-0">PIC pelapor</span>
+          </div>
+          <span id="dtPic" class="text-[11px] font-bold text-on-surface text-right">—</span>
+        </div>
+        <div class="border-t border-outline-variant/40 pt-2">
+          <span class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-wider">Jejak aktivitas</span>
+          <div id="dAudit" class="flex flex-col gap-1 text-[11px] text-on-surface-variant mt-1 leading-relaxed">Belum ada aktivitas tercatat.</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- TAB SPK -->
+    <div id="tab-spk" class="dp hidden flex-col gap-3.5">
+      <section class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+        <div class="flex items-center gap-2 text-primary">
+          <span class="material-symbols-outlined text-[28px]">description</span>
+          <h3 class="font-extrabold text-[15px] text-on-surface">Surat Perintah Kerja (Digital)</h3>
+        </div>
+        <div class="p-3 bg-primary-fixed/40 border border-primary/20 rounded-xl space-y-1.5 text-[12px]">
+          <div class="flex justify-between gap-2 font-medium text-on-surface-variant"><span>No. SPK:</span><strong id="spkNo" class="text-on-surface">—</strong></div>
+          <div class="flex justify-between gap-2 font-medium text-on-surface-variant"><span>Pelanggan:</span><span id="spkPelanggan" class="text-on-surface text-right">—</span></div>
+          <div class="flex justify-between gap-2 font-medium text-on-surface-variant"><span>Jadwal:</span><span id="spkJadwal" class="text-on-surface text-right">—</span></div>
+          <div class="flex justify-between gap-2 font-medium text-on-surface-variant"><span>Layanan:</span><span id="spkLayanan" class="text-on-surface text-right">—</span></div>
+          <div class="flex justify-between gap-2 font-medium text-on-surface-variant"><span>Tim petugas:</span><span id="spkTim" class="text-on-surface text-right">—</span></div>
+          <div class="flex justify-between gap-2 font-medium text-on-surface-variant"><span>Otorisasi:</span><span class="text-tertiary font-bold text-right">Kantor Pusat CV Intan Pratama</span></div>
+        </div>
+        <div class="flex gap-2">
+          <a id="spkWa" href="https://wa.me/" target="_blank" rel="noopener" class="flex-1 min-h-[44px] flex items-center justify-center gap-1.5 bg-tertiary-fixed/40 text-tertiary border border-tertiary/30 text-[12px] font-bold rounded-lg">
+            <span class="material-symbols-outlined text-[18px]">share</span>Bagikan WA
+          </a>
+          <button id="spkCopyBtn" type="button" onclick="copySpk(this)" class="flex-1 min-h-[44px] flex items-center justify-center gap-1.5 bg-surface-container text-on-surface text-[12px] font-bold rounded-lg">
+            <span class="material-symbols-outlined text-[18px]">content_copy</span>Salin
+          </button>
+        </div>
+        <p class="text-[11px] text-on-surface-variant text-center leading-relaxed">SPK diterbitkan Admin setelah solver CSP dan optimasi rute TSP selesai.</p>
+      </section>
+    </div>
+
+    <!-- TAB CHECKLIST (RINGKAS) -->
+    <div id="tab-checklist" class="dp hidden flex-col gap-3.5">
+      <section class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-tertiary text-[26px]">checklist</span>
+            <h3 class="font-extrabold text-[15px] text-on-surface">Checklist Pekerjaan AC</h3>
+          </div>
+          <span id="ckBadge" class="text-[10px] font-bold bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full">Proses Cek</span>
+        </div>
+        <p id="clProgress" class="text-[11px] font-bold text-primary bg-primary-fixed/40 border border-primary/20 rounded-lg px-3 py-2">0 dari 9 item terisi</p>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="flex items-center justify-between gap-1 bg-surface-container-low border border-outline-variant/50 rounded-xl px-2.5 py-2">
+            <span class="text-[11px] font-semibold text-on-surface">Foto bukti</span>
+            <span id="ckFoto" class="text-[10px] font-bold text-error">0/2</span>
+          </div>
+          <div class="flex items-center justify-between gap-1 bg-surface-container-low border border-outline-variant/50 rounded-xl px-2.5 py-2">
+            <span class="text-[11px] font-semibold text-on-surface">Item kerja</span>
+            <span id="ckKerja" class="text-[10px] font-bold text-error">0/5</span>
+          </div>
+          <div class="flex items-center justify-between gap-1 bg-surface-container-low border border-outline-variant/50 rounded-xl px-2.5 py-2">
+            <span class="text-[11px] font-semibold text-on-surface">Uji nyala</span>
+            <span id="ckTes" class="text-[10px] font-bold text-error">Belum</span>
+          </div>
+          <div class="flex items-center justify-between gap-1 bg-surface-container-low border border-outline-variant/50 rounded-xl px-2.5 py-2">
+            <span class="text-[11px] font-semibold text-on-surface">Tanda tangan</span>
+            <span id="ckTtd" class="text-[10px] font-bold text-error">Belum</span>
+          </div>
+        </div>
+        <button id="btnBukaLaporan" type="button" onclick="openLaporan(cur)" class="w-full min-h-[48px] rounded-xl bg-primary text-white font-bold text-[13px] flex items-center justify-center gap-2 active:scale-[0.99] shadow-sm">
+          <span class="material-symbols-outlined text-[20px]">assignment</span>Buka Form Laporan Lapangan
+        </button>
+      </section>
+      <p class="text-[11px] text-on-surface-variant text-center leading-relaxed">Checklist rinci, foto sebelum/sesudah, material dan tanda tangan diisi pada form laporan lapangan.</p>
+    </div>
+
+    <!-- TAB BIAYA -->
+    <div id="tab-invoice" class="dp hidden flex-col gap-3.5">
+      <section class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 text-secondary">
+            <span class="material-symbols-outlined text-[26px]">receipt_long</span>
+            <h3 id="invNo" class="font-extrabold text-[14px] text-on-surface">Ringkasan biaya</h3>
+          </div>
+          <span id="invBadge" class="text-[10px] font-bold bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full">Belum ditagih</span>
+        </div>
+        <div class="p-3 bg-secondary-fixed/30 border border-secondary/20 rounded-xl space-y-2 text-[12px]">
+          <div class="flex justify-between gap-2 text-on-surface-variant"><span id="invJasa">Jasa</span><span class="font-bold text-on-surface" id="invHarga">—</span></div>
+          <div class="flex justify-between gap-2 text-on-surface-variant"><span>Suku cadang / material</span><span class="font-bold text-on-surface" id="invMat">Rp 0</span></div>
+          <div class="border-t border-secondary/25 pt-1.5 flex justify-between gap-2 font-extrabold text-[13px] text-on-surface"><span>Total (incl. PPN 11%)</span><span class="text-primary" id="invTotal">—</span></div>
+          <div class="flex justify-between gap-2 text-on-surface-variant"><span>DP diterima</span><span class="font-bold text-on-surface" id="invDp">Rp 0</span></div>
+          <div class="flex justify-between gap-2 font-bold text-on-surface"><span>Sisa ditagih Admin</span><span class="text-primary font-extrabold" id="invSisa">—</span></div>
+        </div>
+        <p id="invHint" class="text-[11px] text-on-surface-variant italic leading-relaxed">Selesaikan checklist dan kirim laporan agar invoice diproses.</p>
+      </section>
+    </div>
+
+    <p id="blockedNote" class="hidden text-[11px] text-on-secondary-fixed font-semibold text-center bg-secondary-fixed/50 border border-secondary/30 rounded-lg px-3 py-2"></p>
+  </main>
+
+  <!-- DOCK AKSI BAWAH -->
+  <div class="fixed bottom-16 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-40 bg-white/95 backdrop-blur-md px-3.5 py-2.5 border-t border-slate-200 shadow-[0_-8px_20px_rgba(0,0,0,0.08)]">
+    <div class="flex items-center gap-2">
+      <button id="btnKendala" type="button" onclick="bukaKendala()" aria-label="Laporkan kendala" class="min-h-[48px] px-3.5 py-2.5 bg-secondary-fixed/60 hover:bg-secondary-fixed text-on-secondary-fixed border border-secondary/40 rounded-xl font-bold text-[12px] flex items-center justify-center gap-1.5 active:scale-95 transition-all shrink-0 disabled:opacity-40 disabled:cursor-not-allowed">
+        <span class="material-symbols-outlined text-[18px] text-error">warning</span>Kendala?
+      </button>
+      <button id="btnAdvance" type="button" onclick="runAction()" class="flex-1 min-h-[48px] px-4 py-2.5 bg-gradient-to-r from-primary to-primary-container text-white rounded-xl font-bold text-[13px] flex items-center justify-center gap-2 shadow-lg shadow-primary/25 active:scale-[0.98] transition-all">
+        <span id="btnAdvanceLabel">Buka Checklist Pekerjaan</span>
+        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== VIEW: LAPORAN LAPANGAN ==================== -->
+<div class="view" id="view-laporan">
+  <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-50 pt-safe bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-sm">
+    <div class="h-16 px-3 flex items-center gap-2">
+      <button type="button" onclick="closeLaporan()" aria-label="Kembali ke detail order" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container active:scale-95">
+        <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+      </button>
+      <div class="flex flex-col min-w-0 flex-1">
+        <h1 class="text-[15px] font-bold text-on-surface leading-tight">Laporan Lapangan</h1>
+        <span id="lpOrderSub" class="text-[10px] font-semibold text-on-surface-variant truncate">—</span>
+      </div>
+      <span id="lpStateChip" class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-bold">Draft</span>
+    </div>
+  </header>
+
+  <main class="pt-[84px] pb-[124px] px-3.5 flex flex-col gap-3.5">
+
+    <!-- PROGRESS BANNER -->
+    <section class="bg-white px-4 py-3 rounded-xl shadow-sm border border-slate-200 flex flex-col gap-2">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-1.5 min-w-0">
+          <span class="material-symbols-outlined text-primary text-[20px] shrink-0" style="font-variation-settings:'FILL' 1;">task_alt</span>
+          <span class="text-[12px] font-bold text-on-surface truncate">Progres Pengisian Laporan</span>
+        </div>
+        <span id="lpPct" class="text-[10px] font-bold text-primary bg-surface-container-high px-2 py-0.5 rounded shrink-0">0 dari 4 bagian</span>
+      </div>
+      <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden flex">
+        <div id="lpBar" class="bg-primary h-full transition-all duration-300 w-0 rounded-full"></div>
+      </div>
+      <button type="button" onclick="jumpMissing()" class="w-full min-h-[44px] bg-secondary-container text-on-secondary-container rounded-lg px-3 py-2 flex items-center justify-between shadow-sm active:scale-[0.98] transition-transform">
+        <span class="flex items-center gap-1.5 text-[12px] font-bold">
+          <span class="material-symbols-outlined text-[18px] animate-bounce">arrow_downward</span>
+          <span id="lpJump">Lengkapi bagian kosong</span>
+        </span>
+        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+      </button>
+    </section>
+
+    <!-- META ORDER -->
+    <section class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between gap-2 border border-outline-variant/50">
+      <div class="flex flex-col min-w-0">
+        <span class="text-[9px] font-bold text-on-surface-variant uppercase tracking-wider">Surat Tugas Aktif</span>
+        <span id="lpMeta" class="text-[12px] font-bold text-on-surface truncate">—</span>
+      </div>
+      <span id="lpTechBadge" class="text-[10px] font-bold bg-surface-container-high text-on-surface-variant px-2 py-1 rounded shrink-0 max-w-[40%] truncate">—</span>
+    </section>
+
+    <div class="flex flex-col gap-3.5">
+
+      <!-- BAGIAN 1: FOTO -->
+      <section class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200" data-req="foto">
+        <div class="flex items-center justify-between gap-2 pb-1">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-6 h-6 rounded-full bg-surface-container-high text-primary flex items-center justify-center text-[11px] font-bold shrink-0">1</span>
+            <h2 class="text-[13px] font-bold text-on-surface truncate">Foto Sebelum &amp; Sesudah</h2>
+          </div>
+          <span id="lpFotoChip" class="text-[10px] font-bold bg-error-container text-on-error-container px-2 py-0.5 rounded-full flex items-center gap-1 shrink-0">
+            <span class="material-symbols-outlined text-[13px]">priority_high</span>Wajib
+          </span>
+        </div>
+        <p class="text-[11px] text-on-surface-variant mb-2">Wajib 1 foto sebelum dan 1 foto sesudah pengerjaan. Ketuk "Tambah Foto" untuk mengganti.</p>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-on-surface">Sebelum</span>
+              <span id="pvSebelumCount" class="text-[10px] font-bold text-on-surface-variant">0/1 Foto</span>
+            </div>
+            <div id="pv-sebelum" class="relative w-full h-32 rounded-lg overflow-hidden bg-surface-container border border-outline-variant/50"></div>
+            <button id="btnFotoSebelum" type="button" onclick="pickFoto('sebelum')" class="w-full min-h-[44px] bg-surface-container-low hover:bg-surface-container active:scale-[0.98] transition-transform rounded-lg flex items-center justify-center gap-1.5 border border-outline-variant/40">
+              <span class="material-symbols-outlined text-primary text-[20px]">add_a_photo</span>
+              <span class="text-[11px] font-bold text-primary">Tambah Foto</span>
+            </button>
+            <input id="inSebelum" type="file" accept="image/*" capture="environment" class="hidden" onchange="setFoto(this,'sebelum')">
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-on-surface">Sesudah</span>
+              <span id="pvSesudahCount" class="text-[10px] font-bold text-on-surface-variant">0/1 Foto</span>
+            </div>
+            <div id="pv-sesudah" class="relative w-full h-32 rounded-lg overflow-hidden bg-surface-container border border-outline-variant/50"></div>
+            <button id="btnFotoSesudah" type="button" onclick="pickFoto('sesudah')" class="w-full min-h-[44px] bg-surface-container-low hover:bg-surface-container active:scale-[0.98] transition-transform rounded-lg flex items-center justify-center gap-1.5 border border-outline-variant/40">
+              <span class="material-symbols-outlined text-primary text-[20px]">add_a_photo</span>
+              <span class="text-[11px] font-bold text-primary">Tambah Foto</span>
+            </button>
+            <input id="inSesudah" type="file" accept="image/*" capture="environment" class="hidden" onchange="setFoto(this,'sesudah')">
+          </div>
+        </div>
+      </section>
+
+      <!-- BAGIAN 2: CHECKLIST -->
+      <section class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200" data-req="kerja">
+        <div class="flex items-center justify-between gap-2 pb-1">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-6 h-6 rounded-full bg-surface-container-high text-primary flex items-center justify-center text-[11px] font-bold shrink-0">2</span>
+            <h2 class="text-[13px] font-bold text-on-surface truncate">Checklist Pekerjaan Selesai</h2>
+          </div>
+          <span id="clWorkCount" class="text-[10px] font-bold bg-error-container text-on-error-container px-2 py-0.5 rounded-full shrink-0">0/5</span>
+        </div>
+        <p class="text-[11px] text-on-surface-variant mb-2">Seluruh komponen standar perawatan wajib diverifikasi.</p>
+        <div class="space-y-1.5">
+          <label class="cl-item min-h-[52px] px-2.5 py-2 bg-surface-container-low rounded-lg flex items-center gap-2.5 cursor-pointer select-none">
+            <input type="checkbox" value="indoor-filter" class="sr-only">
+            <span class="clbox w-7 h-7 rounded bg-white border border-outline-variant flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[18px] text-outline-variant">check</span>
+            </span>
+            <span class="cltxt text-[13px] font-medium text-on-surface flex-1 min-w-0">Indoor &amp; filter dicuci bersih</span>
+            <span class="clok material-symbols-outlined text-[18px] text-tertiary opacity-0">done_all</span>
+          </label>
+          <label class="cl-item min-h-[52px] px-2.5 py-2 bg-surface-container-low rounded-lg flex items-center gap-2.5 cursor-pointer select-none">
+            <input type="checkbox" value="outdoor" class="sr-only">
+            <span class="clbox w-7 h-7 rounded bg-white border border-outline-variant flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[18px] text-outline-variant">check</span>
+            </span>
+            <span class="cltxt text-[13px] font-medium text-on-surface flex-1 min-w-0">Outdoor dicuci bertekanan</span>
+            <span class="clok material-symbols-outlined text-[18px] text-tertiary opacity-0">done_all</span>
+          </label>
+          <label class="cl-item min-h-[52px] px-2.5 py-2 bg-surface-container-low rounded-lg flex items-center gap-2.5 cursor-pointer select-none">
+            <input type="checkbox" value="drainase" class="sr-only">
+            <span class="clbox w-7 h-7 rounded bg-white border border-outline-variant flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[18px] text-outline-variant">check</span>
+            </span>
+            <span class="cltxt text-[13px] font-medium text-on-surface flex-1 min-w-0">Drainase lancar (bebas sumbatan &amp; bocor)</span>
+            <span class="clok material-symbols-outlined text-[18px] text-tertiary opacity-0">done_all</span>
+          </label>
+          <label class="cl-item min-h-[52px] px-2.5 py-2 bg-surface-container-low rounded-lg flex items-center gap-2.5 cursor-pointer select-none">
+            <input type="checkbox" value="pasang-rapi" class="sr-only">
+            <span class="clbox w-7 h-7 rounded bg-white border border-outline-variant flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[18px] text-outline-variant">check</span>
+            </span>
+            <span class="cltxt text-[13px] font-medium text-on-surface flex-1 min-w-0">Indoor, outdoor, pipa &amp; kabel terpasang rapi</span>
+            <span class="clok material-symbols-outlined text-[18px] text-tertiary opacity-0">done_all</span>
+          </label>
+          <label class="cl-item min-h-[52px] px-2.5 py-2 bg-surface-container-low rounded-lg flex items-center gap-2.5 cursor-pointer select-none">
+            <input type="checkbox" value="sop-bersih" class="sr-only">
+            <span class="clbox w-7 h-7 rounded bg-white border border-outline-variant flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[18px] text-outline-variant">check</span>
+            </span>
+            <span class="cltxt text-[13px] font-medium text-on-surface flex-1 min-w-0">Sesuai SOP &amp; area kerja dibersihkan</span>
+            <span class="clok material-symbols-outlined text-[18px] text-tertiary opacity-0">done_all</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- BAGIAN 3: UJI COBA -->
+      <section class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200" data-req="tes" id="section-uji-coba">
+        <div class="flex items-center justify-between gap-2 pb-1">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[11px] font-bold shrink-0">3</span>
+            <h2 class="text-[13px] font-bold text-on-surface truncate">Uji Coba &amp; Hasil Servis</h2>
+          </div>
+          <span id="tesChip" class="text-[10px] font-bold bg-error-container text-on-error-container px-2 py-0.5 rounded-full flex items-center gap-1 shrink-0">
+            <span class="material-symbols-outlined text-[13px]">priority_high</span>Belum
+          </span>
+        </div>
+        <p class="text-[11px] text-on-surface-variant mb-2">Pastikan unit dinyalakan dan diuji minimal 10 menit bersama pelanggan.</p>
+        <label class="tesrow min-h-[60px] px-2.5 py-2 bg-surface-container-high/60 rounded-lg flex items-center justify-between cursor-pointer active:scale-[0.99] transition-transform mb-3">
+          <input id="tesNyala" type="checkbox" class="sr-only">
+          <span class="flex items-center gap-2.5 min-w-0">
+            <span class="tesbox w-7 h-7 rounded bg-white shadow-sm flex items-center justify-center shrink-0 border border-outline-variant/50">
+              <span class="material-symbols-outlined text-[20px] text-outline-variant">check</span>
+            </span>
+            <span class="flex flex-col min-w-0">
+              <span class="flex items-center gap-1.5">
+                <span class="text-[13px] font-semibold text-on-surface">Tes nyala OK</span>
+                <span class="text-[9px] font-bold bg-error text-white px-1.5 py-0.5 rounded uppercase">Wajib</span>
+              </span>
+              <span class="text-[11px] text-on-surface-variant">Suhu dingin optimal, hembusan normal, suara halus</span>
+            </span>
+          </span>
+          <span class="material-symbols-outlined text-outline text-[22px] shrink-0">touch_app</span>
+        </label>
+        <div class="space-y-1.5 mb-2.5">
+          <div class="flex items-center justify-between">
+            <label class="text-[11px] font-bold text-on-surface" for="catatan">Catatan Teknisi (Opsional)</label>
+            <span id="catatanCount" class="text-[10px] font-semibold text-on-surface-variant">0/200</span>
+          </div>
+          <textarea id="catatan" rows="3" maxlength="200" oninput="countCatatan()" placeholder="Tulis catatan kondisi unit atau pesan untuk pelanggan/admin…" class="w-full p-2.5 bg-surface-container-low rounded-lg text-[13px] text-on-surface placeholder:text-outline focus:bg-white outline-none border border-transparent focus:border-primary/40"></textarea>
+        </div>
+        <div class="bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant/40">
+          <button type="button" onclick="toggleAccordion()" class="w-full min-h-[48px] px-2.5 py-2 flex items-center justify-between text-left hover:bg-surface-container active:scale-[0.99] transition-all">
+            <span class="flex items-center gap-2 min-w-0">
+              <span class="material-symbols-outlined text-primary text-[20px] shrink-0">tune</span>
+              <span class="text-[11px] font-bold text-on-surface truncate">Tambah Detail (Diagnosis, Suku Cadang, Parameter AC)</span>
+            </span>
+            <span id="icon-chevron" class="material-symbols-outlined text-on-surface-variant text-[20px] transition-transform duration-200 shrink-0">expand_more</span>
+          </button>
+          <div class="hidden px-2.5 pb-2.5 pt-1 space-y-2 bg-surface-container-low" id="content-accordion">
+            <p class="text-[11px] text-on-surface-variant">Isi jika ada tindakan tambahan seperti tambah freon R32/R410A atau ganti kapasitor:</p>
+            <div class="grid grid-cols-2 gap-1.5">
+              <div class="bg-white p-2 rounded shadow-sm border border-outline-variant/30">
+                <span class="text-[10px] font-bold text-on-surface-variant">Arus Listrik (Ampere)</span>
+                <input id="dtArus" type="text" inputmode="decimal" placeholder="Contoh: 3.2 A" class="w-full text-[13px] text-on-surface outline-none bg-transparent mt-0.5">
+              </div>
+              <div class="bg-white p-2 rounded shadow-sm border border-outline-variant/30">
+                <span class="text-[10px] font-bold text-on-surface-variant">Tekanan Freon (Psi)</span>
+                <input id="dtTekanan" type="text" inputmode="numeric" placeholder="Contoh: 140 Psi" class="w-full text-[13px] text-on-surface outline-none bg-transparent mt-0.5">
+              </div>
+            </div>
+            <div class="bg-white p-2 rounded shadow-sm border border-outline-variant/30 space-y-1.5">
+              <span class="text-[10px] font-bold text-on-surface-variant block">Material terpakai</span>
+              <div class="flex items-stretch gap-1.5">
+                <select id="matSku" class="flex-1 min-w-0 bg-surface-container-low border border-outline-variant/50 rounded-lg text-[11px] px-2 py-2 outline-none"></select>
+                <input id="matQty" type="number" min="1" step="1" value="1" class="w-14 bg-surface-container-low border border-outline-variant/50 rounded-lg text-[11px] px-2 py-2 outline-none tnum">
+                <button id="btnAddMat" type="button" onclick="addMat()" class="px-2.5 rounded-lg bg-primary text-white text-[11px] font-bold shrink-0">Tambah</button>
+              </div>
+              <div id="matList" class="text-[11px] text-on-surface-variant divide-y divide-outline-variant/30"></div>
+              <p id="matSub" class="text-[11px] font-bold text-on-surface">Subtotal material: Rp 0</p>
+            </div>
+            <div class="grid grid-cols-2 gap-1.5">
+              <label class="flex flex-col gap-1 bg-white p-2 rounded shadow-sm border border-outline-variant/30 text-[10px] font-bold text-on-surface-variant">DP diterima (Rp)
+                <input id="bayDp" type="text" inputmode="numeric" placeholder="0" value="0" oninput="formatDpInput(this)" class="border border-outline-variant/50 rounded-lg px-2 py-1.5 text-[12px] font-normal text-on-surface outline-none tnum">
+                <span id="bayDpHint" class="text-[9px] font-semibold text-on-surface-variant">Maks. sesuai total tagihan</span>
+              </label>
+              <label class="flex flex-col gap-1 bg-white p-2 rounded shadow-sm border border-outline-variant/30 text-[10px] font-bold text-on-surface-variant">Metode
+                <select id="bayMetode" class="border border-outline-variant/50 rounded-lg px-2 py-1.5 text-[12px] font-normal text-on-surface outline-none">
+                  <option>Transfer</option><option>Tunai</option><option>QRIS</option><option>Belum dibayar</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BAGIAN 4: TTD -->
+      <section class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200" data-req="ttd">
+        <div class="flex items-center justify-between gap-2 pb-1">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[11px] font-bold shrink-0">4</span>
+            <h2 class="text-[13px] font-bold text-on-surface truncate">Tanda Tangan Pelanggan</h2>
+          </div>
+          <span id="ttdChip" class="text-[10px] font-bold bg-error-container text-on-error-container px-2 py-0.5 rounded-full flex items-center gap-1 shrink-0">
+            <span class="material-symbols-outlined text-[13px]">priority_high</span>Belum
+          </span>
+        </div>
+        <p class="text-[11px] text-on-surface-variant mb-2">Tanda tangan digital langsung di layar ponsel oleh pelanggan.</p>
+        <div class="space-y-1.5">
+          <div class="relative w-full rounded-lg overflow-hidden bg-surface-container-low border border-outline-variant/50">
+            <canvas id="sigCanvas" class="w-full h-36 block touch-none"></canvas>
+            <div id="signPlh" class="absolute inset-0 flex flex-col items-center justify-center text-outline select-none pointer-events-none">
+              <span class="material-symbols-outlined text-[32px] mb-1">draw</span>
+              <span class="text-[11px] text-center">Customer tanda tangan di area kotak ini</span>
+            </div>
+            <button type="button" onclick="clearSig(event)" class="absolute top-2 right-2 min-h-[36px] px-2.5 bg-white/90 text-on-surface text-[10px] font-bold rounded shadow-sm flex items-center gap-1 border border-outline-variant/40">
+              <span class="material-symbols-outlined text-[16px]">restart_alt</span>Bersihkan
+            </button>
+          </div>
+          <div class="flex items-center justify-between px-1 gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="material-symbols-outlined text-primary text-[18px] shrink-0">verified_user</span>
+              <span class="text-[11px] font-bold text-on-surface truncate"><span id="sigName">Pelanggan</span> <span class="text-on-surface-variant font-normal">(Pemilik / Pelanggan)</span></span>
+            </div>
+            <span class="text-[10px] font-semibold text-tertiary shrink-0">Di lokasi</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALIDASI -->
+      <div id="kirimBox" class="bg-error-container text-on-error-container p-3 rounded-lg flex items-start gap-2 shadow-sm">
+        <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5" style="font-variation-settings:'FILL' 1;">error</span>
+        <div class="flex flex-col min-w-0">
+          <span id="kirimBoxTitle" class="text-[11px] font-bold text-on-error-container">Laporan Belum Dapat Dikirim</span>
+          <span id="kirimBoxText" class="text-[11px] text-on-error-container leading-tight">Lengkapi seluruh bagian wajib untuk membuka tombol kirim.</span>
+        </div>
+      </div>
+
+      <div class="p-2.5 bg-surface-container-high rounded-lg flex items-center justify-between gap-2">
+        <div class="flex items-center gap-1.5 min-w-0">
+          <span class="material-symbols-outlined text-primary text-[18px] shrink-0">cloud_sync</span>
+          <span class="text-[10px] font-bold text-on-surface leading-tight">Data tersimpan di perangkat otomatis</span>
+        </div>
+        <span id="lpId" class="text-[10px] font-bold text-on-surface-variant shrink-0">—</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-50 pb-safe bg-white/95 backdrop-blur-xl border-t border-slate-200 shadow-[0_-4px_16px_rgba(0,0,0,0.06)]">
+    <div class="flex items-center gap-2 px-3.5 py-2.5">
+      <button id="btnDraft" type="button" onclick="simpanDraft()" class="flex-1 min-h-[48px] px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-bold text-[12px] hover:bg-surface-container active:scale-[0.98] transition-transform flex items-center justify-center gap-1.5 border border-outline-variant/40">
+        <span class="material-symbols-outlined text-[20px]">save</span>Simpan Draft
+      </button>
+      <button id="btnKirim" type="button" onclick="kirimLaporan()" class="flex-1 min-h-[48px] px-3 py-2 rounded-lg bg-primary-container text-white font-bold text-[12px] hover:bg-primary active:scale-[0.98] transition-transform flex items-center justify-center gap-1.5 shadow-sm">
+        <span class="material-symbols-outlined text-[20px]">send</span>Kirim Laporan
+      </button>
+    </div>
+    <p id="kirimMsg" class="hidden text-[11px] text-center font-semibold px-3 pb-2"></p>
+  </footer>
+</div>
+
+<!-- ==================== MODALS ==================== -->
+<div id="modalNotif" class="fixed inset-0 z-[60] bg-slate-950/70 backdrop-blur-sm hidden items-end justify-center p-0">
+  <div class="bg-white rounded-t-3xl p-5 w-full max-w-[480px] shadow-2xl space-y-3 max-h-[85vh] overflow-y-auto border-t border-slate-200">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+        </div>
+        <div>
+          <h3 class="font-extrabold text-[15px] text-on-surface">Notifikasi Operasional</h3>
+          <p class="text-[11px] text-on-surface-variant">Pembaruan tugas &amp; presensi hari ini</p>
+        </div>
+      </div>
+      <button type="button" onclick="tutupNotif()" class="w-10 h-10 flex items-center justify-center text-on-surface-variant rounded-full hover:bg-surface-container">
+        <span class="material-symbols-outlined text-[22px]">close</span>
+      </button>
+    </div>
+    <div id="notifList" class="flex flex-col gap-2"></div>
+    <button type="button" onclick="tutupNotif()" class="w-full min-h-[44px] bg-surface-container text-on-surface rounded-xl font-bold text-[12px]">Tutup</button>
+  </div>
+</div>
+
+<div id="modalKendala" class="fixed inset-0 z-[60] bg-slate-950/70 backdrop-blur-sm hidden items-end justify-center p-0">
+  <div class="bg-white rounded-t-3xl p-5 w-full max-w-[480px] shadow-2xl space-y-4 max-h-[85vh] overflow-y-auto border-t border-slate-200">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-error-container text-error flex items-center justify-center">
+          <span class="material-symbols-outlined text-[20px]">warning</span>
+        </div>
+        <h3 class="font-extrabold text-[15px] text-on-surface">Laporkan Kendala Lapangan</h3>
+      </div>
+      <button type="button" onclick="tutupKendala()" class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container rounded-full">
+        <span class="material-symbols-outlined text-[22px]">close</span>
+      </button>
+    </div>
+    <p class="text-[11px] text-on-surface-variant">Laporan masuk ke jejak aktivitas order dan dibaca Admin Operasional serta Customer Care.</p>
+    <div class="space-y-2">
+      <label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low border border-outline-variant/50 cursor-pointer active:bg-primary-fixed/40 transition-colors">
+        <input checked type="radio" name="opsiKendala" value="Customer tidak ada di lokasi" class="w-4 h-4 accent-[#0037b0]">
+        <span class="text-[12px] font-bold text-on-surface">Customer tidak ada di lokasi</span>
+      </label>
+      <label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low border border-outline-variant/50 cursor-pointer active:bg-primary-fixed/40 transition-colors">
+        <input type="radio" name="opsiKendala" value="Menunggu spare part tambahan" class="w-4 h-4 accent-[#0037b0]">
+        <span class="text-[12px] font-bold text-on-surface">Menunggu spare part tambahan</span>
+      </label>
+      <label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low border border-outline-variant/50 cursor-pointer active:bg-primary-fixed/40 transition-colors">
+        <input type="radio" name="opsiKendala" value="Perlu kunjungan ulang / Jadwal ulang" class="w-4 h-4 accent-[#0037b0]">
+        <span class="text-[12px] font-bold text-on-surface">Perlu kunjungan ulang / Reschedule</span>
+      </label>
+    </div>
+    <div class="space-y-1">
+      <label class="text-[11px] font-bold text-on-surface-variant" for="catatanKendala">Catatan Tambahan</label>
+      <textarea id="catatanKendala" rows="3" placeholder="Tuliskan detail kendala atau kondisi teknis unit…" class="w-full p-2.5 bg-surface-container-low border border-outline-variant/50 rounded-xl text-[12px] text-on-surface placeholder:text-outline focus:outline-none focus:border-primary/50"></textarea>
+    </div>
+    <div class="flex flex-col gap-2 pt-1">
+      <button type="button" onclick="kirimKendala()" class="min-h-[48px] w-full bg-error text-white rounded-xl font-bold text-[12px] flex items-center justify-center gap-2 shadow-md active:scale-95">
+        <span class="material-symbols-outlined text-[18px]">send</span>Kirim Laporan Kendala
+      </button>
+      <button type="button" onclick="tutupKendala()" class="min-h-[44px] w-full bg-surface-container text-on-surface rounded-xl font-semibold text-[12px] flex items-center justify-center">Batal &amp; Kembali</button>
+    </div>
+  </div>
+</div>
+
+<div id="modalKoreksi" class="fixed inset-0 z-[60] bg-slate-950/70 backdrop-blur-sm hidden items-end justify-center p-0">
+  <div class="bg-white rounded-t-3xl p-5 w-full max-w-[480px] shadow-2xl space-y-4 max-h-[85vh] overflow-y-auto border-t border-slate-200">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center">
+          <span class="material-symbols-outlined text-[20px]">edit_note</span>
+        </div>
+        <h3 class="font-extrabold text-[15px] text-on-surface">Koreksi Presensi</h3>
+      </div>
+      <button type="button" onclick="tutupKoreksi()" class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container rounded-full">
+        <span class="material-symbols-outlined text-[22px]">close</span>
+      </button>
+    </div>
+    <p class="text-[11px] text-on-surface-variant leading-relaxed">Kirim laporan salah catat ke Admin Operasional. Admin memverifikasi maksimal 1×24 jam kerja; presensi tidak berubah otomatis.</p>
+    <div class="space-y-2">
+      <label class="flex flex-col gap-1 text-[11px] font-bold text-on-surface-variant">Tanggal
+        <input id="koreksiDate" type="date" class="min-h-[44px] border border-outline-variant/50 rounded-xl px-3 py-2 text-[12px] font-normal text-on-surface outline-none">
+      </label>
+      <label class="flex flex-col gap-1 text-[11px] font-bold text-on-surface-variant">Jenis koreksi
+        <select id="koreksiJenis" class="min-h-[44px] border border-outline-variant/50 rounded-xl px-3 py-2 text-[12px] font-normal text-on-surface outline-none">
+          <option>Lupa clock-in</option>
+          <option>Lupa clock-out</option>
+          <option>Jam presensi salah</option>
+          <option>Izin / sakit / cuti belum tercatat</option>
+        </select>
+      </label>
+      <label class="flex flex-col gap-1 text-[11px] font-bold text-on-surface-variant">Catatan
+        <textarea id="koreksiCatatan" rows="3" placeholder="Contoh: clock-in 08:05 WIB, sinyal depo lemah…" class="p-2.5 border border-outline-variant/50 rounded-xl text-[12px] font-normal text-on-surface placeholder:text-outline outline-none"></textarea>
+      </label>
+    </div>
+    <div class="flex flex-col gap-2">
+      <button type="button" onclick="kirimKoreksi()" class="min-h-[48px] w-full bg-primary text-white rounded-xl font-bold text-[12px] flex items-center justify-center gap-2 active:scale-95">
+        <span class="material-symbols-outlined text-[18px]">send</span>Kirim Laporan Koreksi
+      </button>
+      <button type="button" onclick="tutupKoreksi()" class="min-h-[44px] w-full bg-surface-container text-on-surface rounded-xl font-semibold text-[12px] flex items-center justify-center">Batal</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-24 z-[70] max-w-[92vw] hidden rounded-xl bg-inverse-surface text-inverse-on-surface px-4 py-2.5 text-[12px] font-semibold shadow-lg text-center"></div>
+
+<!-- BOTTOM NAV -->
+<nav id="bottomNav" class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-50 bg-white border-t border-slate-200 pb-safe shadow-[0_-4px_16px_rgba(0,0,0,0.06)]" aria-label="Menu teknisi">
+  <div class="grid grid-cols-3 h-16">
+    <button type="button" class="navtab flex flex-col items-center justify-center min-h-[48px] py-1 transition-colors" data-v="tugas" onclick="vtab('tugas')">
+      <span class="material-symbols-outlined text-[24px]">assignment</span>
+      <span class="text-[11px] mt-0.5 leading-none">Tugas</span>
+      <span class="navdot w-1.5 h-1.5 rounded-full bg-primary mt-1 hidden"></span>
+    </button>
+    <button type="button" class="navtab flex flex-col items-center justify-center min-h-[48px] py-1 transition-colors" data-v="riwayat" onclick="vtab('riwayat')">
+      <span class="material-symbols-outlined text-[24px]">history</span>
+      <span class="text-[11px] mt-0.5 leading-none">Riwayat</span>
+      <span class="navdot w-1.5 h-1.5 rounded-full bg-primary mt-1 hidden"></span>
+    </button>
+    <button type="button" class="navtab flex flex-col items-center justify-center min-h-[48px] py-1 transition-colors" data-v="kehadiran" onclick="vtab('kehadiran')">
+      <span class="material-symbols-outlined text-[24px]">how_to_reg</span>
+      <span class="text-[11px] mt-0.5 leading-none">Kehadiran</span>
+      <span class="navdot w-1.5 h-1.5 rounded-full bg-primary mt-1 hidden"></span>
+    </button>
+  </div>
+</nav>
+
+<script>
+/* ================= BASIS DATA & SESI ================= */
+const STORE='ip_customer_orders';
+const BASE_TEAM_TU={alpha:'adrian',beta:'slamet'};
+const BASE_TEAMS={alpha:{name:'Tim Alpha',crew:'Pak Adrian (TU) + Budi (Helper)',zone:'Surabaya Timur / Selatan'},
+ beta:{name:'Tim Beta',crew:'Pak Slamet (TU) + Doni (Helper)',zone:'Waru / Sidoarjo'}};
+const BASE_PEOPLE={adrian:'Pak Adrian',budi:'Budi',slamet:'Pak Slamet',doni:'Doni'};
+const BASE_TECHS={adrian:{av:'PA',name:'Pak Adrian',role:'Teknisi Utama',team:'alpha'},
+ budi:{av:'BU',name:'Budi',role:'Helper',team:'alpha'},
+ slamet:{av:'PS',name:'Pak Slamet',role:'Teknisi Utama',team:'beta'},
+ doni:{av:'DO',name:'Doni',role:'Helper',team:'beta'}};
+
+/* Roster konsol teknisi mengikuti CrewMaster (Master & Inventaris → Tambah Teknisi).
+   Kru yang dinonaktifkan tidak bisa login; fallback statis dipakai bila modul tidak dimuat. */
+const CM=window.CrewMaster;
+const TECHS=(function(){
+  if(!CM) return BASE_TECHS;
+  const out={};
+  CM.crew().forEach(c=>{ out[c.id]={av:CM.initials(c.name),name:c.name,role:c.role==='TU'?'Teknisi Utama':'Helper',team:c.team}; });
+  return Object.keys(out).length?out:BASE_TECHS;
+})();
+const PEOPLE=(function(){
+  if(!CM) return BASE_PEOPLE;
+  const out={};
+  CM.allCrew().forEach(c=>{ out[c.id]=c.name; });
+  return Object.keys(out).length?out:BASE_PEOPLE;
+})();
+const TEAMS=(function(){
+  if(!CM) return BASE_TEAMS;
+  const src=CM.teams(), out={};
+  Object.keys(src).forEach(id=>{ out[id]={name:src[id].label,crew:(src[id].crewNames.join(' + ')||'Belum ada kru aktif'),zone:src[id].zone,leadId:src[id].leadId,helperId:src[id].helperId}; });
+  return Object.keys(out).length?out:BASE_TEAMS;
+})();
+const TEAM_TU=(function(){
+  if(!CM) return BASE_TEAM_TU;
+  const out={};
+  Object.keys(TEAMS).forEach(id=>{ out[id]=(TEAMS[id]&&TEAMS[id].leadId)||BASE_TEAM_TU[id]||null; });
+  return out;
+})();
+
+let sess=null; try{ sess=JSON.parse(sessionStorage.getItem('ip_sess')||'null'); }catch(e){ sess=null; }
+if(!sess||sess.role!=='teknisi'||!TECHS[sess.id]){
+  const q=new URLSearchParams(location.search).get('tech');
+  location.replace('login.html'+(q?'?as='+q:''));
+}
+const meKey=(sess&&TECHS[sess.id])?sess.id:'adrian';
+const me=TECHS[meKey], myTeam=me.team, myTeamName=(TEAMS[myTeam]||{}).name||myTeam;
+const leadId=TEAM_TU[myTeam]||meKey;
+const helpId=(function(){
+  const t=CM?CM.teams()[myTeam]:null;
+  if(t) return t.helperIds.filter(id=>id!==leadId)[0]||t.helperId||'';
+  return leadId==='adrian'?'budi':'doni';
+})();
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const rp=n=>'Rp '+Number(n||0).toLocaleString('id-ID');
+const pad=n=>String(n).padStart(2,'0');
+const hm=x=>{ const n=Number(x||0); return pad(Math.floor(n))+':'+pad(Math.round((n%1)*60)); };
+const durTxt=d=>{ const m=Math.round(Number(d||1)*60); return m<60?m+' Menit':(m%60?(m/60).toFixed(1).replace('.',',')+' Jam':(m/60)+' Jam'); };
+const nowHM=()=>new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}).replace('.',':');
+const dkey=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const todayKey=()=>dkey(new Date());
+const parseKey=k=>new Date(k+'T00:00:00');
+const firstOfMonth=d=>new Date(d.getFullYear(),d.getMonth(),1);
+const longDate=k=>parseKey(k).toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'short',year:'numeric'});
+const monthLabel=d=>d.toLocaleDateString('id-ID',{month:'long',year:'numeric'});
+
+/* ================= STORE ================= */
+let orders=[];
+const load=()=>{ try{ orders=JSON.parse(localStorage.getItem(STORE)||'[]'); if(!Array.isArray(orders)) orders=[]; }catch(e){ orders=[]; } };
+/* ===== Indikator sinkron: membaca status jaringan & perubahan offline ===== */
+const SYNC={pending:0,lastSync:Date.now()};
+function syncRender(){
+  const on=navigator.onLine, n=SYNC.pending;
+  let title,text,tone;
+  if(!on){ title='OFFLINE'; tone='amber'; text=n?(n+' perubahan tersimpan di perangkat'):'Bekerja offline — perubahan disimpan di perangkat'; }
+  else if(n>0){ title='BELUM TERSINKRON'; tone='amber'; text=n+' perubahan menunggu sinkron'; }
+  else { title='ONLINE'; tone='emerald'; text='Tersinkron otomatis'; }
+  const bar = tone==='amber' ? 'bg-amber-50 border-amber-300' : 'bg-emerald-50 border-emerald-200';
+  const pill = tone==='amber' ? 'bg-amber-600' : 'bg-emerald-600';
+  document.querySelectorAll('[data-sync-bar]').forEach(b=>{ if(!b.dataset.base) b.dataset.base=b.className.replace(/\b(bg-(emerald|amber)-50|border-(emerald|amber)-\d+)\b/g,'').replace(/\s+/g,' ').trim(); b.className=b.dataset.base+' '+bar; });
+  document.querySelectorAll('[data-sync-pill]').forEach(p=>{ if(!p.dataset.base) p.dataset.base=p.className.replace(/\bbg-(emerald|amber)-600\b/g,'').replace(/\s+/g,' ').trim(); p.className=p.dataset.base+' '+pill; });
+  document.querySelectorAll('[data-sync-title]').forEach(t=>t.textContent=title);
+  document.querySelectorAll('[data-sync-text]').forEach(t=>{ t.textContent=text; t.className=t.className.replace(/text-(emerald|amber)-900/,'')+' '+(tone==='amber'?'text-amber-900':'text-emerald-900'); });
+  document.querySelectorAll('[data-sync-inline]').forEach(t=>t.textContent=title+' · '+text);
+  const ago=document.getElementById('tgSyncAgo');
+  if(ago && on && n===0){ const s=Math.round((Date.now()-SYNC.lastSync)/1000); ago.textContent=s<60?'Baru saja':Math.round(s/60)+' mnt lalu'; }
+}
+window.addEventListener('offline',()=>syncRender());
+window.addEventListener('online',()=>{
+  const n=SYNC.pending; SYNC.pending=0; SYNC.lastSync=Date.now(); syncRender();
+  if(n>0 && typeof toast==='function') toast(n+' perubahan offline berhasil disinkronkan.','ok');
+});
+document.addEventListener('DOMContentLoaded',syncRender);
+function safeSet(k,v){ try{ localStorage.setItem(k,v); if(!navigator.onLine){ SYNC.pending++; syncRender(); } return true; }catch(e){ storeWarn(e); return false; } }
+function storeWarn(e){
+  let el=$('storeWarn');
+  if(!el){ el=document.createElement('div'); el.id='storeWarn';
+    el.style.cssText='position:fixed;left:50%;transform:translateX(-50%);bottom:96px;z-index:80;max-width:92vw;display:flex;align-items:center;gap:10px;background:#ba1a1a;color:#fff;border-radius:12px;padding:8px 12px;font-size:11px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.25)';
+    document.body.appendChild(el); }
+  el.textContent=(e&&e.name==='QuotaExceededError'?'Penyimpanan perangkat penuh':'Browser menolak menyimpan data (mode privat)')+' — perubahan terakhir belum tersimpan. Hapus foto order lama untuk membebaskan ruang.';
+}
+const save=()=>safeSet(STORE,JSON.stringify(orders));
+const get=id=>orders.find(o=>o.id===id);
+
+/* ================= STATE ================= */
+let view='tugas', lastList='tugas', cur=null, detailFrom='tugas';
+let pickDate=todayKey();
+let histMonth=firstOfMonth(new Date()), histPill='this', histQuery='', histStatus='all';
+let attMonth=firstOfMonth(new Date()), attSel=todayKey();
+let foto={sebelum:false,sesudah:false}, signed=false, sigData='', laporanSent=false;
+let syncMins=0;
+
+/* ================= ATURAN PIC ================= */
+const picId=o=>o.pic||TEAM_TU[o.team]||meKey;
+const picNameOf=o=>PEOPLE[picId(o)]||'belum ditetapkan';
+const canReport=o=>picId(o)===meKey;
+function audit(o,detail){ (o.audit=o.audit||[]).push({t:Date.now(),who:meKey,actor:me.name,role:me.role+' · '+myTeamName,detail}); return o.audit; }
+const auditTime=ms=>{ const d=new Date(ms); return pad(d.getDate())+' '+d.toLocaleDateString('id-ID',{month:'short'})+' '+pad(d.getHours())+':'+pad(d.getMinutes()); };
+
+/* ================= TOAST / SHEET ================= */
+let toastTimer=null;
+function toast(msg,tone){ const el=$('toast'); if(!el) return; el.textContent=msg;
+  el.className='fixed left-1/2 -translate-x-1/2 bottom-28 z-[70] max-w-[92vw] rounded-xl px-4 py-2.5 text-[12px] font-semibold shadow-lg text-center '+(tone==='error'?'bg-error text-white':'bg-inverse-surface text-inverse-on-surface');
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.add('hidden'),3200); }
+function openSheet(id){ const el=$(id); if(!el) return; el.classList.remove('hidden'); el.classList.add('flex'); }
+function closeSheet(id){ const el=$(id); if(!el) return; el.classList.add('hidden'); el.classList.remove('flex'); }
+
+/* ================= IDENTITAS ================= */
+function paintIdentity(){
+  const av=$('rwAvatar'); if(av) av.textContent=me.av;
+  const hv=$('hdAvatar'); if(hv) hv.textContent=me.av;
+  const tl=$('tgLeadAv'), th=$('tgHelperAv');
+  const lead=TECHS[leadId]||{av:"—",name:"Belum ada TU",role:"—"}, help=TECHS[helpId]||{av:"—",name:"Belum ada Helper",role:"—"};
+  if(tl) tl.textContent=lead.av;
+  if(th) th.textContent=help.av;
+  const ln=$('tgLeadName'), lr=$('tgLeadRole'), hn=$('tgHelperName'), hr=$('tgHelperRole');
+  if(ln) ln.textContent=lead.name;
+  if(lr) lr.textContent='Lead PIC'+(leadId===meKey?' · Anda':'');
+  if(hn) hn.textContent=help.name;
+  if(hr) hr.textContent='Helper'+(helpId===meKey?' · Anda':'');
+  const tt=$('tgTeam'); if(tt) tt.textContent=myTeamName;
+  const st=$('hdShiftTeam'); if(st) st.textContent=myTeamName;
+}
+
+/* ================= TUGAS ================= */
+const mine=st=>orders.filter(o=>o.team===myTeam&&st.includes(o.status||'Baru'));
+const onDay=o=>(o.tgl||todayKey())===pickDate;
+const jobsOn=(st,p=pickDate)=>mine(st).filter(o=>(o.tgl||todayKey())===p);
+const startOf=o=>o.tspStart!=null?o.tspStart:(o.slotStart!=null?o.slotStart:9);
+const endOf=o=>o.tspEnd!=null?o.tspEnd:(o.slotEnd!=null?o.slotEnd:startOf(o)+(+o.dur||1));
+const mapsUrl=o=>'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent((o.lat!=null&&o.lng!=null)?(o.lat+','+o.lng):(o.alamat||''));
+const waNum=o=>String(o.hp||'').replace(/[^0-9]/g,'').replace(/^0/,'62');
+const waLink=o=>waNum(o)?'https://wa.me/'+waNum(o)+'?text='+encodeURIComponent('CV Intan Pratama · '+o.id+' · '+me.name):'https://wa.me/';
+
+function statusMeta(o){
+  if(o.status==='Review') return {txt:'Menunggu Validasi',cls:'bg-primary-fixed text-primary border border-primary/30',dot:'bg-primary'};
+  if(o.status==='Selesai') return {txt:'Selesai',cls:'bg-tertiary-fixed/70 text-tertiary border border-tertiary/30',dot:'bg-tertiary-container'};
+  if(o.status==='Dikerjakan') return {txt:'Dikerjakan',cls:'bg-secondary-fixed text-on-secondary-fixed border border-secondary/40',dot:'bg-secondary-container'};
+  if(o.status==='Dibatalkan') return {txt:'Dibatalkan',cls:'bg-error-container text-on-error-container border border-error/30',dot:'bg-error'};
+  return {txt:'Terjadwal',cls:'bg-surface-container text-on-surface-variant border border-outline-variant/60',dot:'bg-outline'};
+}
+function dayLabel(d){
+  const diff=Math.round((parseKey(d)-parseKey(todayKey()))/864e5);
+  return diff===0?'Hari ini':diff===1?'Besok':diff===-1?'Kemarin':parseKey(d).toLocaleDateString('id-ID',{weekday:'short',day:'numeric',month:'short'});
+}
+function nextAction(o){
+  if(!canReport(o)) return {label:'Hanya Lihat',act:'view',icon:'visibility'};
+  const ts=o.techStep||0, sent=!!(o.report&&o.report.sentAt);
+  if(sent) return {label:'Lihat Laporan Terkirim',act:'laporan',icon:'description'};
+  if(ts<2) return {label:'Mulai Perjalanan',act:'depart',icon:'near_me'};
+  if(!o.arrivedAt) return {label:'Tandai Tiba di Lokasi',act:'arrive',icon:'location_on'};
+  if(ts<3) return {label:'Mulai Pengerjaan',act:'start',icon:'build'};
+  return {label:'Buka Checklist Pekerjaan',act:'laporan',icon:'assignment'};
+}
+function heroStages(o){
+  const ts=o.techStep||0, arrived=!!o.arrivedAt, sent=!!(o.report&&o.report.sentAt);
+  return [
+    {label:'Berangkat',icon:'near_me',state:ts>=2?'done':(ts<2?'active':'pending')},
+    {label:'Tiba',icon:'location_on',state:arrived?'done':(ts>=2?'active':'pending')},
+    {label:'Kerjakan',icon:'build',state:ts>=3?'done':(arrived?'active':'pending')},
+    {label:'Selesai',icon:'check_circle',state:sent?'done':(ts>=3?'active':'pending')}
+  ];
+}
+function stageGrid(o){
+  const st=heroStages(o), active=st.findIndex(x=>x.state==='active');
+  return st.map((x,i)=>{
+    const cls=x.state==='done'?'bg-tertiary-fixed/40 border border-tertiary/40'
+      :x.state==='active'?'bg-primary-fixed/40 border-2 border-primary shadow-sm'
+      :'bg-surface-container-low border border-outline-variant/40 opacity-60';
+    const c=x.state==='done'?'bg-tertiary-container text-white'
+      :x.state==='active'?'bg-primary text-white shadow'
+      :'bg-surface-container text-on-surface-variant';
+    const t=x.state==='done'?'text-tertiary':x.state==='active'?'text-primary':'text-on-surface-variant';
+    return '<div class="flex flex-col items-center gap-1 p-2 rounded-lg '+cls+'">'
+      +'<span class="w-8 h-8 rounded-full '+c+' flex items-center justify-center">'
+      +'<span class="material-symbols-outlined text-[18px]">'+(x.state==='done'?'check':x.icon)+'</span></span>'
+      +'<span class="text-[11px] font-'+(x.state==='active'?'extrabold':'bold')+' '+t+' text-center leading-tight">'+x.label+'</span></div>';
+  }).join('')+(active<0?'<p class="col-span-4 text-[11px] font-bold text-tertiary text-center pt-1">Seluruh tahap lapangan selesai</p>':'');
+}
+function heroCard(o){
+  const st=statusMeta(o), a=nextAction(o), stages=heroStages(o);
+  const activeIdx=Math.max(0,stages.findIndex(x=>x.state==='active'));
+  const chips=(o.needs||[]).map(n=>'<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-primary-fixed/60 text-primary border border-primary/20 text-[10px] font-bold">'+esc(n)+'</span>').join('');
+  const needClock=(o.tgl||todayKey())===todayKey()&&!readAt(todayKey());
+  const clockBanner=needClock
+    ?'<button type="button" onclick="toggleAbsen()" class="flex items-start gap-2 rounded-xl border border-rose-300 bg-rose-50 p-2.5 text-left active:scale-[0.99] transition-transform">'
+      +'<span class="material-symbols-outlined text-[18px] text-rose-600 shrink-0">alarm_off</span>'
+      +'<span class="flex-1 min-w-0"><span class="block text-[11px] font-extrabold text-rose-800">Belum clock-in hari ini</span>'
+      +'<span class="block text-[10px] text-rose-700 leading-snug">Clock-in dulu agar order ini masuk penjadwalan otomatis dan kehadiran Anda tercatat.</span></span>'
+      +'<span class="material-symbols-outlined text-[18px] text-rose-600 shrink-0">chevron_right</span></button>'
+    :'';
+  return '<section class="bg-white rounded-2xl border-2 border-primary p-4 shadow-sm flex flex-col gap-3.5 relative">'
+   +clockBanner
+   +'<div class="flex items-start justify-between gap-2 border-b border-slate-200 pb-3">'
+     +'<div class="flex flex-col min-w-0">'
+       +'<div class="flex items-center gap-2 flex-wrap">'
+         +'<span class="bg-primary text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded uppercase tracking-wide">TUGAS SEKARANG</span>'
+         +'<span class="text-[10px] font-bold text-on-surface-variant">'+esc(o.id)+'</span>'
+       +'</div>'
+       +'<div class="flex items-center gap-1.5 mt-1.5 text-on-surface-variant">'
+         +'<span class="material-symbols-outlined text-[18px]">schedule</span>'
+         +'<span class="text-[13px] font-bold text-on-surface">'+hm(startOf(o))+' WIB</span>'
+         +'<span class="text-[11px]">· Est. '+durTxt(o.dur)+'</span>'
+       +'</div>'
+     +'</div>'
+     +'<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-extrabold '+st.cls+' shrink-0">'
+       +'<span class="w-2 h-2 rounded-full '+st.dot+' animate-pulse"></span>'+st.txt+'</span>'
+   +'</div>'
+   +'<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/50 flex flex-col gap-2">'
+     +'<div class="flex items-center justify-between gap-2">'
+       +'<div class="flex items-center gap-2 min-w-0">'
+         +'<span class="material-symbols-outlined text-on-surface-variant text-[20px] shrink-0">person</span>'
+         +'<h3 class="text-[16px] font-extrabold text-on-surface truncate">'+esc(o.nama||o.cust||'Pelanggan')+'</h3>'
+       +'</div>'
+       +'<span class="text-[10px] font-bold text-on-surface-variant bg-white px-2 py-0.5 rounded border border-outline-variant/50 shrink-0">'+esc(o.tipe||'Rumah Tinggal')+'</span>'
+     +'</div>'
+     +'<div class="flex items-start gap-2 pt-1.5 border-t border-outline-variant/40 text-on-surface">'
+       +'<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">location_on</span>'
+       +'<p class="text-[13px] font-semibold leading-snug">'+esc(o.alamat||'Alamat belum diisi')+'</p>'
+     +'</div>'
+     +'<div class="flex flex-wrap items-center gap-1.5 pt-0.5">'
+       +'<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-primary-fixed/60 text-primary border border-primary/20 text-[10px] font-bold">'
+         +'<span class="material-symbols-outlined text-[14px]">mode_fan</span>'+esc(o.paket||'Servis')+(o.unit>1?' ('+o.unit+' Unit)':'')+'</span>'
+       +'<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container text-on-surface-variant border border-outline-variant/50 text-[10px] font-bold">'
+         +'<span class="material-symbols-outlined text-[14px]">ac_unit</span>'+esc((o.merek||'AC')+(o.pk?' '+o.pk+' PK':''))+'</span>'
+       +chips
+     +'</div>'
+   +'</div>'
+   +'<div class="flex flex-col gap-2">'
+     +'<div class="flex items-center justify-between">'
+       +'<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wide">Tahapan Kerja</span>'
+       +'<span class="text-[11px] font-extrabold text-primary">'+(activeIdx<0?'Tahap lengkap':'Tahap '+(activeIdx+1)+' dari 4')+'</span>'
+     +'</div>'
+     +'<div class="grid grid-cols-4 gap-1.5">'+stageGrid(o)+'</div>'
+   +'</div>'
+   +'<div class="flex flex-col gap-2">'
+     +'<button type="button" onclick="heroAct(\''+o.id+'\')" class="w-full min-h-[54px] bg-primary hover:bg-primary-container text-white rounded-lg flex items-center justify-between px-4 py-2.5 shadow-md active:scale-[0.99] transition-all'+(a.act==='view'?' opacity-60':'')+'">'
+       +'<span class="flex items-center gap-3 text-left min-w-0">'
+         +'<span class="w-9 h-9 rounded-md bg-white/20 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[22px]">'+a.icon+'</span></span>'
+         +'<span class="flex flex-col min-w-0">'
+           +'<span class="text-[14px] font-extrabold leading-tight truncate">'+a.label+'</span>'
+           +'<span class="text-[11px] text-white/80 font-medium leading-tight mt-0.5 truncate">'+(a.act==='view'?'PIC: '+esc(picNameOf(o)):'Mode tap cepat · minim ketik')+'</span>'
+         +'</span>'
+       +'</span>'
+       +'<span class="material-symbols-outlined text-[22px] shrink-0">chevron_right</span>'
+     +'</button>'
+     +'<div class="grid grid-cols-3 gap-2">'
+       +'<a class="min-h-[48px] flex flex-col items-center justify-center gap-0.5 py-2 px-1 rounded-lg bg-surface-container border border-outline-variant/60 text-on-surface active:bg-primary-fixed/50 font-bold text-[11px] text-center" href="'+mapsUrl(o)+'" target="_blank" rel="noopener">'
+         +'<span class="material-symbols-outlined text-[22px] text-primary">navigation</span>Peta Rute</a>'
+       +'<a class="min-h-[48px] flex flex-col items-center justify-center gap-0.5 py-2 px-1 rounded-lg bg-surface-container border border-outline-variant/60 text-on-surface active:bg-tertiary-fixed/40 font-bold text-[11px] text-center" href="tel:'+esc(o.hp||'')+'">'
+         +'<span class="material-symbols-outlined text-[22px] text-tertiary">call</span>Telepon</a>'
+       +'<a class="min-h-[48px] flex flex-col items-center justify-center gap-0.5 py-2 px-1 rounded-lg bg-surface-container border border-outline-variant/60 text-on-surface active:bg-tertiary-fixed/40 font-bold text-[11px] text-center" href="'+waLink(o)+'" target="_blank" rel="noopener">'
+         +'<span class="material-symbols-outlined text-[22px] text-tertiary">chat</span>WhatsApp</a>'
+     +'</div>'
+     +'<div class="flex items-center justify-between gap-2 text-[10px] font-bold pt-0.5">'
+       +'<button type="button" onclick="openDetail(\''+o.id+'\')" class="text-primary flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">open_in_new</span>Detail order</button>'
+       +'<span class="text-on-surface-variant truncate">PIC: '+esc(picNameOf(o))+(canReport(o)?' · Anda':'')+'</span>'
+     +'</div>'
+   +'</div>'
+  +'</section>';
+}
+function emptyHero(){
+  return '<section class="bg-white rounded-2xl border-2 border-dashed border-outline-variant p-6 text-center flex flex-col items-center gap-2">'
+   +'<span class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant"><span class="material-symbols-outlined text-[26px]">event_available</span></span>'
+   +'<p class="text-[14px] font-extrabold text-on-surface">Belum ada tugas untuk '+myTeamName+' · '+dayLabel(pickDate)+'</p>'
+   +'<p class="text-[11px] text-on-surface-variant leading-relaxed">Order masuk ke sini setelah Admin menugaskan tim lewat solver CSP di halaman Antrean Penugasan, lalu rutenya dioptimasi TSP.</p>'
+   +'<div class="flex items-center gap-2 pt-1">'
+     +'<button type="button" onclick="vtab(\'kehadiran\')" class="min-h-[40px] px-3 rounded-lg bg-primary-fixed/60 text-primary font-bold text-[11px] border border-primary/20">Cek Kehadiran</button>'
+     +'<button type="button" onclick="vtab(\'riwayat\')" class="min-h-[40px] px-3 rounded-lg bg-surface-container text-on-surface-variant font-bold text-[11px]">Lihat Riwayat</button>'
+   +'</div></section>';
+}
+function renderTugas(){
+  load();
+  const all=mine(['Baru','Dijadwalkan','Dikerjakan','Review','Selesai','Dibatalkan']).map(o=>o.tgl||todayKey());
+  const days=[...new Set(all)];
+  if(days.indexOf(todayKey())<0) days.push(todayKey());
+  if(days.indexOf(pickDate)<0) days.push(pickDate);
+  days.sort();
+  const strip=$('tgDayStrip');
+  if(strip) strip.innerHTML=days.slice(-8).map(d=>{
+    const n=mine(['Dijadwalkan','Dikerjakan','Review']).filter(o=>(o.tgl||todayKey())===d).length;
+    const on=d===pickDate;
+    return '<button type="button" onclick="setJobDay(\''+d+'\')" class="shrink-0 px-3 py-1.5 rounded-lg text-[11px] font-bold border transition-colors '
+      +(on?'bg-primary text-white border-primary shadow-sm':'bg-surface-container-low text-on-surface-variant border-outline-variant/50')+'">'
+      +dayLabel(d)+(n?' · '+n:'')+'</button>';
+  }).join('');
+  if(strip) setTimeout(()=>{ try{ strip.scrollLeft=strip.scrollWidth; }catch(e){} },60);
+  const dl=$('tgDate'); if(dl) dl.textContent=longDate(pickDate);
+  const dayJobs=jobsOn(['Dijadwalkan','Dikerjakan','Review','Selesai']);
+  const zones=[...new Set(dayJobs.map(o=>o.zonaLabel).filter(Boolean))];
+  const zn=$('tgZone'); if(zn) zn.textContent=zones.length?zones.slice(0,2).join(' · '):TEAMS[myTeam].zone;
+  const tot=$('tgTotal'); if(tot) tot.textContent=dayJobs.filter(o=>o.status!=='Dibatalkan').length;
+  const dn=$('tgDone'); if(dn) dn.textContent=dayJobs.filter(o=>o.status==='Review'||o.status==='Selesai').length;
+
+  const doing=jobsOn(['Dikerjakan']).sort((a,b)=>startOf(a)-startOf(b));
+  const upcoming=jobsOn(['Dijadwalkan']).sort((a,b)=>startOf(a)-startOf(b));
+  const review=jobsOn(['Review']).sort((a,b)=>startOf(a)-startOf(b));
+  const hero=doing[0]||upcoming[0]||review[0]||null;
+  const hw=$('tgHeroWrap');
+  if(hw) hw.innerHTML=hero?heroCard(hero):emptyHero();
+
+  const rest=(hero?dayJobs.filter(o=>o.id!==hero.id&&o.status!=='Selesai'&&o.status!=='Dibatalkan'):[])
+    .sort((a,b)=>startOf(a)-startOf(b));
+  const sec=$('tgNextSection'), wrap=$('tgNextWrap'), cnt=$('tgNextCount');
+  if(sec&&wrap&&cnt){
+    sec.classList.toggle('hidden',rest.length===0);
+    sec.classList.toggle('flex',rest.length>0);
+    cnt.textContent=rest.length+' Antrean';
+    wrap.innerHTML=rest.map(o=>{
+      const st=statusMeta(o);
+      return '<div class="bg-white rounded-xl border border-slate-300 p-3.5 shadow-sm flex flex-col gap-2.5">'
+        +'<div class="flex items-start justify-between gap-2">'
+          +'<div class="flex items-start gap-2.5 min-w-0">'
+            +'<span class="w-10 h-10 rounded-lg bg-surface-container border border-outline-variant/50 text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5"><span class="material-symbols-outlined text-[20px]">'+(o.ruteLocked?'lock':'route')+'</span></span>'
+            +'<div class="flex flex-col min-w-0">'
+              +'<div class="flex items-center gap-1.5 flex-wrap">'
+                +'<span class="text-[13px] font-extrabold text-on-surface">'+hm(startOf(o))+' WIB</span>'
+                +'<h4 class="text-[13px] font-extrabold text-on-surface truncate">'+esc(o.nama||o.cust||'Pelanggan')+'</h4>'
+              +'</div>'
+              +'<p class="text-[12px] font-semibold text-on-surface-variant mt-0.5 truncate">'+esc(o.paket||'Servis')+(o.unit>1?' · '+o.unit+' unit':'')+'</p>'
+              +'<p class="text-[11px] text-on-surface-variant truncate">'+esc(o.alamat||'—')+'</p>'
+            +'</div>'
+          +'</div>'
+          +'<span class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-[10px] font-bold '+st.cls+' shrink-0">'+st.txt+'</span>'
+        +'</div>'
+        +'<div class="flex items-center justify-between gap-2">'
+          +'<span class="text-[10px] font-semibold text-on-secondary-fixed bg-secondary-fixed/50 border border-secondary/30 rounded-lg px-2 py-1 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">'+(o.ruteLocked?'lock_clock':'schedule')+'</span>'+(o.ruteLocked?'Rute terkunci · ikuti urutan TSP':'Ikuti jadwal rute hari ini')+'</span>'
+          +'<button type="button" onclick="openDetail(\''+o.id+'\')" class="text-[11px] font-bold text-primary shrink-0">Detail</button>'
+        +'</div>'
+      +'</div>';
+    }).join('');
+  }
+  const dot=$('tgNotifDot');
+  if(dot){ const rec=readAt(todayKey());
+    const need=dayJobs.length>0||(!rec&&new Date().getHours()>=6);
+    dot.classList.toggle('hidden',!need); }
+  const sa=$('tgSyncAgo'); if(sa) sa.textContent=syncMins<1?'Baru saja':syncMins+' mnt lalu';
+}
+function setJobDay(d){ if(!/^\d{4}-\d{2}-\d{2}$/.test(d)) return; pickDate=d; renderTugas(); }
+
+/* ================= AKSI LAPANGAN ================= */
+function heroAct(oid){ load(); const o=get(oid); if(!o) return; cur=oid;
+  if(!canReport(o)){ openDetail(oid); toast('Anda bukan PIC pelapor order ini — mode lihat saja.','error'); return; }
+  runAction();
+}
+function runAction(){
+  load(); const o=cur?get(cur):null;
+  if(!o){ toast('Order tidak ditemukan.','error'); return; }
+  if(!canReport(o)){ toast('Hanya PIC '+picNameOf(o)+' yang dapat memperbarui order ini.','error'); return; }
+  const a=nextAction(o);
+  if(a.act==='view'){ toast('Mode lihat saja — PIC: '+picNameOf(o),'error'); return; }
+  if(a.act==='laporan'){ openLaporan(o.id); return; }
+  if(a.act==='depart'){
+    if(window.IP&&!IP.canMove(o.status,'Dikerjakan')){ toast('Status order '+o.status+' tidak dapat dipindahkan ke Dikerjakan. Hubungi dispatcher.','error'); return; }
+    if(window.IP) IP.move(o,'Dikerjakan',{actor:picNameOf(o),role:'Teknisi',detail:'Mulai perjalanan menuju lokasi'});
+    o.techStep=Math.max(2,o.techStep||0); o.departedAt=o.departedAt||nowHM();
+    if(window.IP) IP.notify(o,'depart',{auditTarget:o.audit});
+    audit(o,'Mulai perjalanan menuju lokasi'); toast('Perjalanan dimulai · order berstatus Dikerjakan.');
+  } else if(a.act==='arrive'){
+    o.arrivedAt=o.arrivedAt||nowHM(); if((o.techStep||0)<3){ if(!(window.IP&&!IP.canMove(o.status,'Dikerjakan'))){ if(window.IP) IP.move(o,'Dikerjakan',{actor:picNameOf(o),role:'Teknisi',detail:'Tiba di lokasi'}); else o.status='Dikerjakan'; } }
+    audit(o,'Tiba di lokasi pelanggan'); toast('Tiba di lokasi pukul '+o.arrivedAt+' WIB.');
+  } else if(a.act==='start'){
+    if(window.IP&&!IP.canMove(o.status,'Dikerjakan')){ toast('Status order '+o.status+' tidak dapat dipindahkan ke Dikerjakan.','error'); return; }
+    if(window.IP) IP.move(o,'Dikerjakan',{actor:picNameOf(o),role:'Teknisi',detail:'Mulai pengerjaan unit'});
+    o.techStep=Math.max(3,o.techStep||0); o.startedAt=o.startedAt||nowHM();
+    audit(o,'Mulai pengerjaan unit'); toast('Pengerjaan dimulai pukul '+o.startedAt+' WIB.');
+  }
+  save();
+  if(view==='detail'){ fillDetail(o); }
+  renderTugas();
+}
+
+/* ================= DETAIL ================= */
+const CHIPS=[['Ditugaskan','assignment_turned_in'],['Menuju Lokasi','near_me'],['Tiba di Lokasi','location_on'],['Mulai Kerja','build'],['Cek & Cuci','cleaning_services'],['Testing','speed'],['Selesai','handshake']];
+function chipDone(o){
+  const ts=o.techStep||0, sent=!!(o.report&&o.report.sentAt);
+  return [ts>=1,ts>=2,!!o.arrivedAt,ts>=3,ts>=4||sent,ts>=5||sent,o.status==='Selesai'];
+}
+function renderStepper(o){
+  const el=$('dtStepper'); if(!el) return;
+  const done=chipDone(o); let active=done.findIndex(x=>!x); if(active<0) active=6;
+  el.innerHTML=CHIPS.map((c,i)=>{
+    const cls=done[i]?'bg-tertiary-fixed/50 text-tertiary border border-tertiary/40 font-bold'
+      :i===active?'bg-primary text-white font-extrabold shadow-md ring-2 ring-primary/25'
+      :'bg-surface-container-low text-on-surface-variant border border-outline-variant/40 font-medium';
+    const icon=done[i]?'check_circle':i===active?c[1]:'radio_button_unchecked';
+    const chip='<div class="shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] '+cls+'">'
+      +'<span class="material-symbols-outlined text-[15px] '+(i===active&&!done[i]?'animate-spin':'')+'"'+(i===active&&!done[i]?' style="animation-duration:3s;"':'')+'>'+icon+'</span>'
+      +'<span class="whitespace-nowrap">'+(i+1)+'. '+c[0]+'</span></div>';
+    const arrow=i<CHIPS.length-1?'<span class="material-symbols-outlined text-[14px] shrink-0 '+(done[i]?'text-tertiary':'text-outline-variant')+'">arrow_forward</span>':'';
+    return chip+arrow;
+  }).join('');
+  const lab=$('dtStepLabel');
+  if(lab) lab.textContent=done.every(Boolean)?'Seluruh tahap selesai':'Tahap '+(active+1)+' dari 7: '+CHIPS[active][0];
+  const tm=$('dtStepTime');
+  if(tm) tm.textContent=(o.report&&o.report.sentAt)?('Kirim: '+String(o.report.sentAt).split(' ')[1]):o.startedAt?('Mulai: '+o.startedAt+' WIB'):('Jadwal '+hm(startOf(o))+' WIB');
+  setTimeout(()=>{ try{ const kids=[...el.children].filter(k=>k.tagName==='DIV'); const tgt=kids[active]; el.scrollTo({left:tgt?Math.max(0,tgt.offsetLeft-(el.clientWidth-tgt.offsetWidth)/2):0,behavior:'smooth'}); }catch(e){} },80);
+}
+function reportState(o){
+  const r=o.report||{};
+  const fs=!!(r.fotoSebelum||fotoThumb(o.id,'sebelum'));
+  const fd=!!(r.fotoSesudah||fotoThumb(o.id,'sesudah'));
+  const kerja=(r.pekerjaan||[]).length;
+  return {fs,fd,kerja,tes:!!r.tes,ttd:!!r.ttd,total:(fs?1:0)+(fd?1:0)+kerja+(r.tes?1:0)+(r.ttd?1:0)};
+}
+function matCost(rows){ return (rows||[]).reduce((s,r)=>{ const it=CATALOG.find(c=>c.sku===r.sku)||{}; return s+(it.jual||0)*(+r.qty||0); },0); }
+/* DP: angka disimpan tanpa pemisah, ditampilkan dengan pemisah ribuan */
+function dpValue(){ const el=$('bayDp'); return Math.max(0, +((el&&el.value||'').replace(/[^0-9]/g,'')) || 0); }
+function dpMax(){ const o=cur?get(cur):null; if(!o) return 0; const kerja=(+o.total||0)+matCost((o.report||{}).material||[]); return Math.round(kerja*1.11); }
+function formatDpInput(el){
+  let d=+((el&&el.value||'').replace(/[^0-9]/g,''))||0;
+  const max=dpMax();
+  if(max>0&&d>max){ d=max; toast('DP tidak boleh melebihi total tagihan '+rp(max)+'.','error'); }
+  el.value=d?d.toLocaleString('id-ID'):'';
+}
+function fillDetail(o){
+  if(!o) return;
+  const st=statusMeta(o);
+  const set=(id,txt)=>{ const el=$(id); if(el) el.textContent=txt; };
+  set('dtOrderId','Detail order · '+o.id);
+  set('dtCust',o.nama||o.cust||'Pelanggan');
+  const chip=$('dtStatusChip'); if(chip){ chip.textContent=st.txt; chip.className='shrink-0 px-2.5 py-1 rounded-full text-[10px] font-bold '+st.cls; }
+  set('dtHeroId',o.id); set('dtHeroCust',o.nama||o.cust||'—');
+  set('dtHeroSlot',hm(startOf(o))+' – '+hm(endOf(o)));
+  set('dtHeroService',(o.paket||'Servis')+(o.unit>1?' ('+o.unit+' Unit)':'')+(o.merek?' · '+o.merek:''));
+  set('dtHeroEst','Est. '+durTxt(o.dur));
+  set('dtZona','Zona '+(o.zonaLabel||TEAMS[myTeam].zone));
+  set('dtAlamat',o.alamat||'Alamat belum diisi');
+  set('dtPatokan',o.patokan||'Belum ada patokan lokasi');
+  const mp=$('dtMapLink'); if(mp) mp.href=mapsUrl(o);
+  const nm=o.nama||o.cust||'Pelanggan';
+  set('dtCustName',nm); set('dtHp',o.hp||'—');
+  set('dtTipe',o.tipe||'Rumah Tinggal');
+  const init=nm.trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+  set('dtCustAv',init||'—');
+  ['dtCall','dtCallMini'].forEach(id=>{ const el=$(id); if(el) el.href='tel:'+(o.hp||''); });
+  set('dtUnitTitle','Detail Unit AC ('+(o.unit||1)+' Unit)');
+  set('dtMerekBadge',o.merek||o.merekPk||'AC');
+  const needs=(o.needs||[]).filter(Boolean);
+  const unitCount=Math.max(1,Math.min(8,+o.unit||1));
+  const units=$('dtUnits');
+  if(units) units.innerHTML=Array.from({length:unitCount}).map((_,i)=>{
+    const teal=i%2===1;
+    return '<div class="bg-surface-container-low border border-outline-variant/60 p-3 rounded-xl space-y-2">'
+      +'<div class="flex items-center justify-between gap-2">'
+        +'<div class="flex items-center gap-2 min-w-0">'
+          +'<span class="w-5 h-5 rounded-full bg-primary text-white text-[10px] flex items-center justify-center font-bold shrink-0">'+(i+1)+'</span>'
+          +'<span class="text-[13px] font-bold text-on-surface truncate">'+esc((o.merek||'AC')+(o.pk?' '+o.pk+' PK':''))+'</span>'
+        +'</div>'
+        +'<span class="text-[10px] font-bold bg-surface-container text-on-surface-variant border border-outline-variant/50 px-2 py-0.5 rounded-md shrink-0">Unit '+(i+1)+'</span>'
+      +'</div>'
+      +'<div class="'+(teal?'bg-tertiary-fixed/30 border-tertiary/20':'bg-secondary-fixed/40 border-secondary/20')+' border p-2.5 rounded-lg">'
+        +'<span class="text-[10px] font-bold '+(teal?'text-tertiary':'text-on-secondary-fixed')+' block uppercase tracking-wide">Keluhan / Pekerjaan</span>'
+        +'<p class="text-[12px] '+(teal?'text-tertiary':'text-on-secondary-fixed')+' font-semibold flex items-center gap-1.5 mt-0.5">'
+          +'<span class="material-symbols-outlined text-[15px]">'+(teal?'cleaning_services':'error')+'</span>'
+          +esc(needs[i]||needs[0]||('Servis '+(o.paket||'AC')+' sesuai SPK'))+'</p>'
+      +'</div></div>';
+  }).join('');
+  set('dtInstruksi',(o.paket||'Sesuai paket layanan')+(o.unit>1?' · '+o.unit+' unit':'')+(o.paket==='Bongkar Pasang'?' · gunakan bracketing aman':' · verifikasi suhu & tekanan sebelum serah terima'));
+  set('dtAkses',o.cat||o.patokan||'Tidak ada catatan akses khusus.');
+  const kc=$('dtKendalaCard');
+  if(kc){ if(o.kendala){ kc.classList.remove('hidden'); kc.classList.add('flex'); set('dtKendalaText',(o.kendala.jenis||'Kendala')+' · '+(o.kendala.catatan||'')+' ('+o.kendala.at+')'); } else { kc.classList.add('hidden'); kc.classList.remove('flex'); } }
+  const lead=TECHS[leadId]||{av:"—",name:"Belum ada TU",role:"—"}, help=TECHS[helpId]||{av:"—",name:"Belum ada Helper",role:"—"};
+  set('dtLeadAv',lead.av); set('dtLeadName',lead.name);
+  set('dtHelpAv',help.av); set('dtHelpName',help.name);
+  const picEl=$('dtPic');
+  if(picEl) picEl.innerHTML=esc(picNameOf(o))+(canReport(o)?' <span class="text-tertiary">· Anda</span>':' <span class="text-error">· bukan Anda</span>')+(o.picSetBy?'<span class="text-on-surface-variant font-normal"> · '+esc(o.picSetBy)+'</span>':'');
+  renderAudit(o);
+  const lock=$('picLock');
+  if(lock){ const allow=canReport(o);
+    lock.classList.toggle('hidden',allow);
+    if(!allow) lock.textContent='Aksi ditolak — PIC pelapor order ini adalah '+picNameOf(o)+'. Admin menetapkan PIC; Anda hanya dapat melihat detail, checklist, dan jadwal rute.';
+  }
+  set('spkNo','SPK-'+o.id.replace('ORD-',''));
+  set('spkPelanggan',nm);
+  set('spkJadwal',(o.tgl||'—')+' · '+hm(startOf(o))+' WIB');
+  set('spkLayanan',(o.paket||'')+(o.unit>1?' · '+o.unit+' unit':''));
+  set('spkTim',TEAMS[myTeam].crew);
+  const wa=$('spkWa'); if(wa) wa.href=waLink(o);
+  const rg=reportState(o);
+  set('clProgress',rg.total>=9?'Siap dikirim · 9 dari 9 item':rg.total+' dari 9 item terisi');
+  set('ckFoto',(Number(rg.fs)+Number(rg.fd))+'/2');
+  set('ckKerja',rg.kerja+'/5');
+  set('ckTes',rg.tes?'OK':'Belum');
+  set('ckTtd',rg.ttd?'Ada':'Belum');
+  const ckb=$('ckBadge'); if(ckb){ const done=rg.total>=9; ckb.textContent=done?'Lengkap':o.report&&o.report.sentAt?'Terkirim':'Proses Cek'; ckb.className='text-[10px] font-bold px-2 py-0.5 rounded-full '+(done||(o.report&&o.report.sentAt)?'bg-tertiary-fixed/70 text-tertiary':'bg-secondary-fixed text-on-secondary-fixed'); }
+  const bl=$('btnBukaLaporan'); if(bl) bl.innerHTML='<span class="material-symbols-outlined text-[20px]">'+(o.report&&o.report.sentAt?'description':'assignment')+'</span>'+(o.report&&o.report.sentAt?'Lihat Laporan Terkirim':'Buka Form Laporan Lapangan');
+  fillInvoice(o);
+  const btn=$('btnAdvance'), lab=$('btnAdvanceLabel'), note=$('blockedNote');
+  const a=nextAction(o), allow=canReport(o);
+  const kb=$('btnKendala'); if(kb) kb.disabled=!allow;
+  if(lab) lab.textContent=allow?a.label:'Hanya Lihat (PIC: '+picNameOf(o)+')';
+  if(btn) btn.disabled=!allow;
+  if(note){
+    if(!allow){ note.classList.remove('hidden'); note.textContent='PIC pelapor order ini '+picNameOf(o)+'. Anda hanya dapat melihat detail dan jadwal.'; }
+    else if(o.status==='Review'){ note.classList.remove('hidden'); note.textContent='Laporan sudah dikirim — menunggu validasi Admin sebelum invoice terbit.'; }
+    else if(o.status==='Selesai'){ note.classList.remove('hidden'); note.textContent='Order selesai dan sudah divalidasi Admin.'; }
+    else note.classList.add('hidden');
+  }
+  renderStepper(o);
+}
+function renderAudit(o){
+  const el=$('dAudit'); if(!el) return;
+  const a=(o.audit||[]).slice(-6).reverse();
+  el.innerHTML=a.length?a.map(x=>'<span class="flex gap-1"><strong class="text-on-surface shrink-0">'+esc(auditTime(x.t))+' · '+esc(x.actor||'—')+'</strong><span class="min-w-0">— '+esc(x.detail)+'</span></span>').join(''):'Belum ada aktivitas tercatat.';
+}
+function fillInvoice(o){
+  const r=o.report||{};
+  const set=(id,txt)=>{ const el=$(id); if(el) el.textContent=txt; };
+  set('invNo',o.invoice?('Invoice '+o.invoice.no):('Ringkasan biaya · '+o.id));
+  set('invJasa','Jasa · '+(o.paket||'')+(o.unit>1?' ('+o.unit+' unit)':''));
+  set('invHarga',rp(o.total));
+  const matTot=matCost(r.material), kerja=(+o.total||0)+matTot, ppn=Math.round(kerja*11/100), dp=(r.bayar&&r.bayar.dp)||0;
+  set('invMat',matTot?rp(matTot):'—');
+  set('invTotal',rp(kerja+ppn));
+  set('invDp',rp(dp)+((r.bayar&&r.bayar.metode)?' · '+r.bayar.metode:''));
+  set('invSisa',rp(Math.max(0,kerja+ppn-dp)));
+  const badge=$('invBadge'), hint=$('invHint');
+  if(badge&&hint){
+    if(o.status==='Selesai'&&o.invoice){ badge.textContent='Invoice '+o.invoice.no+' terbit'; badge.className='text-[10px] font-bold bg-tertiary-fixed/70 text-tertiary px-2 py-0.5 rounded-full'; hint.textContent='Admin sudah memvalidasi laporan. Invoice '+o.invoice.no+' + PPN '+(o.invoice.ppn||11)+'% menunggu pembayaran pelanggan.'; }
+    else if(r.sentAt){ badge.textContent='Menunggu validasi'; badge.className='text-[10px] font-bold bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full'; hint.textContent='Laporan terkirim — invoice menunggu verifikasi Admin.'; }
+    else { badge.textContent='Belum ditagih'; badge.className='text-[10px] font-bold bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full'; hint.textContent='Selesaikan checklist dan kirim laporan agar invoice diproses.'; }
+  }
+}
+function openDetail(oid){
+  load(); const o=get(oid); if(!o) return;
+  detailFrom=(view==='tugas'||view==='riwayat'||view==='kehadiran')?view:lastList;
+  cur=oid; fillDetail(o); setView('detail'); dtab('ringkasan');
+}
+function closeDetail(){ const back=detailFrom||'tugas'; setView(back); if(back==='tugas') renderTugas(); if(back==='riwayat') renderRiwayat(); if(back==='kehadiran') renderKehadiran(); }
+function dtab(x){
+  document.querySelectorAll('#view-detail .dp').forEach(p=>{ p.classList.add('hidden'); p.classList.remove('flex'); });
+  const el=$('tab-'+x); if(el){ el.classList.remove('hidden'); el.classList.add('flex'); }
+  document.querySelectorAll('#view-detail .dtab').forEach(b=>{
+    const on=b.dataset.tab===x;
+    b.className='dtab flex-1 min-h-[44px] rounded-lg font-bold text-[12px] flex items-center justify-center transition-all '+(on?'bg-primary text-white shadow-sm':'text-on-surface-variant');
+  });
+}
+document.querySelectorAll('#view-detail .dtab').forEach(b=>b.addEventListener('click',()=>dtab(b.dataset.tab)));
+
+function salinAlamat(){
+  const a=$('dtAlamat'), p=$('dtPatokan');
+  const txt=(a?a.textContent:'')+(p?(' · Patokan: '+p.textContent):'');
+  navigator.clipboard.writeText(txt).then(()=>{ const l=$('copyLabel'); momen(l,'Tersalin'); }).catch(()=>{ toast('Salin manual: '+txt,'error'); });
+}
+function momen(el,msg){ if(!el) return; const old=el.textContent; el.textContent=msg; setTimeout(()=>{ el.textContent=old; },1600); }
+function copySpk(btn){
+  const o=cur?get(cur):{}; const txt='SPK-'+(o.id||'')+' | '+(o.nama||'-')+' | '+(o.tgl||'-')+' jam '+hm(startOf(o||{}))+' WIB | '+(o.paket||'-')+' '+(o.unit||1)+' unit | Tim: '+TEAMS[myTeam].crew;
+  navigator.clipboard.writeText(txt).then(()=>{ const old=btn.innerHTML; btn.textContent='Ringkasan SPK disalin.'; setTimeout(()=>{btn.innerHTML=old;},1500); }).catch(()=>{ toast('Tidak bisa menyalin otomatis di browser ini.','error'); });
+}
+
+/* ================= LAPORAN ================= */
+const PHOTO_KEY=(oid,stage)=>'ip_photo@'+oid+'@'+stage;
+function fotoThumb(oid,stage){ try{ return localStorage.getItem(PHOTO_KEY(oid,stage))||''; }catch(e){ return ''; } }
+function pickFoto(stage){ if(laporanSent){ toast('Laporan sudah dikirim — foto tidak dapat diubah.','error'); return; } const inp=$(stage==='sebelum'?'inSebelum':'inSesudah'); if(inp) inp.click(); }
+function shrinkTo(file,cb){
+  const url=URL.createObjectURL(file), img=new Image();
+  img.onload=()=>{ const k=Math.min(1,720/Math.max(img.width,img.height));
+    const c=document.createElement('canvas'); c.width=Math.max(1,Math.round(img.width*k)); c.height=Math.max(1,Math.round(img.height*k));
+    c.getContext('2d').drawImage(img,0,0,c.width,c.height); URL.revokeObjectURL(url); cb(c.toDataURL('image/jpeg',0.55)); };
+  img.onerror=()=>{ URL.revokeObjectURL(url); cb(''); }; img.src=url;
+}
+function setFoto(inp,stage){
+  const o=cur?get(cur):null; if(!o) return;
+  if(!canReport(o)){ toast('Hanya PIC '+picNameOf(o)+' yang dapat mengunggah foto.','error'); return; }
+  if(o.report&&o.report.sentAt){ toast('Laporan sudah dikirim.','error'); return; }
+  if(!(inp.files&&inp.files.length)) return;
+  shrinkTo(inp.files[0],data=>{
+    if(!data){ toast('Foto tidak bisa dibaca — coba ambil ulang.','error'); return; }
+    if(!safeSet(PHOTO_KEY(o.id,stage),data)){ toast('Penyimpanan penuh — hapus foto order lama.','error'); return; }
+    foto[stage]=true; inp.value='';
+    o.report=o.report||{}; o.report.fotoAt=Object.assign({},o.report.fotoAt); o.report.fotoAt[stage]=nowHM();
+    audit(o,'Foto '+stage+' diambil dari kamera perangkat'); save();
+    renderFoto(o); updateProgress(); fillDetailIfOpen(o);
+  });
+}
+function renderFoto(o){
+  ['sebelum','sesudah'].forEach(st=>{
+    const box=$('pv-'+st); if(!box) return;
+    const src=o?fotoThumb(o.id,st):'';
+    if(src){
+      const at=o&&o.report&&o.report.fotoAt?o.report.fotoAt[st]:'';
+      box.innerHTML='<img src="'+src+'" alt="Foto '+st+'" class="w-full h-full object-cover">'
+        +(at?'<span class="absolute bottom-1 left-1 bg-inverse-surface/80 text-inverse-on-surface text-[9px] font-bold px-1 rounded">'+esc(at)+' WIB</span>':'')
+        +'<span class="absolute top-1 left-1 bg-white/90 text-on-surface text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">'+(st==='sebelum'?'Sebelum':'Sesudah')+'</span>';
+    } else {
+      box.innerHTML='<div class="w-full h-full flex flex-col items-center justify-center text-on-surface-variant gap-1"><span class="material-symbols-outlined text-[26px]">photo_camera</span><span class="text-[10px] font-bold">Belum ada foto</span></div>';
+    }
+    const cnt=$(st==='sebelum'?'pvSebelumCount':'pvSesudahCount'); if(cnt) cnt.textContent=(src?1:0)+'/1 Foto';
+  });
+}
+function fillLaporan(o){
+  const r=o.report||{};
+  const set=(id,txt)=>{ const el=$(id); if(el) el.textContent=txt; };
+  set('lpOrderSub',o.id+' · '+myTeamName);
+  set('lpMeta',o.id+' · '+(o.paket||'Servis')+' · '+(o.unit||1)+' unit');
+  set('lpTechBadge',me.name);
+  set('lpId',o.id.replace('ORD-',''));
+  set('sigName',o.nama||o.cust||'Pelanggan');
+  const chip=$('lpStateChip');
+  laporanSent=!!r.sentAt;
+  if(chip){ chip.textContent=laporanSent?'Terkirim':(r.draftAt?'Draft':'Draft'); chip.className='shrink-0 px-2.5 py-1 rounded-full text-[10px] font-bold '+(laporanSent?'bg-tertiary-fixed/70 text-tertiary':'bg-surface-container text-on-surface-variant'); }
+  document.querySelectorAll('.cl-item input').forEach(cb=>{ cb.checked=(r.pekerjaan||[]).includes(cb.value); });
+  const tes=$('tesNyala'); if(tes) tes.checked=!!r.tes;
+  const cat=$('catatan'); if(cat) cat.value=r.catatan||'';
+  const ar=$('dtArus'); if(ar) ar.value=r.arus||'';
+  const tk=$('dtTekanan'); if(tk) tk.value=r.tekanan||'';
+  const dp=$('bayDp'); if(dp){ const d0=+((r.bayar&&r.bayar.dp)||0); dp.value=d0?d0.toLocaleString('id-ID'):'0'; }
+  const meSel=$('bayMetode'); if(meSel&&r.bayar&&r.bayar.metode) meSel.value=r.bayar.metode;
+  signed=!!r.ttd; sigData=r.ttdData||'';
+  foto={sebelum:!!(r.fotoSebelum||fotoThumb(o.id,'sebelum')),sesudah:!!(r.fotoSesudah||fotoThumb(o.id,'sesudah'))};
+  renderFoto(o); renderMat(); refreshCatalog(); countCatatan(); updateProgress();
+  setLapRO(laporanSent);
+}
+function setLapRO(flag){
+  ['inSebelum','inSesudah','catatan','dtArus','dtTekanan','matSku','matQty','bayDp','bayMetode','tesNyala'].forEach(id=>{ const el=$(id); if(el) el.disabled=flag; });
+  document.querySelectorAll('.cl-item input').forEach(x=>{ x.disabled=flag; });
+  const c=$('sigCanvas'); if(c) c.classList.toggle('pointer-events-none',flag);
+  ['btnDraft','btnKirim','btnFotoSebelum','btnFotoSesudah','btnAddMat'].forEach(id=>{ const b=$(id); if(b){ b.disabled=flag; b.classList.toggle('opacity-40',flag); } });
+  const msg=$('kirimMsg'); if(flag&&msg){ msg.textContent='Laporan sudah dikirim dan menunggu validasi Admin.'; msg.className='text-[11px] text-center font-semibold text-tertiary px-3 pb-2'; msg.classList.remove('hidden'); }
+}
+function openLaporan(oid){
+  load(); const o=get(oid); if(!o) return;
+  if(!canReport(o)){ toast('Hanya PIC pelapor ('+picNameOf(o)+') yang dapat mengisi laporan.','error'); return; }
+  cur=oid; fillLaporan(o); setView('laporan'); initSig(o);
+}
+function closeLaporan(){ if(cur) openDetail(cur); }
+function countCatatan(){ const c=$('catatan'), n=$('catatanCount'); if(n&&c) n.textContent=c.value.length+'/200'; }
+function toggleAccordion(){
+  const c=$('content-accordion'), ic=$('icon-chevron'); if(!c) return;
+  const hidden=c.classList.contains('hidden');
+  c.classList.toggle('hidden',!hidden);
+  if(ic) ic.classList.toggle('rotate-180',hidden);
+}
+let sigBound=false,drawing=false,lastPt=null;
+function initSig(o){
+  const c=$('sigCanvas'); if(!c) return;
+  const rect=c.getBoundingClientRect();
+  const dpr=Math.min(2,window.devicePixelRatio||1);
+  c.width=Math.max(300,Math.round(rect.width*dpr));
+  c.height=Math.max(140,Math.round(rect.height*dpr));
+  const ctx=c.getContext('2d'); ctx.clearRect(0,0,c.width,c.height);
+  const ph=$('signPlh');
+  sigData=(o.report&&o.report.ttdData)||''; signed=!!(o.report&&o.report.ttd);
+  if(ph) ph.style.opacity=signed||sigData?'0':'1';
+  if(sigData){ const img=new Image(); img.onload=()=>{ ctx.drawImage(img,0,0,c.width,c.height); }; img.src=sigData; }
+  if(sigBound) return; sigBound=true;
+  const pt=e=>{ const r=c.getBoundingClientRect(); return {x:(e.clientX-r.left)*(c.width/r.width),y:(e.clientY-r.top)*(c.height/r.height)}; };
+  c.addEventListener('pointerdown',e=>{
+    if(laporanSent) return;
+    e.preventDefault(); drawing=true; lastPt=pt(e);
+    try{ c.setPointerCapture(e.pointerId); }catch(err){}
+    const g=c.getContext('2d'); g.lineWidth=2.8*(c.width/600); g.lineCap='round'; g.lineJoin='round'; g.strokeStyle='#131b2e';
+    g.beginPath(); g.moveTo(lastPt.x,lastPt.y); g.lineTo(lastPt.x+.5,lastPt.y+.5); g.stroke();
+    if(!signed){ signed=true; const ph2=$('signPlh'); if(ph2) ph2.style.opacity='0'; updateProgress(); }
+  });
+  c.addEventListener('pointermove',e=>{
+    if(!drawing||laporanSent) return;
+    e.preventDefault(); const p=pt(e); const g=c.getContext('2d');
+    g.lineWidth=2.8*(c.width/600); g.lineCap='round'; g.lineJoin='round'; g.strokeStyle='#131b2e';
+    g.beginPath(); g.moveTo(lastPt.x,lastPt.y); g.lineTo(p.x,p.y); g.stroke(); lastPt=p;
+  });
+  const end=()=>{ if(!drawing) return; drawing=false; sigData=c.toDataURL('image/png'); updateProgress(); };
+  c.addEventListener('pointerup',end);
+  c.addEventListener('pointercancel',end);
+  c.addEventListener('pointerleave',end);
+}
+function clearSig(e){
+  if(e) e.stopPropagation();
+  if(laporanSent) return;
+  const c=$('sigCanvas'); if(!c) return;
+  const g=c.getContext('2d'); g.clearRect(0,0,c.width,c.height);
+  signed=false; sigData='';
+  const ph=$('signPlh'); if(ph) ph.style.opacity='1';
+  updateProgress();
+}
+function updateProgress(){
+  const o=cur?get(cur):null;
+  const kerja=document.querySelectorAll('.cl-item input:checked').length;
+  const fs=o?!!fotoThumb(o.id,'sebelum'):false;
+  const fd=o?!!fotoThumb(o.id,'sesudah'):false;
+  const tes=!!($('tesNyala')&&$('tesNyala').checked);
+  const total=(fs?1:0)+(fd?1:0)+kerja+(tes?1:0)+(signed?1:0);
+  const parts=(fs&&fd?1:0)+(kerja===5?1:0)+(tes?1:0)+(signed?1:0);
+  const set=(id,txt)=>{ const el=$(id); if(el) el.textContent=txt; };
+  set('lpPct',parts+' dari 4 bagian');
+  const bar=$('lpBar'); if(bar) bar.style.width=Math.round(total/9*100)+'%';
+  set('lpJump',parts===4?'Semua bagian lengkap':'Lengkapi bagian kosong ('+(4-parts)+')');
+  set('clWorkCount',kerja+'/5');
+  const fotoChip=$('lpFotoChip');
+  if(fotoChip){ const ok=fs&&fd; fotoChip.className='text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shrink-0 '+(ok?'bg-tertiary-fixed/70 text-tertiary':'bg-error-container text-on-error-container');
+    fotoChip.innerHTML='<span class="material-symbols-outlined text-[13px]">'+(ok?'check':'priority_high')+'</span>'+(ok?'Lengkap':'Wajib'); }
+  const tesChip=$('tesChip');
+  if(tesChip){ tesChip.className='text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shrink-0 '+(tes?'bg-tertiary-fixed/70 text-tertiary':'bg-error-container text-on-error-container');
+    tesChip.innerHTML='<span class="material-symbols-outlined text-[13px]">'+(tes?'check':'priority_high')+'</span>'+(tes?'OK':'Belum'); }
+  const ttdChip=$('ttdChip');
+  if(ttdChip){ ttdChip.className='text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shrink-0 '+(signed?'bg-tertiary-fixed/70 text-tertiary':'bg-error-container text-on-error-container');
+    ttdChip.innerHTML='<span class="material-symbols-outlined text-[13px]">'+(signed?'check':'priority_high')+'</span>'+(signed?'Ada':'Belum'); }
+  const box=$('kirimBox'), title=$('kirimBoxTitle'), txt=$('kirimBoxText');
+  if(box&&title&&txt){
+    if(laporanSent){
+      box.className='bg-tertiary-fixed/40 text-tertiary p-3 rounded-lg flex items-start gap-2 shadow-sm border border-tertiary/30';
+      title.textContent='Laporan Sudah Dikirim';
+      txt.textContent='Menunggu validasi Admin Operasional. Invoice diterbitkan setelah laporan divalidasi.';
+      box.classList.remove('hidden');
+    } else if(parts<4){
+      const miss=[];
+      if(!(fs&&fd)) miss.push('foto sebelum & sesudah');
+      if(kerja<5) miss.push((5-kerja)+' item checklist');
+      if(!tes) miss.push('uji nyala OK');
+      if(!signed) miss.push('tanda tangan customer');
+      box.className='bg-error-container text-on-error-container p-3 rounded-lg flex items-start gap-2 shadow-sm';
+      title.textContent='Laporan Belum Dapat Dikirim';
+      txt.textContent='Lengkapi: '+miss.join(', ')+'.';
+      box.classList.remove('hidden');
+    } else {
+      box.classList.add('hidden');
+    }
+  }
+}
+function collectReport(o){
+  const pekerjaan=[...document.querySelectorAll('.cl-item input:checked')].map(c=>c.value);
+  const dp=dpValue();
+  o.report=Object.assign({},o.report,{
+    fotoSebelum:!!fotoThumb(o.id,'sebelum'),fotoSesudah:!!fotoThumb(o.id,'sesudah'),
+    pekerjaan,tes:!!($('tesNyala')&&$('tesNyala').checked),catatan:($('catatan')||{}).value?$('catatan').value.trim():'',
+    ttd:signed,ttdData:sigData||(o.report&&o.report.ttdData)||'',
+    arus:($('dtArus')||{}).value?$('dtArus').value.trim():'',tekanan:($('dtTekanan')||{}).value?$('dtTekanan').value.trim():'',
+    material:matRows(),bayar:{dp,metode:$('bayMetode')?$('bayMetode').value:'Transfer',at:Date.now()}
+  });
+  return o.report;
+}
+function simpanDraft(){
+  const o=cur?get(cur):null; if(!o) return;
+  if(!canReport(o)){ toast('Hanya PIC '+picNameOf(o)+' yang dapat menyimpan laporan.','error'); return; }
+  if(o.report&&o.report.sentAt){ toast('Laporan sudah dikirim.','error'); return; }
+  collectReport(o); o.report.draftAt=Date.now(); save();
+  toast('Draft laporan tersimpan di perangkat.');
+}
+function kirimLaporan(){
+  const o=cur?get(cur):null; if(!o) return;
+  if(!canReport(o)){ toast('Hanya PIC '+picNameOf(o)+' yang dapat mengirim laporan.','error'); return; }
+  if(o.report&&o.report.sentAt){ toast('Laporan sudah dikirim dan menunggu validasi Admin.','error'); return; }
+  const kerja=document.querySelectorAll('.cl-item input:checked').length;
+  const fs=!!fotoThumb(o.id,'sebelum'), fd=!!fotoThumb(o.id,'sesudah');
+  const tes=!!($('tesNyala')&&$('tesNyala').checked);
+  const total=(fs?1:0)+(fd?1:0)+kerja+(tes?1:0)+(signed?1:0);
+  const msg=$('kirimMsg');
+  if(total<9){
+    if(msg){ msg.textContent='Lengkapi '+(9-total)+' item wajib sebelum mengirim.'; msg.className='text-[11px] text-center font-semibold text-error px-3 pb-2'; msg.classList.remove('hidden'); }
+    toast('Masih ada '+(9-total)+' item wajib yang kosong.','error');
+    if(!(fs&&fd)||kerja<5||!tes||!signed) jumpMissing();
+    return;
+  }
+  const r=collectReport(o);
+  r.sentAt=new Date().toLocaleString('id-ID');
+  r.tech=me.name; r.sentBy=me.name; r.team=myTeamName;
+  if(window.IP&&!IP.canMove(o.status,'Review')){ toast('Status '+o.status+' tidak dapat dikirim sebagai laporan baru.','error'); return; }
+  o.report=r; if(window.IP) IP.move(o,'Review',{actor:me.name,role:'Teknisi',detail:'Laporan kerja dikirim'}); else o.status='Review';
+  o.techStep=5; o.finishedAt=o.finishedAt||nowHM(); o.startedAt=o.startedAt||nowHM();
+  audit(o,'Laporan kerja dikirim — menunggu validasi Admin'+(r.material&&r.material.length?' · '+r.material.length+' jenis material':''));
+  save(); laporanSent=true;
+  toast('Laporan '+o.id+' terkirim · menunggu validasi Admin.');
+  setView('tugas'); renderTugas(); renderRiwayat(); renderKehadiran();
+}
+function jumpMissing(){
+  for(const sec of document.querySelectorAll('#view-laporan [data-req]')){
+    const r=sec.dataset.req; let ok=true;
+    if(r==='foto') ok=!!fotoThumb(cur,'sebelum')&&!!fotoThumb(cur,'sesudah');
+    if(r==='kerja') ok=document.querySelectorAll('.cl-item input:checked').length===5;
+    if(r==='tes') ok=!!($('tesNyala')&&$('tesNyala').checked);
+    if(r==='ttd') ok=signed;
+    if(!ok){ sec.scrollIntoView({behavior:'smooth',block:'center'}); sec.classList.add('ring-2','ring-secondary-container'); setTimeout(()=>sec.classList.remove('ring-2','ring-secondary-container'),1500); return; }
+  }
+  toast('Semua bagian wajib sudah lengkap.');
+}
+/* material & pembayaran */
+const INV_KEY='ip_inventory';
+const FALLBACK_CATALOG=[
+ {sku:'GAS-R32-03KG',nama:'Tabung Freon R32 3kg',unit:'tabung',stok:2,min:5,hpp:165000,jual:250000},
+ {sku:'GAS-R410A-11KG',nama:'Freon R410A 11.3kg',unit:'tabung',stok:6,min:3,hpp:820000,jual:1250000},
+ {sku:'CAP-25UF-450V',nama:'Kapasitor Fan 2.5µF 450V',unit:'pcs',stok:4,min:10,hpp:35000,jual:75000},
+ {sku:'PIP-TAT-0608',nama:'Pipa Tembaga Tateyama 1/4"+3/8"',unit:'roll',stok:2,min:3,hpp:68000,jual:110000},
+ {sku:'ELE-MOD-450V',nama:'Modul / Kipas Elektronik',unit:'pcs',stok:18,min:5,hpp:65000,jual:160000},
+ {sku:'TOOL-VAK-VALU2',nama:'Valve Vacuum Kit',unit:'set',stok:3,min:1,hpp:240000,jual:400000}];
+const CATALOG=window.MaterialCatalog?window.MaterialCatalog.items():FALLBACK_CATALOG;
+function invState(){ let m=null; try{ m=JSON.parse(localStorage.getItem(INV_KEY)||'null'); }catch(e){ m=null; }
+  if(!m){ m={}; CATALOG.forEach(i=>m[i.sku]=i.stok); safeSet(INV_KEY,JSON.stringify(m)); } return m; }
+function stockOf(sku){ const m=invState(), it=CATALOG.find(i=>i.sku===sku)||{}; return {qty:m[sku]!=null?m[sku]:(it.stok||0),min:it.min||0}; }
+function matRows(){ const o=cur?get(cur):null; return (o&&o.report&&o.report.material)||[]; }
+function refreshCatalog(){
+  const sel=$('matSku'); if(!sel||sel.dataset.built) return;
+  sel.innerHTML=CATALOG.map(i=>{ const st=stockOf(i.sku); return '<option value="'+i.sku+'">'+esc(i.nama)+' · '+rp(i.jual)+' · stok '+st.qty+(st.qty<st.min?' (kritis)':'')+'</option>'; }).join('');
+  sel.dataset.built='1';
+}
+function renderMat(){
+  const o=cur?get(cur):null, rows=matRows();
+  const box=$('matList');
+  if(box) box.innerHTML=rows.length?rows.map((r,i)=>{
+    const it=CATALOG.find(c=>c.sku===r.sku)||{}, st=stockOf(r.sku);
+    return '<div class="flex items-center justify-between gap-2 py-1.5"><span class="min-w-0 flex-1"><strong class="text-on-surface">'+esc(it.nama||r.sku)+'</strong>'
+      +'<span class="text-on-surface-variant"> · '+r.qty+' '+(it.unit||'pcs')+' × '+rp(it.jual)+(st.qty<st.min?' <span class="text-error font-bold">· stok '+st.qty+' kritis</span>':'')+'</span></span>'
+      +'<span class="font-bold text-on-surface shrink-0">'+rp((it.jual||0)*r.qty)+'</span>'
+      +(o&&canReport(o)&&!laporanSent?'<button type="button" onclick="delMat('+i+')" class="text-error font-bold shrink-0 px-1" aria-label="Hapus material">✕</button>':'<span class="w-3 shrink-0"></span>')+'</div>';
+  }).join(''):'<p class="py-1.5 text-on-surface-variant">Belum ada material tercatat.</p>';
+  const sub=$('matSub'); if(sub) sub.textContent='Subtotal material: '+rp(matCost(rows));
+  const dp=$('bayDp'), meSel=$('bayMetode');
+  if(dp&&!dp.dataset.bound){ dp.dataset.bound='1';
+    dp.addEventListener('input',()=>{ const s=cur?get(cur):null; if(!s) return; s.report=s.report||{}; s.report.bayar=Object.assign({},s.report.bayar,{dp:dpValue(),metode:meSel?meSel.value:'Transfer'}); save(); if(view==='detail') fillDetailIfOpen(s); }); }
+  if(meSel&&!meSel.dataset.bound){ meSel.dataset.bound='1';
+    meSel.addEventListener('change',()=>{ const s=cur?get(cur):null; if(!s) return; s.report=s.report||{}; s.report.bayar=Object.assign({},s.report.bayar,{dp:dpValue(),metode:meSel.value}); save(); if(view==='detail') fillDetailIfOpen(s); }); }
+  const s=o||{};
+  if(dp&&!(s.report&&s.report.bayar&&document.activeElement===dp)){ const d0=+((s.report&&s.report.bayar&&s.report.bayar.dp)||0); dp.value=d0?d0.toLocaleString('id-ID'):'0'; }
+  if(meSel&&s.report&&s.report.bayar&&s.report.bayar.metode) meSel.value=s.report.bayar.metode;
+}
+function fillDetailIfOpen(o){ if(view==='detail'&&o&&cur===o.id){ fillInvoice(o); const rg=reportState(o); const p=$('clProgress'); if(p) p.textContent=rg.total>=9?'Siap dikirim · 9 dari 9 item':rg.total+' dari 9 item terisi;'; } }
+function addMat(){
+  const o=cur?get(cur):null; if(!o) return;
+  if(!canReport(o)){ toast('Hanya PIC '+picNameOf(o)+' yang dapat mencatat material.','error'); return; }
+  if(o.report&&o.report.sentAt){ toast('Laporan sudah dikirim.','error'); return; }
+  const sku=$('matSku')?$('matSku').value:''; const qty=Math.max(1,parseInt($('matQty')?$('matQty').value:1,10)||1);
+  const it=CATALOG.find(c=>c.sku===sku); if(!it) return;
+  const rows=matRows().slice(); const ex=rows.findIndex(r=>r.sku===sku);
+  if(ex>=0) rows[ex].qty+=qty; else rows.push({sku:it.sku,nama:it.nama,qty});
+  o.report=o.report||{}; o.report.material=rows; save(); renderMat();
+  audit(o,'Material dicatat: '+qty+' '+(it.unit||'pcs')+' '+it.nama); save();
+  fillDetailIfOpen(o); updateProgress();
+}
+function delMat(i){
+  const o=cur?get(cur):null; if(!o) return;
+  if(!canReport(o)||(o.report&&o.report.sentAt)) return;
+  const rows=matRows().slice(); rows.splice(i,1); o.report=o.report||{}; o.report.material=rows; save(); renderMat(); fillDetailIfOpen(o); updateProgress();
+}
+
+/* ================= RIWAYAT ================= */
+function addMonths(d,n){ return new Date(d.getFullYear(),d.getMonth()+n,1); }
+function histRange(){
+  const y=histMonth.getFullYear(), mo=histMonth.getMonth();
+  return orders.filter(o=>o.team===myTeam&&['Selesai','Dibatalkan','Review'].includes(o.status))
+    .filter(o=>{ if(histPill==='all') return true; const d=parseKey(o.tgl||todayKey()); return d.getFullYear()===y&&d.getMonth()===mo; });
+}
+function monthStep(n){ histMonth=addMonths(histMonth,n); histPill='this'; renderRiwayat(); }
+function setHistPill(p){
+  histPill=p;
+  if(p==='this') histMonth=firstOfMonth(new Date());
+  if(p==='last') histMonth=addMonths(firstOfMonth(new Date()),-1);
+  renderRiwayat();
+}
+function setHistStatus(s){ histStatus=s; renderRiwayat(); }
+function setHistQuery(q){ histQuery=q; renderRiwayat(); }
+function clearHistQuery(){ histQuery=''; const el=$('rwSearch'); if(el) el.value=''; renderRiwayat(); }
+function renderRiwayat(){
+  load();
+  const lbl=$('rwMonthLabel'); if(lbl) lbl.textContent=histPill==='all'?'Semua Bulan':monthLabel(histMonth);
+  document.querySelectorAll('.rw-pill').forEach(b=>{
+    const on=b.dataset.pill===histPill;
+    b.className='rw-pill h-10 px-3.5 rounded-lg font-bold text-[12px] shrink-0 '+(on?'bg-primary text-white shadow-sm':'bg-surface-container text-on-surface-variant');
+  });
+  const range=histRange();
+  const done=range.filter(o=>o.status==='Selesai');
+  const cancel=range.filter(o=>o.status==='Dibatalkan');
+  const withRep=done.filter(o=>o.report&&o.report.sentAt);
+  const set=(id,txt)=>{ const el=$(id); if(el) el.textContent=txt; };
+  set('rwDone',done.length); set('rwCancel',cancel.length);
+  set('rwValid',done.length?Math.round(withRep.length/done.length*100)+'%':'—');
+  set('rwMonthTotal',done.length+' total penugasan selesai');
+  const chips=$('rwChips');
+  const counts={all:range.length,Selesai:done.length,Dibatalkan:cancel.length};
+  if(chips) chips.innerHTML=[['all','Semua',counts.all],['Selesai','Selesai',counts.Selesai],['Dibatalkan','Dibatalkan',counts.Dibatalkan]].map(([k,lab,n])=>{
+    const on=histStatus===k;
+    const icon=k==='all'?'list_alt':k==='Selesai'?'verified':'highlight_off';
+    return '<button type="button" onclick="setHistStatus(\''+k+'\')" class="h-10 px-3.5 rounded-lg font-bold text-[11px] flex items-center gap-1.5 shrink-0 shadow-sm '
+      +(on?(k==='Selesai'?'bg-tertiary text-white':k==='Dibatalkan'?'bg-error text-white':'bg-on-surface text-surface'):'bg-white text-on-surface-variant border border-outline-variant/50')+'">'
+      +'<span class="material-symbols-outlined text-[17px]">'+icon+'</span>'+lab+' ('+n+')</button>';
+  }).join('');
+  const q=histQuery.trim().toLowerCase();
+  let rows=range.filter(o=>histStatus==='all'||o.status===histStatus);
+  if(q) rows=rows.filter(o=>[o.id,o.nama,o.cust,o.alamat,o.paket].some(v=>String(v||'').toLowerCase().includes(q)));
+  rows.sort((a,b)=>String(b.tgl||'').localeCompare(String(a.tgl||'')));
+  const groups={};
+  rows.forEach(o=>{ const k=o.tgl||todayKey(); (groups[k]=groups[k]||[]).push(o); });
+  const box=$('rwList');
+  if(!box) return;
+  if(!rows.length){
+    box.innerHTML='<div class="bg-white rounded-xl border border-slate-200 p-6 text-center flex flex-col items-center gap-1.5">'
+      +'<span class="material-symbols-outlined text-[30px] text-on-surface-variant">history_toggle_off</span>'
+      +'<p class="text-[13px] font-extrabold text-on-surface">Belum ada riwayat cocok</p>'
+      +'<p class="text-[11px] text-on-surface-variant leading-relaxed">Coba ubah periode, status, atau kata kunci pencarian.</p></div>';
+    return;
+  }
+  const keys=Object.keys(groups).sort((a,b)=>b.localeCompare(a));
+  box.innerHTML=keys.map(k=>{
+    const list=groups[k];
+    const okCount=list.filter(o=>o.status!=='Dibatalkan').length;
+    const cancelCount=list.filter(o=>o.status==='Dibatalkan').length;
+    const head='<div class="flex items-center justify-between px-1"><span class="text-[11px] font-bold text-on-surface uppercase tracking-wider">'+esc(longDate(k))+'</span>'
+      +'<span class="text-[10px] font-bold '+(cancelCount?'text-error':'text-on-surface-variant')+'">'+(cancelCount?cancelCount+' Pembatalan':okCount+' Order')+'</span></div>';
+    const cards=list.map(o=>{
+      const st=statusMeta(o), r=o.report||{};
+      const isCancel=o.status==='Dibatalkan';
+      const reason=o.customerAlasan||(o.kendala&&o.kendala.catatan)||'Dibatalkan Admin / customer.';
+      return '<article class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200 space-y-2.5">'
+        +'<div class="flex items-start justify-between gap-2">'
+          +'<div class="min-w-0"><div class="flex items-center gap-1.5 flex-wrap">'
+            +'<span class="text-[11px] font-bold '+(isCancel?'text-on-surface-variant':'text-primary')+'">'+esc(o.id)+'</span>'
+            +'<span class="text-on-surface-variant text-[10px]">·</span>'
+            +'<span class="text-[10px] font-semibold text-on-surface-variant">'+hm(startOf(o))+' WIB</span>'
+          +'</div>'
+          +'<h2 class="text-[15px] font-extrabold text-on-surface mt-0.5 truncate">'+esc(o.nama||o.cust||'Pelanggan')+'</h2></div>'
+          +'<span class="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] font-bold '+st.cls+' shrink-0">'
+            +'<span class="material-symbols-outlined text-[14px]">'+(isCancel?'close':o.status==='Review'?'hourglass_top':'check')+'</span>'+st.txt+'</span>'
+        +'</div>'
+        +'<div class="bg-surface-container-low rounded-lg p-2.5 space-y-1 border border-outline-variant/40">'
+          +'<div class="flex items-center gap-1.5 text-on-surface"><span class="material-symbols-outlined text-[17px] '+(isCancel?'text-on-surface-variant':'text-primary')+' shrink-0">'+(isCancel?'sync_alt':'ac_unit')+'</span>'
+            +'<span class="text-[12px] font-semibold truncate">'+esc(o.paket||'Servis')+(o.unit>1?' · '+o.unit+' Unit':'')+(o.merek?' '+o.merek:'')+'</span></div>'
+          +'<div class="flex items-center gap-1.5 text-on-surface-variant"><span class="material-symbols-outlined text-[17px] shrink-0">pin_drop</span>'
+            +'<span class="text-[11px] truncate">'+esc(o.alamat||'—')+'</span></div>'
+          +(isCancel
+            ?'<div class="mt-1 p-2 rounded bg-error-container text-on-error-container flex items-start gap-1.5"><span class="material-symbols-outlined text-[16px] text-error shrink-0">info</span><span class="text-[11px]"><strong>Alasan:</strong> '+esc(reason)+'</span></div>'
+            :'<div class="flex items-center gap-1.5 '+(r.ttd?'text-tertiary':'text-on-surface-variant')+' pt-0.5"><span class="material-symbols-outlined text-[16px]">'+(r.ttd?'fact_check':'pending_actions')+'</span>'
+              +'<span class="text-[10px] font-semibold">'+(r.ttd?'BAP digital ditandatangani · '+(r.pekerjaan||[]).length+' item kerja':'Menunggu kelengkapan laporan')+'</span></div>')
+        +'</div>'
+        +'<button type="button" onclick="openDetail(\''+o.id+'\')" class="w-full min-h-[44px] rounded-lg '+(isCancel?'bg-surface-container text-on-surface':'bg-primary-container text-white')+' font-bold text-[12px] flex items-center justify-center gap-1.5 active:scale-95 transition-all">'
+          +'<span class="material-symbols-outlined text-[18px]">'+(isCancel?'assignment_late':'description')+'</span>'+(isCancel?'Detail Pembatalan':'Lihat Laporan & SPK')+'</button>'
+      +'</article>';
+    }).join('');
+    return '<div class="flex flex-col gap-2">'+head+cards+'</div>';
+  }).join('');
+  const s=$('rwSearch'); if(s&&document.activeElement!==s&&s.value!==histQuery) s.value=histQuery;
+}
+function unduhRiwayat(){
+  const rows=histRange().filter(o=>histStatus==='all'||o.status===histStatus);
+  if(!rows.length){ toast('Tidak ada data riwayat untuk diunduh.','error'); return; }
+  const head=['ID Order','Tanggal','Pelanggan','Paket','Unit','Status','Tim','Jam','PIC'];
+  const lines=[head.join(',')].concat(rows.map(o=>[o.id,o.tgl||'',o.nama||o.cust||'',o.paket||'',o.unit||1,o.status||'',TEAMS[o.team]?TEAMS[o.team].name:'',hm(startOf(o)),PEOPLE[picId(o)]||'']
+    .map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')));
+  const blob=new Blob(['\ufeff'+lines.join('\n')],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='riwayat-'+meKey+'-'+todayKey()+'.csv';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+  toast('CSV riwayat diunduh.');
+}
+
+/* ================= KEHADIRAN ================= */
+const CUTOFF=6;
+const akeyFor=k=>'ip_attendance_'+meKey+'@'+k;
+function readAt(k){
+  k=k||todayKey();
+  try{ const r=JSON.parse(localStorage.getItem(akeyFor(k))||'null'); if(r) return r; }catch(e){}
+  if(k===todayKey()){
+    try{ const old=JSON.parse(localStorage.getItem('ip_attendance_'+meKey)||'null');
+      if(old&&old.date===k) return old; if(old&&old.in&&!old.date) return old; }catch(e){}
+  }
+  return null;
+}
+function markCrew(present){
+  const today=todayKey();
+  const write=k=>{ let rec=null; try{ rec=JSON.parse(localStorage.getItem(k)||'null'); }catch(e){}
+    if(!rec||rec.date!==today) rec={date:today,people:{}};
+    rec.people[meKey]={present,at:nowHM(),src:'teknisi'};
+    safeSet(k,JSON.stringify(rec)); };
+  write('ip_crew@'+today); write('ip_crew');
+}
+function attMonthStep(n){ attMonth=addMonths(attMonth,n); renderKehadiran(); }
+function attPick(k){ attSel=k; renderCalendar(); renderAttDetail(); }
+function minutesOf(t){
+  const s=String(t||'').replace('.',':').replace(/\s*WIB$/,'').trim();
+  const m=s.match(/^(\d{1,2}):(\d{2})/); if(!m) return null;
+  return (+m[1])*60+(+m[2]);
+}
+function attStats(){
+  const y=attMonth.getFullYear(), mo=attMonth.getMonth();
+  const last=new Date(y,mo+1,0).getDate();
+  let hadir=0,telat=0,izin=0,sakit=0,cuti=0,picDays=0,workElapsed=0;
+  for(let d=1;d<=last;d++){
+    const key=y+'-'+pad(mo+1)+'-'+pad(d);
+    const dow=new Date(y,mo,d).getDay();
+    const rec=readAt(key);
+    if(rec){
+      if(rec.type==='izin') izin++;
+      else if(rec.type==='sakit') sakit++;
+      else if(rec.type==='cuti') cuti++;
+      else if(rec.in){ hadir++; const mins=minutesOf(rec.in); if(mins!=null&&mins>8*60) telat++; }
+    }
+    if(dow!==0&&key<=todayKey()) workElapsed++;
+    if(orders.some(o=>o.tgl===key&&o.team===myTeam&&picId(o)===meKey&&o.status!=='Dibatalkan')) picDays++;
+  }
+  const discipline=workElapsed?Math.min(100,Math.round(hadir/workElapsed*100)):0;
+  return {hadir,telat,izin,sakit,cuti,picDays,discipline,workElapsed};
+}
+function renderKehadiran(){
+  load();
+  const set=(id,txt)=>{ const el=$(id); if(el) el.textContent=txt; };
+  set('hdMonthLabel',monthLabel(attMonth));
+  const y=attMonth.getFullYear(), mo=attMonth.getMonth();
+  const last=new Date(y,mo+1,0).getDate();
+  set('hdPeriod','Periode 1 – '+last+' '+monthLabel(attMonth).split(' ')[0]);
+  const rec=readAt(todayKey());
+  set('hdToday',longDate(todayKey()));
+  const inTxt=rec&&rec.in?String(rec.in).replace(/\s*WIB$/,''):'—';
+  const outTxt=rec&&rec.out?String(rec.out).replace(/\s*WIB$/,''):'—';
+  const hdIn=$('hdIn'), hdOut=$('hdOut');
+  if(hdIn) hdIn.innerHTML=inTxt==='—'?'—':(esc(inTxt)+' <span class="text-[10px] font-semibold text-on-surface-variant">WIB</span>');
+  if(hdOut) hdOut.innerHTML=outTxt==='—'?'—':(esc(outTxt)+' <span class="text-[10px] font-semibold text-on-surface-variant">WIB</span>');
+  const chip=$('hdStatusChip');
+  if(chip){
+    if(!rec||!rec.in){ chip.className='inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-[11px] font-bold shrink-0'; chip.innerHTML='<span class="w-2 h-2 rounded-full bg-outline"></span>Belum Absen'; }
+    else if(rec.out){ chip.className='inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed/60 text-tertiary text-[11px] font-bold shrink-0'; chip.innerHTML='<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>Shift Selesai'; }
+    else { const mins=minutesOf(rec.in); const late=mins!=null&&mins>8*60;
+      chip.className='inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed/60 text-tertiary text-[11px] font-bold shrink-0';
+      chip.innerHTML='<span class="w-2 h-2 rounded-full bg-tertiary-container animate-ping"></span>Hadir ('+(late?'Terlambat':'Tepat Waktu')+')'; }
+  }
+  const bt=$('hdBadgeTeam'); if(bt) bt.textContent=myTeamName;
+  const br=$('hdBadgeRole'); if(br) br.textContent=me.role;
+  const todayJobs=mine(['Dijadwalkan','Dikerjakan','Review']).filter(o=>(o.tgl||todayKey())===todayKey());
+  const isPic=todayJobs.some(o=>picId(o)===meKey);
+  const bp=$('hdBadgePic'); if(bp){ bp.classList.toggle('hidden',!isPic); bp.classList.toggle('flex',isPic); }
+  const bi=$('hdBadgeIn');
+  if(bi){ const show=!!(rec&&rec.in); bi.classList.toggle('hidden',!show); bi.classList.toggle('flex',show); }
+  const bit=$('hdBadgeInText'); if(bit&&rec&&rec.in) bit.textContent='Masuk '+inTxt;
+  const btn=$('hdClockBtn'), lab=$('hdClockLabel'), hint=$('hdClockHint');
+  const h=new Date().getHours();
+  if(lab) lab.textContent=!rec||!rec.in?'Clock In Sekarang':!rec.out?'Clock Out (Selesai Shift)':'Clock In Lagi';
+  if(btn) btn.className='w-full min-h-[48px] rounded-lg font-bold text-[14px] flex items-center justify-center gap-2 active:scale-[0.99] transition-transform shadow-sm '+(rec&&rec.in&&!rec.out?'bg-secondary-container text-on-secondary-container':'bg-primary text-white');
+  const dl=$('dockClockLabel'), db=$('dockClockBtn');
+  if(dl) dl.textContent=!rec||!rec.in?'Clock In':!rec.out?'Clock Out':'Clock In Lagi';
+  if(db){ db.className='ip-dock-btn'; db.setAttribute('aria-label',(!rec||!rec.in?'Clock in':'Clock out')+' dari dock desktop'); }
+  if(hint){
+    if(!rec&&h>=CUTOFF) hint.textContent='Anda belum clock-in melewati pukul 06:00 WIB. Admin menetapkan kehadiran tim dari panel absensi — hubungi Admin bila hari ini tetap masuk agar penugasan disusun ulang.';
+    else if(rec&&rec.in&&!rec.out&&h>=17) hint.textContent='Shift melewati pukul 17:00 WIB — tutup absen dengan Clock Out dan jangan mulai order baru di luar batas operasional.';
+    else if(rec&&rec.in&&rec.out) hint.textContent='Shift ditutup pukul '+outTxt+' WIB. Clock-in ulang hanya bila ada penugasan tambahan dari Admin.';
+    else hint.textContent='Clock-in tercatat sebagai bukti kehadiran lapangan dan dipakai solver CSP saat menyusun tim.';
+  }
+  const st=attStats();
+  set('hdDiscipline',st.discipline+'%');
+  set('hdHadir',st.hadir); set('hdPicDays',st.picDays);
+  set('hdIzin',st.izin); set('hdSakit',st.sakit); set('hdCuti',st.cuti); set('hdTelat',st.telat);
+  const ring=$('hdRing'); if(ring) ring.setAttribute('stroke-dasharray',(st.discipline*0.88).toFixed(1)+' 100');
+  renderCalendar(); renderAttDetail();
+}
+function renderCalendar(){
+  const box=$('hdCal'); if(!box) return;
+  const y=attMonth.getFullYear(), mo=attMonth.getMonth();
+  const last=new Date(y,mo+1,0).getDate();
+  const startDow=new Date(y,mo,1).getDay();
+  let html='';
+  for(let i=0;i<startDow;i++) html+='<div class="h-11"></div>';
+  for(let d=1;d<=last;d++){
+    const key=y+'-'+pad(mo+1)+'-'+pad(d);
+    const dow=new Date(y,mo,d).getDay();
+    if(dow===0){ html+='<div class="h-11 rounded-lg bg-surface-container flex flex-col items-center justify-center opacity-50"><span class="text-[13px] font-medium text-error">'+d+'</span><span class="text-[8px] font-bold text-on-surface-variant">Off</span></div>'; continue; }
+    const rec=readAt(key);
+    const isPic=orders.some(o=>o.tgl===key&&o.team===myTeam&&picId(o)===meKey&&o.status!=='Dibatalkan');
+    const isSel=key===attSel, isFuture=key>todayKey();
+    let dot='';
+    if(rec){ if(rec.type==='izin') dot='bg-secondary'; else if(rec.type==='sakit') dot='bg-surface-tint'; else if(rec.type==='cuti') dot='bg-outline'; else if(rec.in) dot='bg-tertiary-container'; }
+    const cls=isSel?'bg-primary text-white shadow-sm':(rec?'bg-surface-container-low text-on-surface':'bg-surface-container-lowest text-on-surface-variant border border-outline-variant/40');
+    html+='<button type="button" onclick="attPick(\''+key+'\')" class="h-11 rounded-lg flex flex-col items-center justify-center relative '+cls+(isFuture?' opacity-60':'')+'">'
+      +'<span class="text-[13px] font-semibold">'+d+'</span>'
+      +(dot?'<span class="w-1.5 h-1.5 rounded-full '+dot+' mt-0.5"></span>':'<span class="h-2"></span>')
+      +(isPic?'<span class="material-symbols-outlined text-[10px] '+(isSel?'text-white':'text-primary')+' absolute top-0.5 right-0.5">star</span>':'')
+      +'</button>';
+  }
+  box.innerHTML=html;
+}
+function renderAttDetail(){
+  const rec=readAt(attSel);
+  const title=$('hdDetailTitle'); if(title) title.textContent=longDate(attSel);
+  const chip=$('hdDetailChip');
+  let status='Belum Absen';
+  if(rec){ if(rec.type==='izin') status='Izin'; else if(rec.type==='sakit') status='Sakit'; else if(rec.type==='cuti') status='Cuti'; else if(rec.out) status='Selesai'; else if(rec.in) status='Hadir'; }
+  else if(new Date(attSel+'T00:00:00').getDay()===0) status='Libur / Off';
+  if(chip){ chip.textContent=status; chip.className='px-2 py-0.5 rounded text-[10px] font-bold shrink-0 '+(status==='Hadir'||status==='Selesai'?'bg-tertiary-fixed/60 text-tertiary':status==='Izin'?'bg-secondary-fixed text-on-secondary-fixed':status==='Sakit'||status==='Cuti'?'bg-surface-container text-on-surface-variant':'bg-surface-container-highest text-on-surface-variant'); }
+  const hours=$('hdDetailHours');
+  if(hours) hours.textContent=rec?(String(rec.in||'—').replace(/\s*WIB$/,'')+' – '+String(rec.out||'—').replace(/\s*WIB$/,'')+' WIB'):'—';
+  const shift=$('hdDetailShift');
+  if(shift) shift.innerHTML='<span class="material-symbols-outlined text-[14px] text-primary">star</span>Shift Pagi · 08:00–17:00';
+}
+function toggleAbsen(){
+  let rec=readAt(todayKey());
+  const now=nowHM();
+  if(!rec||!rec.in) rec={in:now,date:todayKey()};
+  else if(!rec.out) rec.out=now;
+  else rec={in:now,date:todayKey()};
+  safeSet(akeyFor(todayKey()),JSON.stringify(rec));
+  safeSet('ip_attendance_'+meKey,JSON.stringify(rec));
+  markCrew(!rec.out);
+  attSel=todayKey(); attMonth=firstOfMonth(new Date());
+  renderKehadiran();
+  toast(rec.out?('Clock out '+String(rec.out).replace(/\s*WIB$/,'')+' WIB · shift ditutup.'):('Clock in '+String(rec.in).replace(/\s*WIB$/,'')+' WIB tercatat.'));
+}
+
+/* ================= NOTIFIKASI ================= */
+function bukaNotif(){ renderNotif(); openSheet('modalNotif'); const d=$('tgNotifDot'); if(d) d.classList.add('hidden'); }
+function tutupNotif(){ closeSheet('modalNotif'); }
+function renderNotif(){
+  const box=$('notifList'); if(!box) return;
+  const items=[];
+  load();
+  const todayJobs=jobsOn(['Dijadwalkan','Dikerjakan','Review'],todayKey());
+  todayJobs.forEach(o=>{
+    const st=statusMeta(o);
+    items.push({icon:o.status==='Review'?'hourglass_top':o.status==='Dikerjakan'?'build':'assignment',tone:o.status==='Review'?'bg-primary-fixed text-primary':o.status==='Dikerjakan'?'bg-secondary-fixed text-secondary':'bg-surface-container text-on-surface-variant',
+      title:hm(startOf(o))+' · '+(o.nama||o.cust||o.id),desc:(o.paket||'Servis')+' · '+st.txt,badge:o.id});
+  });
+  const rec=readAt(todayKey());
+  if(!rec&&new Date().getHours()>=CUTOFF) items.push({icon:'fingerprint',tone:'bg-error-container text-error',title:'Belum clock-in hari ini',desc:'Lewat 06:00 WIB — hubungi Admin bila tetap masuk.',badge:'Presensi'});
+  if(rec&&rec.in&&!rec.out&&new Date().getHours()>=17) items.push({icon:'logout',tone:'bg-error-container text-error',title:'Shift melewati 17:00 WIB',desc:'Tutup absen dengan Clock Out.',badge:'Presensi'});
+  let corr=[]; try{ corr=JSON.parse(localStorage.getItem('ip_att_corrections')||'[]'); }catch(e){ corr=[]; }
+  corr.slice(-1).forEach(c=>items.push({icon:'edit_note',tone:'bg-secondary-fixed text-secondary',title:'Koreksi presensi '+c.date,desc:c.jenis+' · menunggu verifikasi Admin',badge:'Pending'}));
+  box.innerHTML=items.length?items.map(it=>'<div class="flex items-start gap-2.5 p-2.5 bg-surface-container-low border border-outline-variant/50 rounded-xl">'
+    +'<span class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 '+it.tone+'"><span class="material-symbols-outlined text-[18px]">'+it.icon+'</span></span>'
+    +'<div class="flex flex-col min-w-0 flex-1"><span class="text-[12px] font-bold text-on-surface truncate">'+esc(it.title)+'</span>'
+    +'<span class="text-[11px] text-on-surface-variant leading-snug">'+esc(it.desc)+'</span></div>'
+    +'<span class="text-[9px] font-bold text-on-surface-variant bg-white border border-outline-variant/50 px-1.5 py-0.5 rounded shrink-0">'+esc(it.badge)+'</span></div>').join('')
+    :'<div class="p-4 text-center text-[12px] text-on-surface-variant bg-surface-container-low rounded-xl">Tidak ada notifikasi baru.</div>';
+}
+
+/* ================= KENDALA ================= */
+function bukaKendala(){
+  const o=cur?get(cur):null;
+  if(!o){ toast('Pilih order terlebih dahulu.','error'); return; }
+  if(!canReport(o)){ toast('Hanya PIC '+picNameOf(o)+' yang dapat melaporkan kendala.','error'); return; }
+  const c=$('catatanKendala'); if(c) c.value=(o.kendala&&o.kendala.catatan)||'';
+  openSheet('modalKendala');
+}
+function tutupKendala(){ closeSheet('modalKendala'); }
+function kirimKendala(){
+  const o=cur?get(cur):null; if(!o) return;
+  if(!canReport(o)){ toast('Hanya PIC '+picNameOf(o)+' yang dapat melaporkan kendala.','error'); return; }
+  const jenis=[...document.querySelectorAll('input[name="opsiKendala"]')].find(r=>r.checked);
+  const cat=$('catatanKendala')?$('catatanKendala').value.trim():'';
+  if(!cat){ toast('Tuliskan catatan kendala terlebih dahulu.','error'); return; }
+  o.kendala={jenis:jenis?jenis.value:'Kendala lapangan',catatan:cat,at:nowHM(),date:todayKey(),by:me.name};
+  audit(o,'Kendala dilaporkan: '+o.kendala.jenis+' — '+cat); save();
+  tutupKendala(); fillDetail(o); toast('Kendala terkirim ke Admin Operasional.');
+}
+
+/* ================= KOREKSI PRESENSI ================= */
+function bukaKoreksi(){ const d=$('koreksiDate'); if(d) d.value=attSel||todayKey(); const c=$('koreksiCatatan'); if(c) c.value=''; openSheet('modalKoreksi'); }
+function tutupKoreksi(){ closeSheet('modalKoreksi'); }
+function kirimKoreksi(){
+  const date=$('koreksiDate')?$('koreksiDate').value:'';
+  const jenis=$('koreksiJenis')?$('koreksiJenis').value:'';
+  const cat=$('koreksiCatatan')?$('koreksiCatatan').value.trim():'';
+  if(!date||!cat){ toast('Lengkapi tanggal dan catatan koreksi.','error'); return; }
+  let list=[]; try{ list=JSON.parse(localStorage.getItem('ip_att_corrections')||'[]'); }catch(e){ list=[]; }
+  list.push({at:Date.now(),tech:meKey,name:me.name,date,jenis,catatan:cat,status:'pending'});
+  safeSet('ip_att_corrections',JSON.stringify(list));
+  tutupKoreksi(); toast('Laporan koreksi presensi terkirim ke Admin.');
+}
+
+/* ================= NAVIGASI ================= */
+function syncNav(v){
+  document.querySelectorAll('.navtab').forEach(b=>{
+    const on=b.dataset.v===v;
+    b.className='navtab flex flex-col items-center justify-center min-h-[48px] py-1 transition-colors '+(on?'text-primary font-extrabold':'text-slate-500 font-semibold');
+    const d=b.querySelector('.navdot'); if(d) d.classList.toggle('hidden',!on);
+  });
+}
+function setView(v){
+  view=v;
+  ['tugas','riwayat','kehadiran','detail','laporan'].forEach(x=>{ const el=$('view-'+x); if(el) el.classList.toggle('on',x===v); });
+  const nav=$('bottomNav'); if(nav) nav.classList.toggle('hidden',v==='laporan');
+  if(['tugas','riwayat','kehadiran'].includes(v)) syncNav(v);
+  window.scrollTo(0,0);
+}
+function vtab(v){
+  if(['tugas','riwayat','kehadiran'].includes(v)) lastList=v;
+  setView(v);
+  if(v==='tugas'){ pickDate=todayKey(); renderTugas(); }
+  if(v==='riwayat') renderRiwayat();
+  if(v==='kehadiran'){ attMonth=firstOfMonth(new Date()); attSel=todayKey(); renderKehadiran(); }
+}
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape') return;
+  ['modalNotif','modalKendala','modalKoreksi'].forEach(id=>{ const el=$(id); if(el&&!el.classList.contains('hidden')) closeSheet(id); });
+});
+/* input interaksi laporan */
+document.querySelectorAll('.cl-item input').forEach(cb=>cb.addEventListener('change',updateProgress));
+const tesCb=$('tesNyala'); if(tesCb) tesCb.addEventListener('change',updateProgress);
+const catEl=$('catatan'); if(catEl) catEl.addEventListener('input',countCatatan);
+const qEl=$('rwSearch'); if(qEl) qEl.addEventListener('search',()=>setHistQuery(qEl.value));
+window.addEventListener('storage',()=>{ load(); renderTugas(); if(view==='riwayat') renderRiwayat(); if(view==='kehadiran') renderKehadiran(); });
+setInterval(()=>{ syncMins++; const sa=$('tgSyncAgo'); if(sa&&view==='tugas') sa.textContent=syncMins<1?'Baru saja':syncMins+' mnt lalu'; },60000);
+setInterval(()=>{ if(view==='laporan'&&!laporanSent&&cur){ const o=get(cur); if(o&&canReport(o)){ collectReport(o); o.report.draftAt=Date.now(); save(); } } },30000);
+
+/* ================= INIT ================= */
+load();
+paintIdentity();
+renderTugas();
+renderRiwayat();
+renderKehadiran();
+setView('tugas');
+syncNav('tugas');
+dtab('ringkasan');
+refreshCatalog();
+</script>
+<script src="assets/qrcode.min.js"></script>
+<script src="assets/p1.js"></script>
+<aside id="ipDock" class="ip-desk-dock" aria-label="Konsol lapangan untuk layar desktop">
+<div class="flex items-center gap-3">
+<div class="flex flex-col max-w-[240px]">
+<span class="text-[13px] font-bold">Konsol lapangan · layar besar</span>
+<span class="text-[11px] text-slate-300 leading-snug">Clock-in dapat dilakukan di sini. Pindai QR untuk membuka tampilan ponsel penuh.</span>
+</div>
+<div id="dockQR" class="bg-white p-1 rounded-md shrink-0" aria-hidden="true"></div>
+</div>
+<button id="dockClockBtn" type="button" class="ip-dock-btn" onclick="toggleAbsen()">
+<span class="material-symbols-outlined text-[18px]">fingerprint</span><span id="dockClockLabel">Clock In</span>
+</button>
+</aside>
+<script>
+(function(){
+  function init(){
+    if(!window.IP) return setTimeout(init,50);
+    var q=document.getElementById('dockQR'); if(q) IP.qr(q, location.href, 64);
+    var src=document.getElementById('hdClockLabel'), dst=document.getElementById('dockClockLabel');
+    if(src&&dst) dst.textContent=src.textContent.replace(' Sekarang','').replace(' (Selesai Shift)','');
+  }
+  init();
+})();
+</script>
+</body></html>

@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<title>CV Intan Pratama - FSM Dispatcher Pro</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-variant": "#dae2fd",
+          "on-tertiary-container": "#5fcdbf",
+          "tertiary-fixed-dim": "#6bd8cb",
+          "status-otw": "#D97706",
+          "on-secondary-fixed": "#001d31",
+          "on-surface-variant": "#444653",
+          "inverse-surface": "#283044",
+          "primary-fixed-dim": "#b8c4ff",
+          "on-tertiary-fixed": "#00201d",
+          "outline-variant": "#c4c5d5",
+          "on-secondary-fixed-variant": "#004b73",
+          "background": "#faf8ff",
+          "outline": "#757684",
+          "status-kerja": "#2563EB",
+          "status-terjadwal": "#0284C7",
+          "on-primary-fixed-variant": "#173bab",
+          "on-primary": "#ffffff",
+          "error-container": "#ffdad6",
+          "inverse-on-surface": "#eef0ff",
+          "navy-deep": "#0A192F",
+          "status-selesai": "#16A34A",
+          "status-batal": "#DC2626",
+          "primary-container": "#1e40af",
+          "surface-dim": "#d2d9f4",
+          "secondary-container": "#5bb8fe",
+          "surface-bright": "#faf8ff",
+          "surface-tint": "#3755c3",
+          "on-surface": "#131b2e",
+          "status-konfirmasi": "#4338CA",
+          "badge-csp-invalid-text": "#991B1B",
+          "on-primary-fixed": "#001453",
+          "primary": "#00288e",
+          "surface-container": "#eaedff",
+          "surface": "#faf8ff",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-container": "#a8b8ff",
+          "on-tertiary": "#ffffff",
+          "inverse-primary": "#b8c4ff",
+          "on-secondary-container": "#00476e",
+          "on-error": "#ffffff",
+          "badge-csp-valid": "#DCFCE7",
+          "surface-card": "#FFFFFF",
+          "status-diterima": "#64748B",
+          "tertiary-fixed": "#89f5e7",
+          "on-background": "#131b2e",
+          "secondary-fixed-dim": "#93ccff",
+          "badge-csp-valid-text": "#166534",
+          "surface-ice": "#F8FAFC",
+          "border-subtle": "#E2E8F0",
+          "error": "#ba1a1a",
+          "tertiary-container": "#00554e",
+          "secondary": "#006398",
+          "secondary-fixed": "#cce5ff",
+          "primary-fixed": "#dde1ff",
+          "surface-container-high": "#e2e7ff",
+          "on-tertiary-fixed-variant": "#005049",
+          "tertiary": "#003c36",
+          "surface-container-low": "#f2f3ff",
+          "surface-container-highest": "#dae2fd",
+          "on-error-container": "#93000a",
+          "on-secondary": "#ffffff",
+          "badge-csp-invalid": "#FEE2E2",
+          "electric-cyan": "#0284C7",
+          "border-focus": "#38BDF8"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "space-3xl": "4rem",
+          "space-2xl": "3rem",
+          "space-xs": "0.5rem",
+          "gutter-mobile": "1rem",
+          "space-3xs": "0.125rem",
+          "margin": "2rem",
+          "space-2xs": "0.25rem",
+          "space-xl": "2rem",
+          "space-sm": "0.75rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "margin-mobile": "1rem"
+        },
+        "fontFamily": {
+          "display-hero-mobile": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "label-xs": ["Inter"],
+          "label-lg": ["Inter"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "mono-metric": ["Inter"],
+          "display-hero": ["Plus Jakarta Sans"],
+          "body-sm": ["Plus Jakarta Sans"],
+          "label-md": ["Inter"],
+          "body-md": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+          "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+          "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+          "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+          "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+          "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+          "mono-metric": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+          "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+          "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+          "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }]
+        }
+      }
+    }
+  };
+</script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      body { overscroll-behavior: none; }
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', 'Inter', monospace;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+<link rel="stylesheet" href="assets/p1.css">
+<script src="assets/crew-master.js"></script>
+<script src="assets/material-catalog.js"></script>
+</head>
+<body class="bg-surface-ice text-on-surface antialiased selection:bg-primary-container selection:text-white">
+<!-- SIDEBAR NAVIGASI (Dark Sleek Navy Pro) -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-[#0b1329] border-r border-slate-800/80 z-50 flex flex-col justify-between select-none shadow-2xl">
+<div class="flex flex-col">
+<!-- Brand Header -->
+<div class="px-6 pt-6 pb-4 border-b border-slate-800/60">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/25 ring-1 ring-white/20">
+<span class="material-symbols-outlined text-[22px]">hvac</span>
+</div>
+<div class="flex flex-col">
+<span class="font-extrabold text-[15px] tracking-tight text-white leading-tight">CV INTAN PRATAMA</span>
+<span class="text-[10px] uppercase font-bold tracking-widest text-cyan-400/90 font-mono-code">FSM Dispatcher Pro</span>
+</div>
+</div>
+<!-- Operational Depot Chip -->
+<div class="mt-4 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800/80 flex items-center gap-2.5 shadow-inner">
+<div class="w-7 h-7 rounded-lg bg-blue-500/10 text-cyan-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">warehouse</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Depot Operasional</span>
+<span class="text-xs font-semibold text-slate-200 truncate">Taman Pondok Jati, Sda</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 px-3 mt-4" data-active-classes="bg-primary-container text-white font-bold shadow-md shadow-blue-600/30">
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="overview" href="./ringkasan-hari.html">
+<span>Ringkasan Hari</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="customer-requests" href="./pengajuan-pelanggan.html">
+<span class="font-medium">Pengajuan Pelanggan</span>
+<span id="navBaru" class="px-2 py-0.5 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 font-mono-code text-[11px] font-bold">5 Baru</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="csp-dispatch" href="./antrean-penugasan.html">
+<span class="font-medium">Antrean &amp; Penugasan</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-400/20 border border-emerald-400/40 text-emerald-300 font-mono-code text-[11px] font-bold">CSP</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="timeline-gantt" href="./timeline-rute.html">
+<span class="font-medium">Timeline Tim &amp; Rute</span>
+<span class="text-[11px] font-mono-code text-slate-400 bg-slate-800 px-2 py-0.5 rounded-md border border-slate-700/60">TSP</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="work-orders-invoices" href="./spk-invoice.html">
+<span class="font-medium">SPK &amp; Invoice</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-primary-container text-white font-bold shadow-md shadow-blue-600/30 transition-all group font-headline-sm text-body-md" data-path="inventory-master" href="master-inventaris.html">
+<span class="font-bold">Master &amp; Inventaris</span>
+<span class="text-[11px] font-mono-code text-cyan-200 font-bold bg-cyan-950/80 px-2 py-0.5 rounded-md border border-cyan-400/40">Aturan &amp; Stok</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="audit-logs" href="./log-audit.html">
+<span class="font-medium">Log Audit</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom Hotline & Info -->
+<div class="p-3 mb-2 flex flex-col gap-2">
+<div class="p-3 rounded-xl bg-gradient-to-r from-rose-950/60 to-rose-900/40 border border-rose-800/50 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-rose-600/30 text-rose-400 flex items-center justify-center ring-1 ring-rose-500/40">
+<span class="material-symbols-outlined text-[18px]">sos</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-extrabold text-rose-300 uppercase tracking-wider">Hotline Darurat</span>
+<span class="font-mono-code text-xs font-bold text-white">0811-3450-990</span>
+</div>
+</div>
+<a class="w-7 h-7 rounded-lg bg-rose-600 hover:bg-rose-500 text-white flex items-center justify-center transition-colors shadow-sm" href="tel:08113450990" title="Hubungi Hotline">
+<span class="material-symbols-outlined text-[15px]">call</span>
+</a>
+</div>
+<div class="px-2 py-1.5 flex items-center justify-between text-slate-400 text-[11px] font-medium border-t border-slate-800/60">
+<span class="truncate">Surabaya &amp; Sidoarjo Rayon</span>
+<span class="font-mono-code text-cyan-400 font-semibold bg-cyan-950/40 px-1.5 py-0.5 rounded border border-cyan-800/40">v2.4.0</span>
+</div>
+</div>
+</aside>
+<!-- CONTENT SHELL WRAPPER -->
+<div class="pl-72 flex flex-col min-h-screen">
+<!-- TOP HEADER BAR (Modern Dark Slate Pro) -->
+<header class="fixed top-0 left-72 right-0 h-16 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800/80 z-40 flex items-center justify-between px-8 select-none shadow-md">
+<div class="flex items-center gap-4">
+<!-- Date Time Pill -->
+<div class="flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/70 text-slate-200 shadow-inner">
+<span class="material-symbols-outlined text-cyan-400 text-[18px]">schedule</span>
+<span id="hdr-date" class="font-mono-code text-xs font-medium text-slate-300">Senin, 26 Okt 2026</span>
+<span class="w-1 h-3 rounded-full bg-slate-700"></span>
+<span id="hdr-clock" class="font-mono-code text-xs font-bold text-cyan-300">08:15 WIB</span>
+</div>
+<!-- Telemetry Status Tag -->
+<div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/70 border border-emerald-600/40 text-emerald-300 text-xs font-semibold shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="font-label-md">Real-time Telemetri Aktif</span>
+</div>
+</div>
+<!-- User Action Header -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors relative border border-slate-700/60 bg-slate-900/60" title="Notifikasi" type="button">
+<span class="material-symbols-outlined text-[19px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-slate-900"></span>
+</button>
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors border border-slate-700/60 bg-slate-900/60" title="Setelan" type="button">
+<span class="material-symbols-outlined text-[19px]">tune</span>
+</button>
+</div>
+<div class="h-6 w-[1px] bg-slate-700/80"></div>
+<!-- Dispatcher Avatar Info -->
+<div class="flex items-center gap-3 pl-1">
+<div class="flex flex-col text-right">
+<span class="text-xs font-bold text-white leading-tight tracking-tight">Budi Santoso</span>
+<span class="text-[11px] text-cyan-300/80 font-medium">Dispatcher / Kepala Ops</span>
+</div>
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 ring-2 ring-blue-400/40 flex items-center justify-center text-white shadow-md">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN DASHBOARD CONTENT -->
+<main class="w-full pt-16 bg-surface-ice flex-1 px-8 pb-10"><div class="flex flex-col w-full space-y-6">
+<!-- TOP HEADER & PRIMARY ACTION BAR -->
+<div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-4 pb-2">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Master Data &amp; Inventaris</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-badge-csp-valid text-badge-csp-valid-text font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+          Depot Terhubung (Sidoarjo)
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+        Konfigurasi parameter aturan operasional SOP FSM (cut-off, kapasitas, matriks tarif) dan monitoring persediaan suku cadang serta tabung freon Depot Taman Pondok Jati.
+      </p>
+</div>
+<!-- Top Action Buttons -->
+<div class="flex items-center flex-wrap gap-2.5">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-card hover:bg-surface-container text-on-surface shadow-sm font-label-lg text-label-lg transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px]">receipt_long</span>
+        Riwayat Pengadaan / PO
+      </button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-card border border-border-subtle hover:bg-surface-container text-primary shadow-sm font-label-lg text-label-lg transition-all duration-150 active:scale-95" onclick="openAddItemModal()" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">add_circle</span>
+        Tambah Komponen / Item
+      </button>
+</div>
+</div>
+<!-- 4 KPI SUMMARY CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1: Total SKU -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Total Suku Cadang &amp; Bahan</span>
+<span class="font-display-hero text-headline-lg text-on-surface mt-1">38 <span class="text-sm font-label-lg text-on-surface-variant">SKU Aktif</span></span>
+</div>
+<div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-4 pt-3 bg-surface-container-low rounded-lg px-3 py-1.5">
+<span class="font-label-md text-label-md text-secondary font-semibold">8 Kategori Komponen</span>
+<span class="text-outline text-xs">•</span>
+<span class="font-label-md text-label-md text-on-surface-variant">4 Tipe Refrigerant</span>
+</div>
+</div>
+<!-- Card 2: Stok Kritis Alert -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-3 -top-3 w-16 h-16 bg-error-container rounded-full opacity-40 blur-lg pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-badge-csp-invalid-text uppercase tracking-wider font-bold">Peringatan Stok Kritis</span>
+<span class="w-2 h-2 rounded-full bg-status-batal animate-pulse"></span>
+</div>
+<span class="font-display-hero text-headline-lg text-status-batal mt-1">3 Item <span class="text-sm font-label-lg text-on-surface-variant">Perlu Reorder</span></span>
+</div>
+<div class="w-11 h-11 rounded-xl bg-error-container flex items-center justify-center text-status-batal">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 mt-4 pt-3 bg-error-container/40 rounded-lg px-2.5 py-1.5 text-badge-csp-invalid-text">
+<span class="material-symbols-outlined text-[16px] shrink-0">emergency</span>
+<span class="font-label-md text-label-md truncate">Freon R32 (1), Kapasitor 2.5uF (4), Pipa 1/4"</span>
+</div>
+</div>
+<!-- Card 3: Katalog Layanan -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Katalog Layanan &amp; Tarif</span>
+<span class="font-display-hero text-headline-lg text-on-surface mt-1">14 Jenis <span class="text-sm font-label-lg text-on-surface-variant">SOP Standar</span></span>
+</div>
+<div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-status-konfirmasi">
+<span class="material-symbols-outlined text-[24px]">local_offer</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-4 pt-3 bg-surface-container-low rounded-lg px-3 py-1.5 text-on-surface-variant font-label-md text-label-md">
+<span>4 Cleaning</span>
+<span class="text-outline">•</span>
+<span>3 Pasang Baru</span>
+<span class="text-outline">•</span>
+<span class="text-status-kerja font-semibold">7 Diagnosa</span>
+</div>
+</div>
+<!-- Card 4: Solver CSP SOP Status -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Parameter Solver SOP (B.1-B.4)</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-headline-lg text-headline-lg text-badge-csp-valid-text">Terkunci</span>
+<span class="material-symbols-outlined text-status-selesai text-[20px]">lock</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-xl bg-badge-csp-valid flex items-center justify-center text-badge-csp-valid-text">
+<span class="material-symbols-outlined text-[24px]">tune</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-4 pt-3 bg-badge-csp-valid/50 rounded-lg px-3 py-1.5 text-badge-csp-valid-text font-label-md text-label-md">
+<span>Cut-Off 06:00 WIB</span>
+<span>•</span>
+<span>Jeda 30m</span>
+<span>•</span>
+<span>Max 9 Jam/Shift</span>
+</div>
+</div>
+</div>
+<!-- TAB NAVIGATION BAR -->
+<div class="bg-surface-card rounded-xl shadow-sm p-1.5 flex items-center overflow-x-auto gap-1">
+<button class="tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm transition-all whitespace-nowrap" onclick="switchMainTab('tab-services', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+      Katalog Layanan &amp; Aturan Kerja (B.1 - B.4)
+    </button>
+<button class="tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-lg text-label-lg transition-all whitespace-nowrap" onclick="switchMainTab('tab-inventory', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+      Stok Suku Cadang &amp; Refrigerant Depot
+      <span class="px-2 py-0.5 rounded-full bg-status-batal text-white font-mono-code text-label-xs">3 Kritis</span>
+</button>
+<button class="tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-lg text-label-lg transition-all whitespace-nowrap" onclick="switchMainTab('tab-solver', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">rule_settings</span>
+      Parameter Solver &amp; Batasan Dispatcher
+    </button>
+<button class="tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-lg text-label-lg transition-all whitespace-nowrap" onclick="switchMainTab('tab-fleet', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+      Master Armada &amp; Sertifikasi Teknisi
+      <span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-mono-code text-label-xs" id="fleetCount">0</span>
+    </button>
+</div>
+<!-- SIMPAN KONTEKSTUAL PER TAB -->
+<div class="flex flex-wrap items-center justify-between gap-2 px-1 -mt-2" id="tabSaveBar" data-tab="tab-services">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Perubahan pada <strong id="tabSaveLabel" class="text-on-surface">Katalog Layanan &amp; Aturan Kerja</strong> disimpan terpisah per tab.</p>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-status-selesai hover:bg-emerald-700 text-white shadow-sm font-label-md text-label-md transition-all active:scale-95" onclick="saveActiveTab()" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+        Simpan tab ini
+      </button>
+</div>
+<!-- MAIN TAB CONTENT AREAS -->
+<!-- TAB 1: KATALOG LAYANAN & ATURAN KERJA SOP (B.1 - B.4) -->
+<div class="tab-pane flex flex-col space-y-6" id="tab-services">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Katalog Layanan &amp; Standar SOP Lapangan</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Konfigurasi batasan beban kerja tim teknisi Surabaya-Sidoarjo sesuai matriks kualifikasi BNSP dan alokasi waktu SOP.</p>
+</div>
+<span class="font-mono-code text-label-md px-3 py-1 rounded bg-surface-container text-secondary">DOC-23_REF: SOP_B1_B4</span>
+</div>
+<!-- Core Service Matrix Cards (4 Major Services from SOP Document) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+<!-- Card 1: Cuci & Perawatan Rutin -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-electric-cyan">
+<span class="material-symbols-outlined text-[26px]">shower</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Cuci &amp; Perawatan Rutin</h3>
+<span class="px-2 py-0.5 rounded-full bg-badge-csp-valid text-badge-csp-valid-text font-label-xs text-label-xs">Aktif SOP</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Split Wall 0.5 PK - 2.0 PK Inverter/Non-Inverter</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase">Tarif SOP Resmin</span>
+<div class="font-mono-code text-headline-sm text-primary">Rp 80.000 - 90.000 <span class="font-body-sm text-body-sm text-on-surface-variant">/ unit</span></div>
+</div>
+</div>
+<!-- Parameter Chips -->
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                Standar Durasi Operasional
+              </span>
+<span class="font-mono-code text-body-md text-on-surface font-semibold mt-0.5">45 Menit / unit</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">groups</span>
+                Kualifikasi Minimum Tim
+              </span>
+<span class="font-body-md text-body-md text-on-surface font-semibold mt-0.5">Helper Siaga / Teknisi Reguler</span>
+</div>
+</div>
+<!-- SOP Rules Constraints -->
+<div class="p-3 rounded-lg bg-surface-ice flex flex-col space-y-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span><strong>Batas Harian (B.3):</strong> Maksimal 7 unit/hari per tim (turun jadi 5 unit bila ada pasang baru).</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">water_drop</span>
+<span><strong>SOP Wajib:</strong> Plastik pelindung casing indoor + drain pump + ukur delta suhu evaporator &gt; 8°C.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 mt-4 bg-surface-container-low -mx-5 -mb-5 px-5 py-3 rounded-b-xl">
+<span class="font-mono-code text-label-md text-on-surface-variant">SKU Layanan: SRV-CUCI-STD</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md inline-flex items-center gap-1" type="button">
+            Edit Parameter
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Trouble Ringan -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-status-otw">
+<span class="material-symbols-outlined text-[26px]">bolt</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Trouble Ringan (Kapasitor / Sensor)</h3>
+<span class="px-2 py-0.5 rounded-full bg-badge-csp-valid text-badge-csp-valid-text font-label-xs text-label-xs">Aktif SOP</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Penggantian Kapasitor Fan/Kompresor, Thermistor, Blower</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase">Tarif Tetap SOP</span>
+<div class="font-mono-code text-headline-sm text-primary">Rp 275.000 <span class="font-body-sm text-body-sm text-on-surface-variant">(All-in)</span></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                Standar Durasi Operasional
+              </span>
+<span class="font-mono-code text-body-md text-on-surface font-semibold mt-0.5">60 Menit</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">groups</span>
+                Kualifikasi Minimum Tim
+              </span>
+<span class="font-body-md text-body-md text-on-surface font-semibold mt-0.5">Teknisi Pengalaman 1+ Thn</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-ice flex flex-col space-y-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">inventory_2</span>
+<span><strong>Alokasi Part:</strong> Membawa Kapasitor 2.5 uF - 4 uF &amp; Digital Multimeter / Tang Ampere.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+<span><strong>SOP Wajib:</strong> Pengukuran beban Ampere sebelum &amp; sesudah instalasi kapasitor baru.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 mt-4 bg-surface-container-low -mx-5 -mb-5 px-5 py-3 rounded-b-xl">
+<span class="font-mono-code text-label-md text-on-surface-variant">SKU Layanan: SRV-TRB-LIGHT</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md inline-flex items-center gap-1" type="button">
+            Edit Parameter
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Trouble Berat -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-error-container/60 flex items-center justify-center text-status-batal">
+<span class="material-symbols-outlined text-[26px]">build_circle</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Trouble Berat (Kompresor / Bocor / PCB)</h3>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-badge-csp-invalid-text font-label-xs text-label-xs">Level Kritis</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Penggantian Kompresor, Las Pipa Freon, Flushing N2</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase">Estimasi Awal</span>
+<div class="font-mono-code text-headline-sm text-primary">Rp 650.000+ <span class="font-body-sm text-body-sm text-on-surface-variant">Part Khusus</span></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                Standar Durasi Operasional
+              </span>
+<span class="font-mono-code text-body-md text-on-surface font-semibold mt-0.5">120 Menit (2 Jam)</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                Kualifikasi Minimum Tim
+              </span>
+<span class="font-body-md text-body-md text-status-batal font-bold mt-0.5">WAJIB Teknisi Utama (TU - BNSP)</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-ice flex flex-col space-y-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-batal text-[16px]">warning</span>
+<span><strong>Restriksi Solver (B.1):</strong> Order ditolak / invalid jika armada tidak memuat Teknisi Utama.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">hardware</span>
+<span><strong>Alat Wajib:</strong> Tabung Nitrogen (N2), Torch Las Oxy-Acetylene, Digital Manifold.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 mt-4 bg-surface-container-low -mx-5 -mb-5 px-5 py-3 rounded-b-xl">
+<span class="font-mono-code text-label-md text-on-surface-variant">SKU Layanan: SRV-TRB-HEAVY</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md inline-flex items-center gap-1" type="button">
+            Edit Parameter
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Pasang Baru & Relokasi -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-status-kerja">
+<span class="material-symbols-outlined text-[26px]">home_repair_service</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pasang AC Baru &amp; Relokasi Unit</h3>
+<span class="px-2 py-0.5 rounded-full bg-badge-csp-valid text-badge-csp-valid-text font-label-xs text-label-xs">Aktif SOP</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Pemasangan Bracket, Pemipaan, Flaring, Vakum 2-Stage</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase">Tarif Pasang Mulai</span>
+<div class="font-mono-code text-headline-sm text-primary">Rp 450.000 <span class="font-body-sm text-body-sm text-on-surface-variant">(Non-Material)</span></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                Standar Durasi Operasional
+              </span>
+<span class="font-mono-code text-body-md text-on-surface font-semibold mt-0.5">120 Menit (2 Jam)</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">engineering</span>
+                Kualifikasi Minimum Tim
+              </span>
+<span class="font-body-md text-body-md text-primary font-bold mt-0.5">Teknisi Utama + Keahlian Flaring</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-ice flex flex-col space-y-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">priority_high</span>
+<span><strong>Kapasitas Harian (B.3):</strong> Maksimal 2 unit pasang baru per tim per hari.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-badge-csp-valid-text text-[16px]">check_circle</span>
+<span><strong>SOP Wajib CV Intan Pratama:</strong> Wajib Vakum 2-Stage minimal 15 Menit (Dilarang Purging).</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 mt-4 bg-surface-container-low -mx-5 -mb-5 px-5 py-3 rounded-b-xl">
+<span class="font-mono-code text-label-md text-on-surface-variant">SKU Layanan: SRV-INST-NEW</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md inline-flex items-center gap-1" type="button">
+            Edit Parameter
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2: STOK SUKU CADANG & REFRIGERANT DEPOT -->
+<div class="tab-pane flex flex-col space-y-4" id="tab-inventory">
+<!-- Filter and Search Bar Row -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-4">
+<!-- Search Input -->
+<div class="relative w-full lg:w-96">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg bg-surface-ice border-0 focus:ring-2 focus:ring-primary text-body-md text-on-surface placeholder:text-outline font-body-md" id="inventorySearch" onkeyup="filterInventoryTable()" placeholder="Cari SKU, Nama Barang, atau Kompatibilitas..." type="text"/>
+</div>
+<!-- Category Filter Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto w-full lg:w-auto pb-1 lg:pb-0">
+<button class="cat-pill px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm whitespace-nowrap" onclick="filterCategory('all', this)" type="button">Semua (38)</button>
+<button class="cat-pill px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md whitespace-nowrap" onclick="filterCategory('Refrigerant', this)" type="button">Refrigerant (Gas)</button>
+<button class="cat-pill px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md whitespace-nowrap" onclick="filterCategory('Kapasitor', this)" type="button">Kapasitor</button>
+<button class="cat-pill px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md whitespace-nowrap" onclick="filterCategory('Pipa', this)" type="button">Pipa &amp; Aksesoris</button>
+<button class="cat-pill px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md whitespace-nowrap" onclick="filterCategory('Kelistrikan', this)" type="button">Kelistrikan/PCB</button>
+<button class="cat-pill px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md whitespace-nowrap" onclick="filterCategory('Tools', this)" type="button">Alat/Tools</button>
+<button class="px-3 py-1.5 rounded-lg bg-error-container text-badge-csp-invalid-text font-label-md text-label-md whitespace-nowrap flex items-center gap-1" id="lowStockToggleBtn" onclick="toggleLowStockOnly(this)" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_alt</span>
+          Stok Menipis Saja
+        </button>
+</div>
+</div>
+<!-- Inventory Data Table -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="inventoryTable">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<th class="py-3.5 px-4 font-semibold">SKU &amp; Spesifikasi Barang</th>
+<th class="py-3.5 px-4 font-semibold">Kategori &amp; Rak Depot</th>
+<th class="py-3.5 px-4 font-semibold">Stok Saat Ini</th>
+<th class="py-3.5 px-4 font-semibold">Safety Stock</th>
+<th class="py-3.5 px-4 font-semibold">HPP / Harga SOP</th>
+<th class="py-3.5 px-4 font-semibold">Terpakai Hari Ini</th>
+<th class="py-3.5 px-4 font-semibold text-right">Aksi Cepat</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-body-md text-on-surface">
+<!-- Item 1: Freon R32 (Kritis) -->
+<tr class="hover:bg-surface-ice transition-colors stock-row" data-category="Refrigerant" data-status="critical">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-error-container text-status-batal flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">propane</span>
+</div>
+<div>
+<span class="font-mono-code text-label-xs text-status-batal font-bold">GAS-R32-03KG</span>
+<div class="font-headline-sm text-headline-sm text-on-surface">Tabung Freon R32 (3kg Disposable)</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Daikin / Panasonic Original R32 Pressure Gauge</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-on-surface font-medium block">Refrigerant</span>
+<span class="inline-flex items-center gap-1 font-mono-code text-label-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]">warehouse</span>
+                  Rak Gas Outdoor #02
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-badge-csp-invalid-text font-label-md text-label-md font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-batal"></span>
+                  1 Tabung (Kritis)
+                </span>
+</td>
+<td class="py-3.5 px-4 font-mono-code text-body-sm text-on-surface-variant">
+                Min. 5 Tabung
+              </td>
+<td class="py-3.5 px-4">
+<div class="font-mono-code text-body-sm text-on-surface-variant">HPP: Rp 165.000</div>
+<div class="font-mono-code text-label-md font-bold text-primary">SOP: Rp 250.000</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-status-otw font-semibold">2 Tabung</span>
+<span class="text-on-surface-variant text-label-xs block">Tim Alpha (APV-01)</span>
+</td>
+<td class="py-3.5 px-4 text-right space-x-1">
+<button class="px-2.5 py-1.5 rounded bg-surface-container text-primary hover:bg-primary-container hover:text-white font-label-md text-label-md transition-colors" onclick="quickTakeModal('GAS-R32-03KG', 'Freon R32')" type="button">
+                  Catat Ambil
+                </button>
+<button class="px-2.5 py-1.5 rounded bg-status-selesai text-white hover:bg-emerald-700 font-label-md text-label-md transition-colors" onclick="quickRestockModal('GAS-R32-03KG', 'Freon R32')" type="button">
+                  Restock
+                </button>
+</td>
+</tr>
+<!-- Item 2: Kapasitor 2.5 uF (Menipis) -->
+<tr class="hover:bg-surface-ice transition-colors stock-row" data-category="Kapasitor" data-status="warning">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-status-otw flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div>
+<span class="font-mono-code text-label-xs text-status-otw font-bold">CAP-25UF-450V</span>
+<div class="font-headline-sm text-headline-sm text-on-surface">Kapasitor Fan Motor 2.5 µF 450VAC</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Shizuki / Epcos Original Kaki 2 Standard</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-on-surface font-medium block">Kapasitor</span>
+<span class="inline-flex items-center gap-1 font-mono-code text-label-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]">grid_view</span>
+                  Rak A - Kotak 04
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-status-otw font-label-md text-label-md font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-otw"></span>
+                  4 Pcs (Menipis)
+                </span>
+</td>
+<td class="py-3.5 px-4 font-mono-code text-body-sm text-on-surface-variant">
+                Min. 10 Pcs
+              </td>
+<td class="py-3.5 px-4">
+<div class="font-mono-code text-body-sm text-on-surface-variant">HPP: Rp 35.000</div>
+<div class="font-mono-code text-label-md font-bold text-primary">SOP: Rp 75.000</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-on-surface font-semibold">3 Pcs</span>
+<span class="text-on-surface-variant text-label-xs block">Tim Beta (Wuling-02)</span>
+</td>
+<td class="py-3.5 px-4 text-right space-x-1">
+<button class="px-2.5 py-1.5 rounded bg-surface-container text-primary hover:bg-primary-container hover:text-white font-label-md text-label-md transition-colors" onclick="quickTakeModal('CAP-25UF-450V', 'Kapasitor 2.5uF')" type="button">
+                  Catat Ambil
+                </button>
+<button class="px-2.5 py-1.5 rounded bg-status-selesai text-white hover:bg-emerald-700 font-label-md text-label-md transition-colors" onclick="quickRestockModal('CAP-25UF-450V', 'Kapasitor 2.5uF')" type="button">
+                  Restock
+                </button>
+</td>
+</tr>
+<!-- Item 3: Pipa Tembaga AC (Menipis) -->
+<tr class="hover:bg-surface-ice transition-colors stock-row" data-category="Pipa" data-status="warning">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-status-otw flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">timeline</span>
+</div>
+<div>
+<span class="font-mono-code text-label-xs text-status-otw font-bold">PIP-TAT-0608</span>
+<div class="font-headline-sm text-headline-sm text-on-surface">Pipa Tembaga Set Tateyama 1/4" + 3/8" (0.61mm)</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Standar R32 &amp; R410A High-Pressure ASTM-B280</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-on-surface font-medium block">Pipa &amp; Aksesoris</span>
+<span class="inline-flex items-center gap-1 font-mono-code text-label-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]">view_column</span>
+                  Rak Pipa C-01
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-status-otw font-label-md text-label-md font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-otw"></span>
+                  1.5 Roll (Menipis)
+                </span>
+</td>
+<td class="py-3.5 px-4 font-mono-code text-body-sm text-on-surface-variant">
+                Min. 3 Roll (90 m)
+              </td>
+<td class="py-3.5 px-4">
+<div class="font-mono-code text-body-sm text-on-surface-variant">HPP: Rp 68.000 / m</div>
+<div class="font-mono-code text-label-md font-bold text-primary">SOP: Rp 110.000 / m</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-on-surface font-semibold">12 Meter</span>
+<span class="text-on-surface-variant text-label-xs block">Tim Charlie (APV-03)</span>
+</td>
+<td class="py-3.5 px-4 text-right space-x-1">
+<button class="px-2.5 py-1.5 rounded bg-surface-container text-primary hover:bg-primary-container hover:text-white font-label-md text-label-md transition-colors" onclick="quickTakeModal('PIP-TAT-0608', 'Pipa Tateyama 1/4+3/8')" type="button">
+                  Catat Ambil
+                </button>
+<button class="px-2.5 py-1.5 rounded bg-status-selesai text-white hover:bg-emerald-700 font-label-md text-label-md transition-colors" onclick="quickRestockModal('PIP-TAT-0608', 'Pipa Tateyama 1/4+3/8')" type="button">
+                  Restock
+                </button>
+</td>
+</tr>
+<!-- Item 4: Freon R410A (Aman) -->
+<tr class="hover:bg-surface-ice transition-colors stock-row" data-category="Refrigerant" data-status="safe">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">propane_tank</span>
+</div>
+<div>
+<span class="font-mono-code text-label-xs text-secondary font-bold">GAS-R410A-11KG</span>
+<div class="font-headline-sm text-headline-sm text-on-surface">Freon R410A Tabung Segel 11.3 kg</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kemurnian ≥ 99.8% Dupont / Refrigerant Suva</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-on-surface font-medium block">Refrigerant</span>
+<span class="inline-flex items-center gap-1 font-mono-code text-label-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]">warehouse</span>
+                  Rak Gas Outdoor #01
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-badge-csp-valid text-badge-csp-valid-text font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                  6 Tabung (Aman)
+                </span>
+</td>
+<td class="py-3.5 px-4 font-mono-code text-body-sm text-on-surface-variant">
+                Min. 3 Tabung
+              </td>
+<td class="py-3.5 px-4">
+<div class="font-mono-code text-body-sm text-on-surface-variant">HPP: Rp 820.000</div>
+<div class="font-mono-code text-label-md font-bold text-primary">SOP: Rp 1.250.000</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-on-surface font-semibold">0 Tabung</span>
+<span class="text-on-surface-variant text-label-xs block">Tersedia Full</span>
+</td>
+<td class="py-3.5 px-4 text-right space-x-1">
+<button class="px-2.5 py-1.5 rounded bg-surface-container text-primary hover:bg-primary-container hover:text-white font-label-md text-label-md transition-colors" onclick="quickTakeModal('GAS-R410A-11KG', 'Freon R410A')" type="button">
+                  Catat Ambil
+                </button>
+<button class="px-2.5 py-1.5 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" onclick="quickRestockModal('GAS-R410A-11KG', 'Freon R410A')" type="button">
+                  Restock
+                </button>
+</td>
+</tr>
+<!-- Item 5: Pompa Vakum 2-Stage Value (Alat Aset) -->
+<tr class="hover:bg-surface-ice transition-colors stock-row" data-category="Tools" data-status="safe">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+</div>
+<div>
+<span class="font-mono-code text-label-xs text-primary font-bold">TOOL-VAK-VALU2</span>
+<div class="font-headline-sm text-headline-sm text-on-surface">Pompa Vakum 2-Stage Value Navac (Aset Operasional)</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kapasitas 4 CFM, Solenoid Check Valve Kalibrasi 2026</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-on-surface font-medium block">Alat/Tools (Aset)</span>
+<span class="inline-flex items-center gap-1 font-mono-code text-label-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+                  Lemari Alat Khusus TU
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-badge-csp-valid text-badge-csp-valid-text font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                  4 Unit (Lengkap)
+                </span>
+</td>
+<td class="py-3.5 px-4 font-mono-code text-body-sm text-on-surface-variant">
+                Alokasi: 1/Tim APV
+              </td>
+<td class="py-3.5 px-4">
+<div class="font-mono-code text-body-sm text-on-surface-variant">Nilai: Rp 2.800.000</div>
+<div class="font-mono-code text-label-md font-bold text-on-surface-variant">Aset Internal CV</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-primary font-semibold">3 Sedang Dibawa</span>
+<span class="text-on-surface-variant text-label-xs block">1 Siaga di Depot</span>
+</td>
+<td class="py-3.5 px-4 text-right space-x-1">
+<button class="px-2.5 py-1.5 rounded bg-surface-container text-primary hover:bg-primary-container hover:text-white font-label-md text-label-md transition-colors" type="button">
+                  Log Alat
+                </button>
+</td>
+</tr>
+<!-- Item 6: Thermistor Sensor Daikin Inverter (Aman) -->
+<tr class="hover:bg-surface-ice transition-colors stock-row" data-category="Kelistrikan" data-status="safe">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-status-kerja flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">sensors</span>
+</div>
+<div>
+<span class="font-mono-code text-label-xs text-status-kerja font-bold">ELE-MOD-450V</span>
+<div class="font-headline-sm text-headline-sm text-on-surface">Modul Kontrol &amp; Kipas Elektronik AC</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Modul universal 450V untuk unit inverter &amp; split standard</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-on-surface font-medium block">Kelistrikan/PCB</span>
+<span class="inline-flex items-center gap-1 font-mono-code text-label-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]">grid_view</span>
+                  Rak Elektronik E-02
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-badge-csp-valid text-badge-csp-valid-text font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                  18 Pcs (Aman)
+                </span>
+</td>
+<td class="py-3.5 px-4 font-mono-code text-body-sm text-on-surface-variant">
+                Min. 5 Pcs
+              </td>
+<td class="py-3.5 px-4">
+<div class="font-mono-code text-body-sm text-on-surface-variant">HPP: Rp 65.000</div>
+<div class="font-mono-code text-label-md font-bold text-primary">SOP: Rp 160.000</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-on-surface font-semibold">1 Pcs</span>
+<span class="text-on-surface-variant text-label-xs block">Order Rungkut</span>
+</td>
+<td class="py-3.5 px-4 text-right space-x-1">
+<button class="px-2.5 py-1.5 rounded bg-surface-container text-primary hover:bg-primary-container hover:text-white font-label-md text-label-md transition-colors" onclick="quickTakeModal('ELE-MOD-450V', 'Modul Elektronik')" type="button">
+                  Catat Ambil
+                </button>
+<button class="px-2.5 py-1.5 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" onclick="quickRestockModal('ELE-MOD-450V', 'Modul Elektronik')" type="button">
+                  Restock
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Depot Summary -->
+<div class="p-4 bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-3 text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">location_on</span>
+<span>Depot Utama: <strong>Taman Pondok Jati Blok AC No. 12, Geluran, Taman, Sidoarjo (61257)</strong></span>
+</div>
+<div class="flex items-center gap-4">
+<span>Terakhir Audit Fisik: <strong>Hari Ini 06:30 WIB</strong> oleh Logistik Gudang</span>
+<button class="text-primary hover:underline font-semibold" type="button">Export Laporan CSV</button>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 3: PARAMETER MESIN SOLVER CSP/TSP (ATURAN BISNIS B.1 - B.3) -->
+<div class="tab-pane flex flex-col space-y-6" id="tab-solver">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Konfigurasi Parameter Mesin Solver CSP / TSP</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Aturan keras (Hard Constraints) dan penalti bobot rute untuk optimasi otomatis rute armada harian.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-md text-label-md" onclick="resetSolverDefaults()" type="button">
+          Kembalikan ke Default SOP
+        </button>
+<button class="px-3.5 py-2 rounded-lg bg-primary text-white hover:bg-primary-container font-label-md text-label-md flex items-center gap-1.5 shadow-sm" onclick="triggerToast('Kalibrasi Solver Selesai: Matriks Waktu Surabaya-Sidoarjo Diperbarui')" type="button">
+<span class="material-symbols-outlined text-[18px]">autorenew</span>
+          Kalibrasi Ulang Solver
+        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Column 1: Jam Kerja & Cut-Off -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center gap-2.5 pb-2 border-b border-surface-container">
+<span class="material-symbols-outlined text-primary text-[22px]">schedule</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Aturan Waktu &amp; Cut-Off (B.1)</h3>
+</div>
+<div class="space-y-3">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Batas Cut-Off Booking Order Hari H (Same-Day)</label>
+<div class="flex items-center gap-2">
+<input class="px-3 py-2 rounded-lg bg-surface-ice border-0 font-mono-code text-body-md text-on-surface w-full focus:ring-2 focus:ring-primary" id="cutoffTime" type="time" value="06:00"/>
+<span class="font-mono-code text-label-md text-on-surface-variant">WIB</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-1">Setelah pukul 06:00, booking otomatis dialihkan ke slot H+1 kecuali di-override dispatcher supervisor.</p>
+</div>
+<div class="pt-2">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Shift Jam Kerja Teknisi</label>
+<div class="grid grid-cols-2 gap-2">
+<input class="px-3 py-2 rounded-lg bg-surface-ice border-0 font-mono-code text-body-md text-on-surface" type="time" value="08:00"/>
+<input class="px-3 py-2 rounded-lg bg-surface-ice border-0 font-mono-code text-body-md text-on-surface" type="time" value="17:00"/>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-1">Shift aktif 9 jam (termasuk 60 menit istirahat siang di jam 12:00 - 13:00).</p>
+</div>
+<div class="pt-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface-variant">Jeda Buffer Antar-Order</label>
+<span class="font-mono-code text-label-md font-bold text-primary" id="bufferVal">30 Menit</span>
+</div>
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary mt-2" max="60" min="15" oninput="document.getElementById('bufferVal').innerText = this.value + ' Menit'" step="5" type="range" value="30"/>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-1">Waktu berkemas, input berita acara via HP teknisi, dan persiapan berangkat.</p>
+</div>
+</div>
+</div>
+<!-- Column 2: Toleransi Pelanggan & Kapasitas -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center gap-2.5 pb-2 border-b border-surface-container">
+<span class="material-symbols-outlined text-secondary text-[22px]">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Kapasitas &amp; Fleksibilitas Waktu</h3>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface-variant">Toleransi Waktu Pelanggan (± Menit)</label>
+<span class="font-mono-code text-label-md font-bold text-secondary" id="flexVal">± 120 Menit</span>
+</div>
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-secondary mt-2" max="180" min="30" oninput="document.getElementById('flexVal').innerText = '± ' + this.value + ' Menit'" step="15" type="range" value="120"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rentang kedatangan fleksibel untuk perumahan (cth: 09:00 - 11:00 WIB).</span>
+</div>
+<div class="pt-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface-variant">Batas Kapasitas Maksimal Tim</label>
+<span class="font-mono-code text-label-md font-bold text-status-kerja" id="capVal">9.0 Jam / Hari</span>
+</div>
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-status-kerja mt-2" max="11.0" min="6.0" oninput="document.getElementById('capVal').innerText = parseFloat(this.value).toFixed(1) + ' Jam / Hari'" step="0.5" type="range" value="9.0"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mencegah kelelahan teknisi saat cuaca panas ekstrem di Surabaya.</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg space-y-2 mt-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-status-selesai text-[16px]">verified</span>
+              Constraint Solver Terkunci:
+            </span>
+<ul class="text-body-sm font-body-sm text-on-surface-variant space-y-1 list-disc list-inside">
+<li>Maksimal 2 unit Pasang Baru / hari / tim</li>
+<li>Maksimal 7 unit Cuci AC / hari / tim</li>
+<li>Order Trouble Berat wajib Teknisi Utama</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Column 3: Matriks Waktu Tempuh Wilayah Operasional -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center gap-2.5 pb-2 border-b border-surface-container">
+<span class="material-symbols-outlined text-status-otw text-[22px]">alt_route</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Matriks Kecepatan Tempuh Rayon</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Estimasi durasi antar-zona digunakan oleh algoritma TSP untuk menghitung rute tercepat tim lapangan.</p>
+<div class="space-y-2.5">
+<div class="p-2.5 rounded-lg bg-surface-ice flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Lintas Kota: Surabaya ↔ Sidoarjo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Via Tol Waru / Arteri Ahmad Yani</span>
+</div>
+<span class="font-mono-code text-body-md font-bold text-on-surface px-2.5 py-1 bg-surface-card rounded shadow-sm">50 Menit</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-ice flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Intra-Zona Sidoarjo (Taman ↔ Waru ↔ Candi)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Jarak dekat ≤ 7 km</span>
+</div>
+<span class="font-mono-code text-body-md font-bold text-on-surface px-2.5 py-1 bg-surface-card rounded shadow-sm">15 Menit</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-ice flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Surabaya Barat &amp; Selatan (Wiyung ↔ Rungkut)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Via MERR / Mayjen Sungkono</span>
+</div>
+<span class="font-mono-code text-body-md font-bold text-on-surface px-2.5 py-1 bg-surface-card rounded shadow-sm">30 Menit</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-ice flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Surabaya Utara &amp; Timur (Kenjeran ↔ Dharmahusada)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lalu lintas padat jam sibuk</span>
+</div>
+<span class="font-mono-code text-body-md font-bold text-on-surface px-2.5 py-1 bg-surface-card rounded shadow-sm">35 Menit</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 4: MASTER ARMADA & TEKNISI SERTIFIKASI -->
+<div class="tab-pane flex flex-col space-y-4" id="tab-fleet">
+<div class="flex flex-wrap items-start justify-between gap-3">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Armada Mobil Servis &amp; Tim Teknisi</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Tambah, ubah, atau nonaktifkan teknisi. Data ini dipakai bersama oleh SPK &amp; Invoice, penjadwalan, presensi clock-in, dan konsol teknisi.</p>
+</div>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-white shadow-sm font-label-md text-label-md transition-all active:scale-95" data-crew-add type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+        Tambah Teknisi
+      </button>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3" id="crewStats"></div>
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-5" id="crewTeamGrid"></div>
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden">
+<div class="flex flex-wrap items-center justify-between gap-3 p-4 border-b border-surface-ice">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Daftar Teknisi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="crewTableSub">—</p>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-48 pl-8 pr-3 py-1.5 rounded-lg bg-surface-ice text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary" id="crewSearch" placeholder="Cari nama / keahlian" type="search"/>
+</div>
+<select class="px-2 py-1.5 rounded-lg bg-surface-ice text-on-surface font-label-md text-label-md focus:outline-none" id="crewTeamFilter"></select>
+<select class="px-2 py-1.5 rounded-lg bg-surface-ice text-on-surface font-label-md text-label-md focus:outline-none" id="crewStatusFilter">
+<option value="all">Semua status</option>
+<option value="aktif">Aktif</option>
+<option value="cuti">Cuti</option>
+<option value="nonaktif">Nonaktif</option>
+</select>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full min-w-[860px] text-left" id="crewTable">
+<thead class="bg-surface-ice text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider">
+<tr>
+<th class="p-3 font-semibold">Nama &amp; ID</th>
+<th class="p-3 font-semibold">Tim</th>
+<th class="p-3 font-semibold">Peran</th>
+<th class="p-3 font-semibold">Keahlian</th>
+<th class="p-3 font-semibold">No. WhatsApp</th>
+<th class="p-3 font-semibold">Status</th>
+<th class="p-3 font-semibold text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-ice font-body-sm text-body-sm" id="crewRows"></tbody>
+</table>
+</div>
+<div class="hidden p-8 text-center" id="crewEmpty">
+<span class="material-symbols-outlined text-[36px] text-outline">group_off</span>
+<p class="font-label-md text-label-md text-on-surface-variant mt-2">Tidak ada teknisi yang cocok dengan filter.</p>
+<button class="mt-3 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high font-label-md text-label-md" data-crew-reset type="button">Reset filter</button>
+</div>
+</div>
+</div>
+<!-- MODAL: TAMBAH / UBAH TEKNISI -->
+<div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4" id="crewModal" role="dialog" aria-modal="true" aria-labelledby="crewModalTitle">
+<div class="bg-surface-card rounded-2xl shadow-2xl max-w-xl w-full p-6 space-y-4 max-h-[92vh] overflow-y-auto">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface" id="crewModalTitle">Tambah Teknisi</h3>
+</div>
+<button class="text-outline hover:text-on-surface" data-crew-close type="button" aria-label="Tutup">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-label-md text-label-md">
+<div class="sm:col-span-2">
+<label class="block text-on-surface-variant mb-1" for="crewName">Nama lengkap <span class="text-status-batal">*</span></label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary" id="crewName" placeholder="Contoh: Agus Wibowo" type="text"/>
+</div>
+<div>
+<label class="block text-on-surface-variant mb-1" for="crewRole">Peran <span class="text-status-batal">*</span></label>
+<select class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary" id="crewRole">
+<option value="TU">Teknisi Utama (TU)</option>
+<option value="Helper">Helper</option>
+</select>
+</div>
+<div>
+<label class="block text-on-surface-variant mb-1" for="crewTeam">Tim <span class="text-status-batal">*</span></label>
+<select class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary" id="crewTeam"></select>
+</div>
+<div>
+<label class="block text-on-surface-variant mb-1" for="crewStatus">Status</label>
+<select class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary" id="crewStatus">
+<option value="aktif">Aktif</option>
+<option value="cuti">Cuti</option>
+<option value="nonaktif">Nonaktif</option>
+</select>
+</div>
+<div>
+<label class="block text-on-surface-variant mb-1" for="crewPhone">No. WhatsApp</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-mono-code text-body-md text-on-surface focus:ring-2 focus:ring-primary" id="crewPhone" placeholder="0811-3450-995" type="tel"/>
+</div>
+<div class="sm:col-span-2">
+<label class="block text-on-surface-variant mb-1" for="crewCert">Sertifikasi</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary" id="crewCert" placeholder="BNSP Level 3 / Internal"/>
+</div>
+<div class="sm:col-span-2">
+<span class="block text-on-surface-variant mb-1">Keahlian</span>
+<div class="flex flex-wrap gap-2" id="crewSkills"></div>
+</div></div>
+<p class="hidden px-3 py-2 rounded-lg bg-error-container text-badge-csp-invalid-text font-label-md text-label-md" id="crewErr" role="alert"></p>
+<div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-surface-container">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Aturan: 1 TU + maks 2 Helper aktif per tim.</p>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-md text-label-md" data-crew-close type="button">Batal</button>
+<button class="px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-white font-label-md text-label-md" data-crew-save type="button">Simpan Teknisi</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL: ATUR ARMADA / TIM -->
+<div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4" id="teamModal" role="dialog" aria-modal="true" aria-labelledby="teamModalTitle">
+<div class="bg-surface-card rounded-2xl shadow-2xl max-w-lg w-full p-6 space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface" id="teamModalTitle">Atur Tim</h3>
+</div>
+<button class="text-outline hover:text-on-surface" data-team-close type="button" aria-label="Tutup">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<div class="space-y-3 font-label-md text-label-md">
+<div>
+<label class="block text-on-surface-variant mb-1" for="teamName">Nama tim</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary" id="teamName" type="text"/>
+</div>
+<div>
+<label class="block text-on-surface-variant mb-1" for="teamVan">Kendaraan operasional</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary" id="teamVan" placeholder="APV W-1842-PZ" type="text"/>
+</div>
+<div>
+<label class="block text-on-surface-variant mb-1" for="teamZone">Wilayah layanan</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary" id="teamZone" placeholder="Surabaya Timur / Selatan" type="text"/>
+</div>
+<div>
+<label class="block text-on-surface-variant mb-1" for="teamDepot">Depot / titik awal rute</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary" id="teamDepot" placeholder="Depot Rungkut Madya" type="text"/>
+</div>
+</div>
+<p class="hidden px-3 py-2 rounded-lg bg-error-container text-badge-csp-invalid-text font-label-md text-label-md" id="teamErr" role="alert"></p>
+<div class="flex items-center justify-end gap-2 pt-3 border-t border-surface-container">
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-md text-label-md" data-team-close type="button">Batal</button>
+<button class="px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-white font-label-md text-label-md" data-team-save type="button">Simpan Perubahan</button>
+</div>
+</div>
+</div>
+<!-- MODAL: TAMBAH ITEM INVENTARIS BARU -->
+<div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" id="addItemModal">
+<div class="bg-surface-card rounded-2xl shadow-2xl max-w-lg w-full p-6 space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Tambah Item / Suku Cadang</h3>
+</div>
+<button class="text-outline hover:text-on-surface" onclick="closeModal('addItemModal')" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<div class="space-y-3 font-label-md text-label-md">
+<div>
+<label class="block text-on-surface-variant mb-1">Kode SKU Barang</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-mono-code text-body-md text-on-surface focus:ring-2 focus:ring-primary" placeholder="Contoh: CAP-40UF-450V" type="text"/>
+</div>
+<div>
+<label class="block text-on-surface-variant mb-1">Nama &amp; Spesifikasi Barang</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-on-surface focus:ring-2 focus:ring-primary" placeholder="Contoh: Kapasitor Kompresor 40 uF 450V Daikin Inverter" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-on-surface-variant mb-1">Kategori</label>
+<select class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-on-surface focus:ring-2 focus:ring-primary">
+<option>Refrigerant</option>
+<option>Kapasitor</option>
+<option>Pipa &amp; Aksesoris</option>
+<option>Kelistrikan/PCB</option>
+<option>Alat/Tools</option>
+</select>
+</div>
+<div>
+<label class="block text-on-surface-variant mb-1">Lokasi Rak Depot</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-body-md text-on-surface focus:ring-2 focus:ring-primary" placeholder="Rak A-03" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-on-surface-variant mb-1">Stok Awal</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-mono-code text-body-md text-on-surface focus:ring-2 focus:ring-primary" type="number" value="10"/>
+</div>
+<div>
+<label class="block text-on-surface-variant mb-1">Safety Stock Minimal</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-mono-code text-body-md text-on-surface focus:ring-2 focus:ring-primary" type="number" value="5"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-on-surface-variant mb-1">Harga Beli / HPP (Rp)</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-mono-code text-body-md text-on-surface focus:ring-2 focus:ring-primary" placeholder="45000" type="number"/>
+</div>
+<div>
+<label class="block text-on-surface-variant mb-1">Harga SOP Pelanggan (Rp)</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-ice border-0 font-mono-code text-body-md text-on-surface focus:ring-2 focus:ring-primary" placeholder="85000" type="number"/>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-3 border-t border-surface-container">
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-md text-label-md" onclick="closeModal('addItemModal')" type="button">
+          Batal
+        </button>
+<button class="px-4 py-2 rounded-lg bg-primary-container text-white hover:bg-primary font-label-md text-label-md" onclick="saveNewItem()" type="button">
+          Simpan ke Katalog SKU
+        </button>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 ease-out pointer-events-none" id="toastMessage">
+<div class="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-navy-deep text-white shadow-2xl border border-slate-700">
+<span class="material-symbols-outlined text-status-selesai text-[20px]">check_circle</span>
+<span class="font-label-md text-label-md" id="toastText">Aksi berhasil diproses</span>
+</div>
+</div>
+</div>
+<!-- INTERACTION JAVASCRIPT LOGIC -->
+<script>
+  function switchMainTab(tabId, el) {
+    // Hide all tab panes
+    document.querySelectorAll('.tab-pane').forEach(pane => {
+      pane.classList.add('hidden');
+    });
+
+    // Reset all tab button styles
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.className = "tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-lg text-label-lg transition-all whitespace-nowrap";
+    });
+
+    // Activate current tab button
+    el.className = "tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm transition-all whitespace-nowrap";
+
+    // Show current pane
+    const target = document.getElementById(tabId);
+    if (target) {
+      target.classList.remove('hidden');
+    }
+    const TAB_NAME = { 'tab-services':'Katalog Layanan & Aturan Kerja', 'tab-inventory':'Stok Suku Cadang & Refrigerant', 'tab-solver':'Parameter Solver & Batasan Dispatcher', 'tab-fleet':'Master Armada & Sertifikasi Teknisi' };
+    const lbl = document.getElementById('tabSaveLabel');
+    if (lbl) lbl.textContent = TAB_NAME[tabId] || 'Master Data';
+    const bar = document.getElementById('tabSaveBar');
+    if (bar) bar.dataset.tab = tabId;
+  }
+  function saveActiveTab() {
+    const bar = document.getElementById('tabSaveBar');
+    const id = (bar && bar.dataset.tab) || 'tab-services';
+    const N = { 'tab-services':'Katalog Layanan & Aturan Kerja', 'tab-inventory':'Stok Suku Cadang & Refrigerant', 'tab-solver':'Parameter Solver & Batasan Dispatcher', 'tab-fleet':'Master Armada & Sertifikasi Teknisi' };
+    triggerToast('Perubahan tab ' + (N[id] || 'Master Data') + ' tersimpan');
+  }
+
+  function filterInventoryTable() {
+    const input = document.getElementById('inventorySearch').value.toLowerCase();
+    const rows = document.querySelectorAll('#inventoryTable tbody tr');
+
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = text.includes(input) ? '' : 'none';
+    });
+  }
+
+  function filterCategory(cat, btn) {
+    // Update active pill style
+    document.querySelectorAll('.cat-pill').forEach(p => {
+      p.className = "cat-pill px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md whitespace-nowrap";
+    });
+    btn.className = "cat-pill px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm whitespace-nowrap";
+
+    const rows = document.querySelectorAll('#inventoryTable tbody tr');
+    rows.forEach(row => {
+      if (cat === 'all') {
+        row.style.display = '';
+      } else {
+        const rowCat = row.getAttribute('data-category');
+        row.style.display = (rowCat === cat) ? '' : 'none';
+      }
+    });
+  }
+
+  let lowStockOnly = false;
+  function toggleLowStockOnly(btn) {
+    lowStockOnly = !lowStockOnly;
+    const rows = document.querySelectorAll('#inventoryTable tbody tr');
+    
+    if (lowStockOnly) {
+      btn.className = "px-3 py-1.5 rounded-lg bg-status-batal text-white font-label-md text-label-md whitespace-nowrap flex items-center gap-1 shadow-sm";
+      rows.forEach(row => {
+        const st = row.getAttribute('data-status');
+        row.style.display = (st === 'critical' || st === 'warning') ? '' : 'none';
+      });
+    } else {
+      btn.className = "px-3 py-1.5 rounded-lg bg-error-container text-badge-csp-invalid-text font-label-md text-label-md whitespace-nowrap flex items-center gap-1";
+      rows.forEach(row => row.style.display = '');
+    }
+  }
+
+  function quickTakeModal(sku, name) {
+    const amount = prompt(`Catat Pengambilan Item: ${name} (${sku})\nMasukkan jumlah yang diambil tim:`, "1");
+    if (amount) {
+      triggerToast(`Pengambilan ${amount} unit ${sku} tercatat ke log teknisi`);
+    }
+  }
+
+  function quickRestockModal(sku, name) {
+    const amount = prompt(`Restock Suku Cadang: ${name} (${sku})\nMasukkan jumlah barang masuk gudang:`, "5");
+    if (amount) {
+      triggerToast(`Restock +${amount} unit ${sku} berhasil ditambahkan ke Depot Taman`);
+    }
+  }
+
+  function openAddItemModal() {
+    document.getElementById('addItemModal').classList.remove('hidden');
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+
+  function saveNewItem() {
+    closeModal('addItemModal');
+    triggerToast('Komponen baru berhasil didaftarkan ke Master SKU Depot');
+  }
+
+  function resetSolverDefaults() {
+    document.getElementById('cutoffTime').value = '06:00';
+    document.getElementById('bufferVal').innerText = '30 Menit';
+    document.getElementById('flexVal').innerText = '± 120 Menit';
+    document.getElementById('capVal').innerText = '9.0 Jam / Hari';
+    triggerToast('Parameter solver dikembalikan ke konfigurasi default SOP');
+  }
+
+  function triggerToast(text) {
+    const toast = document.getElementById('toastMessage');
+    const toastText = document.getElementById('toastText');
+    toastText.innerText = text;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-24', 'opacity-0');
+    }, 3200);
+  }
+
+  // Set initial default tab view
+  document.addEventListener('DOMContentLoaded', () => {
+    // Hide non-active panes initially
+    document.getElementById('tab-inventory').classList.add('hidden');
+    document.getElementById('tab-solver').classList.add('hidden');
+    document.getElementById('tab-fleet').classList.add('hidden');
+  });
+</script></main>
+</div>
+<script>
+/* Stok live: ip_inventory dipakai bersama dispatcher (pemotongan saat validasi) dan konsol teknisi */
+(function(){
+const INV_KEY='ip_inventory';
+const read=()=>{ try{ return JSON.parse(localStorage.getItem(INV_KEY)||'null'); }catch(e){ return null; } };
+const write=v=>{ try{ localStorage.setItem(INV_KEY,JSON.stringify(v)); return true; }catch(e){ triggerToast('Penyimpanan perangkat penuh — stok belum tersimpan'); return false; } };
+const rows=()=>Array.from(document.querySelectorAll('#inventoryTable tbody tr')).map(tr=>{
+  const skuEl=tr.querySelector('.font-mono-code');
+  const sku=skuEl?skuEl.textContent.trim():'';
+  const cells=tr.querySelectorAll('td');
+  const stockCell=cells[2], minCell=cells[3];
+  const unitM=/Min\.\s*\d+\s*([A-Za-z]+)/.exec(minCell?minCell.textContent:'');
+  return {tr,sku,cells,stockCell,minCell,unit:unitM?unitM[1].toLowerCase():'pcs'};
+}).filter(r=>r.sku);
+const minOf=r=>{ const mc=window.MaterialCatalog?window.MaterialCatalog.item(r.sku):null; if(mc) return mc.min;
+  const m=/(\d+(?:\.\d+)?)/.exec(r.minCell?r.minCell.textContent:''); return m?+m[1]:0; };
+function seed(){ if(read()) return;
+  const inv={};
+  if(window.MaterialCatalog) Object.assign(inv, window.MaterialCatalog.stockSeed());
+  rows().forEach(r=>{ if(inv[r.sku]!=null) return; const m=/(\d+(?:\.\d+)?)/.exec(r.stockCell?r.stockCell.textContent:''); inv[r.sku]=m?+m[1]:0; });
+  write(inv); }
+function paint(){ const inv=read()||{};
+  rows().forEach(r=>{ let q=inv[r.sku]; if(q==null) q=0; const min=minOf(r), krit=q<=Math.max(1,min*0.4), low=q<min;
+    if(r.stockCell) r.stockCell.innerHTML='<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-md text-label-md font-bold '
+      +(krit?'bg-error-container text-badge-csp-invalid-text':low?'bg-surface-container text-status-otw':'bg-status-selesai/10 text-status-selesai')+'">'
+      +'<span class="w-1.5 h-1.5 rounded-full '+(krit?'bg-status-batal':low?'bg-status-otw':'bg-status-selesai')+'"></span>'
+      +q+' '+r.unit+(krit?' (Kritis)':low?' (Menipis)':' (Aman)')+'</span>';
+    r.tr.setAttribute('data-status',krit?'critical':low?'warning':'safe'); });
+}
+function move(sku,delta,label){ const inv=read()||{}; const q=Math.max(0,(+inv[sku]||0)+delta);
+  inv[sku]=q; if(!write(inv)) return; paint();
+  triggerToast(label+' — stok '+sku+' sekarang '+q+' (sumber: ip_inventory)'); }
+window.quickTakeModal=function(sku,name){ const v=prompt('Catat pengambilan '+name+' ('+sku+')\nJumlah diambil tim:', '1');
+  const n=parseInt(v,10); if(!n||n<1) return; move(sku,-n,'Pengambilan '+n+' unit tercatat'); };
+window.quickRestockModal=function(sku,name){ const v=prompt('Restock '+name+' ('+sku+')\nJumlah barang masuk:', '5');
+  const n=parseInt(v,10); if(!n||n<1) return; move(sku,n,'Restock +'+n+' unit'); };
+function triggerToast(t){ const el=document.getElementById('toastText'), box=document.getElementById('toastMessage');
+  if(el) el.textContent=t; if(box){ box.classList.remove('translate-y-20','opacity-0'); setTimeout(()=>box.classList.add('translate-y-20','opacity-0'),2600); }
+  else console.log(t); }
+document.addEventListener('DOMContentLoaded',()=>{ seed(); paint(); });
+window.addEventListener('storage',e=>{ if((e.key||'')===INV_KEY) paint(); });
+})();
+</script>
+
+<script>
+/* v35 — CRUD Teknisi & Tim. Sumber data tunggal: CrewMaster (localStorage ip_master_crew). */
+(function(){
+  'use strict';
+  var CM = window.CrewMaster;
+  if(!CM) return;
+  var $ = function(id){ return document.getElementById(id); };
+  var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]; }); };
+  var OPEN_STATUS = ['Dijadwalkan','Dikerjakan','Review'];
+  var STATUS_STYLE = {
+    aktif: 'bg-status-selesai/10 text-status-selesai',
+    cuti: 'bg-surface-container text-status-otw',
+    nonaktif: 'bg-surface-container-high text-on-surface-variant'
+  };
+  var AVATAR = ['bg-primary-container text-white','bg-secondary-container text-on-secondary-container','bg-status-otw/20 text-status-otw','bg-status-selesai/15 text-status-selesai'];
+  var editingId = null;
+  var editingTeamId = null;
+  (function skillStyle(){
+    var st = document.createElement('style');
+    st.textContent = '#crewSkills input:checked + span .ic{opacity:1}';
+    document.head.appendChild(st);
+  })();
+
+  function notify(msg){ if(typeof window.triggerToast === 'function') window.triggerToast(msg); }
+  function auditMaster(detail){
+    if(CM && typeof CM.audit === 'function') CM.audit({ actor:'Dispatcher (admin)', role:'Admin', entity:'crew', detail:detail });
+  }
+  function orders(){
+    try{ var a = JSON.parse(localStorage.getItem('ip_customer_orders') || '[]'); return Array.isArray(a) ? a : []; }
+    catch(e){ return []; }
+  }
+  function busyOrder(id){
+    return orders().filter(function(o){ return o && o.pic === id && OPEN_STATUS.indexOf(o.status) >= 0; })[0] || null;
+  }
+  function showModal(el){ if(el){ el.classList.remove('hidden'); el.classList.add('flex'); } }
+  function hideModal(el){ if(el){ el.classList.add('hidden'); el.classList.remove('flex'); } }
+  function paintSkills(selected){
+    var box = $('crewSkills');
+    if(!box) return;
+    box.innerHTML = CM.SKILLS.map(function(s){
+      var on = selected.indexOf(s) >= 0;
+      return '<label class="cursor-pointer">'
+        + '<input type="checkbox" class="peer sr-only" value="' + esc(s) + '"' + (on ? ' checked' : '') + '>'
+        + '<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-ice text-on-surface-variant border border-transparent peer-checked:bg-primary-container peer-checked:text-white transition-colors">'
+        + '<span class="material-symbols-outlined text-[14px] ic opacity-0">check</span>'
+        + '<span class="font-label-md text-label-md">' + esc(s) + '</span></span></label>';
+    }).join('');
+  }
+  function pickedSkills(){
+    return Array.prototype.slice.call(document.querySelectorAll('#crewSkills input:checked')).map(function(i){ return i.value; });
+  }
+  function paintTeamOptions(selected){
+    var sel = $('crewTeam'), flt = $('crewTeamFilter'), m = CM.read();
+    var ids = Object.keys(m.teams);
+    if(sel){
+      sel.innerHTML = ids.map(function(id){
+        return '<option value="' + esc(id) + '">' + esc(m.teams[id].name) + ' — ' + esc(m.teams[id].van) + '</option>';
+      }).join('');
+      sel.value = ids.indexOf(selected) >= 0 ? selected : ids[0];
+    }
+    if(flt){
+      var keep = flt.value || 'all';
+      flt.innerHTML = '<option value="all">Semua tim</option>' + ids.map(function(id){
+        return '<option value="' + esc(id) + '">' + esc(m.teams[id].name) + '</option>';
+      }).join('');
+      flt.value = ids.indexOf(keep) >= 0 ? keep : 'all';
+    }
+  }
+  function renderStats(m){
+    var box = $('crewStats');
+    if(!box) return;
+    var active = m.crew.filter(function(c){ return c.status === 'aktif'; });
+    var tu = active.filter(function(c){ return c.role === 'TU'; }).length;
+    var hl = active.filter(function(c){ return c.role === 'Helper'; }).length;
+    var off = m.crew.length - active.length;
+    var card = function(icon, cls, label, value, sub){
+      return '<div class="bg-surface-card rounded-xl shadow-sm p-4 flex items-start justify-between gap-2">'
+        + '<div><p class="font-label-xs text-label-xs uppercase tracking-wider text-on-surface-variant">' + label + '</p>'
+        + '<p class="font-mono-code text-headline-md text-on-surface font-bold leading-tight">' + value + '</p>'
+        + '<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">' + sub + '</p></div>'
+        + '<span class="material-symbols-outlined text-[20px] ' + cls + '">' + icon + '</span></div>';
+    };
+    box.innerHTML =
+      card('groups', 'text-primary', 'Kru aktif', active.length, 'dari ' + m.crew.length + ' teknisi terdaftar')
+      + card('verified_user', 'text-electric-cyan', 'Teknisi Utama', tu, 'penanggung jawab tim')
+      + card('handyman', 'text-status-otw', 'Helper', hl, 'pendamping TU')
+      + card('event_busy', 'text-on-surface-variant', 'Cuti / Nonaktif', off, 'tidak masuk penugasan');
+  }
+  function renderTeams(m){
+    var box = $('crewTeamGrid');
+    if(!box) return;
+    box.innerHTML = Object.keys(m.teams).map(function(id){
+      var t = m.teams[id];
+      var list = m.crew.filter(function(c){ return c.team === id; });
+      var act = list.filter(function(c){ return c.status === 'aktif'; });
+      var lead = act.filter(function(c){ return c.role === 'TU'; })[0] || null;
+      var helpers = act.filter(function(c){ return c.role === 'Helper'; });
+      var warn = !lead ? 'Belum ada TU aktif — tim tidak bisa menerima SPK.'
+        : helpers.length === 0 ? 'Belum ada Helper aktif — kapasitas tim terbatas.' : '';
+      var avatars = act.map(function(c, i){
+        return '<span class="w-7 h-7 rounded-full ' + AVATAR[i % AVATAR.length] + ' flex items-center justify-center font-label-xs text-label-xs font-bold ring-2 ring-surface-card" title="' + esc(c.name) + ' · ' + esc(c.role) + '">' + esc(CM.initials(c.name)) + '</span>';
+      }).join('');
+      var line = function(icon, val){
+        return '<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-[15px] text-outline">' + icon + '</span><span class="truncate">' + val + '</span></div>';
+      };
+      return '<div class="bg-surface-card rounded-xl shadow-sm p-5 flex flex-col gap-3">'
+        + '<div class="flex items-start justify-between gap-2">'
+        + '<div><h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">' + esc(t.name) + '</h3>'
+        + '<p class="font-body-sm text-body-sm text-on-surface-variant">' + act.length + ' kru aktif · ' + list.length + ' terdaftar</p></div>'
+        + '<button type="button" data-team-edit="' + esc(id) + '" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high font-label-xs text-label-xs text-on-surface"><span class="material-symbols-outlined text-[14px]">tune</span>Atur</button>'
+        + '</div>'
+        + '<div class="space-y-1">' + line('local_shipping', esc(t.van)) + line('map', esc(t.zone)) + line('warehouse', esc(t.depot)) + '</div>'
+        + '<div class="grid grid-cols-2 gap-2">'
+        + '<div class="p-2.5 rounded-lg bg-surface-ice"><p class="font-label-xs text-label-xs uppercase tracking-wider text-on-surface-variant">Teknisi Utama</p><p class="font-label-md text-label-md text-on-surface font-semibold truncate">' + (lead ? esc(lead.name) : '—') + '</p></div>'
+        + '<div class="p-2.5 rounded-lg bg-surface-ice"><p class="font-label-xs text-label-xs uppercase tracking-wider text-on-surface-variant">Helper</p><p class="font-label-md text-label-md text-on-surface font-semibold truncate">' + (helpers.length ? esc(helpers.map(function(c){ return c.name; }).join(' + ')) : '—') + '</p></div>'
+        + '</div>'
+        + (warn ? '<p class="flex items-start gap-1.5 px-2.5 py-2 rounded-lg bg-status-otw/10 text-status-otw font-body-sm text-body-sm"><span class="material-symbols-outlined text-[15px]">warning</span>' + warn + '</p>' : '')
+        + '<div class="flex items-center gap-1.5">' + (avatars || '<span class="font-body-sm text-body-sm text-on-surface-variant">Belum ada kru aktif</span>') + '</div>'
+        + '</div>';
+    }).join('');
+  }
+  function renderTable(m){
+    var body = $('crewRows');
+    if(!body) return;
+    var q = (($('crewSearch') || {}).value || '').toLowerCase().trim();
+    var tf = ($('crewTeamFilter') || {}).value || 'all';
+    var sf = ($('crewStatusFilter') || {}).value || 'all';
+    var rows = m.crew.filter(function(c){
+      if(tf !== 'all' && c.team !== tf) return false;
+      if(sf !== 'all' && c.status !== sf) return false;
+      if(!q) return true;
+      return (c.name + ' ' + c.id + ' ' + c.role + ' ' + (c.skills || []).join(' ') + ' ' + c.phone).toLowerCase().indexOf(q) >= 0;
+    });
+    var sub = $('crewTableSub');
+    if(sub) sub.textContent = rows.length + ' dari ' + m.crew.length + ' teknisi ditampilkan · sumber: ip_master_crew';
+    body.innerHTML = rows.map(function(c, i){
+      var t = m.teams[c.team] || { name:'—' };
+      var skills = (c.skills || []).slice(0, 3).map(function(s){
+        return '<span class="px-1.5 py-0.5 rounded bg-surface-ice text-on-surface-variant font-label-xs text-label-xs whitespace-nowrap">' + esc(s) + '</span>';
+      }).join(' ');
+      if((c.skills || []).length > 3) skills += ' <span class="font-label-xs text-label-xs text-on-surface-variant">+' + (c.skills.length - 3) + '</span>';
+      var roleBadge = c.role === 'TU'
+        ? '<span class="px-1.5 py-0.5 rounded bg-primary-container/15 text-primary font-label-xs text-label-xs font-semibold whitespace-nowrap">TU</span>'
+        : '<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs whitespace-nowrap">Helper</span>';
+      var toggleIcon = c.status === 'aktif' ? 'person_off' : 'person_check';
+      var toggleTitle = c.status === 'aktif' ? 'Nonaktifkan' : 'Aktifkan';
+      return '<tr class="hover:bg-surface-ice/60 transition-colors">'
+        + '<td class="p-3"><div class="flex items-center gap-2"><span class="w-8 h-8 shrink-0 rounded-full ' + AVATAR[i % AVATAR.length] + ' flex items-center justify-center font-label-xs text-label-xs font-bold">' + esc(CM.initials(c.name)) + '</span>'
+        + '<div class="min-w-0"><p class="font-label-md text-label-md text-on-surface font-semibold truncate">' + esc(c.name) + '</p>'
+        + '<p class="font-label-xs text-label-xs text-on-surface-variant truncate">#' + esc(c.id) + ' · ' + esc(c.cert || 'Internal') + '</p></div></div></td>'
+        + '<td class="p-3"><p class="font-label-md text-label-md text-on-surface">' + esc(t.name) + '</p><p class="font-label-xs text-label-xs text-on-surface-variant">' + esc(t.van || '—') + '</p></td>'
+        + '<td class="p-3">' + roleBadge + '</td>'
+        + '<td class="p-3"><div class="flex flex-wrap gap-1 max-w-[190px]">' + (skills || '<span class="text-on-surface-variant">—</span>') + '</div></td>'
+        + '<td class="p-3 font-mono-code text-on-surface whitespace-nowrap">' + esc(c.phone || '—') + '</td>'
+        + '<td class="p-3"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-xs text-label-xs font-semibold ' + (STATUS_STYLE[c.status] || '') + '"><span class="w-1.5 h-1.5 rounded-full bg-current"></span>' + c.status + '</span></td>'
+        + '<td class="p-3"><div class="flex items-center justify-end gap-1">'
+        + '<button type="button" data-crew-edit="' + esc(c.id) + '" title="Ubah data" class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">edit</span></button>'
+        + '<button type="button" data-crew-toggle="' + esc(c.id) + '" title="' + toggleTitle + '" class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">' + toggleIcon + '</span></button>'
+        + '</div></td></tr>';
+    }).join('');
+    var empty = $('crewEmpty');
+    if(empty){ empty.classList.toggle('hidden', rows.length > 0); }
+  }
+  function render(){
+    var m = CM.read();
+    paintTeamOptions(($('crewTeam') || {}).value || Object.keys(m.teams)[0]);
+    renderStats(m);
+    renderTeams(m);
+    renderTable(m);
+    var badge = $('fleetCount');
+    if(badge) badge.textContent = m.crew.filter(function(c){ return c.status === 'aktif'; }).length;
+  }
+  function showErr(el, msg){ if(!el) return; el.textContent = msg; el.classList.remove('hidden'); }
+  function clearErr(el){ if(el){ el.textContent = ''; el.classList.add('hidden'); } }
+
+  function openCrew(id){
+    var m = CM.read();
+    editingId = id || null;
+    var c = id ? m.crew.filter(function(x){ return x.id === id; })[0] : null;
+    var title = $('crewModalTitle');
+    if(title) title.textContent = c ? 'Ubah Data Teknisi' : 'Tambah Teknisi';
+    $('crewName').value = c ? c.name : '';
+    $('crewRole').value = c ? c.role : 'TU';
+    $('crewStatus').value = c ? c.status : 'aktif';
+    $('crewPhone').value = c ? (c.phone || '') : '';
+    $('crewCert').value = c ? (c.cert || '') : 'BNSP Level 3';
+    paintTeamOptions(c ? c.team : Object.keys(m.teams)[0]);
+    paintSkills(c ? (c.skills || []) : []);
+    clearErr($('crewErr'));
+    showModal($('crewModal'));
+    setTimeout(function(){ var n = $('crewName'); if(n) n.focus(); }, 30);
+  }
+  function saveCrew(){
+    var m = CM.read();
+    var name = ($('crewName').value || '').trim().replace(/\s+/g, ' ');
+    var role = $('crewRole').value;
+    var team = $('crewTeam').value;
+    var status = $('crewStatus').value;
+    var phone = ($('crewPhone').value || '').trim();
+    var cert = ($('crewCert').value || '').trim() || 'Internal';
+    var skills = pickedSkills();
+    var err = [];
+    if(name.length < 3) err.push('Nama teknisi minimal 3 karakter.');
+    if(!m.teams[team]) err.push('Tim tidak ditemukan — pilih tim yang tersedia.');
+    if(phone && !/^[0-9+()\-\s]{8,20}$/.test(phone)) err.push('Nomor WhatsApp tidak valid (8–20 digit, boleh tanda hubung).');
+    var dup = m.crew.filter(function(c){ return c.id !== editingId && c.name.toLowerCase() === name.toLowerCase(); })[0];
+    if(dup) err.push('Nama "' + name + '" sudah terdaftar sebagai #' + dup.id + ' di ' + (m.teams[dup.team] || {}).name + '.');
+    if(status === 'aktif'){
+      var peers = m.crew.filter(function(c){ return c.id !== editingId && c.team === team && c.status === 'aktif'; });
+      var teamName = (m.teams[team] || {}).name || team;
+      if(role === 'TU' && peers.filter(function(c){ return c.role === 'TU'; }).length >= 1)
+        err.push(teamName + ' sudah punya 1 TU aktif. Jadikan Helper atau pindahkan ke tim lain.');
+      if(role === 'Helper' && peers.filter(function(c){ return c.role === 'Helper'; }).length >= 2)
+        err.push(teamName + ' sudah punya 2 Helper aktif (batas maksimal).');
+    }
+    if(err.length){ showErr($('crewErr'), err[0]); return; }
+    if(editingId){
+      var c = m.crew.filter(function(x){ return x.id === editingId; })[0];
+      if(!c){ showErr($('crewErr'), 'Data teknisi tidak ditemukan. Muat ulang halaman.'); return; }
+      c.name = name; c.role = role; c.team = team; c.status = status;
+      c.phone = phone; c.cert = cert; c.skills = skills;
+    } else {
+      m.crew.push({ id: CM.newId(name), name: name, role: role, team: team, phone: phone, cert: cert, skills: skills, status: status });
+    }
+    if(!CM.save(m)){ showErr($('crewErr'), 'Penyimpanan perangkat penuh — data belum tersimpan.'); return; }
+    var teamLabel = (m.teams[team] || {}).name || team;
+    auditMaster(editingId
+      ? 'Master kru diperbarui: ' + name + ' — ' + role + ' · ' + teamLabel + ' · status ' + status
+      : 'Master kru ditambah: ' + name + ' — ' + role + ' · ' + teamLabel + ' (' + (m.crew[m.crew.length - 1] || {}).id + ')' );
+    hideModal($('crewModal'));
+    render();
+    notify((editingId ? 'Data ' + name + ' diperbarui' : name + ' ditambahkan ke ' + (m.teams[team] || {}).name) + ' — dipakai SPK, antrean, presensi & konsol teknisi');
+    window.dispatchEvent(new CustomEvent('crewmaster:change'));
+  }
+  function toggleCrew(id){
+    var m = CM.read();
+    var c = m.crew.filter(function(x){ return x.id === id; })[0];
+    if(!c) return;
+    if(c.status === 'aktif'){
+      var busy = busyOrder(c.id);
+      if(busy){
+        notify('Tidak bisa menonaktifkan ' + c.name + ' — masih PIC order ' + (busy.id || '') + ' (' + (busy.status || 'aktif') + '). Selesaikan atau ganti PIC dulu.');
+        return;
+      }
+      c.status = 'nonaktif';
+    } else {
+      if(c.role === 'TU'){
+        var tu = m.crew.filter(function(x){ return x.id !== id && x.team === c.team && x.status === 'aktif' && x.role === 'TU'; })[0];
+        if(tu){ notify('Aktifkan gagal — ' + ((m.teams[c.team] || {}).name) + ' sudah punya TU aktif (' + tu.name + ').'); return; }
+      }
+      c.status = 'aktif';
+    }
+    CM.save(m);
+    auditMaster('Master kru ' + (c.status === 'aktif' ? 'diaktifkan' : 'dinonaktifkan') + ': ' + c.name + ' — ' + c.role + ' · ' + ((m.teams[c.team] || {}).name || c.team));
+    render();
+    notify(c.name + (c.status === 'aktif' ? ' diaktifkan kembali' : ' dinonaktifkan dari jadwal'));
+    window.dispatchEvent(new CustomEvent('crewmaster:change'));
+  }
+  function openTeam(id){
+    var m = CM.read();
+    var t = m.teams[id];
+    if(!t) return;
+    editingTeamId = id;
+    var title = $('teamModalTitle');
+    if(title) title.textContent = 'Atur ' + t.name;
+    $('teamName').value = t.name;
+    $('teamVan').value = t.van;
+    $('teamZone').value = t.zone;
+    $('teamDepot').value = t.depot;
+    clearErr($('teamErr'));
+    showModal($('teamModal'));
+  }
+  function saveTeam(){
+    var m = CM.read();
+    var t = m.teams[editingTeamId];
+    if(!t) return;
+    var name = ($('teamName').value || '').trim();
+    if(name.length < 3){ showErr($('teamErr'), 'Nama tim minimal 3 karakter.'); return; }
+    t.name = name;
+    t.van = ($('teamVan').value || '').trim() || '—';
+    t.zone = ($('teamZone').value || '').trim() || '—';
+    t.depot = ($('teamDepot').value || '').trim() || '—';
+    CM.save(m);
+    auditMaster('Master tim diperbarui: ' + name + ' — armada ' + t.van + ' · zona ' + t.zone + ' · depot ' + t.depot);
+    hideModal($('teamModal'));
+    render();
+    notify('Data ' + name + ' diperbarui — rute & SPK memakai armada terbaru');
+    window.dispatchEvent(new CustomEvent('crewmaster:change'));
+  }
+
+  document.addEventListener('click', function(e){
+    var t = e.target.closest ? e.target.closest('[data-crew-add],[data-crew-edit],[data-crew-toggle],[data-crew-close],[data-crew-save],[data-crew-reset],[data-team-edit],[data-team-close],[data-team-save]') : null;
+    if(!t) return;
+    if(t.hasAttribute('data-crew-add')) openCrew(null);
+    else if(t.hasAttribute('data-crew-edit')) openCrew(t.getAttribute('data-crew-edit'));
+    else if(t.hasAttribute('data-crew-toggle')) toggleCrew(t.getAttribute('data-crew-toggle'));
+    else if(t.hasAttribute('data-crew-close')) hideModal($('crewModal'));
+    else if(t.hasAttribute('data-crew-save')) saveCrew();
+    else if(t.hasAttribute('data-crew-reset')){
+      if($('crewSearch')) $('crewSearch').value = '';
+      if($('crewTeamFilter')) $('crewTeamFilter').value = 'all';
+      if($('crewStatusFilter')) $('crewStatusFilter').value = 'all';
+      render();
+    }
+    else if(t.hasAttribute('data-team-edit')) openTeam(t.getAttribute('data-team-edit'));
+    else if(t.hasAttribute('data-team-close')) hideModal($('teamModal'));
+    else if(t.hasAttribute('data-team-save')) saveTeam();
+  });
+  ['crewSearch','crewTeamFilter','crewStatusFilter'].forEach(function(id){
+    var el = $(id);
+    if(el) el.addEventListener('input', function(){ renderTable(CM.read()); });
+    if(el) el.addEventListener('change', function(){ renderTable(CM.read()); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Escape') return;
+    hideModal($('crewModal'));
+    hideModal($('teamModal'));
+  });
+  window.addEventListener('storage', function(e){ if((e.key || '') === CM.KEY) render(); });
+  document.addEventListener('DOMContentLoaded', render);
+  render();
+})();
+</script>
+
+<!-- P0 ADMIN SHELL: navigasi responsif, tanggal operasional global, banner mode demo -->
+<style id="adminP0Style">
+#adminAside{overflow-y:auto}
+#adminBackdrop{display:none}
+#adminDrawerClose{display:none;position:absolute;top:10px;right:10px;z-index:60;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.12);color:#fff;align-items:center;justify-content:center}
+.adminTableWrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:1023px){
+  #adminHeader{display:none!important}
+  #adminAside{transform:translateX(-100%);transition:transform .25s ease}
+  #adminAside.is-open{transform:translateX(0);box-shadow:0 24px 60px rgba(0,0,0,.55)}
+  #adminAside.is-open #adminDrawerClose{display:flex}
+  #adminBackdrop.is-open{display:block}
+  body.adminDrawerOpen{overflow:hidden}
+  main{padding-left:16px!important;padding-right:16px!important;padding-bottom:104px!important}
+  .pl-72{padding-left:0!important}
+  .left-72{left:0!important}
+  #adminMobileBar{display:flex!important}
+  #adminBottomNav{display:flex!important}
+  main footer.sticky{position:static!important;bottom:auto!important}
+}
+</style>
+<div id="adminBackdrop" class="fixed inset-0 z-40 bg-black/50"></div>
+<div id="adminMobileBar" class="fixed top-0 inset-x-0 z-40 h-16 items-center gap-2.5 px-3 bg-[#0b1329] text-white shadow-lg" style="display:none">
+<button id="adminMenuBtn" type="button" aria-label="Buka menu" class="w-10 h-10 shrink-0 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center active:scale-95 transition-colors">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<div class="flex flex-col min-w-0 flex-1 leading-tight">
+<span class="text-[9px] uppercase tracking-[0.14em] text-cyan-300/80 font-bold">FSM Dispatcher</span>
+<span id="adminPageTitle" class="text-[13px] font-bold truncate">Admin</span>
+</div>
+<span id="adminOpsDate" class="shrink-0 text-[10px] font-bold px-2 py-1 rounded-lg bg-white/10 text-slate-200">—</span>
+</div>
+<nav id="adminBottomNav" class="fixed bottom-0 inset-x-0 z-40 h-16 items-stretch bg-[#0b1329] text-slate-400 border-t border-slate-700/70" style="display:none">
+<a data-nav="ringkasan-hari.html" href="ringkasan-hari.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">dashboard</span><span>Ringkasan</span>
+</a>
+<a data-nav="pengajuan-pelanggan.html" href="pengajuan-pelanggan.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">pending_actions</span><span>Pengajuan</span>
+</a>
+<a data-nav="antrean-penugasan.html" href="antrean-penugasan.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">assignment_late</span><span>Antrean</span>
+</a>
+<a data-nav="timeline-rute.html" href="timeline-rute.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">route</span><span>Rute</span>
+</a>
+<button id="adminMoreBtn" type="button" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">apps</span><span>Lainnya</span>
+</button>
+</nav>
+<div id="adminDemoBanner" class="w-full items-start gap-2 rounded-xl border border-amber-300 bg-amber-50 px-3 py-2 text-[11px] leading-snug text-amber-900 shadow-sm" style="display:none">
+<span class="material-symbols-outlined text-[16px] text-amber-700">info</span>
+<span class="flex-1"><strong>Mode demo lokal.</strong> Data tersimpan di perangkat ini (localStorage) — cadangkan rutin dari Ringkasan Hari agar tidak hilang.</span>
+<button id="adminDemoClose" type="button" aria-label="Tutup pemberitahuan" class="shrink-0 w-6 h-6 rounded-md hover:bg-amber-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+<script>
+(function(){
+  'use strict';
+  var page=(location.pathname.split('/').pop()||'').toLowerCase()||'index.html';
+  var TITLES={'ringkasan-hari.html':'Ringkasan Hari','pengajuan-pelanggan.html':'Pengajuan Pelanggan','antrean-penugasan.html':'Antrean & Penugasan','timeline-rute.html':'Timeline Tim & Rute','spk-invoice.html':'SPK & Invoice','master-inventaris.html':'Master & Inventaris','log-audit.html':'Log Audit'};
+  var DATES={'ringkasan-hari.html':'owner-date','antrean-penugasan.html':'csp-date','timeline-rute.html':'rute-date'};
+  var KEY='ip_ops_date';
+  function $(id){ return document.getElementById(id); }
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function todayKey(){ var d=new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+  function readDate(){ try{ var v=localStorage.getItem(KEY); return /^\d{4}-\d{2}-\d{2}$/.test(v||'')?v:''; }catch(e){ return ''; } }
+  function writeDate(v){ try{ localStorage.setItem(KEY,v); }catch(e){} }
+  function fmtDate(iso){ if(!iso) return 'Hari ini';
+    if(iso===todayKey()) return 'Hari ini';
+    try{ return new Date(iso+'T00:00:00').toLocaleDateString('id-ID',{day:'2-digit',month:'short'}); }catch(e){ return iso; } }
+
+  var aside=document.querySelector('aside.fixed');
+  var header=document.querySelector('header.fixed');
+  var backdrop=$('adminBackdrop');
+  if(aside) aside.id='adminAside';
+  if(header) header.id='adminHeader';
+  if(aside){
+    var x=document.createElement('button');
+    x.id='adminDrawerClose'; x.type='button'; x.setAttribute('aria-label','Tutup menu');
+    x.innerHTML='<span class="material-symbols-outlined text-[20px]">close</span>';
+    aside.appendChild(x);
+  }
+  function openDrawer(){ if(!aside||!backdrop) return; aside.classList.add('is-open'); backdrop.classList.add('is-open'); document.body.classList.add('adminDrawerOpen'); }
+  function closeDrawer(){ if(!aside||!backdrop) return; aside.classList.remove('is-open'); backdrop.classList.remove('is-open'); document.body.classList.remove('adminDrawerOpen'); }
+  var mb=$('adminMenuBtn'), more=$('adminMoreBtn');
+  if(mb) mb.addEventListener('click',openDrawer);
+  if(more) more.addEventListener('click',openDrawer);
+  if(backdrop) backdrop.addEventListener('click',closeDrawer);
+  var xb=$('adminDrawerClose'); if(xb) xb.addEventListener('click',closeDrawer);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrawer(); });
+  if(aside) aside.addEventListener('click',function(e){ if(e.target.closest('a')) closeDrawer(); });
+
+  var title=$('adminPageTitle'); if(title) title.textContent=TITLES[page]||'Admin';
+  Array.prototype.forEach.call(document.querySelectorAll('#adminBottomNav [data-nav]'),function(a){
+    if(a.getAttribute('data-nav')===page){ a.classList.add('text-cyan-300','bg-white/5'); }
+  });
+
+  function paintOpsDate(iso){
+    var el=$('adminOpsDate'); if(!el) return;
+    el.textContent=fmtDate(iso||readDate()||todayKey());
+    el.title='Hari operasional aktif';
+  }
+
+  var banner=$('adminDemoBanner');
+  var bannerHidden=false; try{ bannerHidden=sessionStorage.getItem('adminDemoBannerHidden')==='1'; }catch(e){}
+  if(banner){
+    var bc=$('adminDemoClose');
+    if(bc) bc.addEventListener('click',function(){ banner.style.display='none'; try{ sessionStorage.setItem('adminDemoBannerHidden','1'); }catch(e){} });
+  }
+
+  function wrapTables(){
+    Array.prototype.forEach.call(document.querySelectorAll('main table'),function(t){
+      var p=t.parentElement;
+      if(p && p.classList && p.classList.contains('adminTableWrap')) return;
+      var w=document.createElement('div'); w.className='adminTableWrap';
+      t.parentNode.insertBefore(w,t); w.appendChild(t);
+    });
+  }
+
+  function fixOverflow(){
+    var main=document.querySelector('main'); if(!main) return;
+    var vw=document.documentElement.clientWidth;
+    Array.prototype.forEach.call(main.querySelectorAll('div,nav'),function(el){
+      if(el.dataset.ofx||el.classList.contains('flex-nowrap')) return;
+      var s=getComputedStyle(el);
+      if(s.display!=='flex'&&s.display!=='inline-flex') return;
+      if(s.flexDirection!=='row'&&s.flexDirection!=='row-reverse') return;
+      if(s.position==='fixed'||s.position==='absolute') return;
+      var r=el.getBoundingClientRect();
+      if(r.width>vw) return;
+      if(el.scrollWidth<=el.clientWidth+3) return;
+      if(el.querySelectorAll(':scope > button').length>=3){
+        el.style.flexWrap='wrap';
+        el.dataset.ofx='1';
+        return;
+      }
+      el.style.flexWrap='wrap';
+      el.dataset.ofx='1';
+      if(el.scrollWidth>el.clientWidth+3){ el.style.maxWidth='100%'; el.style.overflowX='auto'; }
+    });
+  }
+
+  function initDate(){
+    var id=DATES[page]; if(!id) return;
+    var inp=$(id); if(!inp) return;
+    var v=readDate();
+    if(v && page==='ringkasan-hari.html' && v>todayKey()) v='';
+    if(v && inp.value!==v){
+      inp.value=v;
+      try{ inp.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){}
+    }
+    inp.addEventListener('change',function(){
+      if(/^\d{4}-\d{2}-\d{2}$/.test(inp.value)){ writeDate(inp.value); paintOpsDate(inp.value); }
+    });
+    paintOpsDate(inp.value||readDate());
+  }
+
+  function countBy(list,st){ return list.filter(function(o){ return o.status===st; }).length; }
+  function paintDayStatus(){
+    var box=$('adminDayStatus'); if(!box) return;
+    var inp=$('owner-date');
+    var iso=(inp&&inp.value)||readDate()||todayKey();
+    var all=[]; try{ all=JSON.parse(localStorage.getItem('ip_customer_orders')||'[]')||[]; }catch(e){}
+    var day=all.filter(function(o){ return (o.tgl||todayKey())===iso; });
+    var baru=countBy(day,'Baru')+countBy(day,'Menunggu Persetujuan Customer');
+    var doing=countBy(day,'Dikerjakan');
+    var review=countBy(day,'Review');
+    var sched=day.filter(function(o){ return o.status==='Dijadwalkan'; });
+    var unlocked=sched.filter(function(o){ return !o.ruteLocked; }).length;
+    var closed=day.length && day.every(function(o){ return o.status==='Selesai'||o.status==='Dibatalkan'; });
+    var label='',tone='',sub='',icon='radio_button_checked';
+    if(!day.length){ label='Belum ada order'; tone='bg-slate-100 text-slate-600 border-slate-200'; sub='Belum ada order pada tanggal ini.'; icon='inbox'; }
+    else if(baru){ label='Perlu penugasan'; tone='bg-amber-100 text-amber-800 border-amber-200'; sub=baru+' order menunggu penugasan CSP.'; icon='assignment_late'; }
+    else if(unlocked){ label='Rute belum dikunci'; tone='bg-orange-100 text-orange-800 border-orange-200'; sub=unlocked+' order terjadwal belum punya rute resmi.'; icon='lock_open'; }
+    else if(doing){ label='Sedang berjalan'; tone='bg-blue-100 text-blue-800 border-blue-200'; sub=doing+' order dikerjakan teknisi.'; icon='engineering'; }
+    else if(review){ label='Menunggu validasi'; tone='bg-violet-100 text-violet-800 border-violet-200'; sub=review+' laporan teknisi menunggu review admin.'; icon='fact_check'; }
+    else if(closed){ label='Siap tutup hari'; tone='bg-emerald-100 text-emerald-800 border-emerald-200'; sub='Semua order selesai/dibatalkan — lengkapi rekap dan cadangkan data.'; icon='task_alt'; }
+    else { label='Siap berangkat'; tone='bg-emerald-100 text-emerald-800 border-emerald-200'; sub='Rute terkunci, menunggu teknisi clock-in.'; icon='departure_boarding'; }
+    var detail=[];
+    if(doing) detail.push(doing+' dikerjakan');
+    if(review) detail.push(review+' menunggu validasi');
+    if(unlocked) detail.push(unlocked+' rute belum dikunci');
+    if(baru) detail.push(baru+' baru');
+    if(detail.length) sub=detail.join(' · ');
+    box.className='bg-white rounded-2xl shadow-sm border border-slate-200/90 p-4 flex flex-col sm:flex-row sm:items-center gap-3';
+    box.innerHTML='<div class="w-10 h-10 shrink-0 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center"><span class="material-symbols-outlined text-[21px]">'+icon+'</span></div>'
+      +'<div class="flex-1 min-w-0"><div class="flex flex-wrap items-center gap-2"><h2 class="text-sm font-bold text-slate-900">Status Hari Operasional</h2>'
+      +'<span class="px-2 py-0.5 rounded-full border text-[10px] font-bold '+tone+'">'+label+'</span></div>'
+      +'<p class="text-xs text-slate-500">'+sub+'</p></div>'
+      +'<div class="flex items-center gap-2 shrink-0"><a href="antrean-penugasan.html" class="px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-bold">Antrean</a>'
+      +'<a href="timeline-rute.html" class="px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-bold border border-slate-300">Rute</a></div>';
+  }
+
+  function boot(){
+    wrapTables();
+    fixOverflow();
+    initDate();
+    var main=document.querySelector('main');
+    var host=main&&(main.firstElementChild||main);
+    if(banner && host && banner.parentElement!==host){
+      host.insertBefore(banner,host.firstChild);
+      banner.style.display=bannerHidden?'none':'flex';
+    }
+    if(page==='log-audit.html' && window.matchMedia('(max-width:1023px)').matches){
+      var bcs=[].slice.call(document.querySelectorAll('main div')).filter(function(d){
+        return d.className && d.className.toString().indexOf('uppercase')>=0 && d.textContent.indexOf('Ledger SOP DOC-19')>=0 && d.children.length<=7;
+      })[0];
+      if(bcs) bcs.style.display='none';
+    }
+    if(main){
+      var t=null;
+      var mo=new MutationObserver(function(){
+        clearTimeout(t);
+        t=setTimeout(function(){ wrapTables(); fixOverflow(); },240);
+      });
+      mo.observe(main,{childList:true,subtree:true});
+    }
+    var rt=null;
+    window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(fixOverflow,200); });
+    if(page==='ringkasan-hari.html'){
+      if(host && !$('adminDayStatus')){
+        var el=document.createElement('div'); el.id='adminDayStatus';
+        host.insertBefore(el,(banner&&banner.parentElement===host)?banner.nextSibling:host.firstChild);
+      }
+      paintDayStatus();
+      setInterval(paintDayStatus,15000);
+      document.addEventListener('change',paintDayStatus);
+      window.addEventListener('storage',paintDayStatus);
+    }
+    paintOpsDate();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){ setTimeout(boot,60); });
+  else setTimeout(boot,60);
+})();
+</script>
+<!-- /P0 ADMIN SHELL -->
+
+<script src="assets/p1.js"></script>
+<script src="assets/admin-v32.js"></script>
+</body></html>

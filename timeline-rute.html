@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<title>CV Intan Pratama - FSM Dispatcher Pro</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-variant": "#dae2fd",
+          "on-tertiary-container": "#5fcdbf",
+          "tertiary-fixed-dim": "#6bd8cb",
+          "status-otw": "#D97706",
+          "on-secondary-fixed": "#001d31",
+          "on-surface-variant": "#444653",
+          "inverse-surface": "#283044",
+          "primary-fixed-dim": "#b8c4ff",
+          "on-tertiary-fixed": "#00201d",
+          "outline-variant": "#c4c5d5",
+          "on-secondary-fixed-variant": "#004b73",
+          "background": "#faf8ff",
+          "outline": "#757684",
+          "status-kerja": "#2563EB",
+          "status-terjadwal": "#0284C7",
+          "on-primary-fixed-variant": "#173bab",
+          "on-primary": "#ffffff",
+          "error-container": "#ffdad6",
+          "inverse-on-surface": "#eef0ff",
+          "navy-deep": "#0A192F",
+          "status-selesai": "#16A34A",
+          "status-batal": "#DC2626",
+          "primary-container": "#1e40af",
+          "surface-dim": "#d2d9f4",
+          "secondary-container": "#5bb8fe",
+          "surface-bright": "#faf8ff",
+          "surface-tint": "#3755c3",
+          "on-surface": "#131b2e",
+          "status-konfirmasi": "#4338CA",
+          "badge-csp-invalid-text": "#991B1B",
+          "on-primary-fixed": "#001453",
+          "primary": "#00288e",
+          "surface-container": "#eaedff",
+          "surface": "#faf8ff",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-container": "#a8b8ff",
+          "on-tertiary": "#ffffff",
+          "inverse-primary": "#b8c4ff",
+          "on-secondary-container": "#00476e",
+          "on-error": "#ffffff",
+          "badge-csp-valid": "#DCFCE7",
+          "surface-card": "#FFFFFF",
+          "status-diterima": "#64748B",
+          "tertiary-fixed": "#89f5e7",
+          "on-background": "#131b2e",
+          "secondary-fixed-dim": "#93ccff",
+          "badge-csp-valid-text": "#166534",
+          "surface-ice": "#F8FAFC",
+          "border-subtle": "#E2E8F0",
+          "error": "#ba1a1a",
+          "tertiary-container": "#00554e",
+          "secondary": "#006398",
+          "secondary-fixed": "#cce5ff",
+          "primary-fixed": "#dde1ff",
+          "surface-container-high": "#e2e7ff",
+          "on-tertiary-fixed-variant": "#005049",
+          "tertiary": "#003c36",
+          "surface-container-low": "#f2f3ff",
+          "surface-container-highest": "#dae2fd",
+          "on-error-container": "#93000a",
+          "on-secondary": "#ffffff",
+          "badge-csp-invalid": "#FEE2E2",
+          "electric-cyan": "#0284C7",
+          "border-focus": "#38BDF8"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-md": "1rem",
+          "space-xl": "2rem",
+          "margin": "2rem",
+          "space-xs": "0.5rem",
+          "space-3xs": "0.125rem",
+          "space-lg": "1.5rem",
+          "space-2xs": "0.25rem",
+          "gutter-mobile": "1rem",
+          "gutter": "1.5rem",
+          "space-2xl": "3rem",
+          "space-sm": "0.75rem",
+          "space-3xl": "4rem",
+          "margin-mobile": "1rem"
+        },
+        "fontFamily": {
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "display-hero-mobile": ["Plus Jakarta Sans"],
+          "mono-metric": ["Inter"],
+          "body-md": ["Plus Jakarta Sans"],
+          "body-sm": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "label-lg": ["Inter"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "label-md": ["Inter"],
+          "label-xs": ["Inter"],
+          "display-hero": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+          "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+          "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+          "mono-metric": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+          "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+          "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+          "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+          "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+          "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+          "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+        }
+      }
+    }
+  };
+</script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      body { overscroll-behavior: none; }
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', 'Inter', monospace;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+<link rel="stylesheet" href="assets/p1.css">
+<script src="assets/crew-master.js"></script>
+<script src="assets/ops-calendar.js"></script>
+</head>
+<body class="bg-surface-ice text-on-surface antialiased selection:bg-primary-container selection:text-white">
+<!-- SIDEBAR NAVIGASI (Dark Sleek Navy Pro) -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-[#0b1329] border-r border-slate-800/80 z-50 flex flex-col justify-between select-none shadow-2xl">
+<div class="flex flex-col">
+<!-- Brand Header -->
+<div class="px-6 pt-6 pb-4 border-b border-slate-800/60">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/25 ring-1 ring-white/20">
+<span class="material-symbols-outlined text-[22px]">hvac</span>
+</div>
+<div class="flex flex-col">
+<span class="font-extrabold text-[15px] tracking-tight text-white leading-tight">CV INTAN PRATAMA</span>
+<span class="text-[10px] uppercase font-bold tracking-widest text-cyan-400/90 font-mono-code">FSM Dispatcher Pro</span>
+</div>
+</div>
+<!-- Operational Depot Chip -->
+<div class="mt-4 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800/80 flex items-center gap-2.5 shadow-inner">
+<div class="w-7 h-7 rounded-lg bg-blue-500/10 text-cyan-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">warehouse</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Depot Operasional</span>
+<span class="text-xs font-semibold text-slate-200 truncate">Taman Pondok Jati, Sda</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 px-3 mt-4" data-active-classes="bg-primary-container text-white font-bold shadow-md shadow-blue-600/30">
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="overview" href="./ringkasan-hari.html">
+<span>Ringkasan Hari</span>
+<span class="w-2 h-2 rounded-full bg-cyan-300 animate-pulse"></span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="customer-requests" href="./pengajuan-pelanggan.html">
+<span class="font-medium">Pengajuan Pelanggan</span>
+<span id="navBaru" class="px-2 py-0.5 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 font-mono-code text-[11px] font-bold">5 Baru</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="csp-dispatch" href="./antrean-penugasan.html">
+<span class="font-semibold">Antrean &amp; Penugasan</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-400 text-slate-900 font-mono-code text-[11px] font-extrabold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px] font-bold">check_circle</span>CSP
+</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-primary-container text-white font-bold shadow-md shadow-blue-600/30 transition-all group font-headline-sm text-body-md" data-path="timeline-gantt" href="timeline-rute.html">
+<span class="font-semibold">Timeline Tim &amp; Rute</span>
+<span class="text-[11px] font-mono-code text-cyan-300 font-bold bg-cyan-950/80 px-2 py-0.5 rounded-md border border-cyan-500/40">TSP Aktif</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="work-orders-invoices" href="./spk-invoice.html">
+<span class="font-medium">SPK &amp; Invoice</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="inventory-master" href="./master-inventaris.html">
+<span class="font-medium">Master &amp; Inventaris</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-100 transition-all group font-headline-sm text-body-md" data-path="audit-logs" href="./log-audit.html">
+<span class="font-medium">Log Audit</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom Hotline & Info -->
+<div class="p-3 mb-2 flex flex-col gap-2">
+<div class="p-3 rounded-xl bg-gradient-to-r from-rose-950/60 to-rose-900/40 border border-rose-800/50 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-rose-600/30 text-rose-400 flex items-center justify-center ring-1 ring-rose-500/40">
+<span class="material-symbols-outlined text-[18px]">sos</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-extrabold text-rose-300 uppercase tracking-wider">Hotline Darurat</span>
+<span class="font-mono-code text-xs font-bold text-white">0811-3450-990</span>
+</div>
+</div>
+<a class="w-7 h-7 rounded-lg bg-rose-600 hover:bg-rose-500 text-white flex items-center justify-center transition-colors shadow-sm" href="tel:08113450990" title="Hubungi Hotline">
+<span class="material-symbols-outlined text-[15px]">call</span>
+</a>
+</div>
+<div class="px-2 py-1.5 flex items-center justify-between text-slate-400 text-[11px] font-medium border-t border-slate-800/60">
+<span class="truncate">Surabaya &amp; Sidoarjo Rayon</span>
+<span class="font-mono-code text-cyan-400 font-semibold bg-cyan-950/40 px-1.5 py-0.5 rounded border border-cyan-800/40">v2.4.0</span>
+</div>
+</div>
+</aside>
+<!-- CONTENT SHELL WRAPPER -->
+<div class="pl-72 flex flex-col min-h-screen">
+<!-- TOP HEADER BAR (Modern Dark Slate Pro) -->
+<header class="fixed top-0 left-72 right-0 h-16 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800/80 z-40 flex items-center justify-between px-8 select-none shadow-md">
+<div class="flex items-center gap-4">
+<!-- Date Time Pill -->
+<div class="flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/70 text-slate-200 shadow-inner">
+<span class="material-symbols-outlined text-cyan-400 text-[18px]">schedule</span>
+<span id="hdr-date" class="font-mono-code text-xs font-medium text-slate-300">Senin, 26 Okt 2026</span>
+<span class="w-1 h-3 rounded-full bg-slate-700"></span>
+<span id="hdr-clock" class="font-mono-code text-xs font-bold text-cyan-300">08:15 WIB</span>
+</div>
+<!-- Telemetry Status Tag -->
+<div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/70 border border-emerald-600/40 text-emerald-300 text-xs font-semibold shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="font-label-md">Real-time Telemetri Aktif</span>
+</div>
+</div>
+<!-- User Action Header -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors relative border border-slate-700/60 bg-slate-900/60" title="Notifikasi" type="button">
+<span class="material-symbols-outlined text-[19px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-slate-900"></span>
+</button>
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors border border-slate-700/60 bg-slate-900/60" title="Setelan" type="button">
+<span class="material-symbols-outlined text-[19px]">tune</span>
+</button>
+</div>
+<div class="h-6 w-[1px] bg-slate-700/80"></div>
+<!-- Dispatcher Avatar Info -->
+<div class="flex items-center gap-3 pl-1">
+<div class="flex flex-col text-right">
+<span class="text-xs font-bold text-white leading-tight tracking-tight">Budi Santoso</span>
+<span class="text-[11px] text-cyan-300/80 font-medium">Dispatcher / Kepala Ops</span>
+</div>
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 ring-2 ring-blue-400/40 flex items-center justify-center text-white shadow-md">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN DASHBOARD CONTENT -->
+<main class="w-full pt-16 bg-surface-ice flex-1 px-8 pb-10"><div class="flex flex-col w-full">
+<!-- Top Operational Banner & Engine Header -->
+<div class="flex flex-col gap-6 mb-8">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 bg-surface-card p-6 rounded-xl shadow-sm">
+<div class="flex flex-col gap-2 max-w-3xl">
+<div class="flex flex-wrap items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-status-otw/15 text-status-otw font-label-md text-label-md" id="rute-state-badge">
+<span class="material-symbols-outlined text-[16px]">pending_actions</span>
+            <span id="rute-state-text">Status Rute Hari Ini: Usulan TSP Terbuka (Belum Dikunci)</span>
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[13px]">verified_user</span>
+            FSM DOC-19 Kepatuhan B.1, B.2, C.4, C.5
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Timeline Tim &amp; Optimasi Rute (TSP Solver Engine)
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Urutan kunjungan terpendek berbasis matriks zona Sidoarjo – Surabaya. Pratinjau usulan TSP tidak sama dengan rute aktif sampai disetujui dispatcher (Aturan C.5).
+        </p>
+        <div id="rute-holiday" class="hidden rounded-xl border-2 border-amber-400 bg-amber-50 px-4 py-3 font-label-md text-label-md text-amber-900 items-start gap-2">
+          <span class="material-symbols-outlined text-[20px]">event_busy</span>
+          <span id="rute-holiday-text"></span>
+        </div>
+</div>
+<!-- Action Group -->
+<div class="flex flex-wrap items-center gap-3 self-start xl:self-auto">
+<!-- Tanggal kerja (P1-1) -->
+<label class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-card border border-border-subtle shadow-sm font-label-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[17px] text-primary">event</span>
+<span class="uppercase font-bold">Tanggal rute</span>
+<input id="rute-date" type="date" class="bg-transparent font-label-md text-label-md text-navy-deep outline-none" />
+</label>
+<!-- TSP Mode Toggle Dropdown/Button -->
+<div class="relative inline-flex rounded-lg bg-surface-container-low p-1 shadow-sm">
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-card text-primary font-label-md text-label-md shadow-sm transition-all" id="btn-mode-waktu" onclick="toggleTspMode('waktu')" type="button">
+<span class="material-symbols-outlined text-[17px]">timer</span>
+            Minimalkan Waktu
+          </button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-all" id="btn-mode-jarak" onclick="toggleTspMode('jarak')" type="button">
+<span class="material-symbols-outlined text-[17px]">route</span>
+            Minimalkan Jarak
+          </button>
+</div>
+<!-- Run TSP Solver -->
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-card border border-border-subtle hover:bg-surface-container text-primary font-label-lg text-label-lg shadow-sm transition-transform active:scale-[0.98]" onclick="runTspOptimization()" type="button">
+<span class="material-symbols-outlined text-[19px]">magic_button</span>
+          Optimasi Ulang TSP
+        </button>
+<!-- Lock Route / SPK -->
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-status-selesai hover:opacity-90 text-on-primary font-label-lg text-label-lg shadow-md transition-all active:scale-[0.98]" onclick="lockScheduleModal()" type="button">
+<span class="material-symbols-outlined text-[19px]">lock</span>
+          Kunci &amp; Kirim ke Teknisi
+        </button>
+<!-- Send WhatsApp -->
+<button class="flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-surface-container-highest hover:bg-surface-variant text-on-surface font-label-md text-label-md shadow-sm transition-all" onclick="openWhatsAppModal()" type="button">
+<span class="material-symbols-outlined text-[19px] text-status-selesai">send</span>
+          Kirim Rute WA
+        </button>
+</div>
+</div>
+<!-- 4 KPI Metrics Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- KPI 1 -->
+<div class="bg-surface-card p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant" id="tsp-kpi-label">Total Jarak Tempuh Hari Ini</span>
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight mt-1" id="tsp-kpi-total">118.4 <span class="text-body-md font-body-md">km</span></span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-variant text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">explore</span>
+</div>
+</div>
+<div id="tsp-kpi-save-chip" class="mt-4 pt-3 flex items-center gap-1.5 text-on-surface-variant font-label-xs text-label-xs bg-surface-container px-2.5 py-1.5 rounded-lg w-fit">
+<span class="material-symbols-outlined text-[15px]">trending_down</span>
+<span>Hemat <strong id="tsp-kpi-save">—</strong> vs rute acak manual</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-card p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Estimasi Tempuh Antar-Order</span>
+<span class="font-headline-lg text-headline-lg text-status-selesai tracking-tight mt-1" id="kpi-travel">—</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-badge-csp-valid text-badge-csp-valid-text flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">commute</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center gap-1.5 text-on-surface-variant font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[15px] text-electric-cyan">speed</span>
+<span>Rata-rata <strong id="kpi-legavg">—</strong> per leg perjalanan</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-card p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Kepatuhan Jeda Minimal (Buffer)</span>
+<span class="font-headline-lg text-headline-lg text-status-otw tracking-tight mt-1" id="kpi-buffer">—</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-badge-csp-valid text-status-selesai flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">rule_folder</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center gap-1.5 text-badge-csp-valid-text font-label-xs text-label-xs bg-badge-csp-valid/60 px-2.5 py-1.5 rounded-lg w-fit">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span id="kpi-buffer-note">Buffer transit ≥ 30 mnt diverifikasi B.1</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-card p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Jam Operasional Armada</span>
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1" id="kpi-hours">—</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container text-status-konfirmasi flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">nest_clock_farsight_analog</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center gap-1.5 text-status-selesai font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[15px]">done_all</span>
+<span>Semua tim tuntas sebelum batas 17:00 WIB</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Gantt Schedule Section -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden mb-8 flex flex-col">
+<!-- Timeline Control Bar -->
+<div class="p-5 bg-surface-card flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-status-kerja animate-pulse"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface">
+          Visual Gantt Timeline Eksekusi Lapangan (08:00 – 17:00 WIB)
+        </h2>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded bg-primary"></span>
+<span>Pekerjaan Aktif</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded bg-secondary-container"></span>
+<span>Perjalanan (Leg)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded bg-status-otw"></span>
+<span>Buffer / Usulan Baru</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded bg-surface-variant"></span>
+<span>Istirahat &amp; ISHOMA</span>
+</div>
+</div>
+</div>
+<!-- Scrollable Gantt Canvas Area -->
+<div class="w-full overflow-x-auto pb-4">
+<div class="min-w-[1040px] px-6">
+<!-- Gantt Header Timescale: 08:00 to 17:00 (9 hours = 9 columns) -->
+<div class="grid grid-cols-12 gap-0 py-3.5 bg-surface-container-low rounded-t-xl text-center font-label-md text-label-md text-on-surface-variant">
+<div class="col-span-3 text-left pl-4 font-headline-sm text-headline-sm text-on-surface">Tim &amp; Armada</div>
+<div class="col-span-1">08:00</div>
+<div class="col-span-1">09:00</div>
+<div class="col-span-1">10:00</div>
+<div class="col-span-1">11:00</div>
+<div class="col-span-1 bg-surface-variant/40 rounded-sm font-bold text-on-surface">12:00 (Rest)</div>
+<div class="col-span-1">13:00</div>
+<div class="col-span-1">14:00</div>
+<div class="col-span-1">15:00</div>
+<div class="col-span-1 text-error font-bold">16:00-17:00</div>
+</div>
+<!-- Relative Timeline Grid Container with Red 'Now' Marker -->
+<div class="relative flex flex-col gap-3 py-4">
+<!-- Current Time Indicator Line (08:15 WIB -> ~16.6% through 08:00-09:00 hour) -->
+<!-- col 3 is 25%, col 4 (08:00-09:00) is 8.33%, 15 mins = 2.08% => ~27.1% from left -->
+<div class="absolute top-0 bottom-0 left-[26.4%] w-[2px] bg-error z-20 pointer-events-none flex flex-col items-center">
+<span class="bg-error text-on-error px-2 py-0.5 rounded-full font-label-xs text-label-xs shadow-md whitespace-nowrap -mt-3">
+              08:15 WIB Saat Ini
+            </span>
+</div>
+<!-- Gantt rows dirender dari ip_customer_orders (order terjadwal) -->
+<div id="gantt-rows" class="flex flex-col gap-3"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TSP Solver Console (detail teknis, tertutup bawaan) -->
+<details id="tsp-console" class="bg-navy-deep rounded-xl p-5 shadow-lg mb-8 flex flex-col gap-3 group">
+<summary class="flex items-center justify-between cursor-pointer list-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-electric-cyan text-[18px]">terminal</span>
+<span class="font-label-md text-label-md text-white font-bold">Detail algoritma TSP — Nearest Neighbor + 2-opt</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-cyan-200/80 group-open:hidden">Tampilkan jejak solver</span>
+<span class="font-label-xs text-cyan-200/80 hidden group-open:inline">Sembunyikan jejak</span>
+<span class="font-label-xs text-electric-cyan font-bold bg-blue-950/60 px-2 py-0.5 rounded border border-blue-700/40" id="tsp-badge">Siap</span>
+</div>
+</summary>
+<pre id="tsp-trace" class="font-mono-code text-[11px] leading-relaxed text-cyan-100/90 whitespace-pre-wrap max-h-64 overflow-y-auto bg-blue-950/40 rounded-lg p-3 border border-blue-800/40 mt-3">Klik "Optimasi Ulang TSP" untuk menjalankan konstruksi Nearest Neighbor + perbaikan 2-opt per tim.</pre>
+<div id="tsp-results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"></div>
+</details>
+<!-- Split Panel Bawah: Sequential Route Panel & TSP Validation Matrix -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Panel: Tim Alpha Sequential Stops (7 cols) -->
+<div class="lg:col-span-7 bg-surface-card rounded-xl p-6 shadow-sm flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-variant text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">alt_route</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+              Visual Urutan Kunjungan: <span id="itin-team-name">—</span>
+            </h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="itin-team-sub">Rute rekomendasi dari antrean penugasan CSP</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md shadow-xs transition-colors" onclick="tspFlip()" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_vert</span>
+            Balik Urutan
+          </button>
+<span class="px-2.5 py-1 rounded-full bg-badge-csp-valid text-badge-csp-valid-text font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Optimal TSP
+          </span>
+</div>
+</div>
+<!-- Stop-by-Stop Itinerary Timeline — dirender dari store -->
+<div class="flex items-center gap-2 flex-wrap" id="tsp-team-pick"></div>
+<details id="itin-details" class="rounded-xl border border-border-subtle bg-surface-container-low/40">
+<summary class="px-4 py-2.5 flex items-center justify-between gap-2 cursor-pointer list-none">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-[17px] text-primary">format_list_numbered</span>Rincian urutan kunjungan</span>
+<span class="font-label-xs text-on-surface-variant">Buka untuk melihat jam tiba per titik</span>
+</summary>
+<div id="tsp-itinerary" class="relative pl-6 flex flex-col gap-5 p-4 pt-1"></div>
+</details>
+</div>
+</div>
+<!-- Right Panel: Distance Matrix & TSP Validation Checklist (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Zone Distance Matrix Table -->
+<details class="bg-surface-card rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<summary class="flex items-center justify-between cursor-pointer list-none">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">grid_4x4</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Matriks Waktu Tempuh Zona</h3>
+</div>
+<span class="text-on-surface-variant font-label-xs text-label-xs">DOC-19 B.2 · buka</span>
+</summary>
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container-low text-on-surface font-label-md text-label-md">
+<tr>
+<th class="p-2.5">Dari \ Ke</th>
+<th class="p-2.5 text-center">Sda Kota</th>
+<th class="p-2.5 text-center">Waru/Depot</th>
+<th class="p-2.5 text-center">Sby Timur</th>
+<th class="p-2.5 text-center">Sby Barat</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="p-2.5 font-semibold text-on-surface bg-surface-container-low/50">Waru/Depot</td>
+<td class="p-2.5 text-center text-on-surface-variant">25 mnt</td>
+<td class="p-2.5 text-center font-bold text-primary bg-surface-variant/40">0 mnt</td>
+<td class="p-2.5 text-center text-status-otw font-bold">50 mnt</td>
+<td class="p-2.5 text-center text-on-surface-variant">45 mnt</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="p-2.5 font-semibold text-on-surface bg-surface-container-low/50">Sby Timur</td>
+<td class="p-2.5 text-center text-on-surface-variant">55 mnt</td>
+<td class="p-2.5 text-center text-on-surface-variant">42 mnt</td>
+<td class="p-2.5 text-center font-bold text-status-selesai bg-badge-csp-valid/40">15 mnt*</td>
+<td class="p-2.5 text-center text-on-surface-variant">40 mnt</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="p-2.5 font-semibold text-on-surface bg-surface-container-low/50">Sda Kota</td>
+<td class="p-2.5 text-center font-bold text-status-selesai bg-badge-csp-valid/40">15 mnt*</td>
+<td class="p-2.5 text-center text-on-surface-variant">22 mnt</td>
+<td class="p-2.5 text-center text-on-surface-variant">52 mnt</td>
+<td class="p-2.5 text-center text-on-surface-variant">35 mnt</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          *Catatan Solver: Pindah antar order dalam zona yang sama dihemat menjadi 15 menit, meminimalkan idling mobil APV &amp; konsumsi BBM operasional.
+        </p>
+</details>
+<!-- Audit & SOP Validation Checklist -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-selesai text-[20px]">fact_check</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Validasi Aturan Bisnis &amp; SOP (DOC-19)</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-badge-csp-valid text-badge-csp-valid-text font-label-xs text-label-xs font-bold">4/4 Lolos</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<div class="flex items-start gap-2.5 p-2.5 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-status-selesai text-[18px] shrink-0 mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Aturan B.1: Jeda Buffer ≥ 30 Menit Antar-Order</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant" id="val-b1">Belum dihitung — jalankan solver.</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-2.5 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-status-selesai text-[18px] shrink-0 mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Aturan B.2: Matriks Kecepatan Sidoarjo - Surabaya</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Lolos. Memperhitungkan bottleneck bundaran Waru jam sibuk.</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-2.5 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-status-selesai text-[18px] shrink-0 mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Aturan C.4: Batas Beban Kerja Tim &lt; 9.0 Jam</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant" id="val-c4">Belum dihitung — jalankan solver.</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-2.5 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-status-selesai text-[18px] shrink-0 mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Kualifikasi Teknisi: Order Pasang Baru Memerlukan TU</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Dua tim dengan roster riil: Adrian &amp; Slamet memegang sertifikat TU. Jika TU tidak masuk, job wajib TU otomatis gugur dari domain.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- WhatsApp Preview Card -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-selesai text-[20px]">chat</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pratinjau Pesan WA PIC (B.6)</h3>
+</div>
+<span class="text-on-surface-variant font-label-xs text-label-xs" id="wa-pic">PIC: —</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg font-mono-metric text-[12px] text-on-surface leading-relaxed select-all" id="wa-preview">
+Belum ada rute terjadwal untuk dikirim ke PIC.
+</div>
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg bg-status-selesai text-on-primary font-label-md text-label-md shadow-xs hover:opacity-90 transition-opacity" onclick="copyAndOpenWhatsApp()" type="button">
+<span class="material-symbols-outlined text-[17px]">content_copy</span>
+            Salin &amp; Buka WhatsApp PIC
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Confirmation & Feedback Modals (Inline Accessible Modals) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-navy-deep/60 backdrop-blur-xs p-4" id="modal-lock-schedule">
+<div class="bg-surface-card rounded-xl p-6 max-w-md w-full shadow-2xl flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-status-selesai/20 text-status-selesai flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">lock</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-md text-headline-md text-on-surface">Kunci &amp; Kirim Rute ke Teknisi?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Setelah dikunci, usulan rute TSP menjadi rute operasional resmi untuk tim yang punya stop terjadwal; Rute resmi langsung dipakai di mobile teknisi, SPK diterbitkan otomatis, dan pesan WhatsApp ke PIC disiapkan setelah rute terkunci (status order tetap Dijadwalkan sampai teknisi clock-in).
+        </p>
+</div>
+<div class="flex items-center justify-end gap-3 mt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors" onclick="closeLockModal()" type="button">
+          Batal
+        </button>
+<button class="px-4 py-2 rounded-lg bg-status-selesai text-on-primary font-label-md text-label-md hover:opacity-90 shadow-sm transition-opacity" onclick="confirmLockSchedule()" type="button">
+          Ya, Kunci &amp; Kirim
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast Notification -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-4 py-3 rounded-xl bg-navy-deep text-on-primary shadow-xl" id="toast-notification">
+<span class="material-symbols-outlined text-status-selesai" id="toast-icon">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-message">Pesan notifikasi</span>
+</div>
+<!-- Client-side Operational Logic -->
+<script>
+    /* ============ TSP ENGINE — data dari ip_customer_orders (hasil penugasan CSP) ============
+       Konstruksi Nearest Neighbor + perbaikan 2-opt per tim; objektif km atau menit. */
+    (function(){
+      const STORE='ip_customer_orders';
+      const TRAVEL={'ST-ST':15,'SB-SB':15,'SK-SK':15,'WD-WD':15,'SU-SU':15,'KR-KR':15,
+        'ST-SB':40,'ST-SK':55,'ST-WD':50,'ST-SU':55,'ST-KR':75,'SB-SK':35,'SB-WD':45,'SB-SU':35,'SB-KR':30,
+        'SK-WD':22,'SK-SU':20,'SK-KR':40,'WD-SU':22,'WD-KR':55,'SU-KR':35};
+      const MIN=(a,b)=>a===b?0:(TRAVEL[a+'-'+b]!=null?TRAVEL[a+'-'+b]:(TRAVEL[b+'-'+a]!=null?TRAVEL[b+'-'+a]:60));
+      const KM=(a,b)=>Math.round(MIN(a,b)*0.35*10)/10;
+      /* jarak sebenarnya bila pelanggan memberi koordinat: haversine x faktor jalan 1,35 / 21 km per jam */
+      const ROAD=1.35, SPEED=21;
+      const havKm=(a,b,c,d)=>{const R=6371,rad=Math.PI/180;const x=Math.sin((c-a)*rad/2)**2+Math.cos(a*rad)*Math.cos(c*rad)*Math.sin((d-b)*rad/2)**2;return 2*R*Math.asin(Math.sqrt(x));};
+      const DEPOT_PT={alpha:{lat:-7.2810,lng:112.7560,zone:'ST'},beta:{lat:-7.3510,lng:112.7450,zone:'WD'}};
+      const nodePt=(t,i)=>i===0?DEPOT_PT[t.id]||{zone:t.zone}:(s=>s.lat!=null?{lat:s.lat,lng:s.lng,zone:s.zone}:{zone:s.zone})(t.stops[i-1]);
+      const ptsOf=t=>{const a=[nodePt(t,0)];for(let i=1;i<=t.stops.length;i++)a.push(nodePt(t,i));a.push(nodePt(t,0));return a;};
+      const geoOn=(A,B)=>A&&B&&A.lat!=null&&B.lat!=null;
+      const segKm=(A,B)=>geoOn(A,B)?Math.round(havKm(A.lat,A.lng,B.lat,B.lng)*ROAD*10)/10:KM(A.zone,B.zone);
+      const segMin=(A,B)=>geoOn(A,B)?Math.max(6,Math.round(havKm(A.lat,A.lng,B.lat,B.lng)*ROAD/SPEED*60)):MIN(A.zone,B.zone);
+      const ZONA_NAME={ST:'Sby Timur',SB:'Sby Selatan/Barat',SK:'Sda Kota',WD:'Waru/Sedati',SU:'Gedangan/Candi',KR:'Krian/Sda Barat'};
+      const BASE_TEAMS=[
+        {id:'alpha',zone:'ST',depot:'Depot Rungkut Madya'},
+        {id:'beta',zone:'WD',depot:'Depot Waru'}];
+      const BASE_CREW=[{id:'adrian',team:'alpha',role:'TU',name:'Pak Adrian'},{id:'budi',team:'alpha',role:'Helper',name:'Budi'},
+        {id:'slamet',team:'beta',role:'TU',name:'Pak Slamet'},{id:'doni',team:'beta',role:'Helper',name:'Doni'}];
+      /* Roster & armada mengikuti CrewMaster; fallback statis bila modul tidak dimuat. */
+      const TEAMS=(function(){
+        const meta=window.CrewMaster?window.CrewMaster.read().teams:{};
+        return BASE_TEAMS.map(t=>Object.assign({},t,{name:(meta[t.id]||{}).name||('Tim '+t.id[0].toUpperCase()+t.id.slice(1)),depot:(meta[t.id]||{}).depot||t.depot,lead:'—',helper:'—'}));
+      })();
+      const CREW=(function(){
+        if(!window.CrewMaster) return BASE_CREW;
+        const list=window.CrewMaster.crew();
+        return list.length?list.map(c=>({id:c.id,team:c.team,role:c.role,name:c.name})):BASE_CREW;
+      })();
+        /* kehadiran per tanggal kerja dari ip_crew@<tgl> (fallback kunci lama untuk hari ini) */
+      const todayKey=()=>new Date().toISOString().slice(0,10);
+      let pickDate=todayKey();
+      const onDay=s=>(s.tgl||todayKey())===pickDate;
+      const dayTxt=()=>{ const d=new Date(pickDate+'T00:00:00'), i=Math.round((d-new Date(todayKey()+'T00:00:00'))/864e5);
+        return i===0?'Hari Ini':i===1?'Besok':i===-1?'Kemarin':d.toLocaleDateString('id-ID',{weekday:'short',day:'numeric',month:'short'}); };
+      function safeSet(k,v){ try{ localStorage.setItem(k,v); return true; }catch(e){ ruteWarn(e); return false; } }
+      function ruteWarn(e){ let el=document.getElementById('rute-store-warn');
+        if(!el){ el=document.createElement('div'); el.id='rute-store-warn';
+          el.className='fixed bottom-4 left-1/2 -translate-x-1/2 z-50 max-w-md px-4 py-3 rounded-xl bg-rose-50 border-2 border-rose-400 text-rose-900 shadow-xl flex items-start gap-3 font-label-xs';
+          document.body.appendChild(el); }
+        el.innerHTML='<span class="material-symbols-outlined text-[18px] text-rose-600">save_alert</span><span>'+((e&&e.name==='QuotaExceededError')?'Penyimpanan perangkat penuh':'Browser menolak menyimpan data (mode privat)')
+          +'</span><span>Kunci rute terakhir belum tersimpan — unduh cadangan di Ringkasan Hari lalu ulangi.</span><button onclick="this.parentNode.remove()" class="ml-1 px-2 py-1 rounded bg-rose-600 text-white font-bold">Tutup</button>'; }
+      function crewStatus(){ let rec=null; try{ rec=JSON.parse(localStorage.getItem('ip_crew@'+pickDate)||'null'); }catch(e){}
+        if(!rec&&pickDate===todayKey()){ try{ rec=JSON.parse(localStorage.getItem('ip_crew')||'null'); }catch(e){ rec=null; } }
+        const p={};
+        CREW.forEach(c=>p[c.id]=true);
+        if(rec&&rec.date===pickDate&&pickDate<=todayKey()) CREW.forEach(c=>{ const x=(rec.people||{})[c.id]; if(x) p[c.id]=!!x.present; });
+        TEAMS.forEach(t=>{ const list=CREW.filter(c=>c.team===t.id); const on=list.filter(c=>p[c.id]);
+          t.nPresent=on.length; t.absent=list.filter(c=>!p[c.id]).map(c=>c.name);
+          t.lead=(on.find(c=>c.role==='TU')||{name:'TU tidak masuk'}).name;
+          const hps=on.filter(c=>c.role==='Helper');
+          t.helper=hps.length?hps.map(c=>c.name).join(' + '):(on.length?'Helper tidak masuk':'kru tidak ada');
+          t.mode=on.length>=2?'Kru lengkap':on.length===1?('Degradasi 1 orang — '+t.absent.join(', ')+' tidak masuk'):'Tidak beroperasi';
+          t.active=on.some(c=>c.role==='TU'); }); }
+      const SHIFT0=8, SHIFT1=17, CAP=9, ISH0=12, ISH1=13;
+      let mode='jarak', stops=[], teamRes=[], shown='alpha', flipped=false;
+      const hhmm=t=>String(Math.floor(t)).padStart(2,'0')+':'+String(Math.round((t%1)*60)).padStart(2,'0');
+      const u=()=>mode==='jarak'?'km':'mnt';
+      const fmt=v=>mode==='jarak'?(Math.round(v*10)/10).toFixed(1)+' km':Math.round(v)+' mnt';
+      const dist=(a,b)=>mode==='jarak'?KM(a,b):MIN(a,b);
+      function loadStops(){ let raw=[]; try{ raw=JSON.parse(localStorage.getItem(STORE)||'[]'); }catch(e){ raw=[]; }
+        stops=raw.filter(s=>s.team&&['Dijadwalkan','Dikerjakan','Review'].includes(s.status||'Baru')&&onDay(s))
+          .map(s=>({id:s.id,team:s.team,zone:s.zone||'ST',label:(s.paket||'Servis').slice(0,22),cust:s.nama||s.cust||'Pelanggan',
+            addr:s.alamat||'—',lat:s.lat!=null?+s.lat:null,lng:s.lng!=null?+s.lng:null,patokan:s.patokan||'',tipeTitik:s.tipeTitik||'',dur:+s.dur||1,unit:s.unit||1,w0:s.slotStart!=null?+s.slotStart:8,w1:s.slotEnd!=null?+s.slotEnd:16,
+            promised:(s.slotStart!=null?hhmm(s.slotStart)+'–'+hhmm(s.slotEnd):'—'),type:s.tipe||s.paket||'',needs:s.needs||[],
+            status:s.status,locked:!!s.ruteLocked}));
+        TEAMS.forEach(t=>{ t.stops=stops.filter(s=>s.team===t.id).sort((a,b)=>a.w0-b.w0); }); crewStatus(); }
+      const nodes=t=>['Depot ('+ZONA_NAME[t.zone]+')'].concat(t.stops.map(s=>s.id.slice(-3)+' · '+(s.patokan?String(s.patokan).slice(0,16):ZONA_NAME[s.zone]))).concat(['Depot']);
+      const zones=t=>[t.zone].concat(t.stops.map(s=>s.zone)).concat([t.zone]);
+      const mx=t=>{const P=ptsOf(t);return P.map(a=>P.map(b=>Math.round((mode==='jarak'?segKm(a,b):segMin(a,b))*10)/10));};
+      const mz=t=>{const P=ptsOf(t);return P.map(a=>P.map(b=>segMin(a,b)));};
+      const geoSrc=t=>t.stops.some(s=>s.lat!=null)?'koordinat pelanggan + matriks zona':'matriks zona';
+      const cost=(tour,m)=>{let c=0;for(let i=0;i<tour.length-1;i++)c+=m[tour[i]][tour[i+1]];return Math.round(c*100)/100;};
+      /* node 0 = depot berangkat, 1..L = stop, node L+1 = duplikat depot (tidak pernah dikunjungi NN) */
+      function nnTour(m,n){const L=n-2,seen=new Set([0]),tour=[0];
+        while(seen.size<=L){const c=tour[tour.length-1];let b=-1,bd=Infinity;
+          for(let j=1;j<=L;j++)if(!seen.has(j)&&m[c][j]<bd){bd=m[c][j];b=j;}
+          if(b<0)break; seen.add(b);tour.push(b);}
+        tour.push(0);return tour;}
+      function twoOpt(tour,m,log){const n=tour.length-2;let checks=0,gains=0,improved=true;
+        while(improved){improved=false;
+          for(let i=1;i<=n;i++)for(let j=i+1;j<=n;j++){checks++;
+            const cand=tour.slice(),seg=cand.slice(i,j+1).reverse();cand.splice(i,seg.length,...seg);
+            const a=cost(tour,m),b=cost(cand,m);
+            if(b<a-1e-9){log.push('  [2-OPT] Swap edge '+tour[i-1]+'–'+tour[i]+' + '+tour[j]+'–'+tour[j+1]+' → balik segmen posisi '+i+'–'+j+' · '+fmt(a)+' → '+fmt(b)+' (Δ '+(Math.round((b-a)*10)/10)+')');tour=cand;gains++;improved=true;break;}}
+        }
+        return {checks,gains,tour};}
+      /* jadwal eksekusi rute: waktu tiba/mulai/selesai vs janji CSP + ISHOMA + batas shift */
+      function schedule(t,tour){ const P=ptsOf(t); let cur=SHIFT0, prev=0, legs=[], plan=[], conflict=[], ishom=false;
+        for(let k=1;k<tour.length-1;k++){ const i=tour[k], s=t.stops[i-1]; const trav=Math.max(segMin(P[prev],P[i]),30); const arr=cur+trav/60;
+          let a=arr; if(a>=ISH0&&a<ISH1){ a=ISH1; ishom=true; }
+          const start=Math.max(a,s.w0), wait=start-a, end=start+s.dur;
+          legs.push({from:prev,to:i,travel:trav,wait:Math.round(wait*60),ishoma:arr>=ISH0&&arr<ISH1});
+          plan.push({s,arr:a,start,end});
+          if(end>SHIFT1) conflict.push(s.id+' selesai '+hhmm(end)+' > batas shift 17:00');
+          if(start>s.w1+0.75) conflict.push(s.id+' mulai '+hhmm(start)+' meleset dari janji CSP '+s.promised);
+          cur=end; prev=i; }
+        const back=segMin(P[prev],P[0]); const home=cur+back/60;
+        const load=t.stops.reduce((x,s)=>x+s.dur,0);
+        const cap=t.nPresent===1?6:CAP; /* solo: kemampuan angkat/peralatan berkurang */
+        if(load>cap) conflict.push('Beban tim '+load.toFixed(1)+' jam > kapasitas '+cap+' jam'+(t.nPresent===1?' (kru tidak lengkap)':''));
+        if(home>SHIFT1) conflict.push('Kembali ke depot '+hhmm(home)+' > 17:00');
+        const berat=t.stops.filter(s=>s.needs.some(c=>c!=='Cuci')||s.dur>2);
+        if(t.nPresent===0) conflict.push(t.name+' tidak beroperasi — semua stop harus dialihkan lewat CSP');
+        else if(!t.active&&berat.length) conflict.push('TU '+t.name+' tidak masuk: '+berat.length+' job wajib sertifikat TU tidak boleh dijalankan');
+        else if(t.nPresent<2&&berat.length) conflict.push('Kru '+t.name+' hanya 1 orang untuk '+berat.length+' job berat — perlu bantuan atau jadwal dipecah');
+        return {plan,legs,home,back,load,cap,conflict,ishom};}
+      function solveTeam(t){ const log=[]; const m=mx(t); const n=t.stops.length+2;
+        if(!t.stops.length){ log.push('[TEAM] '+t.name+' — 0 stop (belum ada order terjadwal)'); return {t,log,before:0,after:0,tour:null,plan:null}; }
+        const manual=[0].concat(t.stops.map((s,i)=>i+1)).concat([0]);
+        const before=cost(manual,m);
+        log.push('[TEAM] '+t.name+' — '+t.stops.length+' stop: '+nodes(t).join(', '));
+        log.push('[INIT ] Urutan hasil CSP (baseline): '+manual.map(i=>i===0?'D':t.stops[i-1].id.slice(-3)).join(' → ')+' = '+fmt(before));
+        if(n<4){ const sc=schedule(t,manual); log.push('[NN   ] hanya '+t.stops.length+' stop — urutan CSP sudah tunggal, 2-opt dilewati');
+          return {t,log,before,after:before,tour:manual,plan:sc}; }
+        let tour=nnTour(m,n); const nnCost=cost(tour,m);
+        log.push('[NN   ] Depot → '+tour.slice(1,tour.length-1).map((x,pi,arr)=>{const prev=pi===0?0:arr[pi-1];return t.stops[x-1].id.slice(-3)+' ('+Math.round(m[prev][x]*10)/10+')';}).join(' → ')+' → Depot ('+Math.round(m[tour[tour.length-2]][0]*10)/10+') = '+fmt(nnCost));
+        const res=twoOpt(tour,m,log); tour=res.tour;
+        const after=cost(tour,m);
+        if(!res.gains) log.push('  [2-OPT] '+res.checks+' pasangan edge dicek · 0 swap memperbaiki — tour lokal optimal');
+        else log.push('  [2-OPT] '+res.gains+' perbaikan diterima dari '+res.checks+' pemeriksaan');
+        const sc=schedule(t,tour);
+        log.push('[JADWAL] '+sc.plan.map(p=>p.s.id.slice(-3)+' tiba '+hhmm(p.arr)+' · kerja '+hhmm(p.start)+'–'+hhmm(p.end)).join(' | ')+' · pulang '+hhmm(sc.home));
+        log.push('[HASIL] '+t.name+': '+fmt(before)+' → '+fmt(after)+(after<before-0.01?' (hemat '+fmt(before-after)+' · '+Math.round((before-after)/before*100)+'%)':' (urutan CSP sudah optimal)'));
+        if(sc.conflict.length) log.push('[CONFLICT] '+sc.conflict.join(' • ')+' → usulan TSP ini perlu review dispatcher (aturan C.5)');
+        return {t,log,before,after,tour,plan:sc};}
+      function solveAll(){ const out=[]; const nGeo=stops.filter(s=>s.lat!=null).length;
+        const lines=['[MATRIKS] Objective: '+(mode==='jarak'?'minimalkan KILOMETER':'minimalkan MENIT')+' tempuh · '+stops.length+' stop aktif dari penugasan CSP · jarak: '+(nGeo?nGeo+' stop pakai koordinat pelanggan (haversine ×1,35 ÷ '+SPEED+' km/jam) + '+(stops.length-nGeo)+' pakai matriks zona DOC-19 B.2':'matriks zona DOC-19 B.2 (belum ada koordinat)')];
+        let tb=0,ta=0; const active=TEAMS.filter(t=>t.stops.length);
+        if(!active.length){ lines.push(''); lines.push('[IDLE ] Belum ada order terjadwal. Tugaskan order di halaman Antrean Penugasan (CSP) terlebih dahulu.'); return {out,lines,tb:0,ta:0}; }
+        active.forEach(t=>{const r=solveTeam(t);out.push(r);tb+=r.before;ta+=r.after;lines.push('');lines.push(...r.log);});
+        tb=Math.round(tb*10)/10;ta=Math.round(ta*10)/10;
+        lines.push(''); lines.push('[TOTAL] Manual '+fmt(tb)+' → Optimal '+fmt(ta)+' · Hemat '+fmt(tb-ta)+' ('+(tb>0?Math.round((tb-ta)/tb*100):0)+'%)');
+        const cf=out.reduce((s,r)=>s+((r.plan&&r.plan.conflict.length)||0),0);
+        lines.push('[KUNCI] Usulan belum menjadi rute resmi — dispatcher harus mengunci (Aturan C.5). '+(cf?cf+' peringatan konflik terdeteksi.':'0 konflik terdeteksi.'));
+        return {out,lines,tb,ta};}
+      /* ---------- render: konsol, KPI, chips ---------- */
+      function renderConsole(res){
+        document.getElementById('tsp-trace').textContent=res.lines.join('\n');
+        document.getElementById('tsp-trace').scrollTop=1e9;
+        document.getElementById('tsp-results').innerHTML=res.out.map(r=>'<div class="p-3 rounded-lg bg-blue-950/60 border border-blue-800/40 flex flex-col gap-1 cursor-pointer hover:border-cyan-400" onclick="tspShowTeam(\''+r.t.id+'\')"><span class="font-mono-code text-[10px] uppercase tracking-widest text-cyan-300 font-bold">'+r.t.name+' · '+r.t.stops.length+' stop</span><span class="text-white font-mono-code text-[12px] font-bold">'+fmt(r.before)+' → <span class="text-emerald-300">'+fmt(r.after)+'</span></span><span class="text-cyan-100/80 font-mono-code text-[10px]">'+(r.tour?('urutan: '+r.tour.map(i=>i===0?'D':r.t.stops[i-1].id.slice(-3)).join(' → ')):'—')+'</span>'+(r.plan&&r.plan.conflict.length?'<span class="text-rose-300 font-mono-code text-[10px]">⚠ '+r.plan.conflict[0]+'</span>':'')+'</div>').join('')
+          ||'<div class="text-cyan-100/70 font-mono-code text-[11px]">Belum ada rute untuk dioptimasi.</div>';
+        const totalEl=document.getElementById('tsp-kpi-total'),labEl=document.getElementById('tsp-kpi-label'),saveEl=document.getElementById('tsp-kpi-save');
+        if(mode==='jarak'){labEl.textContent='Total Jarak Tempuh Hari Ini';totalEl.innerHTML=res.ta.toFixed(1)+' <span class="text-body-md font-body-md">km</span>';saveEl.textContent=(res.tb-res.ta).toFixed(1)+' km';}
+        else{const H=Math.floor(res.ta/60),M2=Math.round(res.ta%60);labEl.textContent='Total Waktu Tempuh Hari Ini';totalEl.innerHTML=H+' J '+M2+' <span class="text-body-md font-body-md">Mnt</span>';saveEl.textContent=Math.round(res.tb-res.ta)+' mnt';}
+        const sc=document.getElementById('tsp-kpi-save-chip');
+        if(sc){ const saved=res.tb-res.ta>0.05;
+          sc.className='mt-4 pt-3 flex items-center gap-1.5 font-label-xs text-label-xs px-2.5 py-1.5 rounded-lg w-fit '
+            +(saved?'text-status-selesai bg-badge-csp-valid/60':'text-on-surface-variant bg-surface-container'); }
+        res.out.forEach(r=>{const el=document.getElementById('tsp-line-'+r.t.id);
+          if(el)el.textContent=r.plan?(r.before-r.after>0.05?('Rute TSP: '+fmt(r.after)+' (hemat '+fmt(r.before-r.after)+' vs urutan CSP)'):('Rute TSP: '+fmt(r.after)+' (urutan CSP sudah optimal)')):'';});
+      }
+      /* ---------- render: baris Gantt presisi waktu 08:00–17:00 ---------- */
+      const W=(h)=>((h-SHIFT0)/(SHIFT1-SHIFT0)*100);
+      function ganttRows(res){
+        const box=document.getElementById('gantt-rows');
+        if(!res.out.length){ box.innerHTML='<div class="p-5 rounded-xl bg-surface-card border border-dashed border-border-subtle text-center font-label-md text-on-surface-variant">Belum ada order terjadwal — antrean TSP kosong. Tugaskan order pada halaman Antrean Penugasan (CSP) terlebih dahulu.</div>'; return; }
+        box.innerHTML=TEAMS.map(t=>{ const r=res.out.find(x=>x.t.id===t.id); if(!r) return '';
+          const bars=r.plan.plan.map((p,i)=>{ const left=W(p.start), wid=Math.max(3.2,W(p.end)-left);
+            return '<div class="absolute top-1.5 h-9 rounded px-2 flex flex-col justify-center overflow-hidden shadow-xs cursor-pointer hover:opacity-95 '+(p.s.status==='Dikerjakan'?'bg-status-kerja':p.s.locked?'bg-status-konfirmasi':'bg-primary')+' text-on-primary" style="left:'+left.toFixed(2)+'%;width:'+wid.toFixed(2)+'%" title="'+p.s.id+' · '+p.s.cust+' · tiba '+hhmm(p.arr)+' · kerja '+hhmm(p.start)+'–'+hhmm(p.end)+'"><span class="font-bold text-[10px] truncate">'+p.s.id.slice(-3)+' '+(ZONA_NAME[p.s.zone]||'')+'</span><span class="text-[9px] truncate opacity-90">'+hhmm(p.start)+'–'+hhmm(p.end)+'</span></div>'; }).join('');
+          const homeLeft=W(r.plan.home), retWid=Math.max(2.5,W(SHIFT1)-homeLeft);
+          const rest='<div class="absolute top-1.5 h-9 rounded bg-surface-variant/70 flex flex-col justify-center px-1" style="left:'+W(ISH0).toFixed(2)+'%;width:'+(W(ISH1)-W(ISH0)).toFixed(2)+'%" title="Jeda ISHOMA 12:00–13:00"><span class="text-[9px] font-bold flex items-center gap-0.5 text-on-surface-variant"><span class="material-symbols-outlined text-[10px]">restaurant</span>ISHOMA</span></div>';
+          const ret='<div class="absolute top-2.5 h-7 rounded bg-surface-container-highest text-on-surface px-1 flex flex-col justify-center" style="left:'+homeLeft.toFixed(2)+'%;width:'+retWid.toFixed(2)+'%" title="Perjalanan pulang '+r.plan.back+' mnt"><span class="text-[9px] font-bold truncate"><span class="material-symbols-outlined text-[10px]">warehouse</span> Depot '+hhmm(r.plan.home)+'</span></div>';
+          const cf=r.plan.conflict.length?'<span class="text-[10px] font-mono-code text-error">⚠ '+r.plan.conflict[0]+'</span>':'<span class="text-[10px] font-mono-code text-status-selesai">'+(r.tour?r.tour.filter(i=>i>0).length:0)+' stop · '+(r.plan.load.toFixed(1))+' jam kerja · pulang '+hhmm(r.plan.home)+'</span>';
+          return '<div class="grid grid-cols-12 gap-0 items-center bg-surface-bright p-3 rounded-xl shadow-sm hover:shadow-md transition-shadow" data-team="'+t.id+'">'
+            +'<div class="col-span-3 flex items-center gap-3 pr-2"><div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-headline-sm">'+t.name.slice(4,5)+'</div>'
+            +'<div class="flex flex-col min-w-0"><span class="font-headline-sm text-on-surface truncate">'+t.name+'</span><span class="text-[10px] font-mono-code text-on-surface-variant truncate">'+t.lead+' + '+t.helper+' · '+ZONA_NAME[t.zone]+'</span>'
+            +'<span class="text-[10px] font-mono-code '+(t.nPresent===2?'text-on-surface-variant':'text-error')+' truncate">'+(t.mode||'')+'</span>'
+            +'<span class="text-[10px] font-mono-code text-status-selesai truncate" id="tsp-line-'+t.id+'">—</span>'+cf+'</div></div>'
+            +'<div class="col-span-9 relative h-12 rounded-lg bg-surface-container-low" style="background-image:linear-gradient(to right,rgba(0,0,0,.07) 1px,transparent 1px);background-size:11.11% 100%">'
+            +rest+bars+ret+'</div></div>'; }).join('');
+      }
+      /* ---------- render: itinerary per tim ---------- */
+      function teamPick(){ document.getElementById('tsp-team-pick').innerHTML=TEAMS.filter(t=>t.stops.length).map(t=>
+        '<button onclick="tspShowTeam(\''+t.id+'\')" class="px-3 py-1.5 rounded-lg font-label-xs font-bold border '+(t.id===shown?'bg-primary text-on-primary border-primary':'bg-surface-container-low text-on-surface-variant border-border-subtle hover:bg-surface-container')+' transition-colors">'+t.name+' ('+t.stops.length+')</button>').join('')
+        +'<button onclick="tspFlip()" class="px-3 py-1.5 rounded-lg font-label-xs font-bold bg-surface-container-low border border-border-subtle text-on-surface-variant hover:bg-surface-container">Balik urutan</button>'; }
+      function itinerary(){ const t=TEAMS.find(x=>x.id===shown)||TEAMS.find(x=>x.stops.length);
+        const box=document.getElementById('tsp-itinerary'); const nm=document.getElementById('itin-team-name'); if(nm) nm.textContent=t?t.name:'—';
+        const sub=document.getElementById('itin-team-sub'); if(sub) sub.textContent=t?('Objektif '+(mode==='jarak'?'jarak':'waktu')+' · '+t.stops.length+' stop dari depot '+ZONA_NAME[t.zone]+' · belum resmi sampai dikunci'):'Rute rekomendasi dari antrean penugasan CSP';
+        if(!t||!t.stops.length){ box.innerHTML='<div class="font-label-md text-on-surface-variant">Tidak ada stop untuk tim ini.</div>'; return; }
+        const r=teamRes.find(x=>x.t.id===t.id)||{plan:schedule(t,[0].concat(t.stops.map((s,i)=>i+1)).concat([0])),tour:null};
+        const tour=r.tour||[0].concat(t.stops.map((s,i)=>i+1)).concat([0]);
+        if(flipped) tour=[0].concat(tour.slice(1,tour.length-1).reverse()).concat([0]);
+        let html='<div class="absolute left-2.5 top-3 bottom-5 w-0.5 bg-outline-variant"></div>';
+        html+='<div class="relative flex items-start gap-4"><div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-navy-deep text-on-primary flex items-center justify-center text-[10px] font-bold ring-4 ring-surface-card">0</div>'
+          +'<div class="flex-1 bg-surface-container-low p-3.5 rounded-xl shadow-xs"><div class="flex items-center justify-between"><span class="font-headline-sm text-on-surface">'+t.depot+'</span><span class="font-mono-metric text-primary">08:00 WIB</span></div>'
+          +'<p class="font-body-sm text-on-surface-variant mt-0.5">Start armada, briefing alat &amp; cek kelengkapan '+(t.stops.some(s=>s.needs.includes('Vakum'))?'pompa vakum':'toolkit cuci')+'.</p></div></div>';
+        tour.slice(1,tour.length-1).forEach((i,k)=>{ const p=r.plan.plan.find(x=>x.s.id===t.stops[i-1].id); if(!p) return; const leg=r.plan.legs[k];
+          const waitMin=Math.max(0,Math.round((p.start-p.arr)*60));
+          html+='<div class="ml-2 pl-3 py-1 flex items-center gap-3 text-on-surface-variant font-label-xs"><span class="material-symbols-outlined text-secondary text-[16px]">directions_car</span>'
+            +'<span>Leg '+(k+1)+': '+(k===0?'Depot '+ZONA_NAME[t.zone]:ZONA_NAME[t.stops[tour[k]-1].zone])+' → '+ZONA_NAME[p.s.zone]+' · '+leg.travel+' mnt tempuh'+(waitMin?' + tunggu pelanggan '+waitMin+' mnt':'')+(leg.ishoma?' · setelah ISHOMA':'')+'</span></div>';
+          html+='<div class="relative flex items-start gap-4"><div class="absolute -left-6 top-1 w-5 h-5 rounded-full '+(p.s.locked?'bg-status-konfirmasi':'bg-primary')+' text-on-primary flex items-center justify-center text-[10px] font-bold ring-4 ring-surface-card">'+(k+1)+'</div>'
+            +'<div class="flex-1 bg-surface-bright p-4 rounded-xl shadow-xs flex flex-col gap-2"><div class="flex items-start justify-between"><div class="flex flex-col"><div class="flex items-center gap-2 flex-wrap">'
+            +'<span class="font-headline-sm text-on-surface">'+p.s.id+'</span><span class="px-2 py-0.5 bg-surface-container text-primary rounded font-label-xs font-bold">'+esc2(p.s.type||'Servis')+'</span>'
+            +(p.s.locked?'<span class="px-2 py-0.5 bg-badge-csp-valid text-badge-csp-valid-text rounded font-label-xs font-bold">Rute terkunci</span>':'<span class="px-2 py-0.5 bg-amber-100 text-amber-900 rounded font-label-xs font-bold">Usulan TSP</span>')
+            +'</div><span class="font-body-md text-on-surface font-semibold mt-0.5">'+esc2(p.s.cust)+' • '+esc2(p.s.addr)+'</span></div>'
+            +'<span class="font-mono-metric text-status-kerja bg-surface-variant px-2 py-1 rounded">'+hhmm(p.start)+' – '+hhmm(p.end)+'</span></div>'
+            +'<p class="font-body-sm text-on-surface-variant">'+p.s.unit+' unit · janji CSP '+p.s.promised+' · tiba '+hhmm(p.arr)+(p.s.lat!=null?' · titik '+p.s.lat.toFixed(5)+', '+p.s.lng.toFixed(5):' · tanpa koordinat')+'</p>'+(p.s.patokan?'<p class="font-label-xs text-primary">Patokan: '+esc2(p.s.patokan)+' · '+(p.s.tipeTitik||'titik layanan')+'</p>':'')+'</div></div>'; });
+        html+='<div class="ml-2 pl-3 py-1 flex items-center gap-3 text-on-surface-variant font-label-xs"><span class="material-symbols-outlined text-secondary text-[16px]">warehouse</span><span>Pulang ke '+t.depot+' · '+r.plan.back+' mnt</span></div>'
+          +'<div class="relative flex items-start gap-4"><div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-status-selesai text-on-primary flex items-center justify-center"><span class="material-symbols-outlined text-[13px]">check</span></div>'
+          +'<div class="flex-1 bg-surface-container-low p-3.5 rounded-xl shadow-xs"><div class="flex items-center justify-between"><span class="font-headline-sm text-on-surface">Depot Operasional – Finis Rute</span>'
+          +'<span class="font-mono-metric text-status-selesai font-bold">'+hhmm(r.plan.home)+' WIB</span></div>'
+          +'<p class="font-body-sm text-on-surface-variant mt-0.5">Total beban kerja '+r.plan.load.toFixed(1)+' jam dari kapasitas '+(r.plan.cap||CAP)+' jam · '+(r.plan.conflict.length?'<strong class="text-error">'+r.plan.conflict.length+' konflik perlu review dispatcher</strong>':'selesai sebelum batas 17:00 WIB')+'</p></div></div>';
+        box.innerHTML=html; }
+      const esc2=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+      function waText(id){ const t=TEAMS.find(x=>x.id===(id||shown)); if(!t||!t.stops.length) return '';
+        const r=teamRes.find(x=>x.t.id===t.id); const sc=r&&r.plan; if(!sc) return '';
+        const L=['*CV INTAN PRATAMA — JADWAL RUTE* '+new Date().toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'}),
+          'Halo '+t.lead+' & '+t.helper+' ('+t.name+'):','• 08:00 WIB: Berangkat '+t.depot];
+        sc.plan.forEach(p=>L.push('• '+hhmm(p.start)+' WIB: ['+p.s.id+'] '+p.s.cust+' ('+p.s.type+', '+p.s.unit+' unit) — '+p.s.addr+(p.s.patokan?' (patokan: '+p.s.patokan+')':'')+(p.s.lat!=null?' https://maps.google.com/?q='+p.s.lat+','+p.s.lng:'')));
+        if(sc.ishom) L.push('• 12:00–13:00 WIB: ISHOMA (jeda wajib)');
+        L.push('• '+hhmm(sc.home-sc.back/60)+' WIB: Perjalanan pulang ke Depot (selesai '+hhmm(sc.home)+' WIB)');
+        L.push('Tetap utamakan safety &amp; pastikan SOP vakum 15 menit terpenuhi!');
+        return L.join('\n'); }
+      function waRender(){ const el=document.getElementById('wa-preview'), pic=document.getElementById('wa-pic'); if(!el) return;
+        const t=TEAMS.find(x=>x.id===shown); const txt=waText();
+        if(pic) pic.textContent='PIC: '+(t?t.lead+' ('+t.name+')':'—');
+        el.innerHTML=txt? txt.split('\n').map(esc2).join('<br/>') : 'Belum ada rute terjadwal untuk dikirim ke PIC.'; }
+      function validate(){ const withPlan=teamRes.filter(r=>r.plan&&r.plan.plan.length);
+        const b1=document.getElementById('val-b1'), c4=document.getElementById('val-c4');
+        if(!withPlan.length){ if(b1)b1.textContent='Belum ada rute — tugaskan order di CSP dahulu.'; if(c4)c4.textContent='Belum ada tim dengan stop terjadwal.'; return; }
+        const buf=Math.min(...withPlan.map(r=>Math.min(...r.plan.legs.map(l=>l.travel+l.wait))));
+        if(b1) b1.textContent=(buf>=30?'Lolos. ':'Perhatian: ')+'jeda terkecil antar-order '+Math.round(buf)+' mnt (aturan ≥ 30 mnt) di '+withPlan.length+' rute aktif.';
+        const loads=withPlan.map(r=>r.t.name.replace('Tim ','')+' '+r.plan.load.toFixed(1)+' jam');
+        const over=withPlan.filter(r=>r.plan.load>CAP).length;
+        if(c4) c4.textContent=(over?'Gugus: ':'Lolos. ')+loads.join(', ')+' dari batas '+CAP+' jam.';
+        const legs=withPlan.flatMap(r=>r.plan.legs.map(l=>l.travel)); const home=Math.max(...withPlan.map(r=>r.plan.home));
+        const total=legs.reduce((a,b)=>a+b,0); const H=Math.floor(total/60),M=Math.round(total%60);
+        const set=(id,txt)=>{const el=document.getElementById(id); if(el) el.textContent=txt;};
+        set('kpi-travel',H+' Jam '+M+' Mnt'); set('kpi-legavg',Math.round(total/legs.length)+' menit');
+        const ok=legs.filter(x=>x>=30).length; set('kpi-buffer',Math.round(ok/legs.length*100)+'% Lolos');
+        set('kpi-buffer-note',ok+'/'+legs.length+' jeda ≥ 30 mnt (aturan B.1)'); set('kpi-hours','08:00 – '+hhmm(home));
+        const st=document.getElementById('tsp-kpi-stops'); if(st) st.textContent=stops.length+' stop terjadwal'; }
+      window.tspWaText=waText;
+      window.tspShowTeam=function(id){ shown=id; flipped=false; teamPick(); itinerary(); waRender(); };
+      window.tspFlip=function(){ flipped=!flipped; itinerary(); showToast(flipped?'Urutan stop dibalik sementara (simulasi dispatcher) — tidak mengubah jadwal resmi.':'Urutan kembali ke hasil solver TSP.'); };
+      window.tspRoutes=function(){ return teamRes; };
+      function applyBtns(){
+        document.getElementById('btn-mode-waktu').className='flex items-center gap-1.5 px-3.5 py-2 rounded-lg '+(mode==='waktu'?'bg-surface-card text-primary shadow-sm':'text-on-surface-variant hover:text-on-surface')+' font-label-md text-label-md transition-all';
+        document.getElementById('btn-mode-jarak').className='flex items-center gap-1.5 px-3.5 py-2 rounded-lg '+(mode==='jarak'?'bg-surface-card text-primary shadow-sm':'text-on-surface-variant hover:text-on-surface')+' font-label-md text-label-md transition-all';
+      }
+      let animTimer=null;
+      function run(){ loadStops(); const res=solveAll(); teamRes=res.out; applyBtns(); renderConsole(res); ganttRows(res);
+        if(!TEAMS.some(t=>t.id===shown&&t.stops.length)) shown=(TEAMS.find(t=>t.stops.length)||{}).id;
+        teamPick(); itinerary(); waRender(); validate(); paintHoliday(); return res; }
+      function paintHoliday(){ const box=document.getElementById('rute-holiday'); if(!box) return;
+        const closed=!!(window.OpsCalendar&&window.OpsCalendar.has(pickDate));
+        box.classList.toggle('hidden',!closed); box.classList.toggle('flex',closed);
+        const t=document.getElementById('rute-holiday-text');
+        if(closed&&t) t.innerHTML='Tanggal <strong>'+pickDate+'</strong> ditandai libur ('+(window.OpsCalendar.label(pickDate)||'Libur')+') — rute tidak boleh dikunci dan order di hari ini tidak dijalankan.'; }
+      window.toggleTspMode=function(m){mode=m;const res=run();document.getElementById('tsp-badge').textContent='Selesai ✓';
+        showToast('Mode TSP: '+(m==='waktu'?'minimalkan waktu':'minimalkan jarak')+' — optimal '+(m==='waktu'?Math.floor(res.ta/60)+'j '+Math.round(res.ta%60)+'mnt':res.ta.toFixed(1)+' km')+'.');};
+      window.runTspOptimization=function(){
+        document.getElementById('tsp-badge').textContent='Menghitung…'; loadStops();
+        const res=solveAll(); let i=0; clearInterval(animTimer);
+        const pre=document.getElementById('tsp-trace'); pre.textContent='';
+        animTimer=setInterval(()=>{ if(i>=res.lines.length){ clearInterval(animTimer); teamRes=res.out; renderConsole(res); ganttRows(res);
+            if(!TEAMS.some(t=>t.id===shown&&t.stops.length)) shown=(TEAMS.find(t=>t.stops.length)||{}).id;
+            teamPick(); itinerary(); waRender(); validate(); document.getElementById('tsp-badge').textContent='Selesai ✓';
+            showToast('TSP Solver selesai: '+(mode==='jarak'?res.ta.toFixed(1)+' km total (hemat '+(res.tb-res.ta).toFixed(1)+' km vs urutan CSP)':Math.floor(res.ta/60)+' jam '+Math.round(res.ta%60)+' mnt total')+'.'); return; }
+          pre.textContent+=res.lines[i++]+'\n'; pre.scrollTop=1e9; document.getElementById('tsp-badge').textContent='Baris '+i+'/…'; },90); };
+      /* kunci rute → tulis waktu TSP + flag ke store (Aturan C.5: usulan jadi resmi setelah dispatcher) */
+      window.tspLock=function(){ if(window.OpsCalendar&&window.OpsCalendar.has(pickDate)){
+          showToast('Tanggal '+pickDate+' ditandai libur ('+window.OpsCalendar.label(pickDate)+') — rute tidak boleh dikunci. Pilih tanggal kerja lain.'); return false; }
+        let raw=[]; try{ raw=JSON.parse(localStorage.getItem(STORE)||'[]'); }catch(e){ raw=[]; }
+        let n=0; teamRes.forEach(r=>{ if(!r.plan) return; r.plan.plan.forEach(p=>{ const s=raw.find(x=>x.id===p.s.id); if(!s) return;
+          s.ruteLocked=true; s.tspStart=p.start; s.tspEnd=p.end; s.tspArrival=p.arr; s.status=s.status==='Baru'?'Dijadwalkan':s.status; n++; }); });
+        if(!safeSet(STORE, JSON.stringify(raw))){ showToast('Rute GAGAL DITUTUP — penyimpanan perangkat penuh, ulangi setelah mencadangkan data.'); return false; }
+        const b=document.getElementById('rute-state-text'); if(b) b.textContent='Status Rute '+dayTxt()+': TERKUNCI · '+n+' stop resmi (SPK terkirim ke teknisi)';
+        const pill=document.getElementById('rute-state-badge'); if(pill) pill.className='inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-status-selesai/15 text-status-selesai font-label-md text-label-md';
+        showToast('Rute dikunci — '+n+' stop resmi, jadwal mobile teknisi diperbarui.');
+        run(); return true; };
+      document.addEventListener('DOMContentLoaded',()=>{ const di=document.getElementById('rute-date');
+        const iso=d=>d.toISOString().slice(0,10), now=new Date();
+        if(di){ di.value=pickDate; di.min=iso(new Date(now.getTime()-120*864e5)); di.max=iso(new Date(now.getTime()+60*864e5));
+          di.addEventListener('change',()=>{ if(!/^\d{4}-\d{2}-\d{2}$/.test(di.value)) return; pickDate=di.value;
+            const b=document.getElementById('rute-state-text'); if(b) b.textContent='Status Rute '+dayTxt()+': usulan TSP dihitung ulang'; run(); }); }
+        const res=run(); document.getElementById('tsp-badge').textContent=res.out.length?'Siap · solved':'Menunggu penugasan'; });
+      window.addEventListener('storage',()=>run());
+    })();
+
+    function lockScheduleModal() {
+      document.getElementById('modal-lock-schedule').classList.remove('hidden');
+    }
+
+    function closeLockModal() {
+      document.getElementById('modal-lock-schedule').classList.add('hidden');
+    }
+
+    function confirmLockSchedule() {
+      closeLockModal();
+      if(!window.tspLock){ showToast('Engine rute tidak tersedia.'); return; }
+      var ok = window.tspLock();
+      if(ok) setTimeout(copyAndOpenWhatsApp, 500);
+    }
+
+    function openWhatsAppModal() {
+      copyAndOpenWhatsApp();
+    }
+
+    function copyAndOpenWhatsApp() {
+      const text = (window.tspWaText ? window.tspWaText() : '') || '*CV INTAN PRATAMA*\nBelum ada rute terjadwal.';
+      navigator.clipboard.writeText(text).then(() => {
+        showToast("Format pesan rute disalin ke clipboard! Membuka WhatsApp...");
+        setTimeout(() => { window.open("https://wa.me/?text=" + encodeURIComponent(text.replace(/&amp;/g,'&')), "_blank"); }, 400);
+      }).catch(() => { showToast("Pesan rute telah siap dikirim."); });
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast-notification');
+      const msg = document.getElementById('toast-message');
+      msg.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3500);
+    }
+  </script>
+</div></main>
+</div>
+
+<!-- P0 ADMIN SHELL: navigasi responsif, tanggal operasional global, banner mode demo -->
+<style id="adminP0Style">
+#adminAside{overflow-y:auto}
+#adminBackdrop{display:none}
+#adminDrawerClose{display:none;position:absolute;top:10px;right:10px;z-index:60;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.12);color:#fff;align-items:center;justify-content:center}
+.adminTableWrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:1023px){
+  #adminHeader{display:none!important}
+  #adminAside{transform:translateX(-100%);transition:transform .25s ease}
+  #adminAside.is-open{transform:translateX(0);box-shadow:0 24px 60px rgba(0,0,0,.55)}
+  #adminAside.is-open #adminDrawerClose{display:flex}
+  #adminBackdrop.is-open{display:block}
+  body.adminDrawerOpen{overflow:hidden}
+  main{padding-left:16px!important;padding-right:16px!important;padding-bottom:104px!important}
+  .pl-72{padding-left:0!important}
+  .left-72{left:0!important}
+  #adminMobileBar{display:flex!important}
+  #adminBottomNav{display:flex!important}
+  main footer.sticky{position:static!important;bottom:auto!important}
+}
+</style>
+<div id="adminBackdrop" class="fixed inset-0 z-40 bg-black/50"></div>
+<div id="adminMobileBar" class="fixed top-0 inset-x-0 z-40 h-16 items-center gap-2.5 px-3 bg-[#0b1329] text-white shadow-lg" style="display:none">
+<button id="adminMenuBtn" type="button" aria-label="Buka menu" class="w-10 h-10 shrink-0 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center active:scale-95 transition-colors">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<div class="flex flex-col min-w-0 flex-1 leading-tight">
+<span class="text-[9px] uppercase tracking-[0.14em] text-cyan-300/80 font-bold">FSM Dispatcher</span>
+<span id="adminPageTitle" class="text-[13px] font-bold truncate">Admin</span>
+</div>
+<span id="adminOpsDate" class="shrink-0 text-[10px] font-bold px-2 py-1 rounded-lg bg-white/10 text-slate-200">—</span>
+</div>
+<nav id="adminBottomNav" class="fixed bottom-0 inset-x-0 z-40 h-16 items-stretch bg-[#0b1329] text-slate-400 border-t border-slate-700/70" style="display:none">
+<a data-nav="ringkasan-hari.html" href="ringkasan-hari.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">dashboard</span><span>Ringkasan</span>
+</a>
+<a data-nav="pengajuan-pelanggan.html" href="pengajuan-pelanggan.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">pending_actions</span><span>Pengajuan</span>
+</a>
+<a data-nav="antrean-penugasan.html" href="antrean-penugasan.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">assignment_late</span><span>Antrean</span>
+</a>
+<a data-nav="timeline-rute.html" href="timeline-rute.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">route</span><span>Rute</span>
+</a>
+<button id="adminMoreBtn" type="button" class="flex-1 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[21px]">apps</span><span>Lainnya</span>
+</button>
+</nav>
+<div id="adminDemoBanner" class="w-full items-start gap-2 rounded-xl border border-amber-300 bg-amber-50 px-3 py-2 text-[11px] leading-snug text-amber-900 shadow-sm" style="display:none">
+<span class="material-symbols-outlined text-[16px] text-amber-700">info</span>
+<span class="flex-1"><strong>Mode demo lokal.</strong> Data tersimpan di perangkat ini (localStorage) — cadangkan rutin dari Ringkasan Hari agar tidak hilang.</span>
+<button id="adminDemoClose" type="button" aria-label="Tutup pemberitahuan" class="shrink-0 w-6 h-6 rounded-md hover:bg-amber-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+<script>
+(function(){
+  'use strict';
+  var page=(location.pathname.split('/').pop()||'').toLowerCase()||'index.html';
+  var TITLES={'ringkasan-hari.html':'Ringkasan Hari','pengajuan-pelanggan.html':'Pengajuan Pelanggan','antrean-penugasan.html':'Antrean & Penugasan','timeline-rute.html':'Timeline Tim & Rute','spk-invoice.html':'SPK & Invoice','master-inventaris.html':'Master & Inventaris','log-audit.html':'Log Audit'};
+  var DATES={'ringkasan-hari.html':'owner-date','antrean-penugasan.html':'csp-date','timeline-rute.html':'rute-date'};
+  var KEY='ip_ops_date';
+  function $(id){ return document.getElementById(id); }
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function todayKey(){ var d=new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+  function readDate(){ try{ var v=localStorage.getItem(KEY); return /^\d{4}-\d{2}-\d{2}$/.test(v||'')?v:''; }catch(e){ return ''; } }
+  function writeDate(v){ try{ localStorage.setItem(KEY,v); }catch(e){} }
+  function fmtDate(iso){ if(!iso) return 'Hari ini';
+    if(iso===todayKey()) return 'Hari ini';
+    try{ return new Date(iso+'T00:00:00').toLocaleDateString('id-ID',{day:'2-digit',month:'short'}); }catch(e){ return iso; } }
+
+  var aside=document.querySelector('aside.fixed');
+  var header=document.querySelector('header.fixed');
+  var backdrop=$('adminBackdrop');
+  if(aside) aside.id='adminAside';
+  if(header) header.id='adminHeader';
+  if(aside){
+    var x=document.createElement('button');
+    x.id='adminDrawerClose'; x.type='button'; x.setAttribute('aria-label','Tutup menu');
+    x.innerHTML='<span class="material-symbols-outlined text-[20px]">close</span>';
+    aside.appendChild(x);
+  }
+  function openDrawer(){ if(!aside||!backdrop) return; aside.classList.add('is-open'); backdrop.classList.add('is-open'); document.body.classList.add('adminDrawerOpen'); }
+  function closeDrawer(){ if(!aside||!backdrop) return; aside.classList.remove('is-open'); backdrop.classList.remove('is-open'); document.body.classList.remove('adminDrawerOpen'); }
+  var mb=$('adminMenuBtn'), more=$('adminMoreBtn');
+  if(mb) mb.addEventListener('click',openDrawer);
+  if(more) more.addEventListener('click',openDrawer);
+  if(backdrop) backdrop.addEventListener('click',closeDrawer);
+  var xb=$('adminDrawerClose'); if(xb) xb.addEventListener('click',closeDrawer);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrawer(); });
+  if(aside) aside.addEventListener('click',function(e){ if(e.target.closest('a')) closeDrawer(); });
+
+  var title=$('adminPageTitle'); if(title) title.textContent=TITLES[page]||'Admin';
+  Array.prototype.forEach.call(document.querySelectorAll('#adminBottomNav [data-nav]'),function(a){
+    if(a.getAttribute('data-nav')===page){ a.classList.add('text-cyan-300','bg-white/5'); }
+  });
+
+  function paintOpsDate(iso){
+    var el=$('adminOpsDate'); if(!el) return;
+    el.textContent=fmtDate(iso||readDate()||todayKey());
+    el.title='Hari operasional aktif';
+  }
+
+  var banner=$('adminDemoBanner');
+  var bannerHidden=false; try{ bannerHidden=sessionStorage.getItem('adminDemoBannerHidden')==='1'; }catch(e){}
+  if(banner){
+    var bc=$('adminDemoClose');
+    if(bc) bc.addEventListener('click',function(){ banner.style.display='none'; try{ sessionStorage.setItem('adminDemoBannerHidden','1'); }catch(e){} });
+  }
+
+  function wrapTables(){
+    Array.prototype.forEach.call(document.querySelectorAll('main table'),function(t){
+      var p=t.parentElement;
+      if(p && p.classList && p.classList.contains('adminTableWrap')) return;
+      var w=document.createElement('div'); w.className='adminTableWrap';
+      t.parentNode.insertBefore(w,t); w.appendChild(t);
+    });
+  }
+
+  function fixOverflow(){
+    var main=document.querySelector('main'); if(!main) return;
+    var vw=document.documentElement.clientWidth;
+    Array.prototype.forEach.call(main.querySelectorAll('div,nav'),function(el){
+      if(el.dataset.ofx||el.classList.contains('flex-nowrap')) return;
+      var s=getComputedStyle(el);
+      if(s.display!=='flex'&&s.display!=='inline-flex') return;
+      if(s.flexDirection!=='row'&&s.flexDirection!=='row-reverse') return;
+      if(s.position==='fixed'||s.position==='absolute') return;
+      var r=el.getBoundingClientRect();
+      if(r.width>vw) return;
+      if(el.scrollWidth<=el.clientWidth+3) return;
+      if(el.querySelectorAll(':scope > button').length>=3){
+        el.style.flexWrap='wrap';
+        el.dataset.ofx='1';
+        return;
+      }
+      el.style.flexWrap='wrap';
+      el.dataset.ofx='1';
+      if(el.scrollWidth>el.clientWidth+3){ el.style.maxWidth='100%'; el.style.overflowX='auto'; }
+    });
+  }
+
+  function initDate(){
+    var id=DATES[page]; if(!id) return;
+    var inp=$(id); if(!inp) return;
+    var v=readDate();
+    if(v && page==='ringkasan-hari.html' && v>todayKey()) v='';
+    if(v && inp.value!==v){
+      inp.value=v;
+      try{ inp.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){}
+    }
+    inp.addEventListener('change',function(){
+      if(/^\d{4}-\d{2}-\d{2}$/.test(inp.value)){ writeDate(inp.value); paintOpsDate(inp.value); }
+    });
+    paintOpsDate(inp.value||readDate());
+  }
+
+  function countBy(list,st){ return list.filter(function(o){ return o.status===st; }).length; }
+  function paintDayStatus(){
+    var box=$('adminDayStatus'); if(!box) return;
+    var inp=$('owner-date');
+    var iso=(inp&&inp.value)||readDate()||todayKey();
+    var all=[]; try{ all=JSON.parse(localStorage.getItem('ip_customer_orders')||'[]')||[]; }catch(e){}
+    var day=all.filter(function(o){ return (o.tgl||todayKey())===iso; });
+    var baru=countBy(day,'Baru')+countBy(day,'Menunggu Persetujuan Customer');
+    var doing=countBy(day,'Dikerjakan');
+    var review=countBy(day,'Review');
+    var sched=day.filter(function(o){ return o.status==='Dijadwalkan'; });
+    var unlocked=sched.filter(function(o){ return !o.ruteLocked; }).length;
+    var closed=day.length && day.every(function(o){ return o.status==='Selesai'||o.status==='Dibatalkan'; });
+    var label='',tone='',sub='',icon='radio_button_checked';
+    if(!day.length){ label='Belum ada order'; tone='bg-slate-100 text-slate-600 border-slate-200'; sub='Belum ada order pada tanggal ini.'; icon='inbox'; }
+    else if(baru){ label='Perlu penugasan'; tone='bg-amber-100 text-amber-800 border-amber-200'; sub=baru+' order menunggu penugasan CSP.'; icon='assignment_late'; }
+    else if(unlocked){ label='Rute belum dikunci'; tone='bg-orange-100 text-orange-800 border-orange-200'; sub=unlocked+' order terjadwal belum punya rute resmi.'; icon='lock_open'; }
+    else if(doing){ label='Sedang berjalan'; tone='bg-blue-100 text-blue-800 border-blue-200'; sub=doing+' order dikerjakan teknisi.'; icon='engineering'; }
+    else if(review){ label='Menunggu validasi'; tone='bg-violet-100 text-violet-800 border-violet-200'; sub=review+' laporan teknisi menunggu review admin.'; icon='fact_check'; }
+    else if(closed){ label='Siap tutup hari'; tone='bg-emerald-100 text-emerald-800 border-emerald-200'; sub='Semua order selesai/dibatalkan — lengkapi rekap dan cadangkan data.'; icon='task_alt'; }
+    else { label='Siap berangkat'; tone='bg-emerald-100 text-emerald-800 border-emerald-200'; sub='Rute terkunci, menunggu teknisi clock-in.'; icon='departure_boarding'; }
+    var detail=[];
+    if(doing) detail.push(doing+' dikerjakan');
+    if(review) detail.push(review+' menunggu validasi');
+    if(unlocked) detail.push(unlocked+' rute belum dikunci');
+    if(baru) detail.push(baru+' baru');
+    if(detail.length) sub=detail.join(' · ');
+    box.className='bg-white rounded-2xl shadow-sm border border-slate-200/90 p-4 flex flex-col sm:flex-row sm:items-center gap-3';
+    box.innerHTML='<div class="w-10 h-10 shrink-0 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center"><span class="material-symbols-outlined text-[21px]">'+icon+'</span></div>'
+      +'<div class="flex-1 min-w-0"><div class="flex flex-wrap items-center gap-2"><h2 class="text-sm font-bold text-slate-900">Status Hari Operasional</h2>'
+      +'<span class="px-2 py-0.5 rounded-full border text-[10px] font-bold '+tone+'">'+label+'</span></div>'
+      +'<p class="text-xs text-slate-500">'+sub+'</p></div>'
+      +'<div class="flex items-center gap-2 shrink-0"><a href="antrean-penugasan.html" class="px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-bold">Antrean</a>'
+      +'<a href="timeline-rute.html" class="px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-bold border border-slate-300">Rute</a></div>';
+  }
+
+  function boot(){
+    wrapTables();
+    fixOverflow();
+    initDate();
+    var main=document.querySelector('main');
+    var host=main&&(main.firstElementChild||main);
+    if(banner && host && banner.parentElement!==host){
+      host.insertBefore(banner,host.firstChild);
+      banner.style.display=bannerHidden?'none':'flex';
+    }
+    if(page==='log-audit.html' && window.matchMedia('(max-width:1023px)').matches){
+      var bcs=[].slice.call(document.querySelectorAll('main div')).filter(function(d){
+        return d.className && d.className.toString().indexOf('uppercase')>=0 && d.textContent.indexOf('Ledger SOP DOC-19')>=0 && d.children.length<=7;
+      })[0];
+      if(bcs) bcs.style.display='none';
+    }
+    if(main){
+      var t=null;
+      var mo=new MutationObserver(function(){
+        clearTimeout(t);
+        t=setTimeout(function(){ wrapTables(); fixOverflow(); },240);
+      });
+      mo.observe(main,{childList:true,subtree:true});
+    }
+    var rt=null;
+    window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(fixOverflow,200); });
+    if(page==='ringkasan-hari.html'){
+      if(host && !$('adminDayStatus')){
+        var el=document.createElement('div'); el.id='adminDayStatus';
+        host.insertBefore(el,(banner&&banner.parentElement===host)?banner.nextSibling:host.firstChild);
+      }
+      paintDayStatus();
+      setInterval(paintDayStatus,15000);
+      document.addEventListener('change',paintDayStatus);
+      window.addEventListener('storage',paintDayStatus);
+    }
+    paintOpsDate();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){ setTimeout(boot,60); });
+  else setTimeout(boot,60);
+})();
+</script>
+<!-- /P0 ADMIN SHELL -->
+
+<script src="assets/material-catalog.js"></script>
+<script src="assets/p1.js"></script>
+<script src="assets/admin-v32.js"></script>
+</body></html>
